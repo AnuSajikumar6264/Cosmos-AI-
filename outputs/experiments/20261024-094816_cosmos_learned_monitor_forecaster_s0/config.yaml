@@ -1,0 +1,6 @@
+name: cosmos_learned_monitor_forecaster
+group: cosmos_synthetic_telemetry
+seed: 0
+epochs: 30
+context: 128
+horizon: 8

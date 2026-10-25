@@ -1,0 +1,5 @@
+name: vision_synth_tinyyolo
+group: vision_cosmos_synthetic
+seed: 0
+epochs: 50
+size: 320

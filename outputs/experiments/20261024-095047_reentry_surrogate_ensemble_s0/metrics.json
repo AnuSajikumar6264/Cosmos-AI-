@@ -1,0 +1,40 @@
+{
+  "run_id": "20261024-095047_reentry_surrogate_ensemble_s0",
+  "name": "reentry_surrogate_ensemble",
+  "group": "reentry_surrogate",
+  "seed": 0,
+  "status": "ok",
+  "wall_time_s": 323.62,
+  "config_sha256": "1ecebd2dc099420d0f164bd49eda6046657e8362df2af2c9150291668dcbea4c",
+  "members": [
+    {
+      "member": 0,
+      "val_mse_norm": 0.2626332938671112,
+      "epochs": 44
+    },
+    {
+      "member": 1,
+      "val_mse_norm": 0.26383763551712036,
+      "epochs": 46
+    },
+    {
+      "member": 2,
+      "val_mse_norm": 0.267452210187912,
+      "epochs": 31
+    },
+    {
+      "member": 3,
+      "val_mse_norm": 0.2602400481700897,
+      "epochs": 46
+    },
+    {
+      "member": 4,
+      "val_mse_norm": 0.2620740532875061,
+      "epochs": 30
+    }
+  ],
+  "metrics": {
+    "train_time_s": 323.622816324234,
+    "params_per_member": 202245
+  }
+}

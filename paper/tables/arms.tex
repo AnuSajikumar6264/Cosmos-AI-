@@ -1,0 +1,10 @@
+\begin{table}[t]\centering\small
+\caption{Pre-registered arms (freeze \texttt{09a98f5e160e}). All share the alarm layer of
+Section~\ref{sec:alarm}.}\label{tab:arms}
+\begin{tabular}{llll}\toprule
+Arm & Scores & Selection of $(q,k)$ & Seeds\\\midrule
+A0 & AR(8), fitted on 2000--2005 (M1) & cross-fit on 9-month calibration window & --\\
+A1 & AR(8), out of fold ($K=5$) & cross-fit on whole training half & --\\
+A2 & XGBoost event scorer, out of fold & cross-fit on whole training half & 5\\
+A3 & TCN event scorer, out of fold & cross-fit on whole training half & 5\\
+\bottomrule\end{tabular}\end{table}

@@ -1,0 +1,10 @@
+# Re-entry landmark study (cosmos.ai.survival.landmark); values are the code defaults.
+tau: "2026-08-16"
+follow_up: "2026-10-23"
+horizons_days: [30, 68]
+hazard_bin_days: 7
+split: "by launch group (YYYY-NNN), sha256 hash, 60/20/20"
+mlp_grid: {hidden: [[128, 64], [256, 256, 128]], lr: [0.001, 0.0003], quantile_inputs: [false, true]}
+ensemble_seeds: [0, 1, 2, 3, 4]
+xgboost: {n_estimators: 2000, max_depth: 4, learning_rate: 0.03, early_stopping_rounds: 100}
+conformal_alpha: 0.1

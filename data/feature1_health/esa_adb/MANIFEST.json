@@ -1,0 +1,99 @@
+{
+  "dataset": "esa_adb",
+  "class": "REAL",
+  "status": "downloaded",
+  "title": "ESA Anomaly Dataset",
+  "zenodo_record": 12528696,
+  "doi": "10.5281/zenodo.12528696",
+  "paper": "Kotowski et al., DMLR 3(23), 2026; arXiv 2406.17826",
+  "licence": "not stated in the Zenodo record; CC BY 3.0 IGO per the DMLR paper",
+  "code_licence": "MIT",
+  "publication_date": "2024-06-25",
+  "retrieved_utc": "2026-10-24T08:47:44+00:00",
+  "source_urls": [
+    "https://zenodo.org/records/12528696",
+    "https://github.com/kplabs-pl/ESA-ADB"
+  ],
+  "notes": [
+    "Archives physically live in data/feature1_health/external/esa_ad (fetched by cosmos.datasets); raw/ holds relative symlinks so nothing is duplicated.",
+    "Mission 3 is excluded from algorithm comparison by the benchmark authors."
+  ],
+  "manifest_written_utc": "2026-10-24T08:47:44+00:00",
+  "files": [
+    {
+      "path": "raw/ESA-Mission1.zip",
+      "url": "https://zenodo.org/api/records/12528696/files/ESA-Mission1.zip/content",
+      "bytes": 3776246054,
+      "md5": "80750189d171f5f398fb3d96c49df12b",
+      "sha256": "8c81edb1e81af9084f38a3cc06fa06dbea73b504c99ce1b0fb92bda996b801a7",
+      "status": "cached",
+      "md5_verified": true,
+      "published_checksum": "md5:80750189d171f5f398fb3d96c49df12b",
+      "stored_at": "../external/esa_ad/ESA-Mission1.zip"
+    },
+    {
+      "path": "raw/ESA-Mission2.zip",
+      "url": "https://zenodo.org/api/records/12528696/files/ESA-Mission2.zip/content",
+      "bytes": 4098539912,
+      "md5": "0b7505b7f0731ca037ee889ca2a520ce",
+      "sha256": "843c3b5e0042178bfee650fcf7f16413ce8083dcfa5db53e6d37e0811dfb138d",
+      "status": "cached",
+      "md5_verified": true,
+      "published_checksum": "md5:0b7505b7f0731ca037ee889ca2a520ce",
+      "stored_at": "../external/esa_ad/ESA-Mission2.zip"
+    },
+    {
+      "path": "raw/ESA-Mission3.zip",
+      "url": "https://zenodo.org/api/records/12528696/files/ESA-Mission3.zip/content",
+      "bytes": 3734403447,
+      "md5": "34b8a8857e2242fb1f00b368b7421595",
+      "sha256": "4ed219e4d07c8a277b5c32d06f9a8a9ebc61fc231450bf21ce92079d25182b27",
+      "status": "cached",
+      "md5_verified": true,
+      "published_checksum": "md5:34b8a8857e2242fb1f00b368b7421595",
+      "stored_at": "../external/esa_ad/ESA-Mission3.zip"
+    },
+    {
+      "path": "raw/kplabs-pl__ESA-ADB-67194d389c4a.tar.gz",
+      "url": "https://codeload.github.com/kplabs-pl/ESA-ADB/tar.gz/67194d389c4aa33a9a61fa0715ebdac3002b11b2",
+      "bytes": 18741008,
+      "md5": "3e404de6c38473e27bb93bb17bf03a6e",
+      "sha256": "fcc1b80fbc5e2cc11f137359cd925bddd879a233516d4488e33cdc795883900f",
+      "status": "cached",
+      "md5_verified": false,
+      "repo": "kplabs-pl/ESA-ADB",
+      "commit": "67194d389c4aa33a9a61fa0715ebdac3002b11b2",
+      "extracted_to": "raw/official_repo"
+    },
+    {
+      "path": "raw/zenodo_15237121/members/ESA-Mission1_channels.csv",
+      "bytes": 3782,
+      "md5": "1d2d3658867e92d0fad1f6e749dcff27",
+      "sha256": "27a4d6819642effc2a590d49e5bd2c7a915c06a1eb78502c34bed055d1c76d5d",
+      "status": "member fetched by HTTP Range; CRC-32 verified",
+      "url": "https://zenodo.org/api/records/15237121/files/ESA-Mission1.zip/content",
+      "zenodo_record": 15237121
+    },
+    {
+      "path": "raw/zenodo_15237121/members/ESA-Mission2_channels.csv",
+      "bytes": 4350,
+      "md5": "c15e017c9b1db1a384a779cf40c91f3f",
+      "sha256": "ddd4e30be399ca28aa963b8b6d3f84c7ef10afb512e5cb4a7f11636a986cca98",
+      "status": "member fetched by HTTP Range; CRC-32 verified",
+      "url": "https://zenodo.org/api/records/15237121/files/ESA-Mission2.zip/content",
+      "zenodo_record": 15237121
+    }
+  ],
+  "revision_check": {
+    "record": 15237121,
+    "publication_date": "2025-04-17",
+    "checked_utc": "2026-10-24T08:46:46+00:00",
+    "method": "zip central directories of the remote archives read with HTTP Range requests; CRC-32 and size of every member compared with the local v1.0 archives",
+    "result": "780/780 (M1) and 230/230 (M2) members present in both; the ONLY changed member is ESA-MissionN/channels.csv, which gains a 'Categorical' column (M2 also blanks the physical unit of channel_4 and channel_5). Labels, anomaly types, telecommands and all channel pickles are byte-identical.",
+    "consequence": "the full 7.9 GB revision was not downloaded; v1.0 data + the two revised channels.csv files are equivalent to the revision for every COSMOS-AI use"
+  },
+  "versions": {
+    "12528696": "v1.0, 2024-06-25 (raw/*.zip; used by the original COSMOS code)",
+    "15237121": "2025-04-17 revision: identical to v1.0 except channels.csv (adds 'Categorical'); the changed members are in raw/zenodo_15237121/members/"
+  }
+}

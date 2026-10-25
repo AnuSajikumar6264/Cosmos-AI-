@@ -1,0 +1,11 @@
+monitor,fault,recall,localised
+classical_ewma,degradation,0.125,0.3
+classical_ewma,dropout,0.875,1.0
+classical_ewma,leak,0.825,0.875
+classical_ewma,overheat,0.875,1.0
+classical_ewma,saturation,0.875,0.975
+learned_conformal,degradation,0.05,0.8
+learned_conformal,dropout,1.0,1.0
+learned_conformal,leak,0.975,1.0
+learned_conformal,overheat,0.95,1.0
+learned_conformal,saturation,0.525,1.0

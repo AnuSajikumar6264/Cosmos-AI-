@@ -1,0 +1,43 @@
+{
+  "model": "tinyyolo (existing COSMOS)",
+  "seed": 1,
+  "map50": 0.3764299445997727,
+  "map50_95": 0.16231763013854802,
+  "map50_class_agnostic": 0.8195383072141608,
+  "map50_95_class_agnostic": 0.3285900513488136,
+  "small_map50": 0.2778685189064386,
+  "ap50_per_class": [
+    0.29282713749922845,
+    0.6707949682593561,
+    0.2694965052147999,
+    0.2726011674257063
+  ],
+  "precision@conf": 0.48733535967578523,
+  "recall@conf": 0.6001247660636307,
+  "f1@conf": 0.5378809057869725,
+  "mean_iou@conf": 0.7263961693513188,
+  "tp@conf": 962,
+  "fp@conf": 1012,
+  "fn@conf": 641,
+  "legacy_centre_metric": {
+    "split": "test",
+    "conf": 0.6,
+    "tp": 1579,
+    "fp": 393,
+    "fn": 24,
+    "precision": 0.8007,
+    "recall": 0.985,
+    "f1": 0.8834,
+    "mean_iou": 0.7094,
+    "map50": 0.9104,
+    "match": "centre"
+  },
+  "params": 320313,
+  "size_mb": 1.2259864807128906,
+  "train_time_s": 179.67298865318298,
+  "latency_ms_per_batch": 0.6974949792493135,
+  "batch_items": 16,
+  "latency_ms_per_item": 0.04359343620308209,
+  "throughput_items_s": 22939.233221750463,
+  "peak_memory_mb": 308.73291015625
+}

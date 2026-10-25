@@ -1,0 +1,32 @@
+{
+  "model": "yolov8n (ultralytics, COCO-pretrained)",
+  "seed": 0,
+  "map50": 0.5470512158225677,
+  "map50_95": 0.2869761373425948,
+  "map50_class_agnostic": 0.963895931489636,
+  "map50_95_class_agnostic": 0.5259558969327769,
+  "small_map50": 0.5246280502182064,
+  "ap50_per_class": [
+    0.32247966691591917,
+    0.8250255615889269,
+    0.6210283907178793,
+    0.41967124406754536
+  ],
+  "precision@conf": 0.6022598870056497,
+  "recall@conf": 0.6650031191515907,
+  "f1@conf": 0.632078268603617,
+  "mean_iou@conf": 0.7808121251872983,
+  "tp@conf": 1066,
+  "fp@conf": 704,
+  "fn@conf": 537,
+  "ultralytics_test_map50": 0.6220327631929898,
+  "ultralytics_test_map50_95": 0.3335457202037825,
+  "params": 3138732,
+  "size_mb": 12.014152526855469,
+  "train_time_s": 1867.4664301872253,
+  "latency_ms_per_batch": 35.59509149636142,
+  "batch_items": 16,
+  "latency_ms_per_item": 2.2246932185225887,
+  "throughput_items_s": 449.5001790242776,
+  "peak_memory_mb": 473.4033203125
+}

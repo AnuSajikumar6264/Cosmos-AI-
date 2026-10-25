@@ -1,0 +1,14 @@
+name: opssat_hybrid_time_blocked_f100
+group: opssat
+seed: 1
+lr: 0.001
+weight_decay: 0.0001
+batch: 64
+max_epochs: 300
+patience: 30
+width: 64
+augment: true
+model: hybrid
+protocol: time_blocked
+train_frac: 1.0
+n_train: 1273

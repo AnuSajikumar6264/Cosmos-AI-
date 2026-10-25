@@ -1,0 +1,42 @@
+Checks for the real-data layer — loaders, metrics and the datasets themselves.
+
+EVENT_METRICS
+  [PASS] event-wise recall on a hand-built case
+         expected 0.500   measured 0.500   (one of two events overlapped)
+  [PASS] event-wise precision on a hand-built case
+         expected 0.500   measured 0.500   (one of two alarms is false)
+  [PASS] alarm episodes merge only within the gap
+         expected 1 then 2   measured 1 then 2
+  [PASS] an event between two merged alarms is not 'detected'
+         expected recall 0.0   measured recall 0.0
+  [PASS] persistence: a 4-sample run does not alarm, a 6-sample run does
+         expected [(14, 19)]   measured [(14, 19)]
+
+SCORING
+  [PASS] vectorised EWMA equals the monitor's loop
+         expected 0   measured 0.0e+00
+  [PASS] AR forecaster recovers the innovation spread of an AR(1)
+         expected 1.00 +/- 0.03   measured 0.992   (residual std of x_t = 0.9 x_t-1 + N(0,1))
+  [PASS] trailing baseline absorbs a slow drift a frozen one alarms on
+         expected frozen |z| > 6, trailing |z| < 2   measured 10.9 vs 1.4
+
+SAFE_UNPICKLER
+Traceback (most recent call last):
+  File "/data/anupa/COSMOS_work/Final_Project/tests/test_datasets.py", line 245, in <module>
+    df = main()
+         ^^^^^^
+  File "/data/anupa/COSMOS_work/Final_Project/tests/test_datasets.py", line 232, in main
+    fn()
+  File "/data/anupa/COSMOS_work/Final_Project/tests/test_datasets.py", line 104, in test_safe_unpickler
+    back = R.safe_read_pickle(pickle.dumps(df))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/anupa/COSMOS_work/Final_Project/cosmos/health/realdata.py", line 146, in safe_read_pickle
+    return _SafeUnpickler(io.BytesIO(raw)).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/anupa/COSMOS_work/Final_Project/cosmos/health/realdata.py", line 138, in find_class
+    raise pickle.UnpicklingError(f"refusing to load {module}.{name} from a data file")
+_pickle.UnpicklingError: refusing to load pandas.arrays.ArrowStringArray from a data file
+
+real	0m0.621s
+user	0m17.370s
+sys	0m0.172s

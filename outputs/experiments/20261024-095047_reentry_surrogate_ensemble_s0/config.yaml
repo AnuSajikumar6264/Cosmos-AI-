@@ -1,0 +1,24 @@
+name: reentry_surrogate_ensemble
+group: reentry_surrogate
+seed: 0
+members: 5
+epochs: 200
+inputs:
+- alt_km
+- speed_ms
+- gamma_deg
+- sin_az
+- cos_az
+- sin_lat
+- cos_lat
+- log_bc
+- log_mass
+- log_density
+- dv_e
+- dv_n
+- dv_u
+targets:
+- downrange_km
+- crossrange_km
+- log_fall_time
+- log_speed

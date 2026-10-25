@@ -1,0 +1,8 @@
+# COSMOS synthetic frame-pair study (cosmos.ai.vision.cosmos_synthetic); values are the code defaults.
+splits: {train: [800, 100000], val: [200, 200000], test: [200, 300000]}   # [scenes, first seed]
+models:
+  tinyyolo: {epochs: 50, size: 320}            # the existing COSMOS model, its own defaults
+  yolov8n: {weights: yolov8n.pt, epochs: 100, imgsz: 640, batch: 16}
+  heatmap: {kind: unet, epochs: 60, crop: 320, batch: 8, lr: 0.001}
+metrics: "COCO-style mAP@50 and mAP@50-95 (101-point), all confidences; P/R/F1 at each model's operating confidence"
+seeds: [0, 1, 2]

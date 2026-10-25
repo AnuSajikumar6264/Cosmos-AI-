@@ -1,0 +1,100 @@
+{
+  "dataset": "opssat_ad",
+  "class": "REAL",
+  "status": "downloaded",
+  "title": "OPSSAT-AD - anomaly detection dataset for satellite telemetry",
+  "zenodo_record": 15108715,
+  "zenodo_requested_record": 12588358,
+  "doi": "10.5281/zenodo.15108715",
+  "paper_doi": "10.1038/s41597-025-05035-3",
+  "licence": "cc-by-4.0",
+  "code_licence": "MIT",
+  "publication_date": "2024-06-24",
+  "creators": [
+    "Bogdan, Ruszczak"
+  ],
+  "retrieved_utc": "2026-10-24T08:03:31+00:00",
+  "source_urls": [
+    "https://zenodo.org/records/15108715",
+    "https://github.com/kplabs-pl/OPS-SAT-AD"
+  ],
+  "notes": [
+    "Zenodo record 12588358 resolves to its newest version; the version actually downloaded is the zenodo_record field.",
+    "segments.csv = raw telemetry fragments; dataset.csv = the 18 handcrafted features with the official train/test assignment."
+  ],
+  "manifest_written_utc": "2026-10-24T08:03:31+00:00",
+  "files": [
+    {
+      "path": "raw/LICENSE",
+      "url": "https://zenodo.org/api/records/15108715/files/LICENSE/content",
+      "bytes": 1091,
+      "md5": "ea8befa9af2b37b7a54b5a16fc3712b0",
+      "sha256": "76d2ff9834ed2bb1356d9f7eb303c289817374bb1d5bbe5af86817e73e0f47d2",
+      "status": "downloaded",
+      "md5_verified": true,
+      "published_checksum": "md5:ea8befa9af2b37b7a54b5a16fc3712b0"
+    },
+    {
+      "path": "raw/dataset.csv",
+      "url": "https://zenodo.org/api/records/15108715/files/dataset.csv/content",
+      "bytes": 507550,
+      "md5": "5246fdc5e4630a4cecbf7fb6bc8b795e",
+      "sha256": "b524177da6f516d5c9f63c7acbc385341f0ad42046ef20c1bed2d25e51b98f02",
+      "status": "downloaded",
+      "md5_verified": true,
+      "published_checksum": "md5:5246fdc5e4630a4cecbf7fb6bc8b795e"
+    },
+    {
+      "path": "raw/dataset_generator.ipynb",
+      "url": "https://zenodo.org/api/records/15108715/files/dataset_generator.ipynb/content",
+      "bytes": 8089,
+      "md5": "f0cdeb8f965715d326ebeb625362b71e",
+      "sha256": "409047fc42fbc415b7b16c85e24773127d1266e5034ae5be47b69d5323b120e2",
+      "status": "downloaded",
+      "md5_verified": true,
+      "published_checksum": "md5:f0cdeb8f965715d326ebeb625362b71e"
+    },
+    {
+      "path": "raw/kplabs-pl__OPS-SAT-AD-dafd0d35bfd6.tar.gz",
+      "url": "https://codeload.github.com/kplabs-pl/OPS-SAT-AD/tar.gz/dafd0d35bfd67ac56d5cd3bcf7b28c8afcc86fbd",
+      "bytes": 5493,
+      "md5": "5edf2944dba8ff35a2288237e7b72cd3",
+      "sha256": "8952a366ce75de4cbcd79bd5b713495014d399369a79cb77e85147440aa0c775",
+      "status": "downloaded",
+      "md5_verified": false,
+      "repo": "kplabs-pl/OPS-SAT-AD",
+      "commit": "dafd0d35bfd67ac56d5cd3bcf7b28c8afcc86fbd",
+      "extracted_to": "raw/official_repo"
+    },
+    {
+      "path": "raw/modeling_examples.ipynb",
+      "url": "https://zenodo.org/api/records/15108715/files/modeling_examples.ipynb/content",
+      "bytes": 7174,
+      "md5": "044eeff4bf3c767326e3ffd12c3b7a09",
+      "sha256": "224f8a73561c25e421f1eb72b84a850118002eecf278642c690e8b4fce2d4faa",
+      "status": "downloaded",
+      "md5_verified": true,
+      "published_checksum": "md5:044eeff4bf3c767326e3ffd12c3b7a09"
+    },
+    {
+      "path": "raw/requirements.txt",
+      "url": "https://zenodo.org/api/records/15108715/files/requirements.txt/content",
+      "bytes": 169,
+      "md5": "252b98857695f9695589f90a590a49e6",
+      "sha256": "fd06761596b7271f90cb7183ced57b96884d02ae74195b71dbe26b683a19aaaf",
+      "status": "downloaded",
+      "md5_verified": true,
+      "published_checksum": "md5:252b98857695f9695589f90a590a49e6"
+    },
+    {
+      "path": "raw/segments.csv",
+      "url": "https://zenodo.org/api/records/15108715/files/segments.csv/content",
+      "bytes": 18987091,
+      "md5": "72f109630abb933a386106897a631188",
+      "sha256": "d5201e9e751eb2a53a0ff7c11567dc4239f594ea4b479b2aa66fe67ddcbcb9ba",
+      "status": "downloaded",
+      "md5_verified": true,
+      "published_checksum": "md5:72f109630abb933a386106897a631188"
+    }
+  ]
+}

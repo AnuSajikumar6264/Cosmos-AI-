@@ -1,0 +1,80 @@
+{
+  "dataset": "spotgeo",
+  "class": "REAL",
+  "status": "downloaded",
+  "title": "spotGEO dataset",
+  "zenodo_record": 4432143,
+  "doi": "10.5281/zenodo.4432143",
+  "licence": "cc-by-4.0",
+  "publication_date": "2021-01-11",
+  "creators": [
+    "Chen, Bo",
+    "Liu, Daqi",
+    "Chin, Tat-Jun",
+    "Rutten, Mark",
+    "Derksen, Dawa",
+    "M\u00e4rtens, Marcus",
+    "von Looz, Moritz",
+    "Lecuyer, Gurvan",
+    "Izzo, Dario"
+  ],
+  "retrieved_utc": "2026-10-24T09:12:26+00:00",
+  "source_urls": [
+    "https://zenodo.org/records/4432143"
+  ],
+  "notes": [
+    "Selected by the COSMOS-AI methodology as the only public, real, labelled benchmark of unresolved multi-frame targets (research_design section F).",
+    "Version 2 adds the test annotations used for the final challenge score and a few train annotations found missing during the challenge."
+  ],
+  "manifest_written_utc": "2026-10-24T09:12:26+00:00",
+  "files": [
+    {
+      "path": "raw/SpotGEOv2.zip",
+      "url": "https://zenodo.org/api/records/4432143/files/SpotGEOv2.zip/content",
+      "bytes": 4230495720,
+      "md5": "9a44895f17830247208230bc09c43f2d",
+      "sha256": "33edb85b005efc7629540cef13be22e5366d51cda8f6e234c91c2491e5a9629b",
+      "status": "cached",
+      "md5_verified": true,
+      "published_checksum": "md5:9a44895f17830247208230bc09c43f2d"
+    },
+    {
+      "path": "starter_kit/raw/spotGEO_metric.pdf",
+      "url": "https://zenodo.org/api/records/3874368/files/spotGEO_metric.pdf/content",
+      "bytes": 307611,
+      "md5": "3bd48f58d312c58108df21d5f8e945c6",
+      "sha256": "0be0a959182cc442dd5d50c74a48c5efcc327f2a7e7a8b96bf19e5b6a81c1570",
+      "status": "downloaded",
+      "md5_verified": true,
+      "published_checksum": "md5:3bd48f58d312c58108df21d5f8e945c6",
+      "zenodo_record": 3874368
+    },
+    {
+      "path": "starter_kit/raw/spotGEO_starter_kit.ipynb",
+      "url": "https://zenodo.org/api/records/3874368/files/spotGEO_starter_kit.ipynb/content",
+      "bytes": 179279,
+      "md5": "3e69de435b431a42d199d6305836a584",
+      "sha256": "227b3e0f2360a138c96bf8e895a03cac281b7d758e3ff1cbccb2ea6862ada027",
+      "status": "downloaded",
+      "md5_verified": true,
+      "published_checksum": "md5:3e69de435b431a42d199d6305836a584",
+      "zenodo_record": 3874368
+    },
+    {
+      "path": "starter_kit/raw/validation.py",
+      "url": "https://zenodo.org/api/records/3874368/files/validation.py/content",
+      "bytes": 8260,
+      "md5": "1c199a8c9d9d4815eded18e869463fa0",
+      "sha256": "eaf1c268395c21a7c966c5b55f0498713df2f2d6126bec92762ad432c3462de0",
+      "status": "downloaded",
+      "md5_verified": true,
+      "published_checksum": "md5:1c199a8c9d9d4815eded18e869463fa0",
+      "zenodo_record": 3874368
+    }
+  ],
+  "starter_kit": {
+    "zenodo_record": 3874368,
+    "licence": "cc-by-4.0",
+    "contents": "validation.py (official scorer), metric PDF, notebook"
+  }
+}

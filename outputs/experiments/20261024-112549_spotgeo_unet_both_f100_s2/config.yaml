@@ -1,0 +1,8 @@
+name: spotgeo_unet_both_f100
+group: vision_spotgeo
+seed: 2
+model: unet
+inputs: both
+epochs: 40
+train_frac: 1.0
+device: null

@@ -1,0 +1,127 @@
+
+CONFIGS_MATCH_CODE
+  [PASS] configs/*.yaml state exactly the values the code runs with
+         expected identical   measured identical
+
+CONFORMAL_AND_BH
+  [PASS] conformal p-values are valid under exchangeability
+         expected P(p <= 0.05) <= 0.05 + 3 SE   measured 0.0507 (SE 0.0009)
+  [PASS] Benjamini-Hochberg controls FDR at q m0 / m
+         expected <= 0.09 + 0.005   measured 0.0897   (independent nulls: FDR = q m0 / m exactly in expectation)
+  [PASS] BH rejects something exactly when Simes <= q
+         expected agree   measured agree
+
+DETECTION_METRICS
+  [PASS] COCO mAP50-95: perfect boxes = 1; a 2 px shift scores 4/10 of thresholds
+         expected 1.000 / 0.700   measured 1.000 / 0.700
+  [PASS] official SpotGEO score_frame: TP / FN / FP on the scoring-page example layout
+         expected 2 / 1 / 2   measured 2 / 1 / 2
+
+ESA_PROCESSED
+  [PASS] ESA mission 1: test grid length / target events / no NaN
+         expected 7,364,161 / 91 / False   measured 7,364,161 / 91 / False   (events: test-range events on target channels (M1 91 per DMLR Table 21))
+  [PASS] ESA mission 2: test grid length / target events / no NaN
+         expected 3,062,401 / 362 / False   measured 3,062,401 / 362 / False   (events: test-range events on target channels (M1 91 per DMLR Table 21))
+
+EVENT_MODEL_CAUSAL
+  [PASS] event TCN is causal across channels (a change at t=200 leaves t<200 unchanged)
+         expected 0 before, > 0 after   measured 0.0e+00 / 5.68
+  [PASS] event features are causal (trailing means only)
+         expected identical before t=400   measured max diff 0.0e+00
+
+EXPLAIN
+  [PASS] Integrated Gradients on a linear model = w * x (completeness)
+         expected [1, -4, 1.5]   measured [[1.0, -4.0, 1.5]]
+
+LANDMARK_LEAKAGE
+  [PASS] re-entry landmark: every leakage rule holds
+         expected all True   measured {'no_gp_epoch_after_tau_day': True, 'no_event_at_or_before_tau': True, 'launch_groups_in_one_split': True, 'no_decay_field_in_features': True, 'censoring_time_constant': True}   (GP epoch <= tau day, events after tau, launches in one split, constant censoring)
+
+LEARNED_BACKENDS
+  [PASS] learned telemetry backend feeds the unchanged hazard / break-up chain
+         expected MonitorResult -> BreakupHazard   measured learned-patchtst-conformal-bh -> explosion
+  [PASS] surrogate footprint runs inside the pipeline (with reference fallback)
+         expected impacts > 0, surrogate fraction in [0, 1]   measured 199 impacts, fraction 0.99
+  [PASS] decision layer: noisy-OR of validated items, abstains when evidence is insufficient or conflicting
+         expected 0.80 / abstain / abstain   measured 0.80 / True / True
+
+MODELS
+  [PASS] TCN output shape (B, T, H, Q)
+         expected (2, 600, 16, 7)   measured (2, 600, 16, 7)
+  [PASS] TCN is causal: future inputs never change past forecasts
+         expected 0   measured 0.0e+00
+  [PASS] TCN receptive field fits the 512-sample context
+         expected <= 512   measured 509
+  [PASS] PatchTST output shape (B, H, Q) and monotone quantiles
+         expected (3, 16, 7), monotone   measured (3, 16, 7), True
+  [PASS] closed gate recovers the telemetry-only representation
+         expected max |h' - h| = 0   measured 0.0e+00
+  [PASS] fcnn classifier returns one logit per fragment
+         expected (4,)   measured (4,)
+  [PASS] cnn classifier returns one logit per fragment
+         expected (4,)   measured (4,)
+  [PASS] transformer classifier returns one logit per fragment
+         expected (4,)   measured (4,)
+  [PASS] hybrid classifier returns one logit per fragment
+         expected (4,)   measured (4,)
+  [PASS] heat-map U-Net: full-resolution heat and offset maps
+         expected (1,5,96,128) / (1,10,96,128)   measured (1, 5, 96, 128) / (1, 10, 96, 128)
+  [PASS] checkpoint round trip reproduces the forecasts exactly
+         expected identical   measured identical
+
+OFFICIAL_ESA_METRICS
+  [PASS] official corrected event-wise F0.5 on a hand-solved case
+         expected 0.7143   measured 0.7143
+  [PASS] change-point compression leaves every official score unchanged
+         expected identical   measured identical
+
+OOF_PROTOCOL
+  [PASS] OOF folds tile the training half contiguously
+         expected 0..1003, no gaps   measured 0..1003
+  [PASS] ridge AR(8) recovers an AR(1) coefficient; no usable samples -> persistence
+         expected 0.9 / [1, 0, ...]   measured 0.900 / [1. 0.]
+  [PASS] ACI keeps the point-level alarm rate at alpha = 0.01 under drift
+         expected 0.010   measured 0.0100
+  [PASS] bootstrap EW F0.5 = hand computation (TP 1, FP 1, TNR-corrected)
+         expected 0.5553   measured 0.5553
+  [PASS] pre-registration freeze: every frozen file unchanged
+         expected match   measured 681cc7ddec86
+
+OPSSAT_TENSORS
+  [PASS] OPSSAT-AD: 2,123 fragments -> (2123, 3, 256), each inside its own z-range
+         expected (2123, 3, 256), 0 outside   measured (2123, 3, 256), 0 outside
+  [PASS] OPSSAT-AD official split sizes
+         expected 1594 train / 529 test   measured 1594 train / 529 test
+
+PIPELINE_BACKWARD_COMPATIBLE
+  [PASS] run_pipeline() defaults reproduce the ORIGINAL code's summary exactly
+         expected identical 20-row summary   measured identical   (original package extracted from outputs/baseline and run in a subprocess)
+
+SPLITS
+  [PASS] group split: deterministic and every group in exactly one split
+         expected True / 1   measured True / 1
+  [PASS] SpotGEO train/val split by sequence: disjoint, deterministic, ~10 % val
+         expected disjoint, equal, 0.07-0.13   measured True, True, 0.099
+  [PASS] COSMOS synthetic vision: no scene seed shared across splits
+         expected disjoint   measured disjoint
+
+SURVIVAL_AND_CLASSIFICATION
+  [PASS] Harrell C on perfectly ordered / reversed risks
+         expected 1.0 / 0.0   measured 1.0 / 0.0
+  [PASS] IPCW Brier equals the plain Brier score without censoring
+         expected 0.308513   measured 0.308513
+
+TELECOMMAND_ENCODING
+  [PASS] telecommand indicator = 1 iff an execution lies in (g - rule, g]
+         expected [4, 5, 14]   measured [4, 5, 14]
+
+ZOH_MATCHES_OFFICIAL_PORT
+  [PASS] vectorised ZOH = official pandas port (M1 channel_20)
+         expected identical   measured identical   (values, labels and the 'restore annotated samples' step)
+  [PASS] vectorised ZOH = official pandas port (M1 channel_5)
+         expected identical   measured identical   (values, labels and the 'restore annotated samples' step)
+  [PASS] vectorised ZOH = official pandas port (M2 channel_30)
+         expected identical   measured identical   (values, labels and the 'restore annotated samples' step)
+
+==========================================================================
+45 passed, 0 failed, 0 skipped, 0 errors

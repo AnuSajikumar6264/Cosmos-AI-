@@ -1,0 +1,68 @@
+{
+  "selected_nsigma": 10.0,
+  "validation": {
+    "5.0": {
+      "precision": 0.03899556868537666,
+      "recall": 0.37183098591549296,
+      "f1": 0.07058823529411763,
+      "one_minus_f1": 0.9294117647058824,
+      "official_mse_sum": 12210.592273035541,
+      "official_mse_mean_per_sequence": 96.14639585067356,
+      "n_sequences": 127
+    },
+    "6.0": {
+      "precision": 0.040846404884724706,
+      "recall": 0.3643192488262911,
+      "f1": 0.07345702385460053,
+      "one_minus_f1": 0.9265429761453995,
+      "official_mse_sum": 12188.72792178408,
+      "official_mse_mean_per_sequence": 95.97423560459906,
+      "n_sequences": 127
+    },
+    "7.0": {
+      "precision": 0.04239799407339868,
+      "recall": 0.3492957746478873,
+      "f1": 0.07561744079682894,
+      "one_minus_f1": 0.924382559203171,
+      "official_mse_sum": 12168.584672063165,
+      "official_mse_mean_per_sequence": 95.81562733908004,
+      "n_sequences": 127
+    },
+    "8.0": {
+      "precision": 0.04440585462664351,
+      "recall": 0.336150234741784,
+      "f1": 0.078448559219897,
+      "one_minus_f1": 0.921551440780103,
+      "official_mse_sum": 12138.16355781383,
+      "official_mse_mean_per_sequence": 95.5760910064081,
+      "n_sequences": 127
+    },
+    "10.0": {
+      "precision": 0.04549522673031026,
+      "recall": 0.2863849765258216,
+      "f1": 0.07851718367872314,
+      "one_minus_f1": 0.9214828163212768,
+      "official_mse_sum": 12133.406118893761,
+      "official_mse_mean_per_sequence": 95.53863085743119,
+      "n_sequences": 127
+    },
+    "12.0": {
+      "precision": 0.044417134831460675,
+      "recall": 0.2375586854460094,
+      "f1": 0.0748409998520929,
+      "one_minus_f1": 0.9251590001479071,
+      "official_mse_sum": 12115.599649673928,
+      "official_mse_mean_per_sequence": 95.39842243837738,
+      "n_sequences": 127
+    }
+  },
+  "test": {
+    "precision": 0.04851851066686453,
+    "recall": 0.30823793490460155,
+    "f1": 0.08384008596478375,
+    "one_minus_f1": 0.9161599140352162,
+    "official_mse_sum": 485485.5356018656,
+    "official_mse_mean_per_sequence": 94.82139367223938,
+    "n_sequences": 5120
+  }
+}

@@ -1,0 +1,13 @@
+{"member": 0, "epoch": 0, "val_mse_norm": 0.2771592140197754}
+{"member": 0, "epoch": 20, "val_mse_norm": 0.26754650473594666}
+{"member": 0, "epoch": 40, "val_mse_norm": 0.3243640065193176}
+{"member": 1, "epoch": 0, "val_mse_norm": 0.2780359983444214}
+{"member": 1, "epoch": 20, "val_mse_norm": 0.3341813385486603}
+{"member": 1, "epoch": 40, "val_mse_norm": 0.30686289072036743}
+{"member": 2, "epoch": 0, "val_mse_norm": 0.27713581919670105}
+{"member": 2, "epoch": 20, "val_mse_norm": 0.27932196855545044}
+{"member": 3, "epoch": 0, "val_mse_norm": 0.2797206938266754}
+{"member": 3, "epoch": 20, "val_mse_norm": 0.27524009346961975}
+{"member": 3, "epoch": 40, "val_mse_norm": 0.3463098704814911}
+{"member": 4, "epoch": 0, "val_mse_norm": 0.27775129675865173}
+{"member": 4, "epoch": 20, "val_mse_norm": 0.2795383930206299}

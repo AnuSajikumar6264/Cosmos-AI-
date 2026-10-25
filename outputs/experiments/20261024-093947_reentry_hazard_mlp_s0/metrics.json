@@ -1,0 +1,61 @@
+{
+  "run_id": "20261024-093947_reentry_hazard_mlp_s0",
+  "name": "reentry_hazard_mlp",
+  "group": "reentry_landmark",
+  "seed": 0,
+  "status": "ok",
+  "wall_time_s": 54.58,
+  "config_sha256": "a9ed58ac3fa7e0f505e720cad3829235c00064e58ac72d727bea2c2bbff58c4c",
+  "members": [
+    {
+      "val_nll": 0.021647373214364052,
+      "epochs": 37
+    },
+    {
+      "val_nll": 0.02157065086066723,
+      "epochs": 34
+    },
+    {
+      "val_nll": 0.022023174911737442,
+      "epochs": 37
+    },
+    {
+      "val_nll": 0.02150917425751686,
+      "epochs": 43
+    },
+    {
+      "val_nll": 0.02177252247929573,
+      "epochs": 36
+    }
+  ],
+  "metrics": {
+    "all/n": 6371,
+    "all/events": 38,
+    "all/c_index": 0.9956618478787803,
+    "all/h30/positives": 14,
+    "all/h30/auc_pr": 0.6097088193461665,
+    "all/h30/auc_roc": 0.9980561360929459,
+    "all/h30/brier": 0.0013610427855497921,
+    "all/h30/ece": 0.0010940306757385703,
+    "all/h68/positives": 38,
+    "all/h68/auc_pr": 0.6877164785034644,
+    "all/h68/auc_roc": 0.9963599192201251,
+    "all/h68/brier": 0.0032889182821934236,
+    "all/h68/ece": 0.002406699310690229,
+    "uncontrolled/n": 3001,
+    "uncontrolled/events": 12,
+    "uncontrolled/c_index": 0.9955750980992403,
+    "uncontrolled/h30/positives": 4,
+    "uncontrolled/h30/auc_pr": 0.1363123993558776,
+    "uncontrolled/h30/auc_roc": 0.9948281614948282,
+    "uncontrolled/h30/brier": 0.0016445973622975238,
+    "uncontrolled/h30/ece": 0.0018874553038470494,
+    "uncontrolled/h68/positives": 12,
+    "uncontrolled/h68/auc_pr": 0.39880819266545814,
+    "uncontrolled/h68/auc_roc": 0.9964313594290175,
+    "uncontrolled/h68/brier": 0.0037525547718081785,
+    "uncontrolled/h68/ece": 0.0035129411209532968,
+    "params_per_member": 111498,
+    "train_time_s": 54.577675104141235
+  }
+}

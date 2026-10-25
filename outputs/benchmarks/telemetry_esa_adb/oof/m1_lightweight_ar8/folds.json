@@ -1,0 +1,42 @@
+{
+ "mission": 1,
+ "channels": "lightweight",
+ "encoder": "ar8",
+ "K": 5,
+ "purge_days": 1.0,
+ "purge_steps": 2880,
+ "folds": [
+  [
+   0,
+   1472832
+  ],
+  [
+   1472832,
+   2945664
+  ],
+  [
+   2945664,
+   4418497
+  ],
+  [
+   4418497,
+   5891329
+  ],
+  [
+   5891329,
+   7364161
+  ]
+ ],
+ "n_train": 7364161,
+ "n_test": 7364161,
+ "channel_names": [
+  "channel_41",
+  "channel_42",
+  "channel_43",
+  "channel_44",
+  "channel_45",
+  "channel_46"
+ ],
+ "seconds": 43.80304741859436,
+ "sha256_sample": "6c8e282769bc"
+}

@@ -1,0 +1,50 @@
+{
+ "tag": "m1_lightweight_out_of_limits_all",
+ "rows": [
+  {
+   "tag": "m1_lightweight_out_of_limits_all",
+   "mission": 1,
+   "channels": "lightweight",
+   "encoder": "out_of_limits_all",
+   "calibrator": "native",
+   "seed": 0,
+   "telecommands": false,
+   "anomaly_and_rare/EW_precision": 0.0,
+   "anomaly_and_rare/EW_recall": 0.0,
+   "anomaly_and_rare/EW_F0.5": 0.0,
+   "anomaly_and_rare/alarming_precision": 0.0,
+   "anomaly_and_rare/channel_F0.5": NaN,
+   "anomaly_and_rare/subsystem_F0.5": NaN,
+   "anomaly_and_rare/ADTQC": NaN,
+   "anomaly_and_rare/AFF_F0.5": NaN,
+   "anomaly_and_rare/alarm_fraction": 0.0,
+   "anomaly/EW_precision": 0.0,
+   "anomaly/EW_recall": 0.0,
+   "anomaly/EW_F0.5": 0.0,
+   "anomaly/alarming_precision": 0.0,
+   "anomaly/channel_F0.5": NaN,
+   "anomaly/subsystem_F0.5": NaN,
+   "anomaly/ADTQC": NaN,
+   "anomaly/AFF_F0.5": NaN,
+   "anomaly/alarm_fraction": 0.0,
+   "alarm_runs": 0,
+   "false_alarm_runs": 0,
+   "false_alarms_per_year": 0.0,
+   "rare_event_only_runs": 0,
+   "anomaly_runs": 0,
+   "fit_and_score_s": 1.2222297191619873,
+   "raw_scores": {
+    "alarm_fraction": 0.0,
+    "n_events_scored": 65,
+    "anomaly_and_rare/EW_precision": 0.0,
+    "anomaly_and_rare/EW_recall": 0.0,
+    "anomaly_and_rare/EW_F_0.50": 0.0,
+    "anomaly_and_rare/alarming_precision": 0.0,
+    "anomaly/EW_precision": 0.0,
+    "anomaly/EW_recall": 0.0,
+    "anomaly/EW_F_0.50": 0.0,
+    "anomaly/alarming_precision": 0.0
+   }
+  }
+ ]
+}

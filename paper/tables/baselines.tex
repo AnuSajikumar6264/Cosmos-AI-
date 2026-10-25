@@ -1,0 +1,14 @@
+\begin{table}[t]\centering\small
+\caption{Corrected event-wise $F_{0.5}$ (anomalies and rare events) on the official test halves. GlobalSTD rows show our run and, in parentheses, the value published in DMLR Table~4. $^\dagger$Exploratory: selected on the last 9 months of the training half.}\label{tab:baselines}
+\begin{tabular}{lcccc}\toprule
+ & \multicolumn{2}{c}{Mission 1} & \multicolumn{2}{c}{Mission 2}\\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Detector & full (58) & lightweight & full (47) & lightweight\\\midrule
+Best published (DMLR) & 0.061 & 0.786 & 0.079 & 0.949\\
+GlobalSTD3 (official) & 0.0004 (<0.001) & 0.0011 (0.001) & 0.0075 (0.008) & 0.0071 (0.007)\\
+GlobalSTD5 (official) & 0.0029 (0.003) & 0.253 (0.253) & 0.063 (0.064) & 0.075 (0.075)\\
+Out-of-limit, nominal training range & 0.0007 & 0.202 & 0.894 & 0.965\\
+Out-of-limit, full training range & 0.0051 & 0.000 & 0.261 & 0.080\\
+COSMOS monitor (AR(8), EWMA, fixed rule) & 0.0038 & 0.202 & 0.047 & 0.788\\
+A0: AR(8) + conformal-BH, 9-month selection$^\dagger$ & 0.074 & 0.408 & 0.962 & 0.908\\
+\bottomrule\end{tabular}\end{table}

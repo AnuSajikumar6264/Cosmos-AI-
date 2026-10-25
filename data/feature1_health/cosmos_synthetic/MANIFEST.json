@@ -1,0 +1,27 @@
+{
+  "dataset": "cosmos_synthetic_telemetry",
+  "class": "SYNTHETIC",
+  "status": "generated",
+  "generator": "cosmos.health.telemetry.simulate_telemetry (unchanged), 24 h, 30 s, no faults",
+  "seeds": [
+    50000,
+    50199
+  ],
+  "normalisation": "per run: median / MAD of the first 40 % (the monitor's healthy window)",
+  "generated_utc": "2026-10-24T09:48:08+00:00",
+  "evaluation_seeds": "benchmark() uses seeds 0..4 x 49 records, disjoint from these",
+  "note": "Synthetic; never reported as real satellite performance.",
+  "manifest_written_utc": "2026-10-24T09:48:09+00:00",
+  "files": [
+    {
+      "path": "nominal_runs.npy",
+      "md5": "b6abcc5c28fc75c808a394c58a68dd32",
+      "sha256": "24434ecc4cd9cefd1ad8c1a17f612df13ca6f78ac95fcb3292bd6e88b7e2589d",
+      "shape": [
+        200,
+        2880,
+        16
+      ]
+    }
+  ]
+}

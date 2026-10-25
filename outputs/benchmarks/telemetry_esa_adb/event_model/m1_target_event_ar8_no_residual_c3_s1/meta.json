@@ -1,0 +1,64 @@
+{
+ "config": {
+  "mission": 1,
+  "channels": "target",
+  "source": "ar8",
+  "d_model": 64,
+  "levels": 8,
+  "kernel": 3,
+  "dropout": 0.1,
+  "mix_every": 2,
+  "window": 2048,
+  "batch": 8,
+  "steps": 1500,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "event_fraction": 0.5,
+  "class_weights": [
+   1.0,
+   5.0,
+   5.0
+  ],
+  "n_classes": 3,
+  "inputs": "no_residual",
+  "purge_days": 1.0,
+  "seed": 1,
+  "device": "xpu:2",
+  "extra": {}
+ },
+ "folds": [
+  {
+   "seconds": 1025.3164675235748,
+   "final_loss": 0.11608455449342728,
+   "params": 220419
+  },
+  {
+   "seconds": 1018.0518186092377,
+   "final_loss": 0.1213986442014575,
+   "params": 220419
+  },
+  {
+   "seconds": 1016.8019030094147,
+   "final_loss": 0.12375516270846129,
+   "params": 220419
+  },
+  {
+   "seconds": 1016.9692847728729,
+   "final_loss": 0.13903175967931747,
+   "params": 220419
+  },
+  {
+   "seconds": 1017.4625334739685,
+   "final_loss": 0.11655179028213024,
+   "params": 220419
+  }
+ ],
+ "purge": 2880,
+ "run_id": "20261024-175908_esa_event_m1_target_event_ar8_no_residual_c3_s1_s1",
+ "receptive_field": 1021,
+ "final": {
+  "seconds": 1019.1298568248749,
+  "final_loss": 0.13929365848377348,
+  "params": 220419
+ }
+}

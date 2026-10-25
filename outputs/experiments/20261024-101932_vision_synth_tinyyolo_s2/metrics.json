@@ -1,0 +1,33 @@
+{
+  "run_id": "20261024-101932_vision_synth_tinyyolo_s2",
+  "name": "vision_synth_tinyyolo",
+  "group": "vision_cosmos_synthetic",
+  "seed": 2,
+  "status": "ok",
+  "wall_time_s": 113.01,
+  "config_sha256": "722df67ee32b2d3270a131ceb3e1d7f2e5715e0edf4f0146267c46726ac7d759",
+  "metrics": {
+    "model": "tinyyolo (existing COSMOS)",
+    "seed": 2,
+    "map50": 0.36907881918851687,
+    "map50_95": 0.1574049433606866,
+    "map50_class_agnostic": 0.8426555968263342,
+    "map50_95_class_agnostic": 0.33730458144774655,
+    "small_map50": 0.2778498872955277,
+    "precision@conf": 0.5614657210401891,
+    "recall@conf": 0.5926388022457891,
+    "f1@conf": 0.5766312594840667,
+    "mean_iou@conf": 0.7311601286482635,
+    "tp@conf": 950,
+    "fp@conf": 742,
+    "fn@conf": 653,
+    "params": 320313,
+    "size_mb": 1.2259864807128906,
+    "train_time_s": 107.12664937973022,
+    "latency_ms_per_batch": 0.5805309920106083,
+    "batch_items": 16,
+    "latency_ms_per_item": 0.03628318700066302,
+    "throughput_items_s": 27560.97472864571,
+    "peak_memory_mb": 308.73291015625
+  }
+}

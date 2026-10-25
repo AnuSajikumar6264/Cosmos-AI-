@@ -1,0 +1,197 @@
+{
+ "label": "EXPLORATORY: not pre-registered; re-implemented metric; no multiplicity correction",
+ "results": {
+  "1": [
+   {
+    "comparison": "X1: A2 - A1",
+    "mission": 1,
+    "calibrator": "conformal_bh",
+    "A": [
+     "m1_target_gbt_ar8_s0_event",
+     "m1_target_gbt_ar8_s1_event",
+     "m1_target_gbt_ar8_s2_event",
+     "m1_target_gbt_ar8_s3_event",
+     "m1_target_gbt_ar8_s4_event"
+    ],
+    "B": [
+     "m1_target_ar8"
+    ],
+    "A_EW_F0.5": 0.5355057162122444,
+    "B_EW_F0.5": 0.4278060106388308,
+    "diff": 0.10769970557341363,
+    "ci95_low": -0.13251886384877956,
+    "ci95_high": 0.34414073427135833,
+    "p_boot": 0.39,
+    "n_boot": 2000,
+    "block_days": 30
+   },
+   {
+    "comparison": "X2: A2 - A0",
+    "mission": 1,
+    "calibrator": "conformal_bh",
+    "A": [
+     "m1_target_gbt_ar8_s0_event",
+     "m1_target_gbt_ar8_s1_event",
+     "m1_target_gbt_ar8_s2_event",
+     "m1_target_gbt_ar8_s3_event",
+     "m1_target_gbt_ar8_s4_event"
+    ],
+    "B": [
+     "m1_target_ar8_calperiod"
+    ],
+    "A_EW_F0.5": 0.5355057162122444,
+    "B_EW_F0.5": 0.07601355450635722,
+    "diff": 0.4594921617058872,
+    "ci95_low": 0.24002878675523853,
+    "ci95_high": 0.6503874333710677,
+    "p_boot": 0.0005,
+    "n_boot": 2000,
+    "block_days": 30
+   },
+   {
+    "comparison": "X3: A2 - A1 (threshold layer)",
+    "mission": 1,
+    "calibrator": "threshold",
+    "A": [
+     "m1_target_gbt_ar8_s0_event",
+     "m1_target_gbt_ar8_s1_event",
+     "m1_target_gbt_ar8_s2_event",
+     "m1_target_gbt_ar8_s3_event",
+     "m1_target_gbt_ar8_s4_event"
+    ],
+    "B": [
+     "m1_target_ar8"
+    ],
+    "A_EW_F0.5": 0.6049466925245154,
+    "B_EW_F0.5": 0.4278060106388308,
+    "diff": 0.1771406818856846,
+    "ci95_low": -0.02561573108126461,
+    "ci95_high": 0.3768046948763532,
+    "p_boot": 0.087,
+    "n_boot": 2000,
+    "block_days": 30
+   },
+   {
+    "comparison": "X4: A3_no_residual - A3",
+    "mission": 1,
+    "calibrator": "conformal_bh",
+    "A": [
+     "m1_target_event_ar8_no_residual_c3_s0_event",
+     "m1_target_event_ar8_no_residual_c3_s1_event",
+     "m1_target_event_ar8_no_residual_c3_s2_event"
+    ],
+    "B": [
+     "m1_target_event_ar8_all_c3_s0_event",
+     "m1_target_event_ar8_all_c3_s1_event",
+     "m1_target_event_ar8_all_c3_s2_event",
+     "m1_target_event_ar8_all_c3_s3_event",
+     "m1_target_event_ar8_all_c3_s4_event"
+    ],
+    "A_EW_F0.5": 0.24399753986825198,
+    "B_EW_F0.5": 0.2053610380406647,
+    "diff": 0.038636501827587294,
+    "ci95_low": -0.18823827433409884,
+    "ci95_high": 0.27795837902790665,
+    "p_boot": 0.699,
+    "n_boot": 2000,
+    "block_days": 30
+   },
+   {
+    "comparison": "X5: A3_two_class - A3",
+    "mission": 1,
+    "calibrator": "conformal_bh",
+    "A": [
+     "m1_target_event_ar8_all_c2_s0_event",
+     "m1_target_event_ar8_all_c2_s1_event",
+     "m1_target_event_ar8_all_c2_s2_event"
+    ],
+    "B": [
+     "m1_target_event_ar8_all_c3_s0_event",
+     "m1_target_event_ar8_all_c3_s1_event",
+     "m1_target_event_ar8_all_c3_s2_event",
+     "m1_target_event_ar8_all_c3_s3_event",
+     "m1_target_event_ar8_all_c3_s4_event"
+    ],
+    "A_EW_F0.5": 0.193405243068511,
+    "B_EW_F0.5": 0.2053610380406647,
+    "diff": -0.011955794972153683,
+    "ci95_low": -0.2597899725876692,
+    "ci95_high": 0.16419388766988327,
+    "p_boot": 0.835,
+    "n_boot": 2000,
+    "block_days": 30
+   }
+  ],
+  "2": [
+   {
+    "comparison": "X1: A2 - A1",
+    "mission": 2,
+    "calibrator": "conformal_bh",
+    "A": [
+     "m2_target_gbt_ar8_s0_event",
+     "m2_target_gbt_ar8_s1_event",
+     "m2_target_gbt_ar8_s2_event",
+     "m2_target_gbt_ar8_s3_event",
+     "m2_target_gbt_ar8_s4_event"
+    ],
+    "B": [
+     "m2_target_ar8"
+    ],
+    "A_EW_F0.5": 0.9039491606274632,
+    "B_EW_F0.5": 0.8735292468027238,
+    "diff": 0.03041991382473941,
+    "ci95_low": -0.016108988735848703,
+    "ci95_high": 0.08132283982523694,
+    "p_boot": 0.174,
+    "n_boot": 2000,
+    "block_days": 30
+   },
+   {
+    "comparison": "X2: A2 - A0",
+    "mission": 2,
+    "calibrator": "conformal_bh",
+    "A": [
+     "m2_target_gbt_ar8_s0_event",
+     "m2_target_gbt_ar8_s1_event",
+     "m2_target_gbt_ar8_s2_event",
+     "m2_target_gbt_ar8_s3_event",
+     "m2_target_gbt_ar8_s4_event"
+    ],
+    "B": [
+     "m2_target_ar8_calperiod"
+    ],
+    "A_EW_F0.5": 0.9039491606274632,
+    "B_EW_F0.5": 0.9624110914043259,
+    "diff": -0.05846193077686268,
+    "ci95_low": -0.11950276157422267,
+    "ci95_high": -0.011605463422292291,
+    "p_boot": 0.015,
+    "n_boot": 2000,
+    "block_days": 30
+   },
+   {
+    "comparison": "X3: A2 - A1 (threshold layer)",
+    "mission": 2,
+    "calibrator": "threshold",
+    "A": [
+     "m2_target_gbt_ar8_s0_event",
+     "m2_target_gbt_ar8_s1_event",
+     "m2_target_gbt_ar8_s2_event",
+     "m2_target_gbt_ar8_s3_event",
+     "m2_target_gbt_ar8_s4_event"
+    ],
+    "B": [
+     "m2_target_ar8"
+    ],
+    "A_EW_F0.5": 0.8191550686562401,
+    "B_EW_F0.5": 0.9765290748181182,
+    "diff": -0.15737400616187813,
+    "ci95_low": -0.2511588540137401,
+    "ci95_high": -0.09285446948431089,
+    "p_boot": 0.0005,
+    "n_boot": 2000,
+    "block_days": 30
+   }
+  ]
+ }
+}

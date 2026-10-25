@@ -1,0 +1,26 @@
+name: esa_event_m1_target_event_ar8_no_residual_c3_s2
+group: esa_event_model
+seed: 2
+mission: 1
+channels: target
+source: ar8
+d_model: 64
+levels: 8
+kernel: 3
+dropout: 0.1
+mix_every: 2
+window: 2048
+batch: 8
+steps: 1500
+lr: 0.001
+weight_decay: 0.0001
+event_fraction: 0.5
+class_weights:
+- 1.0
+- 5.0
+- 5.0
+n_classes: 3
+inputs: no_residual
+purge_days: 1.0
+device: xpu:3
+extra: {}

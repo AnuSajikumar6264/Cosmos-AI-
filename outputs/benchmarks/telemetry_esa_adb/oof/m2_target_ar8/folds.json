@@ -1,0 +1,83 @@
+{
+ "mission": 2,
+ "channels": "target",
+ "encoder": "ar8",
+ "K": 5,
+ "purge_days": 1.0,
+ "purge_steps": 4800,
+ "folds": [
+  [
+   0,
+   613440
+  ],
+  [
+   613440,
+   1226880
+  ],
+  [
+   1226880,
+   1840321
+  ],
+  [
+   1840321,
+   2453761
+  ],
+  [
+   2453761,
+   3067201
+  ]
+ ],
+ "n_train": 3067201,
+ "n_test": 3062401,
+ "channel_names": [
+  "channel_9",
+  "channel_10",
+  "channel_11",
+  "channel_12",
+  "channel_13",
+  "channel_14",
+  "channel_15",
+  "channel_16",
+  "channel_17",
+  "channel_18",
+  "channel_19",
+  "channel_20",
+  "channel_21",
+  "channel_22",
+  "channel_23",
+  "channel_24",
+  "channel_25",
+  "channel_26",
+  "channel_27",
+  "channel_28",
+  "channel_58",
+  "channel_59",
+  "channel_70",
+  "channel_71",
+  "channel_72",
+  "channel_73",
+  "channel_74",
+  "channel_75",
+  "channel_76",
+  "channel_77",
+  "channel_78",
+  "channel_79",
+  "channel_80",
+  "channel_81",
+  "channel_82",
+  "channel_83",
+  "channel_84",
+  "channel_85",
+  "channel_86",
+  "channel_87",
+  "channel_88",
+  "channel_89",
+  "channel_90",
+  "channel_91",
+  "channel_96",
+  "channel_97",
+  "channel_98"
+ ],
+ "seconds": 128.9945638179779,
+ "sha256_sample": "e5aff3d52abf"
+}

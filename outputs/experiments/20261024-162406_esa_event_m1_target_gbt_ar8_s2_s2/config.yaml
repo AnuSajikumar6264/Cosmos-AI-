@@ -1,0 +1,23 @@
+name: esa_event_m1_target_gbt_ar8_s2
+group: esa_event_model
+seed: 2
+model: xgboost
+params:
+  objective: multi:softprob
+  num_class: 3
+  max_depth: 8
+  eta: 0.1
+  subsample: 0.8
+  colsample_bytree: 0.8
+  min_child_weight: 5
+  tree_method: hist
+  max_cat_to_onehot: 1
+  nthread: 64
+rounds: 400
+n_rows: 2000000
+mission: 1
+channels: target
+class_weights:
+- 1.0
+- 5.0
+- 5.0

@@ -1,0 +1,505 @@
+[
+  {
+    "name": "esa_conformal_bh_ar8",
+    "feature": "health",
+    "task": "binary event alarms + affected channels on spacecraft telemetry (ESA-ADB official protocol)",
+    "inputs": "per-channel telemetry on the mission grid (30 s / 18 s), robust-normalised with training-half statistics; optional telecommand features",
+    "outputs": "per-channel binary alarms; global alarm = OR; channels named in each run",
+    "uncertainty": "conformal p-values per channel, Benjamini-Hochberg across channels",
+    "preprocessing": "cosmos.ai.data.preprocess_telemetry.prepare_esa_official (verified against a literal port of the official scripts)",
+    "training_data": "ESA-ADB (Zenodo 12528696, v1.0; = rev. 15237121 except channels.csv), training half only",
+    "status": "validated-real",
+    "version": "ar8/conformal_bh",
+    "checkpoint": null,
+    "evidence": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+    "metrics": {
+      "M1_EW_F0.5_mean": 0.0743509903651713,
+      "M1_EW_F0.5_n_seeds": 1,
+      "M1_false_alarms_per_year_mean": 91.56247555729372,
+      "M2_EW_F0.5_mean": 0.9624106610225746,
+      "M2_EW_F0.5_n_seeds": 1,
+      "M2_false_alarms_per_year_mean": 3.4349529780564265
+    },
+    "limitations": [
+      "Mission 1 calibration period holds only 9 labelled events: selection is noisy",
+      "irregular sampling is resampled (benchmark requirement R8 not met)",
+      "exchangeability needed by conformal p-values is violated by serial dependence and drift; realised false-alarm rates are measured, not guaranteed"
+    ]
+  },
+  {
+    "name": "esa_threshold_ar8",
+    "feature": "health",
+    "task": "binary event alarms + affected channels on spacecraft telemetry (ESA-ADB official protocol)",
+    "inputs": "per-channel telemetry on the mission grid (30 s / 18 s), robust-normalised with training-half statistics; optional telecommand features",
+    "outputs": "per-channel binary alarms; global alarm = OR; channels named in each run",
+    "uncertainty": "per-channel percentile threshold",
+    "preprocessing": "cosmos.ai.data.preprocess_telemetry.prepare_esa_official (verified against a literal port of the official scripts)",
+    "training_data": "ESA-ADB (Zenodo 12528696, v1.0; = rev. 15237121 except channels.csv), training half only",
+    "status": "validated-real",
+    "version": "ar8/threshold",
+    "checkpoint": null,
+    "evidence": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+    "metrics": {
+      "M1_EW_F0.5_mean": 0.0882471881829241,
+      "M1_EW_F0.5_n_seeds": 1,
+      "M1_false_alarms_per_year_mean": 64.42227219397732,
+      "M2_EW_F0.5_mean": 0.8820986820011767,
+      "M2_EW_F0.5_n_seeds": 1,
+      "M2_false_alarms_per_year_mean": 0.0
+    },
+    "limitations": [
+      "Mission 1 calibration period holds only 9 labelled events: selection is noisy",
+      "irregular sampling is resampled (benchmark requirement R8 not met)",
+      "exchangeability needed by conformal p-values is violated by serial dependence and drift; realised false-alarm rates are measured, not guaranteed"
+    ]
+  },
+  {
+    "name": "esa_conformal_bh_patchtst",
+    "feature": "health",
+    "task": "binary event alarms + affected channels on spacecraft telemetry (ESA-ADB official protocol)",
+    "inputs": "per-channel telemetry on the mission grid (30 s / 18 s), robust-normalised with training-half statistics; optional telecommand features",
+    "outputs": "per-channel binary alarms; global alarm = OR; channels named in each run",
+    "uncertainty": "conformal p-values per channel, Benjamini-Hochberg across channels",
+    "preprocessing": "cosmos.ai.data.preprocess_telemetry.prepare_esa_official (verified against a literal port of the official scripts)",
+    "training_data": "ESA-ADB (Zenodo 12528696, v1.0; = rev. 15237121 except channels.csv), training half only",
+    "status": "validated-real",
+    "version": "patchtst/conformal_bh",
+    "checkpoint": null,
+    "evidence": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+    "metrics": {
+      "M1_EW_F0.5_mean": 0.047903460162909604,
+      "M1_EW_F0.5_n_seeds": 3,
+      "M1_false_alarms_per_year_mean": 130.03490418459134,
+      "M2_EW_F0.5_mean": 0.951813714266658,
+      "M2_EW_F0.5_n_seeds": 3,
+      "M2_false_alarms_per_year_mean": 6.869905956112852
+    },
+    "limitations": [
+      "Mission 1 calibration period holds only 9 labelled events: selection is noisy",
+      "irregular sampling is resampled (benchmark requirement R8 not met)",
+      "exchangeability needed by conformal p-values is violated by serial dependence and drift; realised false-alarm rates are measured, not guaranteed"
+    ]
+  },
+  {
+    "name": "esa_threshold_patchtst",
+    "feature": "health",
+    "task": "binary event alarms + affected channels on spacecraft telemetry (ESA-ADB official protocol)",
+    "inputs": "per-channel telemetry on the mission grid (30 s / 18 s), robust-normalised with training-half statistics; optional telecommand features",
+    "outputs": "per-channel binary alarms; global alarm = OR; channels named in each run",
+    "uncertainty": "per-channel percentile threshold",
+    "preprocessing": "cosmos.ai.data.preprocess_telemetry.prepare_esa_official (verified against a literal port of the official scripts)",
+    "training_data": "ESA-ADB (Zenodo 12528696, v1.0; = rev. 15237121 except channels.csv), training half only",
+    "status": "validated-real",
+    "version": "patchtst/threshold",
+    "checkpoint": null,
+    "evidence": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+    "metrics": {
+      "M1_EW_F0.5_mean": 0.06188629692979697,
+      "M1_EW_F0.5_n_seeds": 3,
+      "M1_false_alarms_per_year_mean": 54.47086429409464,
+      "M2_EW_F0.5_mean": 0.8533509138821272,
+      "M2_EW_F0.5_n_seeds": 3,
+      "M2_false_alarms_per_year_mean": 1.1449843260188088
+    },
+    "limitations": [
+      "Mission 1 calibration period holds only 9 labelled events: selection is noisy",
+      "irregular sampling is resampled (benchmark requirement R8 not met)",
+      "exchangeability needed by conformal p-values is violated by serial dependence and drift; realised false-alarm rates are measured, not guaranteed"
+    ]
+  },
+  {
+    "name": "esa_conformal_bh_tcn",
+    "feature": "health",
+    "task": "binary event alarms + affected channels on spacecraft telemetry (ESA-ADB official protocol)",
+    "inputs": "per-channel telemetry on the mission grid (30 s / 18 s), robust-normalised with training-half statistics; optional telecommand features",
+    "outputs": "per-channel binary alarms; global alarm = OR; channels named in each run",
+    "uncertainty": "conformal p-values per channel, Benjamini-Hochberg across channels",
+    "preprocessing": "cosmos.ai.data.preprocess_telemetry.prepare_esa_official (verified against a literal port of the official scripts)",
+    "training_data": "ESA-ADB (Zenodo 12528696, v1.0; = rev. 15237121 except channels.csv), training half only",
+    "status": "validated-real",
+    "version": "tcn/conformal_bh",
+    "checkpoint": null,
+    "evidence": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+    "metrics": {
+      "M1_EW_F0.5_mean": 0.030206357674524533,
+      "M1_EW_F0.5_n_seeds": 3,
+      "M1_false_alarms_per_year_mean": 258.26046147829487,
+      "M2_EW_F0.5_mean": 0.9015231241254961,
+      "M2_EW_F0.5_n_seeds": 3,
+      "M2_false_alarms_per_year_mean": 21.945532915360502
+    },
+    "limitations": [
+      "Mission 1 calibration period holds only 9 labelled events: selection is noisy",
+      "irregular sampling is resampled (benchmark requirement R8 not met)",
+      "exchangeability needed by conformal p-values is violated by serial dependence and drift; realised false-alarm rates are measured, not guaranteed"
+    ]
+  },
+  {
+    "name": "esa_threshold_tcn",
+    "feature": "health",
+    "task": "binary event alarms + affected channels on spacecraft telemetry (ESA-ADB official protocol)",
+    "inputs": "per-channel telemetry on the mission grid (30 s / 18 s), robust-normalised with training-half statistics; optional telecommand features",
+    "outputs": "per-channel binary alarms; global alarm = OR; channels named in each run",
+    "uncertainty": "per-channel percentile threshold",
+    "preprocessing": "cosmos.ai.data.preprocess_telemetry.prepare_esa_official (verified against a literal port of the official scripts)",
+    "training_data": "ESA-ADB (Zenodo 12528696, v1.0; = rev. 15237121 except channels.csv), training half only",
+    "status": "validated-real",
+    "version": "tcn/threshold",
+    "checkpoint": null,
+    "evidence": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+    "metrics": {
+      "M1_EW_F0.5_mean": 0.06871064142410953,
+      "M1_EW_F0.5_n_seeds": 3,
+      "M1_false_alarms_per_year_mean": 54.851779429018386,
+      "M2_EW_F0.5_mean": 0.8682009222626204,
+      "M2_EW_F0.5_n_seeds": 3,
+      "M2_false_alarms_per_year_mean": 2.0991379310344827
+    },
+    "limitations": [
+      "Mission 1 calibration period holds only 9 labelled events: selection is noisy",
+      "irregular sampling is resampled (benchmark requirement R8 not met)",
+      "exchangeability needed by conformal p-values is violated by serial dependence and drift; realised false-alarm rates are measured, not guaranteed"
+    ]
+  },
+  {
+    "name": "esa_conformal_bh_chronos-bolt-small",
+    "feature": "health",
+    "task": "binary event alarms + affected channels on spacecraft telemetry (ESA-ADB official protocol)",
+    "inputs": "per-channel telemetry on the mission grid (30 s / 18 s), robust-normalised with training-half statistics; optional telecommand features",
+    "outputs": "per-channel binary alarms; global alarm = OR; channels named in each run",
+    "uncertainty": "conformal p-values per channel, Benjamini-Hochberg across channels",
+    "preprocessing": "cosmos.ai.data.preprocess_telemetry.prepare_esa_official (verified against a literal port of the official scripts)",
+    "training_data": "ESA-ADB (Zenodo 12528696, v1.0; = rev. 15237121 except channels.csv), training half only",
+    "status": "validated-real",
+    "version": "chronos-bolt-small/conformal_bh",
+    "checkpoint": null,
+    "evidence": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+    "metrics": {
+      "M1_EW_F0.5_mean": 0.0238060569496395,
+      "M1_EW_F0.5_n_seeds": 1,
+      "M1_false_alarms_per_year_mean": 303.9702776691435,
+      "M2_EW_F0.5_mean": 0.944568778430127,
+      "M2_EW_F0.5_n_seeds": 1,
+      "M2_false_alarms_per_year_mean": 6.297413793103448
+    },
+    "limitations": [
+      "Mission 1 calibration period holds only 9 labelled events: selection is noisy",
+      "irregular sampling is resampled (benchmark requirement R8 not met)",
+      "exchangeability needed by conformal p-values is violated by serial dependence and drift; realised false-alarm rates are measured, not guaranteed"
+    ]
+  },
+  {
+    "name": "esa_threshold_chronos-bolt-small",
+    "feature": "health",
+    "task": "binary event alarms + affected channels on spacecraft telemetry (ESA-ADB official protocol)",
+    "inputs": "per-channel telemetry on the mission grid (30 s / 18 s), robust-normalised with training-half statistics; optional telecommand features",
+    "outputs": "per-channel binary alarms; global alarm = OR; channels named in each run",
+    "uncertainty": "per-channel percentile threshold",
+    "preprocessing": "cosmos.ai.data.preprocess_telemetry.prepare_esa_official (verified against a literal port of the official scripts)",
+    "training_data": "ESA-ADB (Zenodo 12528696, v1.0; = rev. 15237121 except channels.csv), training half only",
+    "status": "validated-real",
+    "version": "chronos-bolt-small/threshold",
+    "checkpoint": null,
+    "evidence": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+    "metrics": {
+      "M1_EW_F0.5_mean": 0.040739522880656,
+      "M1_EW_F0.5_n_seeds": 1,
+      "M1_false_alarms_per_year_mean": 64.56511536957372,
+      "M2_EW_F0.5_mean": 0.7415730337078652,
+      "M2_EW_F0.5_n_seeds": 1,
+      "M2_false_alarms_per_year_mean": 0.0
+    },
+    "limitations": [
+      "Mission 1 calibration period holds only 9 labelled events: selection is noisy",
+      "irregular sampling is resampled (benchmark requirement R8 not met)",
+      "exchangeability needed by conformal p-values is violated by serial dependence and drift; realised false-alarm rates are measured, not guaranteed"
+    ]
+  },
+  {
+    "name": "esa_conformal_bh_persistence",
+    "feature": "health",
+    "task": "binary event alarms + affected channels on spacecraft telemetry (ESA-ADB official protocol)",
+    "inputs": "per-channel telemetry on the mission grid (30 s / 18 s), robust-normalised with training-half statistics; optional telecommand features",
+    "outputs": "per-channel binary alarms; global alarm = OR; channels named in each run",
+    "uncertainty": "conformal p-values per channel, Benjamini-Hochberg across channels",
+    "preprocessing": "cosmos.ai.data.preprocess_telemetry.prepare_esa_official (verified against a literal port of the official scripts)",
+    "training_data": "ESA-ADB (Zenodo 12528696, v1.0; = rev. 15237121 except channels.csv), training half only",
+    "status": "validated-real",
+    "version": "persistence/conformal_bh",
+    "checkpoint": null,
+    "evidence": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+    "metrics": {
+      "M1_EW_F0.5_mean": 0.0444560535849398,
+      "M1_EW_F0.5_n_seeds": 1,
+      "M1_false_alarms_per_year_mean": 120.55964020336332,
+      "M2_EW_F0.5_mean": 0.8747778142639706,
+      "M2_EW_F0.5_n_seeds": 1,
+      "M2_false_alarms_per_year_mean": 0.0
+    },
+    "limitations": [
+      "Mission 1 calibration period holds only 9 labelled events: selection is noisy",
+      "irregular sampling is resampled (benchmark requirement R8 not met)",
+      "exchangeability needed by conformal p-values is violated by serial dependence and drift; realised false-alarm rates are measured, not guaranteed"
+    ]
+  },
+  {
+    "name": "esa_threshold_persistence",
+    "feature": "health",
+    "task": "binary event alarms + affected channels on spacecraft telemetry (ESA-ADB official protocol)",
+    "inputs": "per-channel telemetry on the mission grid (30 s / 18 s), robust-normalised with training-half statistics; optional telecommand features",
+    "outputs": "per-channel binary alarms; global alarm = OR; channels named in each run",
+    "uncertainty": "per-channel percentile threshold",
+    "preprocessing": "cosmos.ai.data.preprocess_telemetry.prepare_esa_official (verified against a literal port of the official scripts)",
+    "training_data": "ESA-ADB (Zenodo 12528696, v1.0; = rev. 15237121 except channels.csv), training half only",
+    "status": "validated-real",
+    "version": "persistence/threshold",
+    "checkpoint": null,
+    "evidence": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+    "metrics": {
+      "M1_EW_F0.5_mean": 0.0444560535849398,
+      "M1_EW_F0.5_n_seeds": 1,
+      "M1_false_alarms_per_year_mean": 120.55964020336332,
+      "M2_EW_F0.5_mean": 0.8270894939448192,
+      "M2_EW_F0.5_n_seeds": 1,
+      "M2_false_alarms_per_year_mean": 0.0
+    },
+    "limitations": [
+      "Mission 1 calibration period holds only 9 labelled events: selection is noisy",
+      "irregular sampling is resampled (benchmark requirement R8 not met)",
+      "exchangeability needed by conformal p-values is violated by serial dependence and drift; realised false-alarm rates are measured, not guaranteed"
+    ]
+  },
+  {
+    "name": "opssat_hybrid",
+    "feature": "health",
+    "task": "anomalous / nominal classification of OPS-SAT telemetry fragments",
+    "inputs": "fragment resampled to 256 points (z-score, log time gap, scaled value) and/or the 18 official features",
+    "outputs": "P(anomalous); label at 0.5",
+    "uncertainty": "none beyond the probability (calibration measured: ECE)",
+    "preprocessing": "cosmos.ai.data.preprocess_telemetry.opssat_tensors",
+    "training_data": "OPSSAT-AD (Zenodo 15108715), official train split minus a 20 % validation fold",
+    "status": "validated-real",
+    "version": "67465978e136",
+    "checkpoint": "/data/anupa/COSMOS_work/Final_Project/outputs/experiments/20261024-084444_opssat_hybrid_official_f100_s0/checkpoints/best.pt",
+    "evidence": "/data/anupa/COSMOS_work/Final_Project/outputs/benchmarks/telemetry_opssat/summary_official.csv",
+    "metrics": {
+      "f1_mean": 0.948994391587312,
+      "f1_std": 0.0085650405907674,
+      "auc_pr_mean": 0.9855485985742196,
+      "mcc_mean": 0.9355118364019874
+    },
+    "limitations": [
+      "the official split interleaves train and test fragments in time; a time-blocked split lowers every model (see summary_time_blocked)",
+      "one spacecraft, 9 channels"
+    ]
+  },
+  {
+    "name": "opssat_fcnn",
+    "feature": "health",
+    "task": "anomalous / nominal classification of OPS-SAT telemetry fragments",
+    "inputs": "fragment resampled to 256 points (z-score, log time gap, scaled value) and/or the 18 official features",
+    "outputs": "P(anomalous); label at 0.5",
+    "uncertainty": "none beyond the probability (calibration measured: ECE)",
+    "preprocessing": "cosmos.ai.data.preprocess_telemetry.opssat_tensors",
+    "training_data": "OPSSAT-AD (Zenodo 15108715), official train split minus a 20 % validation fold",
+    "status": "validated-real",
+    "version": "2b9a14e3c49e",
+    "checkpoint": "/data/anupa/COSMOS_work/Final_Project/outputs/experiments/20261024-084205_opssat_fcnn_official_f100_s0/checkpoints/best.pt",
+    "evidence": "/data/anupa/COSMOS_work/Final_Project/outputs/benchmarks/telemetry_opssat/summary_official.csv",
+    "metrics": {
+      "f1_mean": 0.9365082570127352,
+      "f1_std": 0.0081351728775041,
+      "auc_pr_mean": 0.979982623464356,
+      "mcc_mean": 0.9203239750742948
+    },
+    "limitations": [
+      "the official split interleaves train and test fragments in time; a time-blocked split lowers every model (see summary_time_blocked)",
+      "one spacecraft, 9 channels"
+    ]
+  },
+  {
+    "name": "opssat_cnn",
+    "feature": "health",
+    "task": "anomalous / nominal classification of OPS-SAT telemetry fragments",
+    "inputs": "fragment resampled to 256 points (z-score, log time gap, scaled value) and/or the 18 official features",
+    "outputs": "P(anomalous); label at 0.5",
+    "uncertainty": "none beyond the probability (calibration measured: ECE)",
+    "preprocessing": "cosmos.ai.data.preprocess_telemetry.opssat_tensors",
+    "training_data": "OPSSAT-AD (Zenodo 15108715), official train split minus a 20 % validation fold",
+    "status": "validated-real",
+    "version": "d18473f9daa3",
+    "checkpoint": "/data/anupa/COSMOS_work/Final_Project/outputs/experiments/20261024-084255_opssat_cnn_official_f100_s0/checkpoints/best.pt",
+    "evidence": "/data/anupa/COSMOS_work/Final_Project/outputs/benchmarks/telemetry_opssat/summary_official.csv",
+    "metrics": {
+      "f1_mean": 0.9387531855021,
+      "f1_std": 0.0154459920411121,
+      "auc_pr_mean": 0.9870410575860816,
+      "mcc_mean": 0.9222985080786816
+    },
+    "limitations": [
+      "the official split interleaves train and test fragments in time; a time-blocked split lowers every model (see summary_time_blocked)",
+      "one spacecraft, 9 channels"
+    ]
+  },
+  {
+    "name": "opssat_xgboost",
+    "feature": "health",
+    "task": "anomalous / nominal classification of OPS-SAT telemetry fragments",
+    "inputs": "fragment resampled to 256 points (z-score, log time gap, scaled value) and/or the 18 official features",
+    "outputs": "P(anomalous); label at 0.5",
+    "uncertainty": "none beyond the probability (calibration measured: ECE)",
+    "preprocessing": "cosmos.ai.data.preprocess_telemetry.opssat_tensors",
+    "training_data": "OPSSAT-AD (Zenodo 15108715), official train split minus a 20 % validation fold",
+    "status": "validated-real",
+    "version": "n/a",
+    "checkpoint": null,
+    "evidence": "/data/anupa/COSMOS_work/Final_Project/outputs/benchmarks/telemetry_opssat/summary_official.csv",
+    "metrics": {
+      "f1_mean": 0.9109364910124638,
+      "f1_std": 0.0082218399731918,
+      "auc_pr_mean": 0.9607393360738852,
+      "mcc_mean": 0.8888961263292765
+    },
+    "limitations": [
+      "the official split interleaves train and test fragments in time; a time-blocked split lowers every model (see summary_time_blocked)",
+      "one spacecraft, 9 channels"
+    ]
+  },
+  {
+    "name": "spotgeo_heatmap_unet",
+    "feature": "debris",
+    "task": "point localisation of unresolved GEO targets in 5-frame sequences",
+    "inputs": "5 frames -> COSMOS registered differences + high-passed frames (10 ch)",
+    "outputs": "per-frame (x, y) points; official SpotGEO scoring",
+    "uncertainty": "heat-map confidence; threshold chosen on validation",
+    "preprocessing": "cosmos.ai.vision.spotgeo.front_end",
+    "training_data": "SpotGEO v2 (Zenodo 4432143) train, 10 % of sequences held out",
+    "status": "validated-real",
+    "version": "n/a",
+    "checkpoint": null,
+    "evidence": "/data/anupa/COSMOS_work/Final_Project/outputs/benchmarks/vision_spotgeo/runs",
+    "metrics": {
+      "test_f1_mean": 0.7460083066565798,
+      "n_seeds": 3
+    },
+    "limitations": [
+      "GEO, ground-based, one sensor: no claim about LEO debris imagery"
+    ]
+  },
+  {
+    "name": "cosmos_synthetic_heatmap",
+    "feature": "debris",
+    "task": "detection + classification of movers on COSMOS synthetic difference images",
+    "inputs": "640 x 640 registered difference image",
+    "outputs": "boxes, classes, scores",
+    "uncertainty": "confidence scores",
+    "preprocessing": "cosmos.debris.register_and_difference",
+    "training_data": "cosmos_synthetic/yolo_v1 (generated, scene-split)",
+    "status": "validated-synthetic",
+    "version": "n/a",
+    "checkpoint": null,
+    "evidence": "/data/anupa/COSMOS_work/Final_Project/outputs/benchmarks/vision_cosmos_synthetic/runs",
+    "metrics": {
+      "map50_95_mean": 0.37049998552329316,
+      "n_seeds": 3
+    },
+    "limitations": [
+      "synthetic only",
+      "class labels differ only in PSF width and flux"
+    ]
+  },
+  {
+    "name": "reentry_xgboost",
+    "feature": "reentry",
+    "task": "P(re-entry within 30 / 68 days) from a catalogue landmark",
+    "inputs": "tau-snapshot SATCAT orbit fields, RCS, type, owner, age; tau GP elements where available",
+    "outputs": "horizon probabilities; time-to-decay ranking",
+    "uncertainty": "ensemble spread (MLP); Mondrian conformal sets (val-calibrated)",
+    "preprocessing": "cosmos.ai.data.preprocess_catalogue.build_landmark (leakage report must pass)",
+    "training_data": "CelesTrak SATCAT 2026-08-16 -> 2026-10-23, split by launch",
+    "status": "validated-real",
+    "version": "n/a",
+    "checkpoint": null,
+    "evidence": "/data/anupa/COSMOS_work/Final_Project/outputs/benchmarks/reentry_landmark/results.json",
+    "metrics": {
+      "all/h68/auc_pr": 0.821325030891084,
+      "all/h30/auc_pr": 0.7607973609024028,
+      "all/c_index": 0.997265348233042
+    },
+    "limitations": [
+      "one landmark, 68-day horizon, 38 test events",
+      "payload decays include controlled de-orbits",
+      "no impact-location prediction is made or validated"
+    ]
+  },
+  {
+    "name": "reentry_hazard_mlp",
+    "feature": "reentry",
+    "task": "P(re-entry within 30 / 68 days) from a catalogue landmark",
+    "inputs": "tau-snapshot SATCAT orbit fields, RCS, type, owner, age; tau GP elements where available",
+    "outputs": "horizon probabilities; time-to-decay ranking",
+    "uncertainty": "ensemble spread (MLP); Mondrian conformal sets (val-calibrated)",
+    "preprocessing": "cosmos.ai.data.preprocess_catalogue.build_landmark (leakage report must pass)",
+    "training_data": "CelesTrak SATCAT 2026-08-16 -> 2026-10-23, split by launch",
+    "status": "not-recommended",
+    "version": "n/a",
+    "checkpoint": null,
+    "evidence": "/data/anupa/COSMOS_work/Final_Project/outputs/benchmarks/reentry_landmark/results.json",
+    "metrics": {
+      "all/h68/auc_pr": 0.6877164785034644,
+      "all/h30/auc_pr": 0.6097088193461665,
+      "all/c_index": 0.9956618478787803
+    },
+    "limitations": [
+      "one landmark, 68-day horizon, 38 test events",
+      "payload decays include controlled de-orbits",
+      "no impact-location prediction is made or validated"
+    ]
+  },
+  {
+    "name": "reentry_physics",
+    "feature": "reentry",
+    "task": "P(re-entry within 30 / 68 days) from a catalogue landmark",
+    "inputs": "tau-snapshot SATCAT orbit fields, RCS, type, owner, age; tau GP elements where available",
+    "outputs": "horizon probabilities; time-to-decay ranking",
+    "uncertainty": "ensemble spread (MLP); Mondrian conformal sets (val-calibrated)",
+    "preprocessing": "cosmos.ai.data.preprocess_catalogue.build_landmark (leakage report must pass)",
+    "training_data": "CelesTrak SATCAT 2026-08-16 -> 2026-10-23, split by launch",
+    "status": "baseline",
+    "version": "n/a",
+    "checkpoint": null,
+    "evidence": "/data/anupa/COSMOS_work/Final_Project/outputs/benchmarks/reentry_landmark/results.json",
+    "metrics": {
+      "all/h68/auc_pr": 0.18823485251003183,
+      "all/h30/auc_pr": 0.2538354316251553,
+      "all/c_index": 0.9759764985684513
+    },
+    "limitations": [
+      "one landmark, 68-day horizon, 38 test events",
+      "payload decays include controlled de-orbits",
+      "no impact-location prediction is made or validated"
+    ]
+  },
+  {
+    "name": "reentry_propagator_surrogate",
+    "feature": "reentry",
+    "task": "impact point / fall time of a fragment from its break-up state",
+    "inputs": "break-up altitude, speed, flight-path angle, heading, latitude, BC, mass, density factor, delta-v",
+    "outputs": "downrange, crossrange, fall time, speed",
+    "uncertainty": "5-member ensemble spread (also the out-of-range flag)",
+    "preprocessing": "cosmos.ai.surrogate.features",
+    "training_data": "reentry/simulated/propagator_surrogate_v1 (COSMOS propagator output)",
+    "status": "validated-synthetic",
+    "version": "n/a",
+    "checkpoint": null,
+    "evidence": "/data/anupa/COSMOS_work/Final_Project/outputs/benchmarks/reentry_surrogate/results.json",
+    "metrics": {
+      "position_error_km_median": 16.17301369729406,
+      "position_error_km_p95": 69.35079754968869
+    },
+    "limitations": [
+      "agreement with the COSMOS simulator only \u2014 not with real re-entries",
+      "valid inside the sampled input ranges; use the ensemble flag outside"
+    ]
+  }
+]

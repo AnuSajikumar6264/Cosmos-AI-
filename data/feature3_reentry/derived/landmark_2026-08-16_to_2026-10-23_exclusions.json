@@ -1,0 +1,12 @@
+{
+  "tau_snapshot_objects": 70288,
+  "in_orbit_at_tau": 34818,
+  "earth_orbiting": 34501,
+  "with_orbit_fields": 34166,
+  "launched_by_tau": 34166,
+  "missing_from_follow_snapshot": 0,
+  "decayed_before_tau_reported_late": 8,
+  "population_at_risk": 34158,
+  "events": 235,
+  "follow_up_days": 68
+}

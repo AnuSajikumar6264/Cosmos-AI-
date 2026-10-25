@@ -1,0 +1,31 @@
+{
+  "run_id": "20261024-112549_spotgeo_unet_both_f100_s2",
+  "name": "spotgeo_unet_both_f100",
+  "group": "vision_spotgeo",
+  "seed": 2,
+  "status": "ok",
+  "wall_time_s": 1946.92,
+  "config_sha256": "96be262172cf5041067a43fb82fba9febf516459b68ae028ef6f4abc91169695",
+  "metrics": {
+    "test_precision": 0.8514742830739018,
+    "test_recall": 0.6618181818181819,
+    "test_f1": 0.7447617363628327,
+    "test_one_minus_f1": 0.2552382636371673,
+    "test_official_mse_sum": 173574.9707670513,
+    "test_official_mse_mean_per_sequence": 33.90136147793971,
+    "test_tp": 29484,
+    "test_fn": 15066,
+    "test_fp": 5143,
+    "test_n_sequences": 5120,
+    "val_f1": 0.7187500000000001,
+    "selected_threshold": 0.4,
+    "best_epoch": 36,
+    "train_time_s": 1771.6006095409393,
+    "test_inference_s": 181.78375816345215,
+    "params": 7784015,
+    "size_mb": 29.716259002685547,
+    "latency_ms_per_sequence": 1.7031719908118248,
+    "peak_memory_mb": 561.7373046875,
+    "n_train_sequences": 1153
+  }
+}

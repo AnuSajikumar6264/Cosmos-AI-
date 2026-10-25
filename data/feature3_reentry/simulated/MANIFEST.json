@@ -1,0 +1,103 @@
+{
+  "dataset": "reentry_simulated",
+  "class": "SIM",
+  "status": "generated",
+  "generator": "cosmos.reentry.propagator.propagate_ensemble (unchanged; dt 0.5 s, US76, tumbling drag law) via cosmos.ai.surrogate.simulate",
+  "generated_utc": "2026-10-24T09:48:52+00:00",
+  "input_ranges": {
+    "alt_km": [
+      50.0,
+      100.0
+    ],
+    "speed_ms": [
+      7000.0,
+      7900.0
+    ],
+    "gamma_deg": [
+      -3.0,
+      -0.5
+    ],
+    "azimuth_deg": [
+      0.0,
+      360.0
+    ],
+    "lat_deg": [
+      -60.0,
+      60.0
+    ],
+    "log_bc": [
+      -0.6,
+      4.1
+    ],
+    "log_mass": [
+      -3.0,
+      2.2
+    ],
+    "log_density": [
+      -0.3,
+      0.3
+    ],
+    "dv_ms": [
+      0.0,
+      60.0
+    ]
+  },
+  "ood_altitude_km": [
+    100.0,
+    120.0
+  ],
+  "splits": {
+    "train": {
+      "n": 400000,
+      "impacted": 0.97096,
+      "generation_s": 63.62489986419678,
+      "seed": 11
+    },
+    "val": {
+      "n": 40000,
+      "impacted": 0.971425,
+      "generation_s": 50.26981782913208,
+      "seed": 22
+    },
+    "test": {
+      "n": 40000,
+      "impacted": 0.9721,
+      "generation_s": 50.17255139350891,
+      "seed": 33
+    },
+    "ood_test": {
+      "n": 20000,
+      "impacted": 0.96255,
+      "generation_s": 61.126922845840454,
+      "seed": 44
+    }
+  },
+  "note": "Simulator output only. Never mixed with historical observations.",
+  "manifest_written_utc": "2026-10-24T09:48:52+00:00",
+  "files": [
+    {
+      "path": "propagator_surrogate_v1/ood_test.parquet",
+      "md5": "f5f00fc333d31592a6866d82d954d144",
+      "sha256": "19819fdd4021cbbf3f702f6c542f84bcfd885da24c7e68514ae11402b98c0a11",
+      "rows": 20000
+    },
+    {
+      "path": "propagator_surrogate_v1/test.parquet",
+      "md5": "549f0fbf89db079fa8756e11ca4334d0",
+      "sha256": "c4741930cf8946bc76ad9cae2ae478e49ff1d0336398ef58de0252e0d6ec8722",
+      "rows": 40000
+    },
+    {
+      "path": "propagator_surrogate_v1/train.parquet",
+      "md5": "80c6ee4699cdec56b73e5e3b0ad6f3ba",
+      "sha256": "f61aa677c63bc97c36ebd946f17fc450cb756b3861d05e123276303f5da0f640",
+      "rows": 400000
+    },
+    {
+      "path": "propagator_surrogate_v1/val.parquet",
+      "md5": "0243349dfd41a8cbd3d0b5df82581630",
+      "sha256": "7f003ec899194e59b0e23b6bd2b1c46d4809c57f818d3baa53c2167237a51370",
+      "rows": 40000
+    }
+  ]
+}

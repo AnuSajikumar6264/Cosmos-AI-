@@ -1,0 +1,152 @@
+{
+  "dataset": "celestrak",
+  "class": "REAL",
+  "status": "downloaded",
+  "source": "CelesTrak (T.S. Kelso), https://celestrak.org",
+  "licence": "CelesTrak usage policy; public, no credentials; no explicit licence",
+  "field_definitions": "https://celestrak.org/satcat/satcat-format.php ; https://celestrak.org/NORAD/documentation/gp-data-formats.php ; https://celestrak.org/SpaceData/SpaceWx-format.php",
+  "notes": [
+    "satcat.csv in this folder is the 2026-08 snapshot used by the original COSMOS code; dated snapshots live in snapshots/<retrieval date>/.",
+    "gp-*.csv contain only objects still in orbit at retrieval.",
+    "SW-All.csv mixes observed and predicted rows (PRD/PRM): only observed rows may be used as features."
+  ],
+  "manifest_written_utc": "2026-10-24T08:05:03+00:00",
+  "files": [
+    {
+      "path": "gp-active.csv",
+      "bytes": 2468651,
+      "md5": "b3cf571975c3658d7e7409b3b69667c1",
+      "sha256": "b2b20a46d4fd0da6a522e3c87c8fbfd9c759d75f91b0d409d39d0be663e7f23e",
+      "status": "pre-existing",
+      "retrieved_utc": "2026-08 (see data/README.md)"
+    },
+    {
+      "path": "gp-cosmos-1408-debris.csv",
+      "bytes": 702,
+      "md5": "1eedc84853583cbcf95ff24eaae6748a",
+      "sha256": "5902cf602697928053b72e0c178c2e874bf04e9c771d2d3b2cdcf513ef03605a",
+      "status": "pre-existing",
+      "retrieved_utc": "2026-08 (see data/README.md)"
+    },
+    {
+      "path": "gp-cosmos-2251-debris.csv",
+      "bytes": 91572,
+      "md5": "2fa3462ffb9b51011e3e9b3dfa49591f",
+      "sha256": "1d4bd3757e155dc7c6dba045e6fa502464651bf1f2e4d3ee5490a703478f7150",
+      "status": "pre-existing",
+      "retrieved_utc": "2026-08 (see data/README.md)"
+    },
+    {
+      "path": "gp-fengyun-1c-debris.csv",
+      "bytes": 296976,
+      "md5": "337ed55e37d10bb97ffcb8c286df5fc3",
+      "sha256": "d34a94a6c48dd55ece64e83189b3bbe9d8afb6f67f1995367ed574374e2c94ee",
+      "status": "pre-existing",
+      "retrieved_utc": "2026-08 (see data/README.md)"
+    },
+    {
+      "path": "gp-iridium-33-debris.csv",
+      "bytes": 17257,
+      "md5": "d2c9524292ef803a2423f31e9a05c4bd",
+      "sha256": "32701be7e2473609e23e2d5032d8551f7cba193f9edbcb3aec001b7234128bf4",
+      "status": "pre-existing",
+      "retrieved_utc": "2026-08 (see data/README.md)"
+    },
+    {
+      "path": "satcat.csv",
+      "bytes": 6703172,
+      "md5": "af26486e2b2eec4830d8f3e08a5f2944",
+      "sha256": "33b1c7678888bce2953e35dd1639731ca5d53e2b6179eeb17a26f0adcd17e42a",
+      "status": "pre-existing",
+      "retrieved_utc": "2026-08 (see data/README.md)"
+    },
+    {
+      "path": "snapshots/2026-10-24/SW-All.csv",
+      "url": "https://celestrak.org/SpaceData/SW-All.csv",
+      "bytes": 2891940,
+      "md5": "fd01e7ad699be7cad7cbf59f3345bc10",
+      "sha256": "a3716a83f82196ef7107ff4667f0ab00b489247f6f0136c99a7f3bb976bb4325",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-24T08:05:03+00:00"
+    },
+    {
+      "path": "snapshots/2026-10-24/gp-active.csv",
+      "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=csv",
+      "bytes": 2543559,
+      "md5": "cd562e41944c979aa697998b54e0d955",
+      "sha256": "9b5004487c258738114e800dfd1cb963a1509cc53c7046c9e95102cda140c335",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-24T08:04:50+00:00"
+    },
+    {
+      "path": "snapshots/2026-10-24/gp-cosmos-1408-debris.csv",
+      "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=cosmos-1408-debris&FORMAT=csv",
+      "bytes": 706,
+      "md5": "6f0f61ac9dee4ae1adc1aa84cd60502f",
+      "sha256": "4fd566c85ef62238fb1dfd78836719688c1803437a1acf43d26579945e85420b",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-24T08:04:54+00:00"
+    },
+    {
+      "path": "snapshots/2026-10-24/gp-cosmos-2251-debris.csv",
+      "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=cosmos-2251-debris&FORMAT=csv",
+      "bytes": 90914,
+      "md5": "21e88ddf95944f2accfa296cd1080ed7",
+      "sha256": "a1b277e81c56abc9c051b7b67e286d8f566e0519dde2ff29bde4836b894317c3",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-24T08:04:57+00:00"
+    },
+    {
+      "path": "snapshots/2026-10-24/gp-fengyun-1c-debris.csv",
+      "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=fengyun-1c-debris&FORMAT=csv",
+      "bytes": 303374,
+      "md5": "053522ed2a2458d80263fcf294c9f322",
+      "sha256": "e12c27f3c436eaf86ea97710f9797fc2b8f55bbb022b16e3e7c072f6cda549fe",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-24T08:04:59+00:00"
+    },
+    {
+      "path": "snapshots/2026-10-24/gp-iridium-33-debris.csv",
+      "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=iridium-33-debris&FORMAT=csv",
+      "bytes": 17007,
+      "md5": "3f6701f9bbaecb77cfc22d9337809491",
+      "sha256": "c0ba155820066a4f2e79ad0b21647b3597759163d9cf47bf1aa2ab3cdae06e8a",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-24T08:05:01+00:00"
+    },
+    {
+      "path": "snapshots/2026-10-24/gp-last-30-days.csv",
+      "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=last-30-days&FORMAT=csv",
+      "bytes": 38724,
+      "md5": "096558e5fafb7244ccda75b6f6c04e28",
+      "sha256": "71444efe20432281d40e328c95afdd32d952cb09f45a3de49120f2ab5dcf337b",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-24T08:04:52+00:00"
+    },
+    {
+      "path": "snapshots/2026-10-24/satcat.csv",
+      "url": "https://celestrak.org/pub/satcat.csv",
+      "bytes": 6781157,
+      "md5": "d908958712416f0ae61b61928cf915a2",
+      "sha256": "e6211ad5e641e95b9b7e6df818c0e781aed6909b690342e2d8d221d400d26cd7",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-24T08:04:48+00:00"
+    },
+    {
+      "path": "spatial_density.csv",
+      "bytes": 963,
+      "md5": "ff64228d94e7df41668f8e8fd47b39a4",
+      "sha256": "cdee326aeacdfea8bd4283f20ff552824c60d87f57f250a4670bd9804ae0097f",
+      "status": "pre-existing",
+      "retrieved_utc": "2026-08 (see data/README.md)"
+    }
+  ]
+}

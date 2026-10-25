@@ -1,0 +1,18 @@
+# COSMOS-AI additions on top of requirements.txt.  Tested with Python 3.12.13 and
+# torch 2.13.0+xpu (Intel GPU); any recent PyTorch build (CPU, CUDA, XPU) should work.
+# The exact environment used is frozen in outputs/baseline/venv_freeze_2026-10-24.txt.
+torch>=2.2
+scikit-learn>=1.3
+xgboost>=2.0
+pyyaml>=6.0
+pyarrow>=14            # parquet files of the simulated re-entry data
+requests>=2.31         # resumable dataset downloads
+portion>=2.4           # interval arithmetic used by the OFFICIAL ESA-ADB metrics
+jsonschema>=4.0        # used by the official SpotGEO validation.py
+chronos-forecasting==2.3.2   # pretrained time-series foundation models (Apache-2.0)
+ultralytics==8.4.185         # YOLOv8n baseline (AGPL-3.0: baseline use only)
+torchvision>=0.17            # ImageNet ResNet-18 encoder
+nbformat>=5.9
+nbclient>=0.10
+pypdf>=4.0             # only to read the cached DMLR paper tables
+# NOT used: lifelines (pins pandas < 3); survival metrics are in cosmos/ai/evaluation.py

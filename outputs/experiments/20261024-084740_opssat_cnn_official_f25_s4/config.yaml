@@ -1,0 +1,14 @@
+name: opssat_cnn_official_f25
+group: opssat
+seed: 4
+lr: 0.001
+weight_decay: 0.0001
+batch: 64
+max_epochs: 300
+patience: 30
+width: 64
+augment: true
+model: cnn
+protocol: official
+train_frac: 0.25
+n_train: 318

@@ -1,0 +1,44 @@
+{
+  "dataset": "reentry_historical",
+  "class": "REAL",
+  "status": "downloaded (public parts only)",
+  "sources": {
+    "esa_recovered_debris": {
+      "url": "https://reentry.esoc.esa.int/api/home (public JSON behind https://reentry.esoc.esa.int/home/recovereddebris)",
+      "retrieved_utc": "2026-10-24T10:08:29+00:00",
+      "licence": "ESA web content; no explicit data licence stated",
+      "content": "curated list of recovered fragments: COSPAR ID, re-entry date, lat/lon, country, mass, shape, size, material, type"
+    },
+    "esa_reentry_predictions": {
+      "url": "https://reentry.esoc.esa.int/api/protected/reentries",
+      "status": "HTTP 401 Unauthorized - requires an ESA account; not attempted further"
+    },
+    "space_track": {
+      "url": "https://www.space-track.org",
+      "status": "not used: requires an account and acceptance of the user agreement; no credentials were provided, and access controls were not bypassed"
+    },
+    "esa_discos": {
+      "status": "not used: DISCOSweb requires a personal token (cosmos.reentry.discos supports it when a token is supplied)"
+    }
+  },
+  "derived": {
+    "recovered_debris_esa.csv": "235 fragment rows, 87 objects",
+    "recovered_debris_esa_with_satcat.csv": "joined to the 2026-10-24 SATCAT by COSPAR ID; within_inclination_band = |lat| <= inclination (180 - i if retrograde) + 1 deg"
+  },
+  "use": "validation of record linkage and of the latitude band allowed by the orbit; NOT an impact-point ground truth for any COSMOS prediction (no re-entry state vectors are available)",
+  "manifest_written_utc": "2026-10-24T10:08:29+00:00",
+  "files": [
+    {
+      "path": "raw/esa_reentry_portal/api_home.json",
+      "md5": "f5cebad9cbe3524df736acdc23bdb944",
+      "sha256": "eb31b0df8ebca40a6d08f3072b955670bc16650b436dcee7579031ee80aa3585",
+      "bytes": 125779
+    },
+    {
+      "path": "recovered_debris_esa.csv",
+      "md5": "bc54d654b15cd69828097e8ea9fff799",
+      "sha256": "816b3a8258d13136d06177608ec3887ed6c75b893febffdc55df884bc6cd4871",
+      "bytes": 31793
+    }
+  ]
+}

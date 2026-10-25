@@ -1,0 +1,5 @@
+seen_class,cat,A1_detect_rate,A2_detect_rate,A3_detect_rate,A3_no_residual_detect_rate,A3_two_class_detect_rate,A0_detect_rate,n_events
+False,Anomaly,0.0,0.0,0.0,0.0,0.0,0.0,3
+False,Rare Event,0.0,0.875,0.125,0.125,0.167,0.875,8
+True,Anomaly,0.154,0.204,0.227,0.301,0.25,0.327,52
+True,Rare Event,0.286,0.679,0.407,0.631,0.476,0.679,28

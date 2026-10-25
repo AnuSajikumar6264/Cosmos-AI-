@@ -1,0 +1,6 @@
+path: /data/anupa/COSMOS_work/Final_Project/data/feature2_debris/cosmos_synthetic/yolo_v1
+train: train/images
+val: val/images
+test: test/images
+nc: 4
+names: ['satellite', 'rocket_body', 'fragment', 'panel']

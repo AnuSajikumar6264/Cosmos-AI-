@@ -1,0 +1,48 @@
+# environments and caches
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+# credentials: never commit (DISCOSweb token, Space-Track, HF tokens)
+*.token
+.env
+data/feature3_reentry/external/discos/token*
+# downloaded and derived data (large; re-create with python -m cosmos.ai.data.download ...)
+data/feature1_health/external/esa_ad/*.zip
+data/feature1_health/esa_adb/raw/
+data/feature1_health/esa_adb/processed/
+data/feature1_health/opssat_ad/raw/
+data/feature1_health/cosmos_synthetic/*.npy
+data/feature2_debris/spotgeo/raw/
+data/feature2_debris/spotgeo/processed/
+data/feature2_debris/spacesense_bench/raw/
+data/feature2_debris/cosmos_synthetic/yolo_v1/*/images/
+data/feature2_debris/cosmos_synthetic/weights/
+data/feature3_reentry/simulated/propagator_surrogate_v1/*.parquet
+data/feature3_reentry/external/ghs_pop/*.zip
+# experiment artefacts (checkpoints and score dumps are large; manifests and metrics stay)
+outputs/experiments/*/checkpoints/
+outputs/experiments/*/scores_*.npy
+outputs/experiments/*/ultralytics/
+outputs/logs/
+# large arrays and model files anywhere (score dumps, features, checkpoints)
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.parquet
+*.h5
+*.zip
+*.tar.gz
+*.part
+# third-party full texts kept locally for reading only (copyright stays with the authors)
+research_design/references/*.pdf
+research_design/references/*.html
+research_design/references/*.txt
+research_design/references/competitors/
+# raw downloads and model weights in data/
+data/**/raw/
+data/**/weights/
+data/**/images/

@@ -1,0 +1,12 @@
+{
+  "run_id": "20261024-161929_esa_event_m2_target_gbt_ar8_s3_s3",
+  "name": "esa_event_m2_target_gbt_ar8_s3",
+  "group": "esa_event_model",
+  "seed": 3,
+  "status": "ok",
+  "wall_time_s": 995.36,
+  "config_sha256": "caca10bef853eff9f927d181f70c78ec6524db62a914501008ba025528f1e699",
+  "metrics": {
+    "final_seconds": 30.28249502182007
+  }
+}

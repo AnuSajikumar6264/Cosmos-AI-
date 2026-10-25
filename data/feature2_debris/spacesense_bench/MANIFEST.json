@@ -1,0 +1,36 @@
+{
+  "dataset": "spacesense_bench",
+  "class": "SYNTHETIC (Unreal Engine 5 renders)",
+  "status": "inspection sample only (1 of 136 archives)",
+  "licence": "cc-by-nc-4.0 (Hugging Face card); GitHub repo has no licence file",
+  "source_urls": [
+    "https://github.com/wuaodi/SpaceSense-Bench",
+    "https://huggingface.co/datasets/Alvin16/SpaceSense-Bench"
+  ],
+  "hf_revision": "90bf1da70fcc",
+  "retrieved_utc": "2026-10-24T10:07:33+00:00",
+  "full_release": "136 archives, ~72 GB on Hugging Face (README states ~70 GB per model uncompressed)",
+  "decision": "not used for training or evaluation: resolved spacecraft (1024x1024 RGB, depth, LiDAR, part segmentation, 6-DoF pose) is a different task from unresolved point-target detection; non-commercial licence",
+  "contents_of_sample": {
+    "members": 2835,
+    "extensions": {
+      ".png": 1336,
+      ".npz": 668,
+      ".asc": 668,
+      "": 136,
+      ".csv": 27
+    }
+  },
+  "manifest_written_utc": "2026-10-24T10:07:33+00:00",
+  "files": [
+    {
+      "path": "raw/ACE.tar.gz",
+      "url": "https://huggingface.co/datasets/Alvin16/SpaceSense-Bench/resolve/90bf1da70fcc/raw/ACE.tar.gz",
+      "bytes": 510933895,
+      "md5": "c4fcbe845a148f8dbcdb9c0a8ee71319",
+      "sha256": "8dd56f11e0aeb26c0adbe4c6f04bf923292abd9f3a2e3b3493fdf03bc571ffbb",
+      "status": "downloaded",
+      "md5_verified": false
+    }
+  ]
+}

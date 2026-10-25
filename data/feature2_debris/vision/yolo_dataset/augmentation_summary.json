@@ -1,0 +1,8 @@
+{
+  "horizontal_flip": true,
+  "vertical_flip": true,
+  "brightness_jitter": "\u00b115 %",
+  "contrast_jitter": "\u00b110 %",
+  "gaussian_noise": "sigma 1-4 ADU",
+  "domain_randomisation": "star count, PSF width, pointing jitter, frame interval"
+}

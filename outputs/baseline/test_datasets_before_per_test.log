@@ -1,0 +1,57 @@
+
+== test_cell_area
+  [PASS] grid cell areas sum to the sphere's area
+         expected 510.07 M km2   measured 510.07 M km2
+
+== test_discos_parsing
+  [PASS] DISCOS client follows JSON:API pagination
+         expected 3 records over 2 pages   measured 3 records
+  [PASS] fragmentation causes map onto coupling subsystems
+         expected propulsion->Propulsion System, battery->Power System, collision->external   measured {'Battery': 'Power System', 'Propulsion related': 'Propulsion System', 'Collision': nan}
+
+== test_event_metrics
+  [PASS] event-wise recall on a hand-built case
+         expected 0.500   measured 0.500   (one of two events overlapped)
+  [PASS] event-wise precision on a hand-built case
+         expected 0.500   measured 0.500   (one of two alarms is false)
+  [PASS] alarm episodes merge only within the gap
+         expected 1 then 2   measured 1 then 2
+  [PASS] an event between two merged alarms is not 'detected'
+         expected recall 0.0   measured recall 0.0
+  [PASS] persistence: a 4-sample run does not alarm, a 6-sample run does
+         expected [(14, 19)]   measured [(14, 19)]
+
+== test_imagery_conversion
+  [PASS] SPARK-style box converts to normalised YOLO
+         expected [0.4, 0.4, 0.4, 0.4]   measured [0.4, 0.4, 0.4, 0.4]
+  [PASS] COCO box [x, y, w, h] reads as corners
+         expected (40, 20, 120, 60)   measured (np.int64(40), np.int64(20), np.int64(120), np.int64(60))
+
+== test_real_datasets
+  [PASS] SMAP/MSL release: channels per spacecraft
+         expected SMAP 55, MSL 27   measured {'SMAP': 55, 'MSL': 27}   (Hundman et al. 2018)
+  [PASS] SMAP/MSL release: labelled anomaly sequences
+         expected SMAP 69, MSL 36   measured {'SMAP': 69, 'MSL': 36}   (Hundman et al. 2018)
+  [PASS] ESA mission 1: channels / subsystems / start after conversion
+         expected 76 / 4 / 2000-01-01   measured 76 / 4 / 2000-01-01   (the archive's own channels.csv)
+  [PASS] ESA mission 2: channels / subsystems / start after conversion
+         expected 100 / 5 / 2000-01-01   measured 100 / 5 / 2000-01-01   (the archive's own channels.csv)
+  [PASS] ESA mission 3: channels / subsystems / start after conversion
+         expected 48 / 3 / 2000-01-01   measured 48 / 3 / 2000-01-01   (the archive's own channels.csv)
+  [PASS] GHS-POP 2020 world population
+         expected 7.84 billion +/- 1 %   measured 7.841 billion   (UN World Population Prospects: 7.84 billion in 2020)
+  [PASS] land fraction of Earth's surface
+         expected 0.29 +/- 0.02   measured 0.288   (about 29 % of the surface is land)
+
+== test_safe_unpickler
+  [ERROR] UnpicklingError('refusing to load pandas.arrays.ArrowStringArray from a data file')
+
+== test_scoring
+  [PASS] vectorised EWMA equals the monitor's loop
+         expected 0   measured 0.0e+00
+  [PASS] AR forecaster recovers the innovation spread of an AR(1)
+         expected 1.00 +/- 0.03   measured 0.992   (residual std of x_t = 0.9 x_t-1 + N(0,1))
+  [PASS] trailing baseline absorbs a slow drift a frozen one alarms on
+         expected frozen |z| > 6, trailing |z| < 2   measured 10.9 vs 1.4
+
+SUMMARY {'PASS': 20, 'ERROR': 1}

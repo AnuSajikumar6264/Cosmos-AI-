@@ -1,0 +1,17 @@
+{
+  "dataset": "spark",
+  "status": "not downloaded",
+  "checked_utc": "2026-10-24T10:08:07+00:00",
+  "class": "SYNTHETIC renders + Zero-G lab images (per the dataset pages)",
+  "source_urls": [
+    "https://cvi2.uni.lu/space-datasets/",
+    "https://cvi2.uni.lu/spark-2021-dataset/",
+    "https://cvi2.uni.lu/spark-2022-dataset/",
+    "https://zenodo.org/records/6599762"
+  ],
+  "reason": "Every SPARK release (2021, 2022, 2024, 2026) is distributed on request through a contact form ('To make a request for the data, please use the following contact form'); the SPARK 2022 Zenodo record 6599762 has access_right='restricted' and lists no public files. No request was submitted on the user's behalf (it needs the user's identity and acceptance of the providers' terms).",
+  "task_fit": "resolved spacecraft detection / pose (11 classes, one 'debris' class); does not match the unresolved point-target study even if obtained. COSMOS already ships a converter: cosmos.debris.realimagery.convert_to_yolo.",
+  "how_to_obtain": "submit the form at https://cvi2.uni.lu/spark-2022-dataset/, place the archives in data/feature2_debris/spark/raw/, then run cosmos.debris.realimagery.convert_to_yolo('spark')",
+  "manifest_written_utc": "2026-10-24T10:08:07+00:00",
+  "files": []
+}

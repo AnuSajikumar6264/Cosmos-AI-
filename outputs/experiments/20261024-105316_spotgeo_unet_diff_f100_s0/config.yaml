@@ -1,0 +1,8 @@
+name: spotgeo_unet_diff_f100
+group: vision_spotgeo
+seed: 0
+model: unet
+inputs: diff
+epochs: 40
+train_frac: 1.0
+device: null

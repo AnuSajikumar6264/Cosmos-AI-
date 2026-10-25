@@ -1,0 +1,58 @@
+Verification suite — every check has an answer that does not come from this code.
+
+ATMOSPHERE
+  [PASS] US76 density vs published table
+         expected < 0.01 %   measured 0.0019 %   (layer boundaries are geopotential, so the table must be indexed through the inverse)
+  [PASS] US76 temperature vs published table
+         expected 0 K   measured 0.000 K
+  [PASS] hydrostatic balance dp/dz = -rho g
+         expected < 1 %   measured 0.933 %
+
+GEODESY
+  [PASS] WGS-84 geodetic round trip
+         expected < 1e-6 m   measured 1.97e-10 m
+  [PASS] great-circle quarter of the equator
+         expected 10007.5 km   measured 10007.5 km
+
+DRAG
+  [PASS] C_D at Kn -> infinity reaches the free-molecular limit
+         expected 2.1   measured 2.100
+  [PASS] C_D at Kn -> 0, Mach 20 reaches the continuum hypersonic value
+         expected 0.92   measured 0.920
+  [PASS] C_D peaks in the transonic regime above the hypersonic value
+         expected > 0.92   measured 1.012   (a sphere peaks near 1.0 against 0.92 hypersonic)
+
+PROPAGATOR
+  [PASS] terminal velocity: drag / gravity at impact
+         expected 1.00   measured 0.9984   (a vertical drop must reach force balance)
+  [PASS] Coriolis deflection is eastward and below the free-fall value
+         expected 0 < d < 82 m   measured 81 m   (drag must REDUCE the deflection, so agreement would indicate a bug)
+  [PASS] impact point converges as rtol tightens 1e-6 -> 1e-12
+         expected < 1 m   measured 0.060 m
+  [PASS] J2 makes a circular orbit oscillate in altitude
+         expected 15-25 km   measured 18.4 km   (an 800 km circular orbit swings ~19 km peak-to-peak under J2)
+  [PASS] vacuum orbit does not decay
+         expected no impact   measured timeout
+
+BREAKUP
+  [PASS] break-up conserves the parent mass
+         expected 1.000   measured 1.0000
+  [PASS] sampled size distribution follows the truncated power law
+         expected < 5 %   measured 3.80 %   (22 bins with >= 200 expected counts)
+
+DETECTION
+  [PASS] registration recovers a known shift with the right SIGN
+         expected < 0.5 px   measured 0.225 px   (getting this backwards is invisible at small jitter and fatal at large)
+  [PASS] residual misalignment after registration
+         expected < 0.3 px   measured 0.118 px
+
+CONFORMAL
+  [PASS] conformal density zone coverage at nominal 90%
+         expected >= 0.87   measured 0.9065
+  [PASS] conformal density zone coverage at nominal 95%
+         expected >= 0.92   measured 0.9495
+  [PASS] Gaussian ellipse under-covers on a skewed sample
+         expected < 0.95   measured 0.9430   (this is the motivation for using a conformal zone at all)
+
+==========================================================================
+20 / 20 checks passed

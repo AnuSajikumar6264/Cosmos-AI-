@@ -1,0 +1,29 @@
+# OPSSAT-AD fragment classification study (cosmos.ai.telemetry.opssat).
+# Protocol fixed before any test number was seen: official split; validation = stratified
+# 20 % of the official TRAIN set (seed 2137); P >= 0.5 decision rule; 5 seeds.
+length: 256                       # raw fragments are linearly resampled to this many points
+seeds: [0, 1, 2, 3, 4]
+protocols: [official, time_blocked]
+train_fracs: [1.0, 0.5, 0.25, 0.1]
+models:
+  - cosmos_robust_z               # existing COSMOS statistic (semi-supervised, 5 % FA budget)
+  - iforest                       # official notebook's unsupervised example
+  - adaboost                      # official notebook's supervised example
+  - logreg
+  - random_forest
+  - xgboost                       # strong conventional ML baseline
+  - fcnn                          # deep baseline on the 18 official features
+  - cnn                           # deep, raw fragment
+  - transformer                   # deep, raw fragment
+  - hybrid                        # deep, raw fragment + features (late fusion)
+  - chronos:amazon/chronos-bolt-small   # frozen foundation-model embedding + linear probe
+label_efficiency_models: [xgboost, fcnn, cnn, hybrid, chronos:amazon/chronos-bolt-small]
+foundation: [amazon/chronos-bolt-small]
+deep:
+  lr: 0.001
+  weight_decay: 0.0001
+  batch: 64
+  max_epochs: 300
+  patience: 30
+  width: 64
+  augment: true

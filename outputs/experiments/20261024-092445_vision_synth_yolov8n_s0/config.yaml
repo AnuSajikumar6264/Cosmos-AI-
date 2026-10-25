@@ -1,0 +1,7 @@
+name: vision_synth_yolov8n
+group: vision_cosmos_synthetic
+seed: 0
+weights: yolov8n.pt
+epochs: 100
+imgsz: 640
+batch: 16

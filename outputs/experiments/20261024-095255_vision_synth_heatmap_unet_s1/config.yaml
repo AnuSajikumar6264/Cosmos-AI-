@@ -1,0 +1,6 @@
+name: vision_synth_heatmap_unet
+group: vision_cosmos_synthetic
+seed: 1
+epochs: 60
+model: unet
+crop: 320

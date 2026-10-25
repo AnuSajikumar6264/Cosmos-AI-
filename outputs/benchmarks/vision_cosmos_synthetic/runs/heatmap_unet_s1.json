@@ -1,0 +1,32 @@
+{
+  "model": "heatmap-unet (COSMOS-AI)",
+  "seed": 1,
+  "map50": 0.787843319729755,
+  "map50_95": 0.3915813187841551,
+  "map50_class_agnostic": 0.9858297027968455,
+  "map50_95_class_agnostic": 0.5322435696699139,
+  "small_map50": 0.7872929704145564,
+  "ap50_per_class": [
+    0.6271726726904919,
+    0.9043634227092142,
+    0.934945102515415,
+    0.6848920810038986
+  ],
+  "precision@conf": 0.7168525402726146,
+  "recall@conf": 0.7217716781035558,
+  "f1@conf": 0.719303699098539,
+  "mean_iou@conf": 0.7648489632505686,
+  "tp@conf": 1157,
+  "fp@conf": 457,
+  "fn@conf": 446,
+  "selected_conf": 0.4,
+  "best_epoch": 15,
+  "params": 7790836,
+  "size_mb": 29.742279052734375,
+  "train_time_s": 1567.1896946430206,
+  "latency_ms_per_batch": 2.135193470166996,
+  "batch_items": 16,
+  "latency_ms_per_item": 0.13344959188543726,
+  "throughput_items_s": 7493.466153560605,
+  "peak_memory_mb": 6912.89453125
+}

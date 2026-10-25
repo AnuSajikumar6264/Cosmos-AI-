@@ -1,0 +1,24 @@
+{
+  "fragments": 2123,
+  "mismatching_fragments_per_feature": {
+    "mean": 0,
+    "var": 0,
+    "std": 0,
+    "len": 0,
+    "duration": 0,
+    "len_weighted": 0,
+    "gaps_squared": 0,
+    "n_peaks": 0,
+    "smooth10_n_peaks": 0,
+    "smooth20_n_peaks": 12,
+    "var_div_duration": 0,
+    "var_div_len": 0,
+    "diff_peaks": 0,
+    "diff2_peaks": 0,
+    "diff_var": 0,
+    "diff2_var": 0,
+    "kurtosis": 0,
+    "skew": 0
+  },
+  "note": "smooth20_n_peaks differs by one peak on a few short fragments (scipy/numpy version difference); every other feature is exact"
+}

@@ -1,0 +1,50 @@
+{
+ "model": "xgboost",
+ "params": {
+  "objective": "multi:softprob",
+  "num_class": 3,
+  "max_depth": 8,
+  "eta": 0.1,
+  "subsample": 0.8,
+  "colsample_bytree": 0.8,
+  "min_child_weight": 5,
+  "tree_method": "hist",
+  "max_cat_to_onehot": 1,
+  "nthread": 64
+ },
+ "rounds": 400,
+ "folds": [
+  {
+   "seconds": 19.032362461090088,
+   "n_rows": 2000000,
+   "labelled_rows": 1000000
+  },
+  {
+   "seconds": 24.912343502044678,
+   "n_rows": 2000000,
+   "labelled_rows": 1000000
+  },
+  {
+   "seconds": 29.01956605911255,
+   "n_rows": 2000000,
+   "labelled_rows": 900054
+  },
+  {
+   "seconds": 28.68573260307312,
+   "n_rows": 2000000,
+   "labelled_rows": 1000000
+  },
+  {
+   "seconds": 26.9477756023407,
+   "n_rows": 2000000,
+   "labelled_rows": 1000000
+  }
+ ],
+ "purge": 4800,
+ "run_id": "20261024-155315_esa_event_m2_target_gbt_ar8_s0_s0",
+ "final": {
+  "seconds": 29.90868306159973,
+  "n_rows": 2000000,
+  "labelled_rows": 1000000
+ }
+}

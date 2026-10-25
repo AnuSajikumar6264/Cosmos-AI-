@@ -1,0 +1,5 @@
+path: /data/ss/workspace/anupa/Satellite-Digital-Twin-for-Anomaly-Detection-and-Heath-Monitoring-System/Final_Project/data/feature2_debris/vision/yolo_dataset
+train: train/images
+val: val/images
+nc: 4
+names: ['satellite', 'rocket_body', 'fragment', 'panel']

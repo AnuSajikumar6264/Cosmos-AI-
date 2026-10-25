@@ -1,0 +1,14 @@
+{
+  "run_id": "20261024-094816_cosmos_learned_monitor_forecaster_s0",
+  "name": "cosmos_learned_monitor_forecaster",
+  "group": "cosmos_synthetic_telemetry",
+  "seed": 0,
+  "status": "ok",
+  "wall_time_s": 124.04,
+  "config_sha256": "8853d428b221dca53b9cdaec11b06f7aa0584d08e2e7002d1231fff37bd06990",
+  "metrics": {
+    "val_pinball": 0.039666686207056046,
+    "train_time_s": 124.0415108203888,
+    "params": 98424
+  }
+}

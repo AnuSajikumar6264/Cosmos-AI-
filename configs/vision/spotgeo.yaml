@@ -1,0 +1,8 @@
+# SpotGEO study (cosmos.ai.vision.train_spotgeo); values are the code defaults.
+front_end: "COSMOS phase-correlation registration of the other 4 frames, median, difference; high-pass = frame - Gaussian(6 px); robust scaling"
+validation: "10 % of the official train sequences, by sequence (sha256 hash split)"
+model: {kinds: [unet, resnet18_pretrained, resnet18_scratch], inputs: [both, diff, raw]}
+train: {epochs: 40, crop: 320, batch: 12, lr_unet: 0.001, lr_resnet: 0.0003, eval_every: 2}
+augmentation: [time_reversal, horizontal_flip, vertical_flip, gain_0.8_1.25, random_crop]
+decode: {thresholds: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7], nms: 3, max_per_frame: 30}
+scoring: "official validation.py (starter kit, Zenodo 3874368), tau = 10 px, eps = 3 px"

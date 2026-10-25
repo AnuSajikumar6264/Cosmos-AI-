@@ -1,0 +1,4 @@
+spotgeo_validation.py is the official spotGEO scorer, copied unmodified from the
+"spotGEO starter kit", Zenodo record 3874368 (https://zenodo.org/record/3874368),
+Advanced Concepts Team, European Space Agency, licensed CC BY 4.0.
+SHA-256 of the original file is recorded in data/feature2_debris/spotgeo/MANIFEST.json.

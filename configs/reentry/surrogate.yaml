@@ -1,0 +1,7 @@
+# Propagator surrogate (cosmos.ai.surrogate); values are the code defaults.
+input_ranges: {alt_km: [50, 100], speed_ms: [7000, 7900], gamma_deg: [-3.0, -0.5], azimuth_deg: [0, 360],
+               lat_deg: [-60, 60], log_bc: [-0.6, 4.1], log_mass: [-3.0, 2.2], log_density: [-0.3, 0.3], dv_ms: [0, 60]}
+ood_altitude_km: [100, 120]
+splits: {train: [400000, 11], val: [40000, 22], test: [40000, 33], ood_test: [20000, 44]}   # [rows, seed]
+ensemble: {members: 5, hidden: [256, 256, 256, 256], epochs: 200, batch: 2048, lr: 0.002}
+fallback: {ensemble_spread_quantile_of_val: 0.95}   # threshold = 95th pct of val spread

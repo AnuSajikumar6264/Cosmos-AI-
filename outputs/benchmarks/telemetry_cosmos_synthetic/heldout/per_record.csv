@@ -1,0 +1,481 @@
+monitor,seed_set,subsystem,fault,faulted,alarm,alarm_before_onset,delay_samples,localised,seconds
+classical_ewma,5,Power System,degradation,True,False,False,,False,0.010352373123168945
+learned_conformal,5,Power System,degradation,True,False,False,,True,1.5133841037750244
+classical_ewma,5,Power System,leak,True,True,False,1218.0,True,0.011143922805786133
+learned_conformal,5,Power System,leak,True,True,False,1132.0,True,0.12749695777893066
+classical_ewma,5,Power System,overheat,True,True,False,1105.0,True,0.009867429733276367
+learned_conformal,5,Power System,overheat,True,True,False,861.0,True,0.1286177635192871
+classical_ewma,5,Power System,dropout,True,True,False,37.0,True,0.009255647659301758
+learned_conformal,5,Power System,dropout,True,True,False,0.0,True,0.1311964988708496
+classical_ewma,5,Power System,saturation,True,True,False,1115.0,True,0.009760141372680664
+learned_conformal,5,Power System,saturation,True,True,False,1212.0,True,0.13001418113708496
+classical_ewma,5,Thermal Control,degradation,True,False,False,,False,0.009470701217651367
+learned_conformal,5,Thermal Control,degradation,True,False,False,,True,0.12061548233032227
+classical_ewma,5,Thermal Control,leak,True,False,False,,False,0.009944438934326172
+learned_conformal,5,Thermal Control,leak,True,True,False,194.0,True,0.11954474449157715
+classical_ewma,5,Thermal Control,overheat,True,False,False,,True,0.009213447570800781
+learned_conformal,5,Thermal Control,overheat,True,True,False,834.0,True,0.11976337432861328
+classical_ewma,5,Thermal Control,dropout,True,False,False,,True,0.009463787078857422
+learned_conformal,5,Thermal Control,dropout,True,True,False,0.0,True,0.11659383773803711
+classical_ewma,5,Thermal Control,saturation,True,False,False,,True,0.009555578231811523
+learned_conformal,5,Thermal Control,saturation,True,True,False,1197.0,True,0.13296794891357422
+classical_ewma,5,Attitude Control,degradation,True,False,False,,False,0.009525537490844727
+learned_conformal,5,Attitude Control,degradation,True,False,False,,True,0.12825989723205566
+classical_ewma,5,Attitude Control,leak,True,True,False,627.0,True,0.0093536376953125
+learned_conformal,5,Attitude Control,leak,True,True,False,956.0,True,0.12896347045898438
+classical_ewma,5,Attitude Control,overheat,True,True,False,529.0,True,0.009335041046142578
+learned_conformal,5,Attitude Control,overheat,True,True,False,854.0,True,0.12956786155700684
+classical_ewma,5,Attitude Control,dropout,True,True,False,3.0,True,0.009737730026245117
+learned_conformal,5,Attitude Control,dropout,True,True,False,0.0,True,0.13602066040039062
+classical_ewma,5,Attitude Control,saturation,True,True,False,544.0,True,0.009388923645019531
+learned_conformal,5,Attitude Control,saturation,True,True,False,1225.0,True,0.13207459449768066
+classical_ewma,5,Propulsion System,degradation,True,False,False,,True,0.009577751159667969
+learned_conformal,5,Propulsion System,degradation,True,False,False,,False,0.12979555130004883
+classical_ewma,5,Propulsion System,leak,True,True,False,630.0,True,0.009972810745239258
+learned_conformal,5,Propulsion System,leak,True,True,False,1118.0,True,0.12653470039367676
+classical_ewma,5,Propulsion System,overheat,True,True,False,529.0,True,0.009527206420898438
+learned_conformal,5,Propulsion System,overheat,True,True,False,290.0,True,0.1299762725830078
+classical_ewma,5,Propulsion System,dropout,True,True,False,3.0,True,0.009466171264648438
+learned_conformal,5,Propulsion System,dropout,True,True,False,0.0,True,0.12772655487060547
+classical_ewma,5,Propulsion System,saturation,True,True,False,540.0,True,0.009209156036376953
+learned_conformal,5,Propulsion System,saturation,True,True,False,632.0,True,0.1303856372833252
+classical_ewma,5,Communication,degradation,True,False,False,,True,0.009366989135742188
+learned_conformal,5,Communication,degradation,True,False,False,,False,0.12726116180419922
+classical_ewma,5,Communication,leak,True,True,False,1017.0,True,0.009730339050292969
+learned_conformal,5,Communication,leak,True,True,False,1188.0,True,0.13007450103759766
+classical_ewma,5,Communication,overheat,True,True,False,716.0,True,0.009504079818725586
+learned_conformal,5,Communication,overheat,True,True,False,1210.0,True,0.12424898147583008
+classical_ewma,5,Communication,dropout,True,True,False,13.0,True,0.009609460830688477
+learned_conformal,5,Communication,dropout,True,True,False,0.0,True,0.1306471824645996
+classical_ewma,5,Communication,saturation,True,True,False,895.0,True,0.009768486022949219
+learned_conformal,5,Communication,saturation,True,True,False,1071.0,True,0.13077735900878906
+classical_ewma,5,Payload,degradation,True,False,False,,False,0.009883642196655273
+learned_conformal,5,Payload,degradation,True,False,False,,True,0.1296229362487793
+classical_ewma,5,Payload,leak,True,True,False,1274.0,True,0.009637117385864258
+learned_conformal,5,Payload,leak,True,True,False,1123.0,True,0.1350090503692627
+classical_ewma,5,Payload,overheat,True,True,False,702.0,True,0.009212732315063477
+learned_conformal,5,Payload,overheat,True,True,False,1228.0,True,0.127349853515625
+classical_ewma,5,Payload,dropout,True,True,False,10.0,True,0.009483098983764648
+learned_conformal,5,Payload,dropout,True,True,False,0.0,True,0.12970948219299316
+classical_ewma,5,Payload,saturation,True,True,False,719.0,True,0.009538412094116211
+learned_conformal,5,Payload,saturation,True,True,False,1234.0,True,0.1298520565032959
+classical_ewma,5,Data Storage Unit,degradation,True,True,False,1201.0,True,0.010312557220458984
+learned_conformal,5,Data Storage Unit,degradation,True,False,False,,True,0.13054680824279785
+classical_ewma,5,Data Storage Unit,leak,True,True,False,711.0,True,0.009863615036010742
+learned_conformal,5,Data Storage Unit,leak,True,True,False,1117.0,True,0.1300797462463379
+classical_ewma,5,Data Storage Unit,overheat,True,True,False,329.0,True,0.009629011154174805
+learned_conformal,5,Data Storage Unit,overheat,True,True,False,877.0,True,0.12623310089111328
+classical_ewma,5,Data Storage Unit,dropout,True,True,False,2.0,True,0.009978055953979492
+learned_conformal,5,Data Storage Unit,dropout,True,True,False,0.0,True,0.13420796394348145
+classical_ewma,5,Data Storage Unit,saturation,True,True,False,476.0,True,0.009573936462402344
+learned_conformal,5,Data Storage Unit,saturation,True,False,False,,True,0.13116073608398438
+classical_ewma,5,Structure,degradation,True,False,False,,False,0.009786128997802734
+learned_conformal,5,Structure,degradation,True,False,False,,True,0.12514829635620117
+classical_ewma,5,Structure,leak,True,True,False,1280.0,True,0.009393692016601562
+learned_conformal,5,Structure,leak,True,True,False,932.0,True,0.12157821655273438
+classical_ewma,5,Structure,overheat,True,True,False,703.0,True,0.009326696395874023
+learned_conformal,5,Structure,overheat,True,True,False,1036.0,True,0.11632776260375977
+classical_ewma,5,Structure,dropout,True,True,False,13.0,True,0.009859323501586914
+learned_conformal,5,Structure,dropout,True,True,False,0.0,True,0.12250113487243652
+classical_ewma,5,Structure,saturation,True,True,False,721.0,True,0.009474515914916992
+learned_conformal,5,Structure,saturation,True,False,False,,True,0.2014932632446289
+classical_ewma,5,none,none,False,False,False,,,0.009749174118041992
+learned_conformal,5,none,none,False,False,False,,,0.12705683708190918
+classical_ewma,5,none,none,False,False,False,,,0.009256839752197266
+learned_conformal,5,none,none,False,False,False,,,0.12649893760681152
+classical_ewma,5,none,none,False,False,False,,,0.009428262710571289
+learned_conformal,5,none,none,False,False,False,,,0.12436747550964355
+classical_ewma,5,none,none,False,False,False,,,0.0092315673828125
+learned_conformal,5,none,none,False,False,False,,,0.12622308731079102
+classical_ewma,5,none,none,False,False,False,,,0.009145259857177734
+learned_conformal,5,none,none,False,False,False,,,0.12358641624450684
+classical_ewma,5,none,none,False,False,False,,,0.009315013885498047
+learned_conformal,5,none,none,False,False,False,,,0.12556219100952148
+classical_ewma,5,none,none,False,False,False,,,0.009263992309570312
+learned_conformal,5,none,none,False,False,False,,,0.12836146354675293
+classical_ewma,5,none,none,False,False,False,,,0.00917959213256836
+learned_conformal,5,none,none,False,True,False,,,0.12369894981384277
+classical_ewma,6,Power System,degradation,True,False,False,,False,0.009521722793579102
+learned_conformal,6,Power System,degradation,True,False,False,,True,0.13107085227966309
+classical_ewma,6,Power System,leak,True,True,False,1224.0,True,0.009503364562988281
+learned_conformal,6,Power System,leak,True,True,True,-916.0,True,0.12224340438842773
+classical_ewma,6,Power System,overheat,True,True,False,943.0,True,0.009167671203613281
+learned_conformal,6,Power System,overheat,True,True,False,845.0,True,0.12490987777709961
+classical_ewma,6,Power System,dropout,True,True,False,40.0,True,0.010172128677368164
+learned_conformal,6,Power System,dropout,True,True,False,0.0,True,0.12400126457214355
+classical_ewma,6,Power System,saturation,True,True,False,1117.0,True,0.009207487106323242
+learned_conformal,6,Power System,saturation,True,False,False,,True,0.12848424911499023
+classical_ewma,6,Thermal Control,degradation,True,False,False,,False,0.009273529052734375
+learned_conformal,6,Thermal Control,degradation,True,False,False,,True,0.12751460075378418
+classical_ewma,6,Thermal Control,leak,True,False,False,,False,0.00928950309753418
+learned_conformal,6,Thermal Control,leak,True,True,False,967.0,True,0.12387895584106445
+classical_ewma,6,Thermal Control,overheat,True,False,False,,True,0.009336233139038086
+learned_conformal,6,Thermal Control,overheat,True,True,False,1017.0,True,0.12728524208068848
+classical_ewma,6,Thermal Control,dropout,True,False,False,,True,0.009122133255004883
+learned_conformal,6,Thermal Control,dropout,True,True,False,0.0,True,0.12833499908447266
+classical_ewma,6,Thermal Control,saturation,True,False,False,,True,0.009711980819702148
+learned_conformal,6,Thermal Control,saturation,True,False,False,,True,0.12276029586791992
+classical_ewma,6,Attitude Control,degradation,True,False,False,,True,0.009361982345581055
+learned_conformal,6,Attitude Control,degradation,True,False,False,,False,0.12654376029968262
+classical_ewma,6,Attitude Control,leak,True,True,False,644.0,True,0.009209156036376953
+learned_conformal,6,Attitude Control,leak,True,True,False,760.0,True,0.12384510040283203
+classical_ewma,6,Attitude Control,overheat,True,True,False,533.0,True,0.009162664413452148
+learned_conformal,6,Attitude Control,overheat,True,True,False,668.0,True,0.12912845611572266
+classical_ewma,6,Attitude Control,dropout,True,True,False,3.0,True,0.009397268295288086
+learned_conformal,6,Attitude Control,dropout,True,True,False,0.0,True,0.126389741897583
+classical_ewma,6,Attitude Control,saturation,True,True,False,544.0,True,0.009380340576171875
+learned_conformal,6,Attitude Control,saturation,True,True,False,1047.0,True,0.12188839912414551
+classical_ewma,6,Propulsion System,degradation,True,False,False,,False,0.009209156036376953
+learned_conformal,6,Propulsion System,degradation,True,False,False,,False,0.12384939193725586
+classical_ewma,6,Propulsion System,leak,True,True,False,631.0,True,0.009653329849243164
+learned_conformal,6,Propulsion System,leak,True,True,False,550.0,True,0.11888766288757324
+classical_ewma,6,Propulsion System,overheat,True,True,False,525.0,True,0.009289026260375977
+learned_conformal,6,Propulsion System,overheat,True,True,False,666.0,True,0.11482524871826172
+classical_ewma,6,Propulsion System,dropout,True,True,False,3.0,True,0.009341955184936523
+learned_conformal,6,Propulsion System,dropout,True,True,False,0.0,True,0.11600518226623535
+classical_ewma,6,Propulsion System,saturation,True,True,False,541.0,True,0.009478569030761719
+learned_conformal,6,Propulsion System,saturation,True,True,False,1244.0,True,0.12213301658630371
+classical_ewma,6,Communication,degradation,True,False,False,,False,0.009201288223266602
+learned_conformal,6,Communication,degradation,True,False,False,,False,0.11561989784240723
+classical_ewma,6,Communication,leak,True,True,False,1014.0,True,0.009912729263305664
+learned_conformal,6,Communication,leak,True,True,False,1198.0,True,0.12189579010009766
+classical_ewma,6,Communication,overheat,True,True,False,713.0,True,0.00935983657836914
+learned_conformal,6,Communication,overheat,True,True,False,1076.0,True,0.1152956485748291
+classical_ewma,6,Communication,dropout,True,True,False,14.0,True,0.009124040603637695
+learned_conformal,6,Communication,dropout,True,True,False,0.0,True,0.1294870376586914
+classical_ewma,6,Communication,saturation,True,True,False,898.0,True,0.009681463241577148
+learned_conformal,6,Communication,saturation,True,False,False,,True,0.12700486183166504
+classical_ewma,6,Payload,degradation,True,False,False,,False,0.009582281112670898
+learned_conformal,6,Payload,degradation,True,False,False,,True,0.1320781707763672
+classical_ewma,6,Payload,leak,True,True,False,1101.0,True,0.009177207946777344
+learned_conformal,6,Payload,leak,True,True,False,976.0,True,0.12825798988342285
+classical_ewma,6,Payload,overheat,True,True,False,542.0,True,0.009161949157714844
+learned_conformal,6,Payload,overheat,True,True,False,1041.0,True,0.12931394577026367
+classical_ewma,6,Payload,dropout,True,True,False,9.0,True,0.009449243545532227
+learned_conformal,6,Payload,dropout,True,True,True,-1317.0,True,0.12706351280212402
+classical_ewma,6,Payload,saturation,True,True,False,710.0,True,0.009236812591552734
+learned_conformal,6,Payload,saturation,True,False,False,,True,0.12864041328430176
+classical_ewma,6,Data Storage Unit,degradation,True,True,False,1202.0,True,0.009633302688598633
+learned_conformal,6,Data Storage Unit,degradation,True,True,True,-1048.0,True,0.12962603569030762
+classical_ewma,6,Data Storage Unit,leak,True,True,False,700.0,True,0.009211301803588867
+learned_conformal,6,Data Storage Unit,leak,True,True,False,880.0,True,0.1291050910949707
+classical_ewma,6,Data Storage Unit,overheat,True,True,False,340.0,True,0.009568929672241211
+learned_conformal,6,Data Storage Unit,overheat,True,True,False,1037.0,True,0.13095903396606445
+classical_ewma,6,Data Storage Unit,dropout,True,True,False,2.0,True,0.009677648544311523
+learned_conformal,6,Data Storage Unit,dropout,True,True,False,0.0,True,0.12703943252563477
+classical_ewma,6,Data Storage Unit,saturation,True,True,False,479.0,True,0.009229183197021484
+learned_conformal,6,Data Storage Unit,saturation,True,False,False,,True,0.12599778175354004
+classical_ewma,6,Structure,degradation,True,False,False,,False,0.009190082550048828
+learned_conformal,6,Structure,degradation,True,False,False,,True,0.13286566734313965
+classical_ewma,6,Structure,leak,True,False,False,,True,0.009343385696411133
+learned_conformal,6,Structure,leak,True,True,False,997.0,True,0.1281881332397461
+classical_ewma,6,Structure,overheat,True,True,False,706.0,True,0.009259700775146484
+learned_conformal,6,Structure,overheat,True,True,False,1198.0,True,0.13183188438415527
+classical_ewma,6,Structure,dropout,True,True,False,18.0,True,0.009512186050415039
+learned_conformal,6,Structure,dropout,True,True,False,0.0,True,0.13153815269470215
+classical_ewma,6,Structure,saturation,True,True,False,720.0,True,0.009171247482299805
+learned_conformal,6,Structure,saturation,True,False,False,,True,0.13040781021118164
+classical_ewma,6,none,none,False,False,False,,,0.00926351547241211
+learned_conformal,6,none,none,False,False,False,,,0.12726855278015137
+classical_ewma,6,none,none,False,False,False,,,0.009170770645141602
+learned_conformal,6,none,none,False,False,False,,,0.124298095703125
+classical_ewma,6,none,none,False,False,False,,,0.009514331817626953
+learned_conformal,6,none,none,False,False,False,,,0.12716197967529297
+classical_ewma,6,none,none,False,False,False,,,0.00928640365600586
+learned_conformal,6,none,none,False,False,False,,,0.13150620460510254
+classical_ewma,6,none,none,False,False,False,,,0.00936269760131836
+learned_conformal,6,none,none,False,False,False,,,0.12775683403015137
+classical_ewma,6,none,none,False,False,False,,,0.009571075439453125
+learned_conformal,6,none,none,False,False,False,,,0.12908554077148438
+classical_ewma,6,none,none,False,False,False,,,0.009122371673583984
+learned_conformal,6,none,none,False,False,False,,,0.13216805458068848
+classical_ewma,6,none,none,False,False,False,,,0.009643316268920898
+learned_conformal,6,none,none,False,False,False,,,0.12739944458007812
+classical_ewma,7,Power System,degradation,True,False,False,,False,0.009147405624389648
+learned_conformal,7,Power System,degradation,True,False,False,,True,0.13165855407714844
+classical_ewma,7,Power System,leak,True,True,False,1229.0,True,0.00939321517944336
+learned_conformal,7,Power System,leak,True,True,False,970.0,True,0.12870049476623535
+classical_ewma,7,Power System,overheat,True,True,False,1105.0,True,0.009209632873535156
+learned_conformal,7,Power System,overheat,True,True,False,1191.0,True,0.1195981502532959
+classical_ewma,7,Power System,dropout,True,True,False,39.0,True,0.0091705322265625
+learned_conformal,7,Power System,dropout,True,True,False,0.0,True,0.11931586265563965
+classical_ewma,7,Power System,saturation,True,True,False,1118.0,True,0.009696245193481445
+learned_conformal,7,Power System,saturation,True,False,False,,True,0.1266343593597412
+classical_ewma,7,Thermal Control,degradation,True,False,False,,False,0.009310007095336914
+learned_conformal,7,Thermal Control,degradation,True,False,False,,True,0.11670804023742676
+classical_ewma,7,Thermal Control,leak,True,False,False,,False,0.009224653244018555
+learned_conformal,7,Thermal Control,leak,True,True,False,789.0,True,0.11905884742736816
+classical_ewma,7,Thermal Control,overheat,True,False,False,,True,0.009648323059082031
+learned_conformal,7,Thermal Control,overheat,True,True,False,1075.0,True,0.11906719207763672
+classical_ewma,7,Thermal Control,dropout,True,False,False,,True,0.009490489959716797
+learned_conformal,7,Thermal Control,dropout,True,True,False,0.0,True,0.1281871795654297
+classical_ewma,7,Thermal Control,saturation,True,False,False,,False,0.009525060653686523
+learned_conformal,7,Thermal Control,saturation,True,True,False,862.0,True,0.12809014320373535
+classical_ewma,7,Attitude Control,degradation,True,False,False,,True,0.00973963737487793
+learned_conformal,7,Attitude Control,degradation,True,False,False,,True,0.13092303276062012
+classical_ewma,7,Attitude Control,leak,True,True,False,633.0,True,0.009131669998168945
+learned_conformal,7,Attitude Control,leak,True,True,True,-864.0,True,0.13108420372009277
+classical_ewma,7,Attitude Control,overheat,True,True,False,526.0,True,0.009370803833007812
+learned_conformal,7,Attitude Control,overheat,True,True,False,1131.0,True,0.12682843208312988
+classical_ewma,7,Attitude Control,dropout,True,True,False,3.0,True,0.00931549072265625
+learned_conformal,7,Attitude Control,dropout,True,True,False,0.0,True,0.13522005081176758
+classical_ewma,7,Attitude Control,saturation,True,True,False,544.0,True,0.00922703742980957
+learned_conformal,7,Attitude Control,saturation,True,True,False,1044.0,True,0.12697696685791016
+classical_ewma,7,Propulsion System,degradation,True,False,False,,True,0.009314537048339844
+learned_conformal,7,Propulsion System,degradation,True,False,False,,True,0.13013553619384766
+classical_ewma,7,Propulsion System,leak,True,True,False,627.0,True,0.009090900421142578
+learned_conformal,7,Propulsion System,leak,True,True,False,582.0,True,0.1255486011505127
+classical_ewma,7,Propulsion System,overheat,True,True,False,530.0,True,0.009386539459228516
+learned_conformal,7,Propulsion System,overheat,True,True,False,269.0,True,0.12889456748962402
+classical_ewma,7,Propulsion System,dropout,True,True,False,3.0,True,0.009936094284057617
+learned_conformal,7,Propulsion System,dropout,True,True,False,0.0,True,0.12893939018249512
+classical_ewma,7,Propulsion System,saturation,True,True,False,537.0,True,0.009830474853515625
+learned_conformal,7,Propulsion System,saturation,True,True,False,273.0,True,0.1296229362487793
+classical_ewma,7,Communication,degradation,True,False,False,,False,0.009163618087768555
+learned_conformal,7,Communication,degradation,True,False,False,,True,0.13350343704223633
+classical_ewma,7,Communication,leak,True,True,False,1015.0,True,0.009303569793701172
+learned_conformal,7,Communication,leak,True,True,False,1136.0,True,0.1226654052734375
+classical_ewma,7,Communication,overheat,True,True,False,723.0,True,0.009926557540893555
+learned_conformal,7,Communication,overheat,True,True,False,685.0,True,0.13111615180969238
+classical_ewma,7,Communication,dropout,True,True,False,12.0,True,0.009821653366088867
+learned_conformal,7,Communication,dropout,True,True,False,0.0,True,0.12925219535827637
+classical_ewma,7,Communication,saturation,True,True,False,894.0,True,0.009359598159790039
+learned_conformal,7,Communication,saturation,True,True,False,861.0,True,0.1290287971496582
+classical_ewma,7,Payload,degradation,True,False,False,,False,0.009250640869140625
+learned_conformal,7,Payload,degradation,True,False,False,,True,0.13441109657287598
+classical_ewma,7,Payload,leak,True,True,False,1285.0,True,0.009659290313720703
+learned_conformal,7,Payload,leak,True,True,False,987.0,True,0.12557101249694824
+classical_ewma,7,Payload,overheat,True,True,False,698.0,True,0.009564638137817383
+learned_conformal,7,Payload,overheat,True,True,False,668.0,True,0.12900471687316895
+classical_ewma,7,Payload,dropout,True,True,False,11.0,True,0.009398221969604492
+learned_conformal,7,Payload,dropout,True,True,False,0.0,True,0.12931203842163086
+classical_ewma,7,Payload,saturation,True,True,False,714.0,True,0.009423971176147461
+learned_conformal,7,Payload,saturation,True,True,False,657.0,True,0.12998127937316895
+classical_ewma,7,Data Storage Unit,degradation,True,True,False,1209.0,True,0.009426593780517578
+learned_conformal,7,Data Storage Unit,degradation,True,False,False,,True,0.12384176254272461
+classical_ewma,7,Data Storage Unit,leak,True,True,False,704.0,True,0.009282112121582031
+learned_conformal,7,Data Storage Unit,leak,True,True,False,1177.0,True,0.1291050910949707
+classical_ewma,7,Data Storage Unit,overheat,True,True,False,321.0,True,0.009179353713989258
+learned_conformal,7,Data Storage Unit,overheat,True,False,False,,True,0.13135528564453125
+classical_ewma,7,Data Storage Unit,dropout,True,True,False,2.0,True,0.00908350944519043
+learned_conformal,7,Data Storage Unit,dropout,True,True,False,0.0,True,0.12847042083740234
+classical_ewma,7,Data Storage Unit,saturation,True,True,False,365.0,True,0.009298086166381836
+learned_conformal,7,Data Storage Unit,saturation,True,False,False,,True,0.11992883682250977
+classical_ewma,7,Structure,degradation,True,False,False,,False,0.009083986282348633
+learned_conformal,7,Structure,degradation,True,False,False,,True,0.1174783706665039
+classical_ewma,7,Structure,leak,True,False,False,,True,0.009721755981445312
+learned_conformal,7,Structure,leak,True,True,False,978.0,True,0.12017965316772461
+classical_ewma,7,Structure,overheat,True,True,False,700.0,True,0.009485006332397461
+learned_conformal,7,Structure,overheat,True,True,False,637.0,True,0.1249549388885498
+classical_ewma,7,Structure,dropout,True,True,False,15.0,True,0.009426355361938477
+learned_conformal,7,Structure,dropout,True,True,False,0.0,True,0.11353135108947754
+classical_ewma,7,Structure,saturation,True,True,False,718.0,True,0.009162664413452148
+learned_conformal,7,Structure,saturation,True,True,False,1253.0,True,0.12671542167663574
+classical_ewma,7,none,none,False,False,False,,,0.009469985961914062
+learned_conformal,7,none,none,False,False,False,,,0.12080740928649902
+classical_ewma,7,none,none,False,False,False,,,0.009624958038330078
+learned_conformal,7,none,none,False,False,False,,,0.13364958763122559
+classical_ewma,7,none,none,False,False,False,,,0.009596586227416992
+learned_conformal,7,none,none,False,False,False,,,0.1306920051574707
+classical_ewma,7,none,none,False,False,False,,,0.009229421615600586
+learned_conformal,7,none,none,False,False,False,,,0.1327672004699707
+classical_ewma,7,none,none,False,False,False,,,0.009223222732543945
+learned_conformal,7,none,none,False,False,False,,,0.13152170181274414
+classical_ewma,7,none,none,False,False,False,,,0.00966954231262207
+learned_conformal,7,none,none,False,False,False,,,0.12755918502807617
+classical_ewma,7,none,none,False,False,False,,,0.009550809860229492
+learned_conformal,7,none,none,False,False,False,,,0.1313612461090088
+classical_ewma,7,none,none,False,False,False,,,0.009633779525756836
+learned_conformal,7,none,none,False,False,False,,,0.13050627708435059
+classical_ewma,8,Power System,degradation,True,False,False,,False,0.009767770767211914
+learned_conformal,8,Power System,degradation,True,False,False,,True,0.12987279891967773
+classical_ewma,8,Power System,leak,True,True,False,1219.0,True,0.009751081466674805
+learned_conformal,8,Power System,leak,True,True,False,1156.0,True,0.12911009788513184
+classical_ewma,8,Power System,overheat,True,True,False,1108.0,True,0.009528398513793945
+learned_conformal,8,Power System,overheat,True,True,False,1064.0,True,0.1258697509765625
+classical_ewma,8,Power System,dropout,True,True,False,35.0,True,0.009276866912841797
+learned_conformal,8,Power System,dropout,True,True,False,0.0,True,0.13107013702392578
+classical_ewma,8,Power System,saturation,True,True,False,1115.0,True,0.00911402702331543
+learned_conformal,8,Power System,saturation,True,False,False,,True,0.12598109245300293
+classical_ewma,8,Thermal Control,degradation,True,False,False,,False,0.009326457977294922
+learned_conformal,8,Thermal Control,degradation,True,False,False,,True,0.12994027137756348
+classical_ewma,8,Thermal Control,leak,True,False,False,,False,0.009488344192504883
+learned_conformal,8,Thermal Control,leak,True,True,False,942.0,True,0.12850451469421387
+classical_ewma,8,Thermal Control,overheat,True,False,False,,True,0.009416818618774414
+learned_conformal,8,Thermal Control,overheat,True,True,False,1173.0,True,0.11787843704223633
+classical_ewma,8,Thermal Control,dropout,True,False,False,,True,0.009035110473632812
+learned_conformal,8,Thermal Control,dropout,True,True,False,0.0,True,0.127854585647583
+classical_ewma,8,Thermal Control,saturation,True,False,False,,True,0.010090351104736328
+learned_conformal,8,Thermal Control,saturation,True,False,False,,True,0.12903404235839844
+classical_ewma,8,Attitude Control,degradation,True,False,False,,True,0.009302854537963867
+learned_conformal,8,Attitude Control,degradation,True,False,False,,True,0.1319584846496582
+classical_ewma,8,Attitude Control,leak,True,True,False,632.0,True,0.009855270385742188
+learned_conformal,8,Attitude Control,leak,True,True,False,1069.0,True,0.12470293045043945
+classical_ewma,8,Attitude Control,overheat,True,True,False,536.0,True,0.009204626083374023
+learned_conformal,8,Attitude Control,overheat,True,True,False,869.0,True,0.12953662872314453
+classical_ewma,8,Attitude Control,dropout,True,True,False,4.0,True,0.009575366973876953
+learned_conformal,8,Attitude Control,dropout,True,True,False,0.0,True,0.12731647491455078
+classical_ewma,8,Attitude Control,saturation,True,True,False,543.0,True,0.009334564208984375
+learned_conformal,8,Attitude Control,saturation,True,True,False,1075.0,True,0.12999510765075684
+classical_ewma,8,Propulsion System,degradation,True,False,False,,False,0.009412288665771484
+learned_conformal,8,Propulsion System,degradation,True,False,False,,True,0.11082649230957031
+classical_ewma,8,Propulsion System,leak,True,True,False,632.0,True,0.008972406387329102
+learned_conformal,8,Propulsion System,leak,True,True,False,1122.0,True,0.19888997077941895
+classical_ewma,8,Propulsion System,overheat,True,True,False,531.0,True,0.009081125259399414
+learned_conformal,8,Propulsion System,overheat,True,True,False,472.0,True,0.12413811683654785
+classical_ewma,8,Propulsion System,dropout,True,True,False,3.0,True,0.009261131286621094
+learned_conformal,8,Propulsion System,dropout,True,True,False,0.0,True,0.1297440528869629
+classical_ewma,8,Propulsion System,saturation,True,True,False,540.0,True,0.009291887283325195
+learned_conformal,8,Propulsion System,saturation,True,True,False,473.0,True,0.11443686485290527
+classical_ewma,8,Communication,degradation,True,False,False,,False,0.00935816764831543
+learned_conformal,8,Communication,degradation,True,False,False,,True,0.11530137062072754
+classical_ewma,8,Communication,leak,True,True,False,1016.0,True,0.00917673110961914
+learned_conformal,8,Communication,leak,True,True,False,932.0,True,0.11633968353271484
+classical_ewma,8,Communication,overheat,True,True,False,723.0,True,0.009090423583984375
+learned_conformal,8,Communication,overheat,True,True,False,678.0,True,0.11486601829528809
+classical_ewma,8,Communication,dropout,True,True,False,12.0,True,0.009056806564331055
+learned_conformal,8,Communication,dropout,True,True,False,0.0,True,0.11025452613830566
+classical_ewma,8,Communication,saturation,True,True,False,890.0,True,0.00936579704284668
+learned_conformal,8,Communication,saturation,True,False,False,,True,0.1154940128326416
+classical_ewma,8,Payload,degradation,True,False,False,,False,0.009128570556640625
+learned_conformal,8,Payload,degradation,True,False,False,,True,0.11778736114501953
+classical_ewma,8,Payload,leak,True,True,False,1281.0,True,0.009086370468139648
+learned_conformal,8,Payload,leak,True,True,False,1123.0,True,0.1269087791442871
+classical_ewma,8,Payload,overheat,True,True,False,698.0,True,0.009217262268066406
+learned_conformal,8,Payload,overheat,True,True,False,903.0,True,0.131242036819458
+classical_ewma,8,Payload,dropout,True,True,False,12.0,True,0.009312868118286133
+learned_conformal,8,Payload,dropout,True,True,False,0.0,True,0.12519621849060059
+classical_ewma,8,Payload,saturation,True,True,False,715.0,True,0.009138345718383789
+learned_conformal,8,Payload,saturation,True,False,False,,True,0.12917327880859375
+classical_ewma,8,Data Storage Unit,degradation,True,True,False,1211.0,True,0.009068489074707031
+learned_conformal,8,Data Storage Unit,degradation,True,False,False,,False,0.12676000595092773
+classical_ewma,8,Data Storage Unit,leak,True,True,False,728.0,True,0.009058237075805664
+learned_conformal,8,Data Storage Unit,leak,True,True,False,1237.0,True,0.12770628929138184
+classical_ewma,8,Data Storage Unit,overheat,True,True,False,340.0,True,0.009598493576049805
+learned_conformal,8,Data Storage Unit,overheat,True,True,False,1229.0,True,0.127976655960083
+classical_ewma,8,Data Storage Unit,dropout,True,True,False,2.0,True,0.009287357330322266
+learned_conformal,8,Data Storage Unit,dropout,True,True,False,0.0,True,0.1263127326965332
+classical_ewma,8,Data Storage Unit,saturation,True,True,False,377.0,True,0.00905299186706543
+learned_conformal,8,Data Storage Unit,saturation,True,False,False,,True,0.1282501220703125
+classical_ewma,8,Structure,degradation,True,False,False,,False,0.009644031524658203
+learned_conformal,8,Structure,degradation,True,False,False,,False,0.13061952590942383
+classical_ewma,8,Structure,leak,True,True,False,1282.0,True,0.009059906005859375
+learned_conformal,8,Structure,leak,True,True,False,1013.0,True,0.12846159934997559
+classical_ewma,8,Structure,overheat,True,True,False,704.0,True,0.009454727172851562
+learned_conformal,8,Structure,overheat,True,True,False,482.0,True,0.12879252433776855
+classical_ewma,8,Structure,dropout,True,True,False,17.0,True,0.009112834930419922
+learned_conformal,8,Structure,dropout,True,True,False,0.0,True,0.1280813217163086
+classical_ewma,8,Structure,saturation,True,True,False,734.0,True,0.009834766387939453
+learned_conformal,8,Structure,saturation,True,False,False,,True,0.12948083877563477
+classical_ewma,8,none,none,False,False,False,,,0.00918126106262207
+learned_conformal,8,none,none,False,False,False,,,0.1248624324798584
+classical_ewma,8,none,none,False,False,False,,,0.009083747863769531
+learned_conformal,8,none,none,False,False,False,,,0.12780404090881348
+classical_ewma,8,none,none,False,False,False,,,0.009002208709716797
+learned_conformal,8,none,none,False,False,False,,,0.1236572265625
+classical_ewma,8,none,none,False,False,False,,,0.009103775024414062
+learned_conformal,8,none,none,False,True,False,,,0.12924528121948242
+classical_ewma,8,none,none,False,False,False,,,0.008997201919555664
+learned_conformal,8,none,none,False,False,False,,,0.1222527027130127
+classical_ewma,8,none,none,False,False,False,,,0.009212493896484375
+learned_conformal,8,none,none,False,False,False,,,0.12783122062683105
+classical_ewma,8,none,none,False,False,False,,,0.009231805801391602
+learned_conformal,8,none,none,False,True,False,,,0.1275041103363037
+classical_ewma,8,none,none,False,False,False,,,0.009133100509643555
+learned_conformal,8,none,none,False,False,False,,,0.12566471099853516
+classical_ewma,9,Power System,degradation,True,False,False,,False,0.009180307388305664
+learned_conformal,9,Power System,degradation,True,True,False,831.0,True,0.12761855125427246
+classical_ewma,9,Power System,leak,True,True,False,1220.0,True,0.009107828140258789
+learned_conformal,9,Power System,leak,True,False,False,,True,0.1286935806274414
+classical_ewma,9,Power System,overheat,True,True,False,1108.0,True,0.009195566177368164
+learned_conformal,9,Power System,overheat,True,True,False,1019.0,True,0.1252460479736328
+classical_ewma,9,Power System,dropout,True,True,False,36.0,True,0.009770870208740234
+learned_conformal,9,Power System,dropout,True,True,False,0.0,True,0.13837122917175293
+classical_ewma,9,Power System,saturation,True,True,False,1117.0,True,0.008989810943603516
+learned_conformal,9,Power System,saturation,True,True,False,1028.0,True,0.1220548152923584
+classical_ewma,9,Thermal Control,degradation,True,False,False,,False,0.00910186767578125
+learned_conformal,9,Thermal Control,degradation,True,False,False,,True,0.1184842586517334
+classical_ewma,9,Thermal Control,leak,True,False,False,,False,0.009131669998168945
+learned_conformal,9,Thermal Control,leak,True,True,False,763.0,True,0.1169588565826416
+classical_ewma,9,Thermal Control,overheat,True,False,False,,True,0.009664535522460938
+learned_conformal,9,Thermal Control,overheat,True,True,False,997.0,True,0.11861085891723633
+classical_ewma,9,Thermal Control,dropout,True,False,False,,True,0.009115457534790039
+learned_conformal,9,Thermal Control,dropout,True,True,False,0.0,True,0.12601613998413086
+classical_ewma,9,Thermal Control,saturation,True,False,False,,True,0.009234905242919922
+learned_conformal,9,Thermal Control,saturation,True,False,False,,True,0.1261904239654541
+classical_ewma,9,Attitude Control,degradation,True,False,False,,False,0.009526729583740234
+learned_conformal,9,Attitude Control,degradation,True,False,False,,True,0.12499737739562988
+classical_ewma,9,Attitude Control,leak,True,True,False,631.0,True,0.009248495101928711
+learned_conformal,9,Attitude Control,leak,True,True,False,1109.0,True,0.1288442611694336
+classical_ewma,9,Attitude Control,overheat,True,True,False,531.0,True,0.009076356887817383
+learned_conformal,9,Attitude Control,overheat,True,True,False,449.0,True,0.12518835067749023
+classical_ewma,9,Attitude Control,dropout,True,True,False,4.0,True,0.00902700424194336
+learned_conformal,9,Attitude Control,dropout,True,True,False,0.0,True,0.12609410285949707
+classical_ewma,9,Attitude Control,saturation,True,True,False,540.0,True,0.009308338165283203
+learned_conformal,9,Attitude Control,saturation,True,True,False,305.0,True,0.12915945053100586
+classical_ewma,9,Propulsion System,degradation,True,False,False,,True,0.009177446365356445
+learned_conformal,9,Propulsion System,degradation,True,False,False,,True,0.12636709213256836
+classical_ewma,9,Propulsion System,leak,True,True,False,627.0,True,0.009128808975219727
+learned_conformal,9,Propulsion System,leak,True,True,True,-1216.0,True,0.12478923797607422
+classical_ewma,9,Propulsion System,overheat,True,True,False,528.0,True,0.009124994277954102
+learned_conformal,9,Propulsion System,overheat,True,True,False,288.0,True,0.1241004467010498
+classical_ewma,9,Propulsion System,dropout,True,True,False,2.0,True,0.009331226348876953
+learned_conformal,9,Propulsion System,dropout,True,True,False,0.0,True,0.12831330299377441
+classical_ewma,9,Propulsion System,saturation,True,True,False,542.0,True,0.009049654006958008
+learned_conformal,9,Propulsion System,saturation,True,True,True,-199.0,True,0.1273634433746338
+classical_ewma,9,Communication,degradation,True,False,False,,False,0.009144783020019531
+learned_conformal,9,Communication,degradation,True,False,False,,True,0.12464594841003418
+classical_ewma,9,Communication,leak,True,True,False,1017.0,True,0.009335994720458984
+learned_conformal,9,Communication,leak,True,True,False,973.0,True,0.13173437118530273
+classical_ewma,9,Communication,overheat,True,True,False,712.0,True,0.009077310562133789
+learned_conformal,9,Communication,overheat,True,True,False,686.0,True,0.1246645450592041
+classical_ewma,9,Communication,dropout,True,True,False,13.0,True,0.009071111679077148
+learned_conformal,9,Communication,dropout,True,True,False,0.0,True,0.1279430389404297
+classical_ewma,9,Communication,saturation,True,True,False,897.0,True,0.009224414825439453
+learned_conformal,9,Communication,saturation,True,True,False,1022.0,True,0.12853193283081055
+classical_ewma,9,Payload,degradation,True,False,False,,False,0.009297609329223633
+learned_conformal,9,Payload,degradation,True,False,False,,True,0.12777400016784668
+classical_ewma,9,Payload,leak,True,True,False,1111.0,True,0.009094715118408203
+learned_conformal,9,Payload,leak,True,True,False,931.0,True,0.12938785552978516
+classical_ewma,9,Payload,overheat,True,True,False,697.0,True,0.009510517120361328
+learned_conformal,9,Payload,overheat,True,True,False,459.0,True,0.12246918678283691
+classical_ewma,9,Payload,dropout,True,True,False,13.0,True,0.009009122848510742
+learned_conformal,9,Payload,dropout,True,True,False,0.0,True,0.12577080726623535
+classical_ewma,9,Payload,saturation,True,True,False,711.0,True,0.009162425994873047
+learned_conformal,9,Payload,saturation,True,False,False,,True,0.12918829917907715
+classical_ewma,9,Data Storage Unit,degradation,True,True,False,1231.0,True,0.009355306625366211
+learned_conformal,9,Data Storage Unit,degradation,True,False,False,,False,0.12839531898498535
+classical_ewma,9,Data Storage Unit,leak,True,True,False,690.0,True,0.009204864501953125
+learned_conformal,9,Data Storage Unit,leak,True,True,False,845.0,True,0.12291288375854492
+classical_ewma,9,Data Storage Unit,overheat,True,True,False,335.0,True,0.00907444953918457
+learned_conformal,9,Data Storage Unit,overheat,True,False,False,,True,0.12583708763122559
+classical_ewma,9,Data Storage Unit,dropout,True,True,False,2.0,True,0.00920248031616211
+learned_conformal,9,Data Storage Unit,dropout,True,True,False,0.0,True,0.13008522987365723
+classical_ewma,9,Data Storage Unit,saturation,True,True,False,478.0,True,0.009124755859375
+learned_conformal,9,Data Storage Unit,saturation,True,False,False,,True,0.12417054176330566
+classical_ewma,9,Structure,degradation,True,False,False,,False,0.009161949157714844
+learned_conformal,9,Structure,degradation,True,False,False,,True,0.12105441093444824
+classical_ewma,9,Structure,leak,True,True,False,1284.0,True,0.009075164794921875
+learned_conformal,9,Structure,leak,True,True,False,1046.0,True,0.11591029167175293
+classical_ewma,9,Structure,overheat,True,True,False,708.0,True,0.009066104888916016
+learned_conformal,9,Structure,overheat,True,True,False,853.0,True,0.11882591247558594
+classical_ewma,9,Structure,dropout,True,True,False,17.0,True,0.009709835052490234
+learned_conformal,9,Structure,dropout,True,True,False,0.0,True,0.12011027336120605
+classical_ewma,9,Structure,saturation,True,True,False,724.0,True,0.009250402450561523
+learned_conformal,9,Structure,saturation,True,True,True,-296.0,True,0.12199878692626953
+classical_ewma,9,none,none,False,False,False,,,0.00935220718383789
+learned_conformal,9,none,none,False,False,False,,,0.12435531616210938
+classical_ewma,9,none,none,False,False,False,,,0.00913381576538086
+learned_conformal,9,none,none,False,False,False,,,0.1268453598022461
+classical_ewma,9,none,none,False,False,False,,,0.009440898895263672
+learned_conformal,9,none,none,False,False,False,,,0.13059544563293457
+classical_ewma,9,none,none,False,False,False,,,0.009483098983764648
+learned_conformal,9,none,none,False,False,False,,,0.12673521041870117
+classical_ewma,9,none,none,False,False,False,,,0.009613752365112305
+learned_conformal,9,none,none,False,False,False,,,0.13056683540344238
+classical_ewma,9,none,none,False,False,False,,,0.009490251541137695
+learned_conformal,9,none,none,False,False,False,,,0.13118433952331543
+classical_ewma,9,none,none,False,False,False,,,0.00983738899230957
+learned_conformal,9,none,none,False,False,False,,,0.12782955169677734
+classical_ewma,9,none,none,False,False,False,,,0.009121417999267578
+learned_conformal,9,none,none,False,False,False,,,0.13146662712097168

@@ -1,0 +1,15 @@
+\begin{table}[t]\centering\scriptsize
+\caption{Test-half corrected event-wise $F_{0.5}$ for every arm and alarm layer (mean $\pm$ sd over seeds; $n$ seeds). The conformal-BH column is the pre-registered primary layer, and the other columns are secondary. ACI is the point-level adaptive conformal comparator. FA/yr: false alarms per year under conformal-BH.}\label{tab:ablations}
+\begin{tabular}{lllccccccc}\toprule
+M & set & Arm & threshold & conformal-BH & rolling BH & ACI & ACI + events & FA/yr & $n$\\\midrule
+1 & full & A1: AR(8), OOF & 0.428 & 0.428 & 0.101 & 0.000 & 0.008 & 1.1 & 1\\
+1 & full & A2: XGBoost & 0.613 $\pm$ 0.159 & 0.544 $\pm$ 0.236 & 0.087 $\pm$ 0.080 & 0.000 $\pm$ 0.000 & 0.046 $\pm$ 0.049 & 8.5 & 5\\
+1 & full & A3: TCN & 0.282 $\pm$ 0.202 & 0.205 $\pm$ 0.114 & 0.323 $\pm$ 0.297 & 0.000 $\pm$ 0.000 & 0.003 $\pm$ 0.007 & 20.9 & 5\\
+1 & full & A3 without residual inputs & 0.276 $\pm$ 0.103 & 0.249 $\pm$ 0.114 & 0.000 $\pm$ 0.000 & 0.000 $\pm$ 0.000 & 0.005 $\pm$ 0.007 & 19.0 & 3\\
+1 & full & A3 with 2 classes & 0.363 $\pm$ 0.270 & 0.196 $\pm$ 0.120 & 0.084 $\pm$ 0.146 & 0.000 $\pm$ 0.000 & 0.000 $\pm$ 0.001 & 26.7 & 3\\
+1 & lightweight & A1: AR(8), OOF & 0.350 & 0.025 & 0.130 & 0.000 & 0.000 & 11.9 & 1\\
+2 & full & A1: AR(8), OOF & 0.977 & 0.874 & 0.356 & 0.001 & 0.000 & 0.0 & 1\\
+2 & full & A2: XGBoost & 0.819 $\pm$ 0.055 & 0.904 $\pm$ 0.050 & 0.244 $\pm$ 0.050 & 0.001 $\pm$ 0.000 & 0.013 $\pm$ 0.029 & 3.5 & 5\\
+2 & full & A3: TCN & 0.853 $\pm$ 0.079 & 0.875 $\pm$ 0.058 & 0.487 $\pm$ 0.092 & 0.001 $\pm$ 0.000 & 0.005 $\pm$ 0.007 & 7.7 & 5\\
+2 & lightweight & A1: AR(8), OOF & 0.978 & 0.978 & 0.529 & 0.002 & 0.000 & 0.6 & 1\\
+\bottomrule\end{tabular}\end{table}
