@@ -1,0 +1,20 @@
+digraph G {
+
+  graph [fontname="Helvetica", fontsize=11, bgcolor="#fcfcfb", pad=0.25, nodesep=0.35, ranksep=0.45];
+  node  [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", fillcolor="#ffffff",
+         color="#52514e", penwidth=1.0, margin="0.12,0.06"];
+  edge  [fontname="Helvetica", fontsize=9, color="#52514e", arrowsize=0.7];
+
+  rankdir=TB;
+  a [label="simulate_telemetry(hours=24, dt=30 s, faults, seed)\n→ 2880 × 16 samples", fillcolor="#dbe8f8"];
+  b [label="monitor: HealthMonitor().fit().score()   or   LearnedHealthMonitor\n→ anomaly score A(t), subsystem degradation D_s(t), first alarm", fillcolor="#dbe8f8"];
+  c [label="health = D_s at the last sample;  score = A at the last sample", fillcolor="#ecebe6"];
+  d [label="assess_hazard(score, health)\ndriver = argmax_s D_s → break-up type, altitude h_bu, σ log10 B\n(also P_frag and σ_state: displayed only, not used downstream)", fillcolor="#fbecc7"];
+  e [label="sample_cloud(parent_mass = 1800 kg, kind)\n→ fragments (L_c, A/M, m, B, Δv), mass closure", fillcolor="#fbecc7"];
+  f [label="footprint: monte_carlo_footprint (RK4 ensemble, US76, tumbling C_D)\nor surrogate_footprint (5-member MLP ensemble, range fallback)", fillcolor="#fbecc7"];
+  g [label="assess_footprint(fp, population)\n→ per-fragment E_c, risk band, land probability, nearest city", fillcolor="#fbe1d4"];
+  h [label="zone_comparison (optional, with_zones=True)\nGaussian ellipse vs split-conformal zones", fillcolor="#ecebe6"];
+  r [label="PipelineResult.summary()", shape=note, fillcolor="#f9dfea"];
+  a -> b -> c -> d -> e -> f -> g -> r; f -> h [style=dashed]; h -> r [style=dashed];
+
+}

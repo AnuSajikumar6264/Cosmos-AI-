@@ -1,0 +1,1005 @@
+{
+ "cosmos_version": "1.1.0",
+ "generated_utc": "2026-10-25T03:08:22.621571+00:00",
+ "default_summary": [
+  {
+   "stage": "1 Health",
+   "quantity": "telemetry samples",
+   "value": 2880
+  },
+  {
+   "stage": "1 Health",
+   "quantity": "injected fault",
+   "value": "none"
+  },
+  {
+   "stage": "1 Health",
+   "quantity": "anomaly score (final)",
+   "value": 0.241
+  },
+  {
+   "stage": "1 Health",
+   "quantity": "worst subsystem",
+   "value": "Data Storage Unit"
+  },
+  {
+   "stage": "1 Health",
+   "quantity": "health band",
+   "value": "NOMINAL"
+  },
+  {
+   "stage": "1 Health",
+   "quantity": "detection delay (min)",
+   "value": "n/a"
+  },
+  {
+   "stage": "1 -> 3 coupling",
+   "quantity": "break-up type",
+   "value": "aerodynamic"
+  },
+  {
+   "stage": "1 -> 3 coupling",
+   "quantity": "break-up altitude (km)",
+   "value": 77.9
+  },
+  {
+   "stage": "1 -> 3 coupling",
+   "quantity": "P(fragmentation)",
+   "value": 0.031
+  },
+  {
+   "stage": "1 -> 3 coupling",
+   "quantity": "footprint sigma log10(B)",
+   "value": 0.18
+  },
+  {
+   "stage": "3 Re-entry",
+   "quantity": "fragments generated",
+   "value": 868
+  },
+  {
+   "stage": "3 Re-entry",
+   "quantity": "mass closure",
+   "value": 1.0
+  },
+  {
+   "stage": "3 Re-entry",
+   "quantity": "impacts propagated",
+   "value": 1199
+  },
+  {
+   "stage": "3 Re-entry",
+   "quantity": "downrange mean (km)",
+   "value": 834.0
+  },
+  {
+   "stage": "3 Re-entry",
+   "quantity": "downrange spread (km)",
+   "value": 1936.3
+  },
+  {
+   "stage": "3 Re-entry",
+   "quantity": "CEP50 (km)",
+   "value": 459.7
+  },
+  {
+   "stage": "3 Risk",
+   "quantity": "expected casualties",
+   "value": "0.000e+00"
+  },
+  {
+   "stage": "3 Risk",
+   "quantity": "risk band",
+   "value": "NEGLIGIBLE"
+  },
+  {
+   "stage": "3 Risk",
+   "quantity": "land impact probability",
+   "value": 0.0
+  },
+  {
+   "stage": "3 Risk",
+   "quantity": "nearest city",
+   "value": "Colombo (581 km)"
+  }
+ ],
+ "default_summary_seconds": 12.43965768814087,
+ "monitor_grid": [
+  {
+   "subsystem": "Power System",
+   "fault": "degradation",
+   "detected": false,
+   "delay_minutes": null,
+   "final_anomaly": 0.2348328897696891,
+   "worst_subsystem": "('Data Storage Unit', 0.18117066071888133)"
+  },
+  {
+   "subsystem": "Power System",
+   "fault": "leak",
+   "detected": true,
+   "delay_minutes": 608.0,
+   "final_anomaly": 0.30793929384382696,
+   "worst_subsystem": "('Power System', 0.298451871590383)"
+  },
+  {
+   "subsystem": "Power System",
+   "fault": "overheat",
+   "detected": true,
+   "delay_minutes": 552.5,
+   "final_anomaly": 0.6145901846670554,
+   "worst_subsystem": "('Power System', 0.6145435783718562)"
+  },
+  {
+   "subsystem": "Power System",
+   "fault": "dropout",
+   "detected": true,
+   "delay_minutes": 18.0,
+   "final_anomaly": 0.42901644152121127,
+   "worst_subsystem": "('Power System', 0.42901644152121127)"
+  },
+  {
+   "subsystem": "Power System",
+   "fault": "saturation",
+   "detected": true,
+   "delay_minutes": 559.0,
+   "final_anomaly": 0.5449347154282905,
+   "worst_subsystem": "('Power System', 0.5447751873808293)"
+  },
+  {
+   "subsystem": "Thermal Control",
+   "fault": "degradation",
+   "detected": false,
+   "delay_minutes": null,
+   "final_anomaly": 0.23387836201422196,
+   "worst_subsystem": "('Data Storage Unit', 0.18117066071888133)"
+  },
+  {
+   "subsystem": "Thermal Control",
+   "fault": "leak",
+   "detected": false,
+   "delay_minutes": null,
+   "final_anomaly": 0.2816127787281689,
+   "worst_subsystem": "('Thermal Control', 0.2731521501878991)"
+  },
+  {
+   "subsystem": "Thermal Control",
+   "fault": "overheat",
+   "detected": false,
+   "delay_minutes": null,
+   "final_anomaly": 0.4639742889043789,
+   "worst_subsystem": "('Thermal Control', 0.4635982305552056)"
+  },
+  {
+   "subsystem": "Thermal Control",
+   "fault": "dropout",
+   "detected": false,
+   "delay_minutes": null,
+   "final_anomaly": 0.23822993018556285,
+   "worst_subsystem": "('Data Storage Unit', 0.18117066071888133)"
+  },
+  {
+   "subsystem": "Thermal Control",
+   "fault": "saturation",
+   "detected": false,
+   "delay_minutes": null,
+   "final_anomaly": 0.4135261333971971,
+   "worst_subsystem": "('Thermal Control', 0.41280913435908184)"
+  },
+  {
+   "subsystem": "Attitude Control",
+   "fault": "degradation",
+   "detected": false,
+   "delay_minutes": null,
+   "final_anomaly": 0.2390314831735636,
+   "worst_subsystem": "('Data Storage Unit', 0.18117066071888133)"
+  },
+  {
+   "subsystem": "Attitude Control",
+   "fault": "leak",
+   "detected": true,
+   "delay_minutes": 316.0,
+   "final_anomaly": 0.9435558102021911,
+   "worst_subsystem": "('Attitude Control', 0.9435558102021911)"
+  },
+  {
+   "subsystem": "Attitude Control",
+   "fault": "overheat",
+   "detected": true,
+   "delay_minutes": 265.0,
+   "final_anomaly": 1.0,
+   "worst_subsystem": "('Attitude Control', 1.0)"
+  },
+  {
+   "subsystem": "Attitude Control",
+   "fault": "dropout",
+   "detected": true,
+   "delay_minutes": 1.5,
+   "final_anomaly": 1.0,
+   "worst_subsystem": "('Attitude Control', 1.0)"
+  },
+  {
+   "subsystem": "Attitude Control",
+   "fault": "saturation",
+   "detected": true,
+   "delay_minutes": 272.0,
+   "final_anomaly": 1.0,
+   "worst_subsystem": "('Attitude Control', 1.0)"
+  },
+  {
+   "subsystem": "Propulsion System",
+   "fault": "degradation",
+   "detected": false,
+   "delay_minutes": null,
+   "final_anomaly": 0.23793037565850353,
+   "worst_subsystem": "('Data Storage Unit', 0.18117066071888133)"
+  },
+  {
+   "subsystem": "Propulsion System",
+   "fault": "leak",
+   "detected": true,
+   "delay_minutes": 318.0,
+   "final_anomaly": 0.9760918472540029,
+   "worst_subsystem": "('Propulsion System', 0.9760918472540029)"
+  },
+  {
+   "subsystem": "Propulsion System",
+   "fault": "overheat",
+   "detected": true,
+   "delay_minutes": 264.5,
+   "final_anomaly": 1.0,
+   "worst_subsystem": "('Propulsion System', 1.0)"
+  },
+  {
+   "subsystem": "Propulsion System",
+   "fault": "dropout",
+   "detected": true,
+   "delay_minutes": 1.5,
+   "final_anomaly": 1.0,
+   "worst_subsystem": "('Propulsion System', 1.0)"
+  },
+  {
+   "subsystem": "Propulsion System",
+   "fault": "saturation",
+   "detected": true,
+   "delay_minutes": 270.0,
+   "final_anomaly": 1.0,
+   "worst_subsystem": "('Propulsion System', 1.0)"
+  },
+  {
+   "subsystem": "Communication",
+   "fault": "degradation",
+   "detected": false,
+   "delay_minutes": null,
+   "final_anomaly": 0.22874358117534324,
+   "worst_subsystem": "('Data Storage Unit', 0.18117066071888133)"
+  },
+  {
+   "subsystem": "Communication",
+   "fault": "leak",
+   "detected": true,
+   "delay_minutes": 505.0,
+   "final_anomaly": 0.5214096656409483,
+   "worst_subsystem": "('Communication', 0.5214096655019201)"
+  },
+  {
+   "subsystem": "Communication",
+   "fault": "overheat",
+   "detected": true,
+   "delay_minutes": 356.0,
+   "final_anomaly": 0.9794716762989594,
+   "worst_subsystem": "('Communication', 0.9794716762989158)"
+  },
+  {
+   "subsystem": "Communication",
+   "fault": "dropout",
+   "detected": true,
+   "delay_minutes": 6.0,
+   "final_anomaly": 0.6558695508869142,
+   "worst_subsystem": "('Communication', 0.6558695508869142)"
+  },
+  {
+   "subsystem": "Communication",
+   "fault": "saturation",
+   "detected": true,
+   "delay_minutes": 446.0,
+   "final_anomaly": 0.8441130755339912,
+   "worst_subsystem": "('Communication', 0.8441125491547887)"
+  },
+  {
+   "subsystem": "Payload",
+   "fault": "degradation",
+   "detected": false,
+   "delay_minutes": null,
+   "final_anomaly": 0.22308187572712343,
+   "worst_subsystem": "('Data Storage Unit', 0.18117066071888133)"
+  },
+  {
+   "subsystem": "Payload",
+   "fault": "leak",
+   "detected": true,
+   "delay_minutes": 557.5,
+   "final_anomaly": 0.5560359354980536,
+   "worst_subsystem": "('Payload', 0.5560273887640841)"
+  },
+  {
+   "subsystem": "Payload",
+   "fault": "overheat",
+   "detected": true,
+   "delay_minutes": 347.5,
+   "final_anomaly": 1.0,
+   "worst_subsystem": "('Payload', 1.0)"
+  },
+  {
+   "subsystem": "Payload",
+   "fault": "dropout",
+   "detected": true,
+   "delay_minutes": 7.0,
+   "final_anomaly": 0.560504461652632,
+   "worst_subsystem": "('Payload', 0.560504461652632)"
+  },
+  {
+   "subsystem": "Payload",
+   "fault": "saturation",
+   "detected": true,
+   "delay_minutes": 357.0,
+   "final_anomaly": 1.0,
+   "worst_subsystem": "('Payload', 1.0)"
+  },
+  {
+   "subsystem": "Data Storage Unit",
+   "fault": "degradation",
+   "detected": true,
+   "delay_minutes": 600.5,
+   "final_anomaly": 0.32292697588263997,
+   "worst_subsystem": "('Data Storage Unit', 0.2908063595718196)"
+  },
+  {
+   "subsystem": "Data Storage Unit",
+   "fault": "leak",
+   "detected": true,
+   "delay_minutes": 346.5,
+   "final_anomaly": 1.0,
+   "worst_subsystem": "('Data Storage Unit', 1.0)"
+  },
+  {
+   "subsystem": "Data Storage Unit",
+   "fault": "overheat",
+   "detected": true,
+   "delay_minutes": 165.0,
+   "final_anomaly": 1.0,
+   "worst_subsystem": "('Data Storage Unit', 1.0)"
+  },
+  {
+   "subsystem": "Data Storage Unit",
+   "fault": "dropout",
+   "detected": true,
+   "delay_minutes": 1.5,
+   "final_anomaly": 1.0,
+   "worst_subsystem": "('Data Storage Unit', 1.0)"
+  },
+  {
+   "subsystem": "Data Storage Unit",
+   "fault": "saturation",
+   "detected": true,
+   "delay_minutes": 170.0,
+   "final_anomaly": 1.0,
+   "worst_subsystem": "('Data Storage Unit', 1.0)"
+  },
+  {
+   "subsystem": "Structure",
+   "fault": "degradation",
+   "detected": false,
+   "delay_minutes": null,
+   "final_anomaly": 0.23530402085777788,
+   "worst_subsystem": "('Data Storage Unit', 0.186411235453491)"
+  },
+  {
+   "subsystem": "Structure",
+   "fault": "leak",
+   "detected": true,
+   "delay_minutes": 645.5,
+   "final_anomaly": 0.5137573755234225,
+   "worst_subsystem": "('Structure', 0.5128069681877908)"
+  },
+  {
+   "subsystem": "Structure",
+   "fault": "overheat",
+   "detected": true,
+   "delay_minutes": 353.0,
+   "final_anomaly": 1.0,
+   "worst_subsystem": "('Structure', 1.0)"
+  },
+  {
+   "subsystem": "Structure",
+   "fault": "dropout",
+   "detected": true,
+   "delay_minutes": 8.0,
+   "final_anomaly": 0.44737064006969424,
+   "worst_subsystem": "('Structure', 0.447370640012952)"
+  },
+  {
+   "subsystem": "Structure",
+   "fault": "saturation",
+   "detected": true,
+   "delay_minutes": 364.5,
+   "final_anomaly": 0.8879443757868035,
+   "worst_subsystem": "('Structure', 0.8879443757867816)"
+  },
+  {
+   "subsystem": "none",
+   "fault": "nominal",
+   "detected": false,
+   "delay_minutes": null,
+   "final_anomaly": 0.2406038253767563
+  }
+ ],
+ "monitor_grid_seconds": 0.478656530380249,
+ "stuck_fault": {
+  "raises": true,
+  "error": "ValueError('scale < 0')"
+ },
+ "stuck_fault_seconds": 0.0007104873657226562,
+ "scenario_table": [
+  {
+   "scenario": "all nominal",
+   "anomaly_score": 0.05,
+   "driver": "Power System",
+   "breakup_type": "explosion",
+   "breakup_altitude_km": 79.3,
+   "p_fragmentation": 0.009,
+   "bc_sigma_log10": 0.167,
+   "state_sigma_m": 841.0,
+   "band": "NOMINAL"
+  },
+  {
+   "scenario": "thermal critical",
+   "anomaly_score": 0.85,
+   "driver": "Thermal Control",
+   "breakup_type": "aerodynamic",
+   "breakup_altitude_km": 69.8,
+   "p_fragmentation": 0.129,
+   "bc_sigma_log10": 0.199,
+   "state_sigma_m": 1561.0,
+   "band": "CRITICAL"
+  },
+  {
+   "scenario": "power critical",
+   "anomaly_score": 0.85,
+   "driver": "Power System",
+   "breakup_type": "explosion",
+   "breakup_altitude_km": 76.6,
+   "p_fragmentation": 0.103,
+   "bc_sigma_log10": 0.191,
+   "state_sigma_m": 1561.0,
+   "band": "CRITICAL"
+  },
+  {
+   "scenario": "attitude critical",
+   "anomaly_score": 0.85,
+   "driver": "Attitude Control",
+   "breakup_type": "aerodynamic",
+   "breakup_altitude_km": 80.7,
+   "p_fragmentation": 0.099,
+   "bc_sigma_log10": 0.19,
+   "state_sigma_m": 3144.0,
+   "band": "CRITICAL"
+  },
+  {
+   "scenario": "comms + storage lost",
+   "anomaly_score": 0.85,
+   "driver": "Communication",
+   "breakup_type": "aerodynamic",
+   "breakup_altitude_km": 78.3,
+   "p_fragmentation": 0.056,
+   "bc_sigma_log10": 0.176,
+   "state_sigma_m": 9101.0,
+   "band": "CRITICAL"
+  },
+  {
+   "scenario": "structure compromised",
+   "anomaly_score": 0.85,
+   "driver": "Structure",
+   "breakup_type": "aerodynamic",
+   "breakup_altitude_km": 63.2,
+   "p_fragmentation": 0.15,
+   "bc_sigma_log10": 0.204,
+   "state_sigma_m": 1561.0,
+   "band": "CRITICAL"
+  },
+  {
+   "scenario": "propulsion critical",
+   "anomaly_score": 0.85,
+   "driver": "Propulsion System",
+   "breakup_type": "explosion",
+   "breakup_altitude_km": 83.0,
+   "p_fragmentation": 0.4,
+   "bc_sigma_log10": 0.243,
+   "state_sigma_m": 1561.0,
+   "band": "CRITICAL"
+  },
+  {
+   "scenario": "propulsion + attitude",
+   "anomaly_score": 0.9,
+   "driver": "Attitude Control",
+   "breakup_type": "aerodynamic",
+   "breakup_altitude_km": 75.0,
+   "p_fragmentation": 0.574,
+   "bc_sigma_log10": 0.243,
+   "state_sigma_m": 3117.0,
+   "band": "CRITICAL"
+  }
+ ],
+ "scenario_table_seconds": 0.0024569034576416016,
+ "detection_single_vs_pair": [
+  {
+   "detector": "single frame",
+   "truth": 135,
+   "predicted": 1182,
+   "true_positives": 130,
+   "precision": 0.11,
+   "recall": 0.963,
+   "f1": 0.1974
+  },
+  {
+   "detector": "registered difference",
+   "truth": 135,
+   "predicted": 77,
+   "true_positives": 76,
+   "precision": 0.987,
+   "recall": 0.563,
+   "f1": 0.717
+  }
+ ],
+ "detection_single_vs_pair_seconds": 5.801525592803955,
+ "catalogue": {
+  "overview": [
+   {
+    "OBJECT_TYPE": "DEB",
+    "objects": 35834,
+    "decayed": 23335,
+    "still_in_orbit": 12499,
+    "percent_decayed": 65.1
+   },
+   {
+    "OBJECT_TYPE": "PAY",
+    "objects": 27414,
+    "decayed": 7566,
+    "still_in_orbit": 19848,
+    "percent_decayed": 27.6
+   },
+   {
+    "OBJECT_TYPE": "R/B",
+    "objects": 6881,
+    "decayed": 4460,
+    "still_in_orbit": 2421,
+    "percent_decayed": 64.8
+   },
+   {
+    "OBJECT_TYPE": "UNK",
+    "objects": 159,
+    "decayed": 109,
+    "still_in_orbit": 50,
+    "percent_decayed": 68.6
+   }
+  ],
+  "clouds": [
+   {
+    "event": "Cosmos 1408",
+    "altitude_km": 480.0,
+    "fragments": 1805,
+    "decayed": 1801,
+    "percent_decayed": 99.8,
+    "median_lifetime_years": 0.5256673511293635,
+    "censored": 4
+   },
+   {
+    "event": "Iridium 33",
+    "altitude_km": 789.0,
+    "fragments": 656,
+    "decayed": 539,
+    "percent_decayed": 82.2,
+    "median_lifetime_years": 13.149897330595483,
+    "censored": 117
+   },
+   {
+    "event": "Cosmos 2251",
+    "altitude_km": 789.0,
+    "fragments": 1716,
+    "decayed": 1097,
+    "percent_decayed": 63.9,
+    "median_lifetime_years": 15.238877481177276,
+    "censored": 619
+   },
+   {
+    "event": "Fengyun-1C",
+    "altitude_km": 865.0,
+    "fragments": 3534,
+    "decayed": 1215,
+    "percent_decayed": 34.4,
+    "median_lifetime_years": NaN,
+    "censored": 2319
+   }
+  ],
+  "calibration": {
+   "area_to_mass_censored": 0.14907,
+   "optimum_at_grid_edge": false,
+   "area_to_mass_naive": 0.1564,
+   "bias_factor": 1.049,
+   "n_fragments": 7711,
+   "n_observed": 4652,
+   "n_censored": 3059,
+   "rms_log10_error": 0.46
+  },
+  "validation": [
+   {
+    "event": "Cosmos 1408",
+    "altitude_km": 480.0,
+    "fragments": 1805,
+    "percent_decayed": 99.8,
+    "measured_median_years": 0.526,
+    "modelled_years": 0.154,
+    "ratio": 0.292
+   },
+   {
+    "event": "Iridium 33",
+    "altitude_km": 789.0,
+    "fragments": 656,
+    "percent_decayed": 82.2,
+    "measured_median_years": 13.15,
+    "modelled_years": 13.158,
+    "ratio": 1.001
+   },
+   {
+    "event": "Cosmos 2251",
+    "altitude_km": 789.0,
+    "fragments": 1716,
+    "percent_decayed": 63.9,
+    "measured_median_years": 15.239,
+    "modelled_years": 13.158,
+    "ratio": 0.863
+   },
+   {
+    "event": "Fengyun-1C",
+    "altitude_km": 865.0,
+    "fragments": 3534,
+    "percent_decayed": 34.4,
+    "measured_median_years": NaN,
+    "modelled_years": 28.039,
+    "ratio": NaN
+   }
+  ],
+  "density": [
+   {
+    "alt_lo_km": 200.0,
+    "alt_hi_km": 300.0,
+    "alt_mid_km": 250.0,
+    "count": 5,
+    "shell_volume_km3": 55207878022.029686,
+    "density_per_km3": 9.05667846535388e-11
+   },
+   {
+    "alt_lo_km": 300.0,
+    "alt_hi_km": 400.0,
+    "alt_mid_km": 350.0,
+    "count": 27,
+    "shell_volume_km3": 56886276913.13924,
+    "density_per_km3": 4.746311670427443e-10
+   },
+   {
+    "alt_lo_km": 400.0,
+    "alt_hi_km": 500.0,
+    "alt_mid_km": 450.0,
+    "count": 103,
+    "shell_volume_km3": 58589808545.47725,
+    "density_per_km3": 1.7579849219007378e-09
+   },
+   {
+    "alt_lo_km": 500.0,
+    "alt_hi_km": 600.0,
+    "alt_mid_km": 550.0,
+    "count": 342,
+    "shell_volume_km3": 60318472919.043976,
+    "density_per_km3": 5.669904814384359e-09
+   },
+   {
+    "alt_lo_km": 600.0,
+    "alt_hi_km": 700.0,
+    "alt_mid_km": 650.0,
+    "count": 1024,
+    "shell_volume_km3": 62072270033.839424,
+    "density_per_km3": 1.6496899492184746e-08
+   },
+   {
+    "alt_lo_km": 700.0,
+    "alt_hi_km": 800.0,
+    "alt_mid_km": 750.0,
+    "count": 2148,
+    "shell_volume_km3": 63851199889.86334,
+    "density_per_km3": 3.364071471961492e-08
+   },
+   {
+    "alt_lo_km": 800.0,
+    "alt_hi_km": 900.0,
+    "alt_mid_km": 850.0,
+    "count": 2504,
+    "shell_volume_km3": 65655262487.11648,
+    "density_per_km3": 3.8138603139258785e-08
+   },
+   {
+    "alt_lo_km": 900.0,
+    "alt_hi_km": 1000.0,
+    "alt_mid_km": 950.0,
+    "count": 1229,
+    "shell_volume_km3": 67484457825.59808,
+    "density_per_km3": 1.8211600709249796e-08
+   },
+   {
+    "alt_lo_km": 1000.0,
+    "alt_hi_km": 1100.0,
+    "alt_mid_km": 1050.0,
+    "count": 662,
+    "shell_volume_km3": 69338785905.30841,
+    "density_per_km3": 9.547326093999561e-09
+   },
+   {
+    "alt_lo_km": 1100.0,
+    "alt_hi_km": 1200.0,
+    "alt_mid_km": 1150.0,
+    "count": 398,
+    "shell_volume_km3": 71218246726.2472,
+    "density_per_km3": 5.588455463244629e-09
+   },
+   {
+    "alt_lo_km": 1200.0,
+    "alt_hi_km": 1300.0,
+    "alt_mid_km": 1250.0,
+    "count": 424,
+    "shell_volume_km3": 73122840288.4152,
+    "density_per_km3": 5.7984618530630846e-09
+   },
+   {
+    "alt_lo_km": 1300.0,
+    "alt_hi_km": 1400.0,
+    "alt_mid_km": 1350.0,
+    "count": 237,
+    "shell_volume_km3": 75052566591.81169,
+    "density_per_km3": 3.157786745508273e-09
+   },
+   {
+    "alt_lo_km": 1400.0,
+    "alt_hi_km": 1500.0,
+    "alt_mid_km": 1450.0,
+    "count": 347,
+    "shell_volume_km3": 77007425636.43689,
+    "density_per_km3": 4.506058956421122e-09
+   },
+   {
+    "alt_lo_km": 1500.0,
+    "alt_hi_km": 1600.0,
+    "alt_mid_km": 1550.0,
+    "count": 353,
+    "shell_volume_km3": 78987417422.29054,
+    "density_per_km3": 4.469066232571646e-09
+   }
+  ],
+  "leo_rate": {
+   "collisions_per_year": 0.07071,
+   "years_between_collisions": 14.1,
+   "worst_shell_km": 1550,
+   "max_criticality": 0.176,
+   "supercritical_shells": 0
+  }
+ },
+ "catalogue_seconds": 1.839406967163086,
+ "zones": {
+  "footprint": {
+   "n_impacts": 1200,
+   "downrange_mean_km": 869.1,
+   "downrange_std_km": 523.1,
+   "downrange_min_km": 71.7,
+   "downrange_max_km": 2080.5,
+   "downrange_skew": 0.509,
+   "cep50_km": 452.3,
+   "r95_km": 880.9,
+   "impact_speed_median_ms": 28.4,
+   "max_energy_J": 1518382.0,
+   "casualty_capable": 833
+  },
+  "cloud": {
+   "kind": "explosion",
+   "parent_mass_kg": 1800.0,
+   "n_fragments": 868,
+   "n_remnants": 1,
+   "n_dropped_over_budget": 333,
+   "mass_closure": 1.0,
+   "lc_cm_min": 5.0,
+   "lc_cm_max": 425.1,
+   "mass_kg_median": 0.5145,
+   "bc_min": 0.35,
+   "bc_max": 5191.6,
+   "dv_ms_median": 0.36,
+   "casualty_capable": 365
+  },
+  "zones": [
+   {
+    "nominal": 0.9,
+    "gaussian_ellipse_coverage": 0.9122,
+    "gaussian_ellipse_area_km2": 16136.0,
+    "conformal_ellipse_coverage": 0.9015,
+    "conformal_ellipse_area_km2": 15484.0,
+    "conformal_density_coverage": 0.9004,
+    "conformal_density_area_km2": 6393.0,
+    "gaussian_shortfall_pts": -1.22,
+    "density_area_saving_pct": 60.4
+   },
+   {
+    "nominal": 0.95,
+    "gaussian_ellipse_coverage": 0.945,
+    "gaussian_ellipse_area_km2": 20813.0,
+    "conformal_ellipse_coverage": 0.949,
+    "conformal_ellipse_area_km2": 21767.0,
+    "conformal_density_coverage": 0.9437,
+    "conformal_density_area_km2": 8361.0,
+    "gaussian_shortfall_pts": 0.5,
+    "density_area_saving_pct": 59.8
+   },
+   {
+    "nominal": 0.99,
+    "gaussian_ellipse_coverage": 0.9856,
+    "gaussian_ellipse_area_km2": 32388.0,
+    "conformal_ellipse_coverage": 0.9894,
+    "conformal_ellipse_area_km2": 35662.0,
+    "conformal_density_coverage": 0.9846,
+    "conformal_density_area_km2": 13807.0,
+    "gaussian_shortfall_pts": 0.44,
+    "density_area_saving_pct": 57.4
+   }
+  ],
+  "risk": {
+   "expected_casualties": 0.0,
+   "risk_band": "NEGLIGIBLE",
+   "population_model": "GHS-POP E2020 R2023A 30ss (JRC, CC BY 4.0); Natural Earth 1:50m land (public domain)",
+   "threshold": 0.0001,
+   "exceeds_threshold": false,
+   "land_impact_probability": 0.0,
+   "casualty_capable_fraction": 0.6942,
+   "mean_population_density": 0.0,
+   "max_population_density": 0.0,
+   "centre_lat": 7.653,
+   "centre_lon": 85.236,
+   "nearest_city": "Colombo",
+   "nearest_distance_km": 598.4,
+   "nearest_population": 5600000
+  }
+ },
+ "zones_seconds": 18.613163232803345,
+ "failure_modes": [
+  {
+   "scenario": "nominal",
+   "anomaly_score": 0.05,
+   "driver": "Data Storage Unit",
+   "breakup_type": "aerodynamic",
+   "breakup_alt_km": 77.9,
+   "P_fragmentation": 0.021,
+   "sigma_logB": 0.18,
+   "state_sigma_m": 2168.0,
+   "downrange_mean_km": 796.7,
+   "downrange_spread_km": 1898.8,
+   "cep50_km": 432.9,
+   "expected_casualties": 0.0,
+   "risk_band": "NEGLIGIBLE"
+  },
+  {
+   "scenario": "thermal",
+   "anomaly_score": 0.85,
+   "driver": "Thermal Control",
+   "breakup_type": "aerodynamic",
+   "breakup_alt_km": 71.3,
+   "P_fragmentation": 0.154,
+   "sigma_logB": 0.186,
+   "state_sigma_m": 2794.0,
+   "downrange_mean_km": 632.1,
+   "downrange_spread_km": 1679.3,
+   "cep50_km": 386.1,
+   "expected_casualties": 0.0,
+   "risk_band": "NEGLIGIBLE"
+  },
+  {
+   "scenario": "structure",
+   "anomaly_score": 0.85,
+   "driver": "Data Storage Unit",
+   "breakup_type": "aerodynamic",
+   "breakup_alt_km": 77.9,
+   "P_fragmentation": 0.091,
+   "sigma_logB": 0.179,
+   "state_sigma_m": 2888.0,
+   "downrange_mean_km": 798.2,
+   "downrange_spread_km": 1900.2,
+   "cep50_km": 433.3,
+   "expected_casualties": 0.0,
+   "risk_band": "NEGLIGIBLE"
+  },
+  {
+   "scenario": "propulsion",
+   "anomaly_score": 0.85,
+   "driver": "Propulsion System",
+   "breakup_type": "explosion",
+   "breakup_alt_km": 81.8,
+   "P_fragmentation": 0.592,
+   "sigma_logB": 0.254,
+   "state_sigma_m": 2804.0,
+   "downrange_mean_km": 902.8,
+   "downrange_spread_km": 2115.2,
+   "cep50_km": 458.4,
+   "expected_casualties": 0.0,
+   "risk_band": "NEGLIGIBLE"
+  },
+  {
+   "scenario": "comms lost",
+   "anomaly_score": 0.85,
+   "driver": "Communication",
+   "breakup_type": "aerodynamic",
+   "breakup_alt_km": 77.6,
+   "P_fragmentation": 0.109,
+   "sigma_logB": 0.182,
+   "state_sigma_m": 5409.0,
+   "downrange_mean_km": 788.6,
+   "downrange_spread_km": 1891.9,
+   "cep50_km": 431.5,
+   "expected_casualties": 0.0,
+   "risk_band": "NEGLIGIBLE"
+  }
+ ],
+ "failure_modes_seconds": 52.05123949050903,
+ "corridors": [
+  {
+   "corridor": "Mid-Pacific (E)",
+   "entry_lat": 0.0,
+   "entry_lon": -150.0,
+   "azimuth": 90.0,
+   "expected_casualties": 0.0,
+   "risk_band": "NEGLIGIBLE",
+   "expected_casualties_event": 0.0,
+   "land_impact_probability": 0.0,
+   "mean_population_density": 0.0,
+   "population_model": "GHS-POP E2020 R2023A 30ss (JRC, CC BY 4.0); Natural Earth 1:50m land (public domain)"
+  },
+  {
+   "corridor": "Bay of Bengal (SE)",
+   "entry_lat": 13.72,
+   "entry_lon": 80.23,
+   "azimuth": 140.0,
+   "expected_casualties": 0.0,
+   "risk_band": "NEGLIGIBLE",
+   "expected_casualties_event": 0.0,
+   "land_impact_probability": 0.0,
+   "mean_population_density": 0.0,
+   "population_model": "GHS-POP E2020 R2023A 30ss (JRC, CC BY 4.0); Natural Earth 1:50m land (public domain)"
+  },
+  {
+   "corridor": "Peninsular India (NW)",
+   "entry_lat": 13.72,
+   "entry_lon": 80.23,
+   "azimuth": 320.0,
+   "expected_casualties": 0.00033693594101411446,
+   "risk_band": "ELEVATED",
+   "expected_casualties_event": 0.0610304222055984,
+   "land_impact_probability": 0.9919,
+   "mean_population_density": 197.89,
+   "population_model": "GHS-POP E2020 R2023A 30ss (JRC, CC BY 4.0); Natural Earth 1:50m land (public domain)"
+  },
+  {
+   "corridor": "Central Europe (E)",
+   "entry_lat": 50.0,
+   "entry_lon": 2.0,
+   "azimuth": 90.0,
+   "expected_casualties": 0.00017101040564291458,
+   "risk_band": "ELEVATED",
+   "expected_casualties_event": 0.031944201163391896,
+   "land_impact_probability": 0.9447,
+   "mean_population_density": 123.53,
+   "population_model": "GHS-POP E2020 R2023A 30ss (JRC, CC BY 4.0); Natural Earth 1:50m land (public domain)"
+  }
+ ],
+ "corridors_seconds": 36.217825174331665
+}

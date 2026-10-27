@@ -1,0 +1,19 @@
+digraph G {
+
+  graph [fontname="Helvetica", fontsize=11, bgcolor="#fcfcfb", pad=0.25, nodesep=0.35, ranksep=0.45];
+  node  [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", fillcolor="#ffffff",
+         color="#52514e", penwidth=1.0, margin="0.12,0.06"];
+  edge  [fontname="Helvetica", fontsize=9, color="#52514e", arrowsize=0.7];
+
+  rankdir=LR;
+  s [label="scores s(t,c)\n(any source)", fillcolor="#ecebe6"];
+  pool [label="nominal OOF training\nscores per channel\n= calibration pool", fillcolor="#dbe8f8"];
+  p [label="conformal p-value\np(t,c) = (1 + #pool ≥ s) / (n_c + 1)", fillcolor="#dbe8f8"];
+  bh [label="Benjamini–Hochberg\nacross channels at each t\n(level q)", fillcolor="#dbe8f8"];
+  hot [label="hot cells H(t,c)", fillcolor="#ecebe6"];
+  per [label="persistence: ≥ k consecutive\nsteps with any hot channel", fillcolor="#fbecc7"];
+  merge [label="merge runs closer\nthan 1 h", fillcolor="#fbecc7"];
+  attr [label="global alarm + attributed\nchannels (hot inside the run)", fillcolor="#fbe1d4"];
+  s -> p; pool -> p; p -> bh -> hot -> per -> merge -> attr;
+
+}

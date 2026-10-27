@@ -1,0 +1,18 @@
+digraph G {
+
+  graph [fontname="Helvetica", fontsize=11, bgcolor="#fcfcfb", pad=0.25, nodesep=0.35, ranksep=0.45];
+  node  [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", fillcolor="#ffffff",
+         color="#52514e", penwidth=1.0, margin="0.12,0.06"];
+  edge  [fontname="Helvetica", fontsize=9, color="#52514e", arrowsize=0.7];
+
+  rankdir=TB;
+  x [label="input window (B, C, 7, T)\nT = 2048 steps, all C target channels", fillcolor="#ecebe6"];
+  inp [label="1×1 conv 7 → 64  +  learned channel embedding", fillcolor="#dbe8f8"];
+  blk [label="8 residual blocks, dilation 2^i (i = 0…7)\n[causal conv k3 → ChannelNorm → SiLU → dropout] × 2", fillcolor="#dbe8f8"];
+  mix [label="every 2 blocks: cross-channel mixing\nh ← h + W · mean_c(h)   (permutation-equivariant)", fillcolor="#d2efe3"];
+  head [label="1×1 conv 64 → 3 logits per (t, c)\nnominal | anomaly | rare nominal event", fillcolor="#dbe8f8"];
+  loss [label="class-weighted cross-entropy (1, 5, 5)\non the last T − 1021 steps; gaps ignored", fillcolor="#fbecc7"];
+  out [label="event score = log P(anomaly ∪ rare) − log P(nominal)", fillcolor="#fbe1d4"];
+  x -> inp -> blk -> head -> out; blk -> mix [dir=both, style=dashed]; head -> loss [style=dashed];
+
+}

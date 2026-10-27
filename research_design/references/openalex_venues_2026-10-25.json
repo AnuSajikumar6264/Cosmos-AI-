@@ -1,0 +1,167 @@
+[
+ {
+  "query": "Engineering Applications of Artificial Intelligence",
+  "name": "Engineering Applications of Artificial Intelligence",
+  "issn": "0952-1976",
+  "publisher": "Elsevier BV",
+  "oa": false,
+  "doaj": false,
+  "apc": 3200,
+  "cites2y": 7.87,
+  "h": 187
+ },
+ {
+  "query": "Expert Systems with Applications",
+  "name": "Expert Systems with Applications",
+  "issn": "0957-4174",
+  "publisher": "Elsevier BV",
+  "oa": false,
+  "doaj": false,
+  "apc": 3500,
+  "cites2y": 7.93,
+  "h": 352
+ },
+ {
+  "query": "Knowledge-Based Systems",
+  "name": "Knowledge-Based Systems",
+  "issn": "0950-7051",
+  "publisher": "Elsevier BV",
+  "oa": false,
+  "doaj": false,
+  "apc": 3430,
+  "cites2y": 6.87,
+  "h": 222
+ },
+ {
+  "query": "Applied Soft Computing",
+  "name": "Applied Soft Computing",
+  "issn": "1568-4946",
+  "publisher": "Elsevier BV",
+  "oa": false,
+  "doaj": false,
+  "apc": 3730,
+  "cites2y": 6.47,
+  "h": 237
+ },
+ {
+  "query": "Neural Computing and Applications",
+  "name": "Neural Computing and Applications",
+  "issn": "0941-0643",
+  "publisher": "Springer Science+Business Media",
+  "oa": false,
+  "doaj": false,
+  "apc": 3290,
+  "cites2y": 6.6,
+  "h": 193
+ },
+ {
+  "query": "Applied Intelligence",
+  "name": "Applied Intelligence",
+  "issn": "0924-669X",
+  "publisher": "Springer Science+Business Media",
+  "oa": false,
+  "doaj": false,
+  "apc": 3190,
+  "cites2y": 4.66,
+  "h": 132
+ },
+ {
+  "query": "IEEE Access",
+  "name": "IEEE Access",
+  "issn": "2169-3536",
+  "publisher": "Institute of Electrical and Electronics Engineers",
+  "oa": true,
+  "doaj": true,
+  "apc": 2075,
+  "cites2y": 6.56,
+  "h": 379
+ },
+ {
+  "query": "Machine Learning with Applications",
+  "name": "Machine Learning with Applications",
+  "issn": "2666-8270",
+  "publisher": "Elsevier BV",
+  "oa": true,
+  "doaj": true,
+  "apc": 2340,
+  "cites2y": 5.31,
+  "h": 60
+ },
+ {
+  "query": "Acta Astronautica",
+  "name": "Acta Astronautica",
+  "issn": "0094-5765",
+  "publisher": "Elsevier BV",
+  "oa": false,
+  "doaj": false,
+  "apc": 3350,
+  "cites2y": 4.12,
+  "h": 133
+ },
+ {
+  "query": "Aerospace Science and Technology",
+  "name": "Aerospace Science and Technology",
+  "issn": "1270-9638",
+  "publisher": "Elsevier BV",
+  "oa": false,
+  "doaj": false,
+  "apc": 4360,
+  "cites2y": 4.45,
+  "h": 137
+ },
+ {
+  "query": "Advances in Space Research",
+  "name": "Advances in Space Research",
+  "issn": "0273-1177",
+  "publisher": "Elsevier BV",
+  "oa": false,
+  "doaj": false,
+  "apc": 2780,
+  "cites2y": 3.28,
+  "h": 151
+ },
+ {
+  "query": "Reliability Engineering & System Safety",
+  "name": "Reliability Engineering & System Safety",
+  "issn": "0951-8320",
+  "publisher": "Elsevier BV",
+  "oa": false,
+  "doaj": false,
+  "apc": 4830,
+  "cites2y": 11.14,
+  "h": 226
+ },
+ {
+  "query": "Scientific Reports",
+  "name": "Scientific Reports",
+  "issn": "2045-2322",
+  "publisher": "Nature Portfolio",
+  "oa": true,
+  "doaj": true,
+  "apc": 2690,
+  "cites2y": 5.32,
+  "h": 463
+ },
+ {
+  "query": "Array",
+  "name": "Array",
+  "issn": "2590-0056",
+  "publisher": "Elsevier BV",
+  "oa": true,
+  "doaj": true,
+  "apc": 1680,
+  "cites2y": 2.89,
+  "h": 50
+ },
+ {
+  "query": "IEEE Transactions on Aerospace and Electronic Systems",
+  "name": "IEEE Transactions on Aerospace and Electronic Systems",
+  "issn": "0018-9251",
+  "publisher": "Institute of Electrical and Electronics Engineers",
+  "oa": false,
+  "doaj": false,
+  "apc": 2645,
+  "cites2y": 4.99,
+  "h": 229
+ }
+]

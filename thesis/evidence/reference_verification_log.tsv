@@ -1,0 +1,69 @@
+key	title	first_author	year	doi_or_arxiv	source_used	status
+malhotra2016lstm	LSTM-based Encoder-Decoder for Multi-sensor Anomaly Detection	Malhotra	2016	arXiv:1607.00148	arxiv	verified
+liu2024tsbad	The Elephant in the Room: Towards A Reliable Time-Series Anomaly Detection Benchmark	Liu	2024	10.52202/079017-3437	doi.org	verified
+paparrizos2022tsbuad	TSB-UAD: an end-to-end benchmark suite for univariate time-series anomaly detection	Paparrizos	2022	10.14778/3529337.3529354	doi.org	verified
+schmidl2022anomaly	Anomaly detection in time series: a comprehensive evaluation	Schmidl	2022	10.14778/3538598.3538602	doi.org	verified
+wenig2022timeeval	TimeEval: a benchmarking toolkit for time series anomaly detection algorithms	Wenig	2022	10.14778/3554821.3554873	doi.org	verified
+huet2022local	Local Evaluation of Time Series Anomaly Detection Algorithms	Huet	2022	10.1145/3534678.3539339	doi.org	verified
+garcia2022dcvae	DC-VAE, Fine-grained Anomaly Detection in Multivariate Time-Series with Dilated Convolutions and Variational Auto Encoders	Gonzalez	2022	10.1109/eurospw55150.2022.00035	doi.org	verified
+ruff2018deepsvdd	Deep One-Class Classification	Ruff	2018	PMLR v80 (no DOI)	proceedings.mlr.press	verified
+ruff2021unifying	A Unifying Review of Deep and Shallow Anomaly Detection	Ruff	2021	10.1109/jproc.2021.3052449	doi.org	verified
+pang2022deep	Deep Learning for Anomaly Detection: A Review	Pang	2022	10.1145/3439950	doi.org	verified
+chandola2009anomaly	Anomaly detection: A survey	Chandola	2009	10.1145/1541880.1541882	doi.org	verified
+vovk2022alrw	Algorithmic Learning in a Random World	Vovk	2022	10.1007/978-3-031-06649-8	doi.org	verified
+angelopoulos2023gentle	Conformal Prediction: A Gentle Introduction	Angelopoulos	2023	10.1561/2200000101	doi.org	verified
+lei2018distribution	Distribution-Free Predictive Inference for Regression	Lei	2018	10.1080/01621459.2017.1307116	doi.org	verified
+romano2019cqr	Conformalized Quantile Regression	Romano	2019	arXiv:1905.03222 (NeurIPS 2019, no DOI)	papers.nips.cc and arxiv	verified
+laxhammar2010conformal	Conformal prediction for distribution-independent anomaly detection in streaming vessel data	Laxhammar	2010	10.1145/1833280.1833287	doi.org	verified
+laxhammar2015inductive	Inductive conformal anomaly detection for sequential detection of anomalous sub-trajectories	Laxhammar	2015	10.1007/s10472-013-9381-7	doi.org	verified
+efron1979bootstrap	Bootstrap Methods: Another Look at the Jackknife	Efron	1979	10.1214/aos/1176344552	doi.org	verified
+nosek2018preregistration	The preregistration revolution	Nosek	2018	10.1073/pnas.1708274114	doi.org	verified
+he2016resnet	Deep Residual Learning for Image Recognition	He	2016	10.1109/CVPR.2016.90	doi.org	verified
+ronneberger2015unet	U-Net: Convolutional Networks for Biomedical Image Segmentation	Ronneberger	2015	10.1007/978-3-319-24574-4_28	doi.org	verified
+lin2017focal	Focal Loss for Dense Object Detection	Lin	2017	10.1109/iccv.2017.324	doi.org	verified
+zhou2019objects	Objects as Points	Zhou	2019	arXiv:1904.07850	arxiv	verified
+redmon2016yolo	You Only Look Once: Unified, Real-Time Object Detection	Redmon	2016	10.1109/cvpr.2016.91	doi.org	verified
+kingma2017adam	Adam: A Method for Stochastic Optimization	Kingma	2017	arXiv:1412.6980	arxiv	verified
+loshchilov2019adamw	Decoupled Weight Decay Regularization	Loshchilov	2019	arXiv:1711.05101	arxiv	verified
+smith2019superconvergence	Super-convergence: very fast training of neural networks using large learning rates	Smith	2019	10.1117/12.2520589	doi.org and arxiv	verified
+lakshminarayanan2017ensembles	Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles	Lakshminarayanan	2017	arXiv:1612.01474 (NeurIPS 2017, no DOI)	papers.nips.cc and arxiv	verified
+sundararajan2017ig	Axiomatic Attribution for Deep Networks	Sundararajan	2017	arXiv:1703.01365 (ICML 2017, PMLR 70, no DOI)	proceedings.mlr.press and arxiv	verified
+adebayo2018sanity	Sanity Checks for Saliency Maps	Adebayo	2018	arXiv:1810.03292 (NeurIPS 2018, no DOI)	papers.nips.cc and arxiv	verified
+guo2017calibration	On Calibration of Modern Neural Networks	Guo	2017	arXiv:1706.04599 (ICML 2017, PMLR 70, no DOI)	proceedings.mlr.press and arxiv	verified
+grinsztajn2022tree	Why Do Tree-Based Models Still Outperform Deep Learning on Typical Tabular Data?	Grinsztajn	2022	10.52202/068431-0037	doi.org and arxiv	verified
+chen2021spotgeo	Spot the GEO Satellites: From Dataset to Kelvins SpotGEO Challenge	Chen	2021	10.1109/cvprw53098.2021.00237	doi.org + openaccess.thecvf.com	verified
+kuhn1955hungarian	The Hungarian method for the assignment problem	Kuhn	1955	10.1002/nav.3800020109	doi.org	verified
+kessler1978collision	Collision frequency of artificial satellites: The creation of a debris belt	Kessler	1978	10.1029/ja083ia06p02637	doi.org	verified
+picone2002nrlmsise	NRLMSISE-00 empirical model of the atmosphere: Statistical comparisons and scientific issues	Picone	2002	10.1029/2002ja009430	doi.org	verified
+jung2021reentry	Recurrent neural network model to predict re-entry trajectories of uncontrolled space objects	Jung	2021	10.1016/j.asr.2021.04.041	doi.org	verified
+shorten2023lifetimes	Wide-Scale Monitoring of Satellite Lifetimes: Pitfalls and a Benchmark Dataset	Shorten	2023	10.2514/1.a35642	doi.org	verified
+salmaso2023reentry	A Machine Learning and Feature Engineering Approach for the Prediction of the Uncontrolled Re-Entry of Space Objects	Salmaso	2023	10.3390/aerospace10030297	doi.org and arxiv	verified
+peng2020orbit	Machine Learning Approach to Improve Satellite Orbit Prediction Accuracy Using Publicly Available Data	Peng	2020	10.1007/s40295-019-00158-3	doi.org	verified
+barnwal2022aft	Survival Regression with Accelerated Failure Time Model in XGBoost	Barnwal	2022	10.1080/10618600.2022.2067548	doi.org	verified
+cox1972regression	Regression Models and Life-Tables	Cox	1972	10.1111/j.2517-6161.1972.tb00899.x	doi.org	verified
+harrell1982yield	Evaluating the Yield of Medical Tests	Harrell	1982	10.1001/jama.1982.03320430047030; PMID 7069920	doi.org and PubMed	verified
+harrell1996multivariable	Multivariable Prognostic Models: Issues in Developing Models, Evaluating Assumptions and Adequacy, and Measuring and Reducing Errors	Harrell	1996	10.1002/(sici)1097-0258(19960229)15:4<361::aid-sim168>3.0.co;2-4	doi.org	verified
+graf1999assessment	Assessment and comparison of prognostic classification schemes for survival data	Graf	1999	10.1002/(sici)1097-0258(19990915/30)18:17/18<2529::aid-sim274>3.0.co;2-5	doi.org	verified
+brier1950verification	Verification of Forecasts Expressed in Terms of Probability	Brier	1950	10.1175/1520-0493(1950)078<0001:vofeit>2.0.co;2	doi.org	verified
+tutz2016discrete	Modeling Discrete Time-to-Event Data	Tutz	2016	10.1007/978-3-319-28158-2	doi.org	verified
+kvamme2021continuous	Continuous and discrete-time survival prediction with neural networks	Kvamme	2021	10.1007/s10985-021-09532-6	doi.org	verified
+candes2023conformalized	Conformalized survival analysis	Candès	2023	10.1093/jrsssb/qkac004	doi.org	verified
+gui2024conformalized	Conformalized survival analysis with adaptive cut-offs	Gui	2024	10.1093/biomet/asad076	doi.org and arxiv	verified
+glaessgen2012digital	The Digital Twin Paradigm for Future NASA and U.S. Air Force Vehicles	Glaessgen	2012	10.2514/6.2012-1818	doi.org	verified
+grieves2017digital	Digital Twin: Mitigating Unpredictable, Undesirable Emergent Behavior in Complex Systems	Grieves	2017	10.1007/978-3-319-38756-7_4	doi.org	verified
+tao2019digital	Digital Twin in Industry: State-of-the-Art	Tao	2019	10.1109/tii.2018.2873186	doi.org	verified
+evans2014opssat	OPS-SAT: A ESA nanosatellite for accelerating innovation in satellite control	Evans	2014	10.2514/6.2014-1702	doi.org	verified
+ibrahim2019telemetry	Machine Learning Methods for Spacecraft Telemetry Mining	Ibrahim	2019	10.1109/taes.2018.2876586	doi.org	verified
+yairi2017health	A Data-Driven Health Monitoring Method for Satellite Housekeeping Data Based on Probabilistic Clustering and Dimensionality Reduction	Yairi	2017	10.1109/taes.2017.2671247	doi.org	verified
+esa2026environment	ESA's Annual Space Environment Report	ESA Space Debris Office	2026	no DOI; ESA ref. GEN-DB-LOG-00288-OPS-SD issue 10.1	esa.int / sdo.esoc.esa.int (report PDF cover page)	verified
+kinghele1987satellite	Satellite Orbits in an Atmosphere: Theory and Applications	King-Hele	1987	no DOI; ISBN 0216922526; CiNii NCID BA2671870X	CiNii Books (NII union catalogue) + OpenAlex	verified
+vallado2013fundamentals	Fundamentals of Astrodynamics and Applications (4th ed.)	Vallado	2013	no DOI; ISBN 9781881883180; CiNii NCID BB1743900X	CiNii Books (NII union catalogue)	verified
+vallado2022fundamentals	Fundamentals of Astrodynamics and Applications (5th ed.)	Vallado	2022	no DOI; ISBN 9781881883227; CiNii NCID BD05035063	CiNii Books (NII union catalogue)	verified
+-	Reversible Instance Normalization for Accurate Time-Series Forecasting against Distribution Shift (RevIN)	Kim	2022	none found	Crossref, OpenAlex, arXiv search; OpenReview API blocked (bot challenge)	not found
+-	Zeng et al. spacecraft telemetry anomaly detection survey	Zeng	-	none found	Crossref, OpenAlex (only Zeng 2022 Appl. Sci. 10.3390/app12041803, a method paper, not a survey)	not found
+-	SpotGEO arXiv preprint (2203.xxxxx)	Chen	-	none found	arXiv search 'SpotGEO'; only the CVPRW 2021 version exists (included as chen2021spotgeo)	not found
+johnson2001sbm	NASA's new breakup model of EVOLVE 4.0	Johnson	2001	10.1016/S0273-1177(01)00423-9	api.crossref.org	verified
+loshchilov2019adamw	Decoupled Weight Decay Regularization	Loshchilov	2019	arXiv:1711.05101	export.arxiv.org	verified
+smith2019superconvergence	Super-convergence: very fast training of neural networks using large learning rates	Smith	2019	10.1117/12.2520589	api.crossref.org	verified
+sehili2023flawed (updated)	Multivariate Time Series Anomaly Detection: Fancy Algorithms and Flawed Evaluation Methodology	Sehili	2024	10.1007/978-3-031-68031-1_1	api.crossref.org	verified (published LNCS version)
+carlstein1986	The Use of Subseries Values for Estimating the Variance of a General Statistic from a Stationary Sequence	Carlstein	1986	10.1214/aos/1176350057	api.crossref.org	verified

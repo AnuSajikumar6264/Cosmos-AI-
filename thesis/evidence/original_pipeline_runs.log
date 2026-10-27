@@ -1,0 +1,10 @@
+default_summary: ok in 12 s
+monitor_grid: ok in 0 s
+stuck_fault: ok in 0 s
+scenario_table: ok in 0 s
+detection_single_vs_pair: ok in 6 s
+catalogue: ok in 2 s
+zones: ok in 19 s
+failure_modes: ok in 52 s
+corridors: ok in 36 s
+wrote /data/anupa/COSMOS_work/Final_Project/thesis/evidence/original_pipeline_runs.json

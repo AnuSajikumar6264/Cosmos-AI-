@@ -1,0 +1,60 @@
+{
+ "script": "scripts/posthoc_v2/seeds_train.py",
+ "script_sha256": "e61d6743400d4fc454be1ee12ee874618e00dc93502f93d45c9bfe47bebec939",
+ "plan_sha256": "217648e6805f84e11903507820a52c23b8446c03651523bb6f3d0e0b12fb0dea",
+ "run_at": "2026-10-25T12:41:03",
+ "kind": "gbt",
+ "seed": 7,
+ "mission": 1,
+ "dir": "/tmp/posthoc_v2/benchmarks/telemetry_esa_adb/event_model/m1_target_gbt_ar8_s7",
+ "meta": {
+  "model": "xgboost",
+  "params": {
+   "objective": "multi:softprob",
+   "num_class": 3,
+   "max_depth": 8,
+   "eta": 0.1,
+   "subsample": 0.8,
+   "colsample_bytree": 0.8,
+   "min_child_weight": 5,
+   "tree_method": "hist",
+   "max_cat_to_onehot": 1,
+   "nthread": 64
+  },
+  "rounds": 400,
+  "folds": [
+   {
+    "seconds": 17.552653551101685,
+    "n_rows": 2000000,
+    "labelled_rows": 1000000
+   },
+   {
+    "seconds": 21.863152265548706,
+    "n_rows": 2000000,
+    "labelled_rows": 1000000
+   },
+   {
+    "seconds": 20.34105157852173,
+    "n_rows": 2000000,
+    "labelled_rows": 1000000
+   },
+   {
+    "seconds": 19.959052324295044,
+    "n_rows": 2000000,
+    "labelled_rows": 1000000
+   },
+   {
+    "seconds": 20.442721605300903,
+    "n_rows": 2000000,
+    "labelled_rows": 1000000
+   }
+  ],
+  "purge": 2880,
+  "run_id": "20261025-124743_esa_event_m1_target_gbt_ar8_s7_s7",
+  "final": {
+   "seconds": 21.829062938690186,
+   "n_rows": 2000000,
+   "labelled_rows": 1000000
+  }
+ }
+}

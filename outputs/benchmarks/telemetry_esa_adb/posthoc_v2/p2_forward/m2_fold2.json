@@ -1,0 +1,441 @@
+{
+ "script": "scripts/posthoc_v2/p2_forward_chain.py",
+ "script_sha256": "468b76324d24d75afff2abba7eb4f6780e956f013c793ae761f87abbf62cb544",
+ "plan_sha256": "217648e6805f84e11903507820a52c23b8446c03651523bb6f3d0e0b12fb0dea",
+ "run_at": "2026-10-25T12:23:32",
+ "mission": 2,
+ "fold": 2,
+ "fold_start": "2001-07-01",
+ "fold_end": "2001-10-01",
+ "rows": {
+  "es0": 1747200,
+  "cal0": 1968000,
+  "start": 2625600,
+  "end": 3067200
+ },
+ "n_events_eval": 26,
+ "protocols": {
+  "W_conformal_bh": {
+   "level": 0.01,
+   "k": 30,
+   "EW_F0.5": 0.9407243838755731,
+   "anomaly_EW_F0.5": 0.0,
+   "EW_recall": 1.0,
+   "exact_EW_F0.5": 0.9407243838755731,
+   "alarm_runs": 28,
+   "false_alarm_runs": 2,
+   "false_alarms_per_year": 7.94023537190981,
+   "rare_event_only_runs": 26,
+   "anomaly_runs": 0,
+   "table": {
+    "nb": 4,
+    "nominal": [
+     2562223551000000.0,
+     2572546293000000.0,
+     2567623530000000.0,
+     170027997000000.0
+    ],
+    "alarm_nominal": [
+     13428000000000.0,
+     993000000.0,
+     0.0,
+     0.0
+    ],
+    "ev_block": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     3,
+     2
+    ],
+    "ev_det": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "fp_block": [
+     0,
+     0
+    ],
+    "ev_count": [
+     9,
+     7,
+     9,
+     1
+    ],
+    "tp_count": [
+     9.0,
+     7.0,
+     9.0,
+     1.0
+    ],
+    "fp_count": [
+     2,
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "H_conformal_bh": {
+   "level": 0.01,
+   "k": 30,
+   "EW_F0.5": 0.9602294558314771,
+   "anomaly_EW_F0.5": 0.0,
+   "EW_recall": 0.9615384615384616,
+   "exact_EW_F0.5": 0.9602294558314771,
+   "alarm_runs": 26,
+   "false_alarm_runs": 1,
+   "false_alarms_per_year": 3.970117685954905,
+   "rare_event_only_runs": 25,
+   "anomaly_runs": 0,
+   "table": {
+    "nb": 4,
+    "nominal": [
+     2562223551000000.0,
+     2572546293000000.0,
+     2567623530000000.0,
+     170027997000000.0
+    ],
+    "alarm_nominal": [
+     13392000000000.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "ev_block": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     3,
+     2
+    ],
+    "ev_det": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     false
+    ],
+    "fp_block": [
+     0
+    ],
+    "ev_count": [
+     9,
+     7,
+     9,
+     1
+    ],
+    "tp_count": [
+     9.0,
+     7.0,
+     8.0,
+     1.0
+    ],
+    "fp_count": [
+     1,
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "W_threshold": {
+   "level": 0.0001,
+   "k": 30,
+   "EW_F0.5": 0.9602294558314771,
+   "anomaly_EW_F0.5": 0.0,
+   "EW_recall": 0.9615384615384616,
+   "exact_EW_F0.5": 0.9602294558314771,
+   "alarm_runs": 26,
+   "false_alarm_runs": 1,
+   "false_alarms_per_year": 3.970117685954905,
+   "rare_event_only_runs": 25,
+   "anomaly_runs": 0,
+   "table": {
+    "nb": 4,
+    "nominal": [
+     2562223551000000.0,
+     2572546293000000.0,
+     2567623530000000.0,
+     170027997000000.0
+    ],
+    "alarm_nominal": [
+     13392000000000.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "ev_block": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     3,
+     2
+    ],
+    "ev_det": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     false
+    ],
+    "fp_block": [
+     0
+    ],
+    "ev_count": [
+     9,
+     7,
+     9,
+     1
+    ],
+    "tp_count": [
+     9.0,
+     7.0,
+     8.0,
+     1.0
+    ],
+    "fp_count": [
+     1,
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "H_threshold": {
+   "level": 0.0001,
+   "k": 30,
+   "EW_F0.5": 0.9511016072966899,
+   "anomaly_EW_F0.5": 0.0,
+   "EW_recall": 0.9230769230769231,
+   "exact_EW_F0.5": 0.9511016072966899,
+   "alarm_runs": 25,
+   "false_alarm_runs": 1,
+   "false_alarms_per_year": 3.970117685954905,
+   "rare_event_only_runs": 24,
+   "anomaly_runs": 0,
+   "table": {
+    "nb": 4,
+    "nominal": [
+     2562223551000000.0,
+     2572546293000000.0,
+     2567623530000000.0,
+     170027997000000.0
+    ],
+    "alarm_nominal": [
+     13320000000000.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "ev_block": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     3,
+     2
+    ],
+    "ev_det": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     false,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     false
+    ],
+    "fp_block": [
+     0
+    ],
+    "ev_count": [
+     9,
+     7,
+     9,
+     1
+    ],
+    "tp_count": [
+     8.0,
+     7.0,
+     8.0,
+     1.0
+    ],
+    "fp_count": [
+     1,
+     0,
+     0,
+     0
+    ]
+   }
+  }
+ },
+ "seconds": 731.1414151191711
+}

@@ -1,0 +1,5 @@
+- Pre-registered ESA-ADB study of event-level alarm protocols at full channel scale
+- Training-half alarm selection raised Mission 1 $F_{0.5}$ from {{pre.m1.A0.conformal_bh.f05.mean:.3f}} to {{pre.m1.A1.conformal_bh.f05.mean:.3f}}
+- Decomposition: the selection labels, not the fitted scores, carried the gain
+- A deep temporal convolutional scorer gave no gain over AR(8) or boosted trees
+- The gain failed to replicate forward in time and reversed in two other settings

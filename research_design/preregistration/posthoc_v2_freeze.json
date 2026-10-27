@@ -1,0 +1,6 @@
+{
+ "document": "research_design/preregistration/POSTHOC_PLAN_V2.md",
+ "sha256": "217648e6805f84e11903507820a52c23b8446c03651523bb6f3d0e0b12fb0dea",
+ "written": "2026-10-25T12:14:37",
+ "note": "Frozen before any post-hoc V2 analysis was run; analysis scripts record their own SHA-256 in each result file."
+}

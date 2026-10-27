@@ -1,0 +1,22 @@
+{
+ "script": "scripts/posthoc_v2/p5_p8_selection.py",
+ "script_sha256": "ff2407bbeafcd8db23851861c697e8a7048a26c729001ecb2ce2a108700f6902",
+ "plan_sha256": "217648e6805f84e11903507820a52c23b8446c03651523bb6f3d0e0b12fb0dea",
+ "run_at": "2026-10-25T12:24:59",
+ "checks": [
+  {
+   "mission": 1,
+   "same_choice": true,
+   "n_grid": 60,
+   "max_abs_cv_diff": 0.0,
+   "passed": true
+  },
+  {
+   "mission": 2,
+   "same_choice": true,
+   "n_grid": 60,
+   "max_abs_cv_diff": 0.0,
+   "passed": true
+  }
+ ]
+}

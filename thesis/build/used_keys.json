@@ -1,0 +1,5647 @@
+{
+ "tests.verify.total": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": 20
+ },
+ "verify.n_external": {
+  "kind": "derived",
+  "source": "tests/test_verify.py",
+  "value": 10
+ },
+ "verify.n_internal": {
+  "kind": "derived",
+  "source": "tests/test_verify.py",
+  "value": 9
+ },
+ "data.esa.m1.target_channels": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 58
+ },
+ "data.esa.m2.target_channels": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 47
+ },
+ "explo.m2.full.ar8.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.9624106610225746
+ },
+ "lit.dmlr.m2.full.best": {
+  "kind": "literature",
+  "source": "kotowski2026esaadb, DMLR Table 4 (research_design/references/kotowski2026_esa_adb_dmlr.pdf)",
+  "value": 0.079
+ },
+ "explo.m2.full.ool.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.8936112694063737
+ },
+ "explo.m1.full.ar8.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.0743509903651713
+ },
+ "data.esa.m1.events_target.cal.events": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 9
+ },
+ "prereg.frozen_files": {
+  "kind": "derived",
+  "source": "research_design/preregistration/freeze_09a98f5e160e.json",
+  "value": 28
+ },
+ "prereg.freeze_id": {
+  "kind": "measured",
+  "source": "research_design/preregistration/freeze_09a98f5e160e.json",
+  "value": "09a98f5e160e"
+ },
+ "sel.m1.n_train_events": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/selection/m1_target_ar8.json",
+  "value": 109
+ },
+ "pre.m1.A0.conformal_bh.f05.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/arms/m1_target_ar8_s0.json",
+  "value": 0.07435099036517134
+ },
+ "pre.m1.A1.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.4278060106400274
+ },
+ "conf.m1.h6.diff_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.35345502027485604
+ },
+ "conf.m1.h6.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.20635509925755668
+ },
+ "conf.m1.h6.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.48810654614581644
+ },
+ "conf.p_floor_holm": {
+  "kind": "derived",
+  "note": "Holm factor 3 x floor",
+  "source": "CONFIRMATORY.json",
+  "value": 0.0015
+ },
+ "pre.m1.A1.conformal_bh.fa_yr.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 1.1427454047712162
+ },
+ "pre.m1.A1.conformal_bh.alarm_runs_per_year": {
+  "kind": "derived",
+  "note": "alarm runs / test-half years",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 17.56971059835745
+ },
+ "seleff.m1.full.threshold": {
+  "kind": "derived",
+  "note": "A1 minus A0",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.3395588224571032
+ },
+ "pre.m1.A3.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.20536106259946085
+ },
+ "pre.m1.A3.conformal_bh.f05.std": {
+  "kind": "derived",
+  "note": "sample sd over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.11416843086435596
+ },
+ "conf.m1.h4.diff_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.22244494804056653
+ },
+ "pre.m1.A2.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.5436142089506507
+ },
+ "pre.m1.A2.conformal_bh.f05.std": {
+  "kind": "derived",
+  "note": "sample sd over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.23565873782168226
+ },
+ "conf.m1.h5.diff_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.33825314635118986
+ },
+ "conf.m2.h6.diff_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.08888141425973117
+ },
+ "xcomp.m2.a1_minus_a0.threshold": {
+  "kind": "derived",
+  "note": "A1 minus A0 under the threshold layer (not a pre-registered test)",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json + arms",
+  "value": 0.09442984523282927
+ },
+ "cfg.prereg.aci_alpha": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/oof_benchmark.py",
+  "value": 0.01
+ },
+ "pre.all.aci.f05.max": {
+  "kind": "derived",
+  "note": "max over all test arms and seeds (30 runs)",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.0017180078681627985
+ },
+ "shift.m1.A3.ratio_min": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/calibration_shift_m1.json",
+  "value": 2.7868925443728823
+ },
+ "shift.m1.A3.ratio_max": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/calibration_shift_m1.json",
+  "value": 54.15764522168543
+ },
+ "shift.m1.a1_ar8.ratio": {
+  "kind": "derived",
+  "note": "test rate / CV rate",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/calibration_shift_m1.json",
+  "value": 0.8153460756633076
+ },
+ "shift.m1.supervised.spearman_f05": {
+  "kind": "derived",
+  "note": "Spearman rho over the 10 supervised runs",
+  "source": "calibration_shift_m1.json + test/*.json",
+  "value": -0.11515151515151514
+ },
+ "ph.p1.m1.target.conformal_bh.forward.D.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 0.300603093451957
+ },
+ "ph.p1.m1.target.conformal_bh.reverse.D.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 0.366067815772373
+ },
+ "ph.p2.m1.conformal_bh.n_folds_H_better": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p2_forward/m1_summary.json",
+  "value": 2
+ },
+ "ph.p2.m1.conformal_bh.n_folds": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p2_forward/m1_summary.json",
+  "value": 4
+ },
+ "ph.p4.m1.ar8.gamma_positive.f05": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p4_aci/m1_target_ar8.json",
+  "value": 0.4716978667070382
+ },
+ "ops.official.hybrid.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.948994391587312
+ },
+ "spot.unet.both.f100.test_f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.7460083066565798
+ },
+ "lm.xgboost.all.h68.auc_pr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.821325030891084
+ },
+ "lm.hazard_mlp.all.h68.auc_pr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.6877164785034644
+ },
+ "lit.dmlr.m1.full.best": {
+  "kind": "literature",
+  "source": "kotowski2026esaadb, DMLR Table 4 (research_design/references/kotowski2026_esa_adb_dmlr.pdf)",
+  "value": 0.061
+ },
+ "lit.dmlr.m1.full.best_name": {
+  "kind": "literature",
+  "source": "kotowski2026esaadb, DMLR Table 4 (research_design/references/kotowski2026_esa_adb_dmlr.pdf)",
+  "value": "Telemanom-ESA-Pruned"
+ },
+ "lit.dmlr.m2.full.best_name": {
+  "kind": "literature",
+  "source": "kotowski2026esaadb, DMLR Table 4 (research_design/references/kotowski2026_esa_adb_dmlr.pdf)",
+  "value": "PCC"
+ },
+ "lit.dmlr.m1.lw.best": {
+  "kind": "literature",
+  "source": "kotowski2026esaadb, DMLR Table 4 (research_design/references/kotowski2026_esa_adb_dmlr.pdf)",
+  "value": 0.786
+ },
+ "lit.dmlr.m2.lw.best": {
+  "kind": "literature",
+  "source": "kotowski2026esaadb, DMLR Table 4 (research_design/references/kotowski2026_esa_adb_dmlr.pdf)",
+  "value": 0.949
+ },
+ "lit.brancato.smed_full": {
+  "kind": "literature",
+  "source": "brancato2027ast, abstract (full text not accessed)",
+  "value": 0.902
+ },
+ "lit.brancato.qgpr_full": {
+  "kind": "literature",
+  "source": "brancato2027ast, abstract (full text not accessed)",
+  "value": 0.883
+ },
+ "lit.brancato.ool_full": {
+  "kind": "literature",
+  "source": "brancato2027ast, abstract (full text not accessed)",
+  "value": 0.754
+ },
+ "lit.alcarria.m1_f05": {
+  "kind": "literature",
+  "source": "alcarria2026, Table 1 (arXiv 2609.10017)",
+  "value": 0.7
+ },
+ "lit.alcarria.m2_f05": {
+  "kind": "literature",
+  "source": "alcarria2026, Table 1 (arXiv 2609.10017)",
+  "value": 0.698
+ },
+ "lit.alcarria.pitia_m1": {
+  "kind": "literature",
+  "source": "alcarria2026, Table 1 (arXiv 2609.10017)",
+  "value": 0.424
+ },
+ "lit.alcarria.pitia_m2": {
+  "kind": "literature",
+  "source": "alcarria2026, Table 1 (arXiv 2609.10017)",
+  "value": 0.882
+ },
+ "lit.allegrini.public": {
+  "kind": "literature",
+  "source": "allegrini2026 (arXiv 2605.06681)",
+  "value": 0.931
+ },
+ "lit.allegrini.private": {
+  "kind": "literature",
+  "source": "allegrini2026 (arXiv 2605.06681)",
+  "value": 0.853
+ },
+ "lit.tccad.m1_channels": {
+  "kind": "literature",
+  "source": "sahin2026tccad, figures/table7_official_V0_data.csv and fig5_budget_data.csv (Zenodo 23344000)",
+  "value": 24
+ },
+ "lit.tccad.m2_channels": {
+  "kind": "literature",
+  "source": "sahin2026tccad, figures/table7_official_V0_data.csv and fig5_budget_data.csv (Zenodo 23344000)",
+  "value": 19
+ },
+ "lit.tccad.seeds": {
+  "kind": "literature",
+  "source": "sahin2026tccad, figures/table7_official_V0_data.csv and fig5_budget_data.csv (Zenodo 23344000)",
+  "value": 16
+ },
+ "lit.tccad.c0_anom_ewf05": {
+  "kind": "literature",
+  "source": "sahin2026tccad, figures/table7_official_V0_data.csv and fig5_budget_data.csv (Zenodo 23344000)",
+  "value": 0.08951238809421605
+ },
+ "lit.tccad.c3_anom_ewf05_order": {
+  "kind": "literature",
+  "source": "sahin2026tccad, figures/table7_official_V0_data.csv and fig5_budget_data.csv (Zenodo 23344000)",
+  "value": "1e-5"
+ },
+ "lit.heydari.shared_channels": {
+  "kind": "literature",
+  "source": "heydari2026, abstract",
+  "value": 77
+ },
+ "lit.tccad.aci_far_overshoot": {
+  "kind": "literature",
+  "source": "sahin2026tccad, preregistration/en/PREREGISTRATION_H4.md section 0",
+  "value": "1.15\u20133.4"
+ },
+ "lit.tccad.deferral_pp": {
+  "kind": "literature",
+  "source": "sahin2026tccad, Zenodo description",
+  "value": "29-33"
+ },
+ "data.opssat.n_features": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 18
+ },
+ "lit.opssat.fcnn_f1": {
+  "kind": "literature",
+  "source": "ruszczak2025opssat, Table 3 (research_design/references/opssat_table3.html)",
+  "value": 0.946
+ },
+ "lit.opssat.fcnn_aucpr": {
+  "kind": "literature",
+  "source": "ruszczak2025opssat, Table 3 (research_design/references/opssat_table3.html)",
+  "value": 0.979
+ },
+ "lit.opssat.adaboost_f1": {
+  "kind": "literature",
+  "source": "ruszczak2025opssat, Table 3 (research_design/references/opssat_table3.html)",
+  "value": 0.836
+ },
+ "data.spotgeo.train.sequences": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 1280
+ },
+ "data.spotgeo.test.sequences": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 5120
+ },
+ "lit.spotgeo.winner_1mf1": {
+  "kind": "literature",
+  "source": "chen2021spotgeo, Table 1 (final ranking, full test set)",
+  "value": 0.0517
+ },
+ "lit.spotgeo.winner_f1": {
+  "kind": "literature",
+  "note": "1 - (1 - F1) as published",
+  "source": "chen2021spotgeo, Table 1 (final ranking, full test set)",
+  "value": 0.9483
+ },
+ "evm.receptive_field": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/event_model/m2_target_event_ar8_all_c3_s4/meta.json",
+  "value": 1021
+ },
+ "data.esa.m1.test.blocks30": {
+  "kind": "derived",
+  "note": "number of 30-day bootstrap blocks in the test half",
+  "source": "data/DATASET_REPORT.json",
+  "value": 86
+ },
+ "data.esa.m2.test.blocks30": {
+  "kind": "derived",
+  "note": "number of 30-day bootstrap blocks in the test half",
+  "source": "data/DATASET_REPORT.json",
+  "value": 22
+ },
+ "conf.reimpl_gap_max": {
+  "kind": "derived",
+  "note": "max |re-implemented - official difference| over the six comparisons",
+  "source": "CONFIRMATORY.json",
+  "value": 0.00810846817961014
+ },
+ "conf.m1.h6.n_boot": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 2000
+ },
+ "conf.p_floor": {
+  "kind": "derived",
+  "note": "1 / replicates",
+  "source": "CONFIRMATORY.json",
+  "value": 0.0005
+ },
+ "code.original.files": {
+  "kind": "derived",
+  "source": "cosmos/{*,health,debris,reentry}/*.py",
+  "value": 26
+ },
+ "code.original.lines": {
+  "kind": "derived",
+  "source": "cosmos/{*,health,debris,reentry}/*.py",
+  "value": 5317
+ },
+ "code.ai.files": {
+  "kind": "derived",
+  "source": "cosmos/ai/**/*.py (excl. vendored esa_metrics)",
+  "value": 38
+ },
+ "code.ai.lines": {
+  "kind": "derived",
+  "source": "cosmos/ai/**/*.py (excl. vendored esa_metrics)",
+  "value": 8749
+ },
+ "orig.stuck.error": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": "ValueError('scale < 0')"
+ },
+ "syn.tinyyolo.params.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_cosmos_synthetic/summary.csv",
+  "value": 320313.0
+ },
+ "orig.default.anomaly_score_final": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.241
+ },
+ "orig.default.health_band": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": "NOMINAL"
+ },
+ "orig.default.break_up_type": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": "aerodynamic"
+ },
+ "orig.default.break_up_altitude_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 77.9
+ },
+ "orig.default.fragments_generated": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 868
+ },
+ "orig.default.impacts_propagated": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 1199
+ },
+ "orig.default.cep50_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 459.7
+ },
+ "orig.default.risk_band": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": "NEGLIGIBLE"
+ },
+ "orig.version": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": "1.1.0"
+ },
+ "tests.verify.passed": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": 20
+ },
+ "data.esa.revision_check": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "780/780 (M1) and 230/230 (M2) members present in both; the ONLY changed member is ESA-MissionN/channels.csv, which gains a 'Categorical' column (M2 also blanks the physical unit of channel_4 and channel_5). Labels, anomaly types, telecommands and all channel pickles are byte-identical."
+ },
+ "data.esa.m1.grid_seconds": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 30
+ },
+ "data.esa.m2.grid_seconds": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 18
+ },
+ "data.esa.m1.train.n": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 7364161
+ },
+ "data.esa.m1.test.n": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 7364161
+ },
+ "data.esa.m2.train.n": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 3067201
+ },
+ "data.esa.m2.test.n": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 3062401
+ },
+ "cfg.periods.m1.fit": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/forecasting.py",
+  "value": "2000-01-01 to 2006-01-01"
+ },
+ "cfg.periods.m2.fit": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/forecasting.py",
+  "value": "2000-01-01 to 2001-04-01"
+ },
+ "cfg.periods.m1.es": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/forecasting.py",
+  "value": "2006-01-01 to 2006-04-01"
+ },
+ "cfg.periods.m2.es": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/forecasting.py",
+  "value": "2001-04-01 to 2001-05-15"
+ },
+ "cfg.periods.m1.cal": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/forecasting.py",
+  "value": "2006-04-01 to 2007-01-01"
+ },
+ "cfg.periods.m2.cal": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/forecasting.py",
+  "value": "2001-05-15 to 2001-10-01"
+ },
+ "cfg.fc.context": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/forecasting.py: ForecastConfig",
+  "value": 512
+ },
+ "cfg.fc.horizon": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/forecasting.py: ForecastConfig",
+  "value": 16
+ },
+ "cfg.fc.levels": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/forecasting.py: ForecastConfig",
+  "value": 7
+ },
+ "cfg.fc.d_model": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/forecasting.py: ForecastConfig",
+  "value": 64
+ },
+ "cfg.fc.patch": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/forecasting.py: ForecastConfig",
+  "value": 16
+ },
+ "cfg.fc.n_layers": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/forecasting.py: ForecastConfig",
+  "value": 3
+ },
+ "cfg.fc.lr": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/forecasting.py: ForecastConfig",
+  "value": 0.001
+ },
+ "cfg.fc.weight_decay": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/forecasting.py: ForecastConfig",
+  "value": 0.0001
+ },
+ "cfg.fc.batch": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/forecasting.py: ForecastConfig",
+  "value": 256
+ },
+ "cfg.fc.steps": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/forecasting.py: ForecastConfig",
+  "value": 20000
+ },
+ "cfg.fc.patience": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/forecasting.py: ForecastConfig",
+  "value": 6
+ },
+ "cfg.explo.levels.threshold": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/alarms.py",
+  "value": [
+   0.001,
+   0.0001,
+   1e-05,
+   0.0
+  ]
+ },
+ "cfg.explo.levels.conformal_bh": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/alarms.py",
+  "value": [
+   0.01,
+   0.001,
+   0.0003,
+   0.0001
+  ]
+ },
+ "cfg.explo.ks": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/alarms.py",
+  "value": [
+   1,
+   3,
+   10,
+   30
+  ]
+ },
+ "data.esa.m1.events_all.train.Anomaly": {
+  "kind": "derived",
+  "note": "events (unique ID) by first start time vs the official split date",
+  "source": "data/feature1_health/esa_adb/processed/mission1/labels_with_types.csv",
+  "value": 63
+ },
+ "data.esa.m1.events_all.train.Rare_Event": {
+  "kind": "derived",
+  "note": "events (unique ID) by first start time vs the official split date",
+  "source": "data/feature1_health/esa_adb/processed/mission1/labels_with_types.csv",
+  "value": 42
+ },
+ "data.esa.m1.events_all.train.Communication_Gap": {
+  "kind": "derived",
+  "note": "events (unique ID) by first start time vs the official split date",
+  "source": "data/feature1_health/esa_adb/processed/mission1/labels_with_types.csv",
+  "value": 4
+ },
+ "oof.m1.K": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof/m1_target_ar8/folds.json",
+  "value": 5
+ },
+ "oof.m1.purge_steps": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof/m1_target_ar8/folds.json",
+  "value": 2880
+ },
+ "oof.m2.purge_steps": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof/m2_target_ar8/folds.json",
+  "value": 4800
+ },
+ "cfg.evm.features": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_model.py",
+  "value": [
+   "asinh_z",
+   "log_s",
+   "ewm_1h",
+   "ewm_12h",
+   "ewm_3d",
+   "asinh_dev_1d",
+   "finite"
+  ]
+ },
+ "cfg.evm.d_model": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_model.py: EventConfig",
+  "value": 64
+ },
+ "cfg.evm.levels": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_model.py: EventConfig",
+  "value": 8
+ },
+ "cfg.evm.kernel": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_model.py: EventConfig",
+  "value": 3
+ },
+ "cfg.evm.dropout": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_model.py: EventConfig",
+  "value": 0.1
+ },
+ "cfg.evm.mix_every": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_model.py: EventConfig",
+  "value": 2
+ },
+ "evm.m1.params": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/event_model/m1_target_event_ar8_all_c3_s4/meta.json",
+  "value": 220739
+ },
+ "cfg.evm.class_weights": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_model.py: EventConfig",
+  "value": [
+   1.0,
+   5.0,
+   5.0
+  ]
+ },
+ "cfg.evm.steps": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_model.py: EventConfig",
+  "value": 1500
+ },
+ "cfg.evm.lr": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_model.py: EventConfig",
+  "value": 0.001
+ },
+ "cfg.evm.weight_decay": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_model.py: EventConfig",
+  "value": 0.0001
+ },
+ "cfg.evm.batch": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_model.py: EventConfig",
+  "value": 8
+ },
+ "cfg.evm.window": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_model.py: EventConfig",
+  "value": 2048
+ },
+ "cfg.evm.event_fraction": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_model.py: EventConfig",
+  "value": 0.5
+ },
+ "cfg.gbt.objective": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_gbt.py: PARAMS",
+  "value": "multi:softprob"
+ },
+ "cfg.gbt.rounds": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_gbt.py",
+  "value": 400
+ },
+ "cfg.gbt.max_depth": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_gbt.py: PARAMS",
+  "value": 8
+ },
+ "cfg.gbt.eta": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_gbt.py: PARAMS",
+  "value": 0.1
+ },
+ "cfg.gbt.subsample": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_gbt.py: PARAMS",
+  "value": 0.8
+ },
+ "cfg.gbt.n_rows": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_gbt.py",
+  "value": 2000000
+ },
+ "cfg.prereg.merge_h": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/oof_benchmark.py",
+  "value": 1.0
+ },
+ "cfg.prereg.levels.conformal_bh": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/oof_benchmark.py",
+  "value": [
+   0.01,
+   0.001,
+   0.0001,
+   1e-05
+  ]
+ },
+ "cfg.prereg.levels.threshold": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/oof_benchmark.py",
+  "value": [
+   0.001,
+   0.0001,
+   1e-05,
+   0.0
+  ]
+ },
+ "cfg.prereg.ks": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/oof_benchmark.py",
+  "value": [
+   1,
+   3,
+   10,
+   30,
+   100
+  ]
+ },
+ "cfg.prereg.aci_gammas": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/oof_benchmark.py",
+  "value": [
+   0.001,
+   0.005,
+   0.01,
+   0.05
+  ]
+ },
+ "prereg.frozen_code_files": {
+  "kind": "derived",
+  "note": "frozen files minus the document",
+  "source": "research_design/preregistration/freeze_09a98f5e160e.json",
+  "value": 27
+ },
+ "prereg.freeze_written": {
+  "kind": "measured",
+  "source": "research_design/preregistration/freeze_09a98f5e160e.json",
+  "value": "2026-10-24T15:56:29"
+ },
+ "prereg.n_deviations": {
+  "kind": "derived",
+  "source": "research_design/preregistration/DEVIATIONS.md",
+  "value": 8
+ },
+ "prereg.refreeze_id": {
+  "kind": "measured",
+  "source": "research_design/preregistration/freeze.json",
+  "value": "681cc7ddec86"
+ },
+ "data.opssat.train": {
+  "kind": "derived",
+  "source": "data/DATASET_REPORT.json",
+  "value": 1594
+ },
+ "data.opssat.test": {
+  "kind": "derived",
+  "source": "data/DATASET_REPORT.json",
+  "value": 529
+ },
+ "ops.official.fcnn.f100.params": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 13249.0
+ },
+ "data.spotgeo.valsplit.train_sequences": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 1153
+ },
+ "data.spotgeo.valsplit.val_sequences": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 127
+ },
+ "spot.unet.both.f100.params.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 7784015.0
+ },
+ "spot.resnet18_pretrained.both.f100.params.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 14405775.0
+ },
+ "data.synvis.train.images": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 800
+ },
+ "data.synvis.val.images": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 200
+ },
+ "data.synvis.test.images": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 200
+ },
+ "lm.tau": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": "2026-08-16"
+ },
+ "lm.follow_up": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": "2026-10-23"
+ },
+ "data.landmark.population_at_risk": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 34158
+ },
+ "data.landmark.events": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 235
+ },
+ "data.landmark.gp_coverage": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 0.5551261783476784
+ },
+ "lm.mlp.grid_size": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 8
+ },
+ "lm.mlp.selected": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": "{\"hidden\": [256, 256, 128], \"lr\": 0.0003, \"quantile\": true}"
+ },
+ "sur.test.n": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_surrogate/results.json",
+  "value": 40000
+ },
+ "sur.ood_test.n": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_surrogate/results.json",
+  "value": 20000
+ },
+ "runs.total": {
+  "kind": "derived",
+  "note": "line count",
+  "source": "outputs/experiments/index.jsonl",
+  "value": 188
+ },
+ "runs.ok": {
+  "kind": "derived",
+  "source": "outputs/experiments/index.jsonl",
+  "value": 185
+ },
+ "runs.failed": {
+  "kind": "derived",
+  "source": "outputs/experiments/index.jsonl",
+  "value": 3
+ },
+ "data.esa_adb.class": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "REAL"
+ },
+ "data.esa_adb.status": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "downloaded"
+ },
+ "data.esa_adb.size_mb": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 8498.1
+ },
+ "data.esa_adb.licence": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "not stated in the Zenodo record; CC BY 3.0 IGO per the DMLR paper"
+ },
+ "data.opssat_ad.class": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "REAL"
+ },
+ "data.opssat_ad.status": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "downloaded"
+ },
+ "data.opssat_ad.size_mb": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 22.8
+ },
+ "data.opssat_ad.licence": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "cc-by-4.0"
+ },
+ "data.spotgeo.class": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "REAL"
+ },
+ "data.spotgeo.status": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "downloaded"
+ },
+ "data.spotgeo.size_mb": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 45576.8
+ },
+ "data.spotgeo.licence": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "cc-by-4.0"
+ },
+ "data.celestrak.class": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "REAL"
+ },
+ "data.celestrak.status": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "downloaded"
+ },
+ "data.celestrak.size_mb": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 21.2
+ },
+ "data.celestrak.licence": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "CelesTrak usage policy; public, no credentials; no explicit licence"
+ },
+ "data.reentry_historical.class": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "REAL"
+ },
+ "data.reentry_historical.status": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "downloaded (public parts only)"
+ },
+ "data.reentry_historical.size_mb": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 0.2
+ },
+ "data.cosmos_synthetic_telemetry.class": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "SYNTHETIC"
+ },
+ "data.cosmos_synthetic_telemetry.status": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "generated"
+ },
+ "data.cosmos_synthetic_telemetry.size_mb": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 38.9
+ },
+ "data.cosmos_synthetic_vision.class": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "SYNTHETIC"
+ },
+ "data.cosmos_synthetic_vision.status": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "generated"
+ },
+ "data.cosmos_synthetic_vision.size_mb": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 467.5
+ },
+ "data.cosmos_synthetic_vision.licence": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "generated by this project"
+ },
+ "data.reentry_simulated.class": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "SIM"
+ },
+ "data.reentry_simulated.status": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "generated"
+ },
+ "data.reentry_simulated.size_mb": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 67.5
+ },
+ "data.spacesense_bench.class": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "SYNTHETIC (Unreal Engine 5 renders)"
+ },
+ "data.spacesense_bench.status": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "inspection sample only (1 of 136 archives)"
+ },
+ "data.spacesense_bench.size_mb": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 1031.7
+ },
+ "data.spacesense_bench.licence": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "cc-by-nc-4.0 (Hugging Face card); GitHub repo has no licence file"
+ },
+ "data.spark.status": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "not downloaded"
+ },
+ "data.esa.m1.events_target.fit.Anomaly": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 55
+ },
+ "data.esa.m1.events_target.fit.Rare_Event": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 40
+ },
+ "data.esa.m1.events_target.fit.Communication_Gap": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 4
+ },
+ "data.esa.m2.events_target.fit.Anomaly": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 25
+ },
+ "data.esa.m2.events_target.fit.Rare_Event": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 202
+ },
+ "data.esa.m1.events_target.es.Anomaly": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 1
+ },
+ "data.esa.m2.events_target.es.Rare_Event": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 12
+ },
+ "data.esa.m1.events_target.cal.Anomaly": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 7
+ },
+ "data.esa.m1.events_target.cal.Rare_Event": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 2
+ },
+ "data.esa.m2.events_target.cal.Rare_Event": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 43
+ },
+ "data.esa.m1.events_target.test.Anomaly": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 55
+ },
+ "data.esa.m1.events_target.test.Rare_Event": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 36
+ },
+ "data.esa.m2.events_target.test.Anomaly": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 6
+ },
+ "data.esa.m2.events_target.test.Rare_Event": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 356
+ },
+ "data.esa.m2.events_target.cal.events": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 43
+ },
+ "data.esa.m1.classes.test": {
+  "kind": "derived",
+  "source": "data/feature1_health/esa_adb/processed/mission1/labels_with_types.csv",
+  "value": 17
+ },
+ "data.esa.m1.classes.test_unseen": {
+  "kind": "derived",
+  "source": "data/feature1_health/esa_adb/processed/mission1/labels_with_types.csv",
+  "value": 4
+ },
+ "data.esa.m2.classes.test_unseen": {
+  "kind": "derived",
+  "source": "data/feature1_health/esa_adb/processed/mission2/labels_with_types.csv",
+  "value": 8
+ },
+ "data.esa.m2.classes.test": {
+  "kind": "derived",
+  "source": "data/feature1_health/esa_adb/processed/mission2/labels_with_types.csv",
+  "value": 24
+ },
+ "data.opssat.fragments": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 2123
+ },
+ "data.opssat.channels": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 9
+ },
+ "data.opssat.anomaly_fraction": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 0.20442769665567592
+ },
+ "data.opssat.seg_len_median": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 70.0
+ },
+ "data.opssat.seg_len_min": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 8.0
+ },
+ "data.opssat.seg_len_max": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 1040.0
+ },
+ "data.spotgeo.train.frames_on_disk": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 6400
+ },
+ "data.spotgeo.train.objects": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 11250
+ },
+ "data.spotgeo.test.frames_on_disk": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 25600
+ },
+ "data.spotgeo.test.objects": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 44550
+ },
+ "data.spotgeo.train.corrupt_png": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 0
+ },
+ "data.spotgeo.dup_train_test": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 0
+ },
+ "data.synvis.train.objects": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 6448
+ },
+ "data.synvis.val.objects": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 1619
+ },
+ "data.synvis.test.objects": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 1603
+ },
+ "data.synvis.train.box_median_px": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 8.43264
+ },
+ "data.landmark.follow_up_days": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 68
+ },
+ "lm.split.train.n": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 18914
+ },
+ "lm.split.train.events": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 140
+ },
+ "lm.split.val.n": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 8873
+ },
+ "lm.split.val.events": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 57
+ },
+ "lm.split.test.n": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 6371
+ },
+ "lm.split.test.events": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 38
+ },
+ "data.landmark.events_type.PAY": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 173
+ },
+ "data.landmark.events_type.DEB": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 46
+ },
+ "data.landmark.events_type.RB": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 14
+ },
+ "data.landmark.events_type.UNK": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 2
+ },
+ "env.cpu_count": {
+  "kind": "measured",
+  "source": "outputs/experiments/20261024-154724_esa_event_m1_target_event_ar8_all_c3_s0_s0/env.json",
+  "value": 512
+ },
+ "env.device_name": {
+  "kind": "measured",
+  "source": "outputs/experiments/20261024-154724_esa_event_m1_target_event_ar8_all_c3_s0_s0/env.json",
+  "value": "Intel(R) Arc(TM) Pro B60 Graphics"
+ },
+ "env.python": {
+  "kind": "measured",
+  "source": "outputs/experiments/20261024-154724_esa_event_m1_target_event_ar8_all_c3_s0_s0/env.json",
+  "value": "3.12.13"
+ },
+ "env.torch": {
+  "kind": "measured",
+  "source": "outputs/experiments/20261024-154724_esa_event_m1_target_event_ar8_all_c3_s0_s0/env.json",
+  "value": "2.13.0+xpu"
+ },
+ "env.numpy": {
+  "kind": "measured",
+  "source": "outputs/experiments/20261024-154724_esa_event_m1_target_event_ar8_all_c3_s0_s0/env.json",
+  "value": "2.3.5"
+ },
+ "env.pandas": {
+  "kind": "measured",
+  "source": "outputs/experiments/20261024-154724_esa_event_m1_target_event_ar8_all_c3_s0_s0/env.json",
+  "value": "3.0.3"
+ },
+ "env.platform": {
+  "kind": "measured",
+  "source": "outputs/experiments/20261024-154724_esa_event_m1_target_event_ar8_all_c3_s0_s0/env.json",
+  "value": "Linux-6.17.0-1010-intel-x86_64-with-glibc2.41"
+ },
+ "evm.m1.tcn.train_seconds_total.mean": {
+  "kind": "derived",
+  "note": "mean over runs (5 fold models + final model per run)",
+  "source": "outputs/benchmarks/telemetry_esa_adb/event_model/*/meta.json",
+  "value": 6170.096994733811
+ },
+ "evm.m1.tcn.train_seconds_total.n": {
+  "kind": "derived",
+  "note": "count over runs (5 fold models + final model per run)",
+  "source": "outputs/benchmarks/telemetry_esa_adb/event_model/*/meta.json",
+  "value": 5
+ },
+ "evm.m1.gbt.train_seconds_total.mean": {
+  "kind": "derived",
+  "note": "mean over runs (5 fold models + final model per run)",
+  "source": "outputs/benchmarks/telemetry_esa_adb/event_model/*/meta.json",
+  "value": 193.2493832588196
+ },
+ "cfg.gbt.nthread": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/event_gbt.py: PARAMS",
+  "value": 64
+ },
+ "oof.m1.seconds": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof/m1_target_ar8/folds.json",
+  "value": 381.6687202453613
+ },
+ "explo.boot.h2.m2.ar8_conformal_bh_vs_threshold.n_boot": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 1000
+ },
+ "lm.cmp.hazard_mlp_vs_xgboost.h68.n_boot": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 2000
+ },
+ "verify.n_misspecified": {
+  "kind": "derived",
+  "source": "tests/test_verify.py",
+  "value": 1
+ },
+ "verify.3.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "0.933 %"
+ },
+ "verify.1.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "US76 density vs published table"
+ },
+ "verify.1.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "published table"
+ },
+ "verify.1.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "< 0.01 %"
+ },
+ "verify.1.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "0.0019 %"
+ },
+ "verify.2.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "US76 temperature vs published table"
+ },
+ "verify.2.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "layer constants (by construction)"
+ },
+ "verify.2.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "0 K"
+ },
+ "verify.2.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "0.000 K"
+ },
+ "verify.3.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "hydrostatic balance dp/dz = -rho g"
+ },
+ "verify.3.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "uses g0, not local g (mis-specified)"
+ },
+ "verify.3.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "< 1 %"
+ },
+ "verify.4.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "WGS-84 geodetic round trip"
+ },
+ "verify.4.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "round trip (self-consistency)"
+ },
+ "verify.4.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "< 1e-6 m"
+ },
+ "verify.4.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "1.97e-10 m"
+ },
+ "verify.5.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "great-circle quarter of the equator"
+ },
+ "verify.5.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "same radius on both sides (self-consistency)"
+ },
+ "verify.5.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "10007.5 km"
+ },
+ "verify.5.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "10007.5 km"
+ },
+ "verify.6.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "C_D at Kn -> infinity reaches the free-molecular limit"
+ },
+ "verify.6.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "code constant (by construction)"
+ },
+ "verify.6.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "2.1"
+ },
+ "verify.6.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "2.100"
+ },
+ "verify.7.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "C_D at Kn -> 0, Mach 20 reaches the continuum hypersonic value"
+ },
+ "verify.7.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "code constant (by construction)"
+ },
+ "verify.7.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "0.92"
+ },
+ "verify.7.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "0.920"
+ },
+ "verify.8.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "C_D peaks in the transonic regime above the hypersonic value"
+ },
+ "verify.8.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "tuned bump (by construction)"
+ },
+ "verify.8.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "> 0.92"
+ },
+ "verify.8.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "1.012"
+ },
+ "verify.9.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "terminal velocity: drag / gravity at impact"
+ },
+ "verify.9.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "physical limit"
+ },
+ "verify.9.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "1.00"
+ },
+ "verify.9.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "0.9984"
+ },
+ "verify.10.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "Coriolis deflection is eastward and below the free-fall value"
+ },
+ "verify.10.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "closed-form bound"
+ },
+ "verify.10.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "0 < d < 82 m"
+ },
+ "verify.10.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "81 m"
+ },
+ "verify.11.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "impact point converges as rtol tightens 1e-6 -> 1e-12"
+ },
+ "verify.11.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "convergence (self-consistency)"
+ },
+ "verify.11.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "< 1 m"
+ },
+ "verify.11.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "0.060 m"
+ },
+ "verify.12.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "J2 makes a circular orbit oscillate in altitude"
+ },
+ "verify.12.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "physical expectation"
+ },
+ "verify.12.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "15-25 km"
+ },
+ "verify.12.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "18.4 km"
+ },
+ "verify.13.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "vacuum orbit does not decay"
+ },
+ "verify.13.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "run shorter than any decay (weak)"
+ },
+ "verify.13.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "no impact"
+ },
+ "verify.13.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "timeout"
+ },
+ "verify.14.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "break-up conserves the parent mass"
+ },
+ "verify.14.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "enforced mass closure (by construction)"
+ },
+ "verify.14.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "1.000"
+ },
+ "verify.14.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "1.0000"
+ },
+ "verify.15.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "sampled size distribution follows the truncated power law"
+ },
+ "verify.15.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "closed-form sampling law"
+ },
+ "verify.15.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "< 5 %"
+ },
+ "verify.15.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "3.80 %"
+ },
+ "verify.16.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "registration recovers a known shift with the right SIGN"
+ },
+ "verify.16.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "imposed shift (known answer)"
+ },
+ "verify.16.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "< 0.5 px"
+ },
+ "verify.16.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "0.225 px"
+ },
+ "verify.17.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "residual misalignment after registration"
+ },
+ "verify.17.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "imposed shift (known answer)"
+ },
+ "verify.17.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "< 0.3 px"
+ },
+ "verify.17.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "0.118 px"
+ },
+ "verify.18.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "conformal density zone coverage at nominal 90%"
+ },
+ "verify.18.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "conformal coverage guarantee"
+ },
+ "verify.18.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": ">= 0.87"
+ },
+ "verify.18.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "0.9065"
+ },
+ "verify.19.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "conformal density zone coverage at nominal 95%"
+ },
+ "verify.19.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "conformal coverage guarantee"
+ },
+ "verify.19.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": ">= 0.92"
+ },
+ "verify.19.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "0.9495"
+ },
+ "verify.20.name": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "Gaussian ellipse under-covers on a skewed sample"
+ },
+ "verify.20.reference": {
+  "kind": "derived",
+  "note": "classification of the reference",
+  "source": "tests/test_verify.py",
+  "value": "known property of the ellipse"
+ },
+ "verify.20.expected": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "< 0.95"
+ },
+ "verify.20.measured": {
+  "kind": "measured",
+  "source": "outputs/tests/test_verify_after.log",
+  "value": "0.9430"
+ },
+ "tests.ai.passed": {
+  "kind": "measured",
+  "source": "outputs/tests/test_ai_after_prereg.log",
+  "value": 45
+ },
+ "tests.ai.failed": {
+  "kind": "measured",
+  "source": "outputs/tests/test_ai_after_prereg.log",
+  "value": 0
+ },
+ "tests.datasets.log_tail": {
+  "kind": "measured",
+  "source": "outputs/tests/test_datasets_after_per_test.log",
+  "value": "SUMMARY {'PASS': 20, 'ERROR': 1}"
+ },
+ "orig.monitor.n_subsystems": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 8
+ },
+ "orig.monitor.n_faults": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 5
+ },
+ "orig.monitor.n_detected": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 29
+ },
+ "orig.monitor.n_faulted": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 40
+ },
+ "orig.monitor.nominal_false_alarm": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": false
+ },
+ "orig.monitor.degradation.detected": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 1
+ },
+ "orig.monitor.degradation.n": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 8
+ },
+ "orig.monitor.dropout.detected": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 7
+ },
+ "orig.monitor.dropout.n": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 8
+ },
+ "orig.monitor.dropout.median_delay_min": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 6.0
+ },
+ "orig.monitor.sub.thermal_control.detected": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0
+ },
+ "orig.monitor.sub.data_storage_unit.detected": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 5
+ },
+ "orig.monitor.sub.power_system.detected": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 4
+ },
+ "orig.monitor.degradation.median_delay_min": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 600.5
+ },
+ "orig.monitor.leak.detected": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 7
+ },
+ "orig.monitor.leak.n": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 8
+ },
+ "orig.monitor.leak.median_delay_min": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 505.0
+ },
+ "orig.monitor.overheat.detected": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 7
+ },
+ "orig.monitor.overheat.n": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 8
+ },
+ "orig.monitor.overheat.median_delay_min": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 347.5
+ },
+ "orig.monitor.saturation.detected": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 7
+ },
+ "orig.monitor.saturation.n": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 8
+ },
+ "orig.monitor.saturation.median_delay_min": {
+  "kind": "derived",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 357.0
+ },
+ "orig.scen.thermal_critical.breakup_altitude_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 69.8
+ },
+ "orig.scen.thermal_critical.p_fragmentation": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.129
+ },
+ "orig.scen.power_critical.breakup_altitude_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 76.6
+ },
+ "orig.scen.all_nominal.anomaly_score": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.05
+ },
+ "orig.scen.all_nominal.p_fragmentation": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.009
+ },
+ "orig.scen.all_nominal.driver": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": "Power System"
+ },
+ "orig.scen.all_nominal.breakup_type": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": "explosion"
+ },
+ "orig.scen.all_nominal.breakup_altitude_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 79.3
+ },
+ "orig.fm.propulsion.breakup_alt_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 81.8
+ },
+ "orig.fm.propulsion.cep50_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 458.4
+ },
+ "orig.fm.thermal.breakup_alt_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 71.3
+ },
+ "orig.fm.thermal.cep50_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 386.1
+ },
+ "orig.fm.structure.driver": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": "Data Storage Unit"
+ },
+ "orig.fm.structure.cep50_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 433.3
+ },
+ "orig.fm.nominal.cep50_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 432.9
+ },
+ "orig.fm.nominal.driver": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": "Data Storage Unit"
+ },
+ "orig.fm.nominal.breakup_type": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": "aerodynamic"
+ },
+ "orig.fm.nominal.breakup_alt_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 77.9
+ },
+ "orig.fm.nominal.P_fragmentation": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.021
+ },
+ "orig.fm.nominal.sigma_logB": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.18
+ },
+ "orig.fm.nominal.downrange_mean_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 796.7
+ },
+ "orig.fm.thermal.driver": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": "Thermal Control"
+ },
+ "orig.fm.thermal.breakup_type": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": "aerodynamic"
+ },
+ "orig.fm.thermal.P_fragmentation": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.154
+ },
+ "orig.fm.thermal.sigma_logB": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.186
+ },
+ "orig.fm.thermal.downrange_mean_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 632.1
+ },
+ "orig.fm.structure.breakup_type": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": "aerodynamic"
+ },
+ "orig.fm.structure.breakup_alt_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 77.9
+ },
+ "orig.fm.structure.P_fragmentation": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.091
+ },
+ "orig.fm.structure.sigma_logB": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.179
+ },
+ "orig.fm.structure.downrange_mean_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 798.2
+ },
+ "orig.fm.propulsion.driver": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": "Propulsion System"
+ },
+ "orig.fm.propulsion.breakup_type": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": "explosion"
+ },
+ "orig.fm.propulsion.P_fragmentation": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.592
+ },
+ "orig.fm.propulsion.sigma_logB": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.254
+ },
+ "orig.fm.propulsion.downrange_mean_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 902.8
+ },
+ "orig.fm.comms_lost.driver": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": "Communication"
+ },
+ "orig.fm.comms_lost.breakup_type": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": "aerodynamic"
+ },
+ "orig.fm.comms_lost.breakup_alt_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 77.6
+ },
+ "orig.fm.comms_lost.P_fragmentation": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.109
+ },
+ "orig.fm.comms_lost.sigma_logB": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.182
+ },
+ "orig.fm.comms_lost.downrange_mean_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 788.6
+ },
+ "orig.fm.comms_lost.cep50_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 431.5
+ },
+ "orig.fp.n_impacts": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 1200
+ },
+ "orig.fp.cep50_km": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 452.3
+ },
+ "orig.zone.90.conformal_density_coverage": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.9004
+ },
+ "orig.zone.90.gaussian_ellipse_coverage": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.9122
+ },
+ "orig.zone.90.density_area_saving_pct": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 60.4
+ },
+ "orig.zone.95.conformal_density_coverage": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.9437
+ },
+ "orig.zone.95.gaussian_ellipse_coverage": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.945
+ },
+ "orig.zone.95.density_area_saving_pct": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 59.8
+ },
+ "orig.zone.99.conformal_density_coverage": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.9846
+ },
+ "orig.zone.99.gaussian_ellipse_coverage": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.9856
+ },
+ "orig.zone.99.density_area_saving_pct": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 57.4
+ },
+ "orig.zone.90.gaussian_shortfall_pts": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": -1.22
+ },
+ "orig.zone.95.gaussian_shortfall_pts": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.5
+ },
+ "orig.zone.99.gaussian_shortfall_pts": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.44
+ },
+ "orig.det.registered_difference.precision": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.987
+ },
+ "orig.det.registered_difference.recall": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.563
+ },
+ "orig.det.registered_difference.f1": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.717
+ },
+ "orig.det.single_frame.precision": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.11
+ },
+ "orig.det.single_frame.f1": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.1974
+ },
+ "data.satcat.20260816.rows": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 70288
+ },
+ "data.satcat.20260816.type.DEB": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 35834
+ },
+ "orig.lifetime_cal.n_fragments": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 7711
+ },
+ "orig.lifetime_cal.n_observed": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 4652
+ },
+ "orig.lifetime_cal.n_censored": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 3059
+ },
+ "orig.lifetime_cal.area_to_mass_censored": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.14907
+ },
+ "orig.lifetime_cal.bias_factor": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 1.049
+ },
+ "orig.lifetime_val.iridium_33.ratio": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 1.001
+ },
+ "orig.lifetime_val.cosmos_2251.ratio": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.863
+ },
+ "orig.lifetime_val.cosmos_1408.ratio": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.292
+ },
+ "orig.corr.mid_pacific_e.expected_casualties": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.0
+ },
+ "orig.corr.peninsular_india_nw.expected_casualties": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.00033693594101411446
+ },
+ "orig.corr.peninsular_india_nw.expected_casualties_event": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.0610304222055984
+ },
+ "orig.corr.central_europe_e.expected_casualties_event": {
+  "kind": "measured",
+  "source": "thesis/evidence/original_pipeline_runs.json",
+  "value": 0.031944201163391896
+ },
+ "explo.m2.lw.ool.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.9648077843107152
+ },
+ "explo.m1.full.gstd3.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.000443490626176
+ },
+ "explo.m1.lw.gstd3.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.0010811797540883
+ },
+ "lit.dmlr.m1.lw.gstd3": {
+  "kind": "literature",
+  "source": "kotowski2026esaadb, DMLR Table 4 (research_design/references/kotowski2026_esa_adb_dmlr.pdf)",
+  "value": 0.001
+ },
+ "explo.m2.full.gstd3.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.0074936802928186
+ },
+ "lit.dmlr.m2.full.gstd3": {
+  "kind": "literature",
+  "source": "kotowski2026esaadb, DMLR Table 4 (research_design/references/kotowski2026_esa_adb_dmlr.pdf)",
+  "value": 0.008
+ },
+ "explo.m2.lw.gstd3.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.0070812498440414
+ },
+ "lit.dmlr.m2.lw.gstd3": {
+  "kind": "literature",
+  "source": "kotowski2026esaadb, DMLR Table 4 (research_design/references/kotowski2026_esa_adb_dmlr.pdf)",
+  "value": 0.007
+ },
+ "explo.m1.full.gstd5.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.0029321783787164
+ },
+ "lit.dmlr.m1.full.gstd5": {
+  "kind": "literature",
+  "source": "kotowski2026esaadb, DMLR Table 4 (research_design/references/kotowski2026_esa_adb_dmlr.pdf)",
+  "value": 0.003
+ },
+ "explo.m1.lw.gstd5.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.2526868037248693
+ },
+ "lit.dmlr.m1.lw.gstd5": {
+  "kind": "literature",
+  "source": "kotowski2026esaadb, DMLR Table 4 (research_design/references/kotowski2026_esa_adb_dmlr.pdf)",
+  "value": 0.253
+ },
+ "explo.m2.full.gstd5.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.0634997820301447
+ },
+ "lit.dmlr.m2.full.gstd5": {
+  "kind": "literature",
+  "source": "kotowski2026esaadb, DMLR Table 4 (research_design/references/kotowski2026_esa_adb_dmlr.pdf)",
+  "value": 0.064
+ },
+ "explo.m2.lw.gstd5.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.0749327183727315
+ },
+ "lit.dmlr.m2.lw.gstd5": {
+  "kind": "literature",
+  "source": "kotowski2026esaadb, DMLR Table 4 (research_design/references/kotowski2026_esa_adb_dmlr.pdf)",
+  "value": 0.075
+ },
+ "explo.m1.full.ool.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.0006794632013626
+ },
+ "explo.m1.lw.ool.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.2018559280642692
+ },
+ "explo.m1.full.oolall.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.0051110521285492
+ },
+ "explo.m1.lw.oolall.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.0
+ },
+ "explo.m2.full.oolall.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.2609201813292522
+ },
+ "explo.m2.lw.oolall.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.0802139005772944
+ },
+ "explo.m1.full.cosmon.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.0037858277201857
+ },
+ "explo.m1.lw.cosmon.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.2020643589680991
+ },
+ "explo.m2.full.cosmon.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.047146446258285
+ },
+ "explo.m2.lw.cosmon.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.7880522833472241
+ },
+ "explo.m1.full.ool.native.fa_yr.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 11627.005964020336
+ },
+ "explo.m2.full.patchtst.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.951813714266658
+ },
+ "explo.m2.full.patchtst.conformal_bh.f05.std": {
+  "kind": "derived",
+  "note": "sample sd over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.009428008565834475
+ },
+ "explo.m2.full.chronos.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.944568778430127
+ },
+ "explo.m2.full.ar8.conformal_bh.r_anom.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.1666666666666666
+ },
+ "explo.m1.full.ar8.threshold.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.0882471881829241
+ },
+ "explo.m1.full.ar8.conformal_bh.fa_yr.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 91.56247555729372
+ },
+ "explo.m1.full.tcn_tc.conformal_bh_rolling.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.3183659516511385
+ },
+ "explo.m1.full.tcn_tc.conformal_bh_rolling.f05.std": {
+  "kind": "derived",
+  "note": "sample sd over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.2145398006099785
+ },
+ "explo.m1.full.tcn_tc.conformal_bh_rolling.f05.min": {
+  "kind": "derived",
+  "note": "min over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.0719424080973689
+ },
+ "explo.m1.full.tcn_tc.conformal_bh_rolling.f05.max": {
+  "kind": "derived",
+  "note": "max over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.463575539969032
+ },
+ "explo.m1.lw.ar8.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.4080353896100782
+ },
+ "explo.boot.h1.m1.patchtst_vs_cosmos_ar_8_conformal_bh.name": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": "H1 M1: patchtst vs COSMOS AR(8), conformal-BH"
+ },
+ "explo.boot.h1.m1.patchtst_vs_cosmos_ar_8_conformal_bh.A_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.061883171093822
+ },
+ "explo.boot.h1.m1.patchtst_vs_cosmos_ar_8_conformal_bh.B_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0743509903651713
+ },
+ "explo.boot.h1.m1.patchtst_vs_cosmos_ar_8_conformal_bh.diff_reimpl": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0111967674475313
+ },
+ "explo.boot.h1.m1.patchtst_vs_cosmos_ar_8_conformal_bh.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0313526121715901
+ },
+ "explo.boot.h1.m1.patchtst_vs_cosmos_ar_8_conformal_bh.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0089607469640538
+ },
+ "explo.boot.h1.m1.tcn_vs_cosmos_ar_8_conformal_bh.name": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": "H1 M1: tcn vs COSMOS AR(8), conformal-BH"
+ },
+ "explo.boot.h1.m1.tcn_vs_cosmos_ar_8_conformal_bh.A_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.049078362579886
+ },
+ "explo.boot.h1.m1.tcn_vs_cosmos_ar_8_conformal_bh.B_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0743509903651713
+ },
+ "explo.boot.h1.m1.tcn_vs_cosmos_ar_8_conformal_bh.diff_reimpl": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0249749832040227
+ },
+ "explo.boot.h1.m1.tcn_vs_cosmos_ar_8_conformal_bh.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.047729018615604
+ },
+ "explo.boot.h1.m1.tcn_vs_cosmos_ar_8_conformal_bh.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0062072849096444
+ },
+ "explo.boot.h1.m1.chronos_bolt_small_vs_cosmos_ar_8_confor.name": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": "H1 M1: chronos-bolt-small vs COSMOS AR(8), conformal-BH"
+ },
+ "explo.boot.h1.m1.chronos_bolt_small_vs_cosmos_ar_8_confor.A_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0238060569496395
+ },
+ "explo.boot.h1.m1.chronos_bolt_small_vs_cosmos_ar_8_confor.B_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0743509903651713
+ },
+ "explo.boot.h1.m1.chronos_bolt_small_vs_cosmos_ar_8_confor.diff_reimpl": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0516517947958031
+ },
+ "explo.boot.h1.m1.chronos_bolt_small_vs_cosmos_ar_8_confor.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0749268611546658
+ },
+ "explo.boot.h1.m1.chronos_bolt_small_vs_cosmos_ar_8_confor.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0315661929679145
+ },
+ "explo.boot.h1.m2.patchtst_vs_cosmos_ar_8_conformal_bh.name": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": "H1 M2: patchtst vs COSMOS AR(8), conformal-BH"
+ },
+ "explo.boot.h1.m2.patchtst_vs_cosmos_ar_8_conformal_bh.A_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.94106297017907
+ },
+ "explo.boot.h1.m2.patchtst_vs_cosmos_ar_8_conformal_bh.B_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.9624106610225746
+ },
+ "explo.boot.h1.m2.patchtst_vs_cosmos_ar_8_conformal_bh.diff_reimpl": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0213483250320745
+ },
+ "explo.boot.h1.m2.patchtst_vs_cosmos_ar_8_conformal_bh.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0511867796948616
+ },
+ "explo.boot.h1.m2.patchtst_vs_cosmos_ar_8_conformal_bh.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0069694816672933
+ },
+ "explo.boot.h1.m2.tcn_vs_cosmos_ar_8_conformal_bh.name": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": "H1 M2: tcn vs COSMOS AR(8), conformal-BH"
+ },
+ "explo.boot.h1.m2.tcn_vs_cosmos_ar_8_conformal_bh.A_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.9356488288611456
+ },
+ "explo.boot.h1.m2.tcn_vs_cosmos_ar_8_conformal_bh.B_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.9624106610225746
+ },
+ "explo.boot.h1.m2.tcn_vs_cosmos_ar_8_conformal_bh.diff_reimpl": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0267612538469578
+ },
+ "explo.boot.h1.m2.tcn_vs_cosmos_ar_8_conformal_bh.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0539900391921905
+ },
+ "explo.boot.h1.m2.tcn_vs_cosmos_ar_8_conformal_bh.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0024106284795477
+ },
+ "explo.boot.h1.m2.chronos_bolt_small_vs_cosmos_ar_8_confor.name": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": "H1 M2: chronos-bolt-small vs COSMOS AR(8), conformal-BH"
+ },
+ "explo.boot.h1.m2.chronos_bolt_small_vs_cosmos_ar_8_confor.A_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.944568778430127
+ },
+ "explo.boot.h1.m2.chronos_bolt_small_vs_cosmos_ar_8_confor.B_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.9624106610225746
+ },
+ "explo.boot.h1.m2.chronos_bolt_small_vs_cosmos_ar_8_confor.diff_reimpl": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0178425212111461
+ },
+ "explo.boot.h1.m2.chronos_bolt_small_vs_cosmos_ar_8_confor.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0465581912126014
+ },
+ "explo.boot.h1.m2.chronos_bolt_small_vs_cosmos_ar_8_confor.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0135240559431105
+ },
+ "explo.boot.h2.m1.ar8_conformal_bh_vs_threshold.name": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": "H2 M1: ar8 conformal-BH vs threshold"
+ },
+ "explo.boot.h2.m1.ar8_conformal_bh_vs_threshold.A_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0743509903651713
+ },
+ "explo.boot.h2.m1.ar8_conformal_bh_vs_threshold.B_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0882471881829241
+ },
+ "explo.boot.h2.m1.ar8_conformal_bh_vs_threshold.diff_reimpl": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0122336455414882
+ },
+ "explo.boot.h2.m1.ar8_conformal_bh_vs_threshold.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0270307846193246
+ },
+ "explo.boot.h2.m1.ar8_conformal_bh_vs_threshold.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 1.4152097057710652e-05
+ },
+ "explo.boot.h2.m2.ar8_conformal_bh_vs_threshold.name": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": "H2 M2: ar8 conformal-BH vs threshold"
+ },
+ "explo.boot.h2.m2.ar8_conformal_bh_vs_threshold.A_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.9624106610225746
+ },
+ "explo.boot.h2.m2.ar8_conformal_bh_vs_threshold.B_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.8820986820011767
+ },
+ "explo.boot.h2.m2.ar8_conformal_bh_vs_threshold.diff_reimpl": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0803124093624823
+ },
+ "explo.boot.h2.m2.ar8_conformal_bh_vs_threshold.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0405999954061232
+ },
+ "explo.boot.h2.m2.ar8_conformal_bh_vs_threshold.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.1328151370897991
+ },
+ "explo.boot.h2.m2.patchtst_conformal_bh_vs_threshold.name": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": "H2 M2: patchtst conformal-BH vs threshold"
+ },
+ "explo.boot.h2.m2.patchtst_conformal_bh_vs_threshold.A_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.94106297017907
+ },
+ "explo.boot.h2.m2.patchtst_conformal_bh_vs_threshold.B_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.8173996175908222
+ },
+ "explo.boot.h2.m2.patchtst_conformal_bh_vs_threshold.diff_reimpl": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.1236631487814291
+ },
+ "explo.boot.h2.m2.patchtst_conformal_bh_vs_threshold.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0801519885989633
+ },
+ "explo.boot.h2.m2.patchtst_conformal_bh_vs_threshold.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.1773454510780227
+ },
+ "explo.boot.h3.m1.tcn_telecommands_vs_without_conformal_bh.name": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": "H3 M1: tcn + telecommands vs without, conformal-BH"
+ },
+ "explo.boot.h3.m1.tcn_telecommands_vs_without_conformal_bh.A_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0185321233514459
+ },
+ "explo.boot.h3.m1.tcn_telecommands_vs_without_conformal_bh.B_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.049078362579886
+ },
+ "explo.boot.h3.m1.tcn_telecommands_vs_without_conformal_bh.diff_reimpl": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0325064499430823
+ },
+ "explo.boot.h3.m1.tcn_telecommands_vs_without_conformal_bh.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0689801110561326
+ },
+ "explo.boot.h3.m1.tcn_telecommands_vs_without_conformal_bh.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0117758975015169
+ },
+ "explo.boot.h3.m2.tcn_telecommands_vs_without_conformal_bh.name": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": "H3 M2: tcn + telecommands vs without, conformal-BH"
+ },
+ "explo.boot.h3.m2.tcn_telecommands_vs_without_conformal_bh.A_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.9484640459621896
+ },
+ "explo.boot.h3.m2.tcn_telecommands_vs_without_conformal_bh.B_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.9356488288611456
+ },
+ "explo.boot.h3.m2.tcn_telecommands_vs_without_conformal_bh.diff_reimpl": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0128152390220631
+ },
+ "explo.boot.h3.m2.tcn_telecommands_vs_without_conformal_bh.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0002718313452729
+ },
+ "explo.boot.h3.m2.tcn_telecommands_vs_without_conformal_bh.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0251972152413606
+ },
+ "explo.boot.h3.m1.patchtst_telecommands_vs_without_conform.name": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": "H3 M1: patchtst + telecommands vs without, conformal-BH"
+ },
+ "explo.boot.h3.m1.patchtst_telecommands_vs_without_conform.A_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0196319684420155
+ },
+ "explo.boot.h3.m1.patchtst_telecommands_vs_without_conform.B_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.061883171093822
+ },
+ "explo.boot.h3.m1.patchtst_telecommands_vs_without_conform.diff_reimpl": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0451848187190861
+ },
+ "explo.boot.h3.m1.patchtst_telecommands_vs_without_conform.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0704653242554112
+ },
+ "explo.boot.h3.m1.patchtst_telecommands_vs_without_conform.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0257175188815115
+ },
+ "explo.boot.h3.m2.patchtst_telecommands_vs_without_conform.name": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": "H3 M2: patchtst + telecommands vs without, conformal-BH"
+ },
+ "explo.boot.h3.m2.patchtst_telecommands_vs_without_conform.A_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.950841686555631
+ },
+ "explo.boot.h3.m2.patchtst_telecommands_vs_without_conform.B_EW_F05_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.94106297017907
+ },
+ "explo.boot.h3.m2.patchtst_telecommands_vs_without_conform.diff_reimpl": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0097792225833447
+ },
+ "explo.boot.h3.m2.patchtst_telecommands_vs_without_conform.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": -0.0112313974135477
+ },
+ "explo.boot.h3.m2.patchtst_telecommands_vs_without_conform.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/bootstrap_comparisons.csv",
+  "value": 0.0327385908197469
+ },
+ "explo.m1.full.tcn.conformal_bh.rare_only.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 100.66666666666667
+ },
+ "explo.m1.full.tcn_tc.conformal_bh.rare_only.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 91.33333333333333
+ },
+ "explo.m2.full.tcn.conformal_bh.rare_only.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 399.3333333333333
+ },
+ "explo.m2.full.tcn_tc.conformal_bh.rare_only.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 393.3333333333333
+ },
+ "explo.m1.full.patchtst.conformal_bh.rare_only.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 97.0
+ },
+ "explo.m1.full.patchtst_tc.conformal_bh.rare_only.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 207.0
+ },
+ "explo.m2.full.patchtst.conformal_bh.rare_only.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 352.6666666666667
+ },
+ "explo.m2.full.patchtst_tc.conformal_bh.rare_only.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 356.0
+ },
+ "explo.robust.m2_target_patchtst_tc_s0_telecommands_removed.conformal_bh.f05": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/robustness/m2_target_patchtst_tc_s0_telecommands_removed.json",
+  "value": 0.950841686555631
+ },
+ "explo.robust.m2_target_patchtst_tc_s0_telecommands_removed.conformal_bh.f05_with_tc": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/robustness/m2_target_patchtst_tc_s0_telecommands_removed.json",
+  "value": 0.950841686555631
+ },
+ "explo.robust.m2_target_ar8_s0_telecommand_mask.mask0.rare_only": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/robustness/m2_target_ar8_s0_telecommand_mask.json",
+  "value": 351
+ },
+ "explo.robust.m2_target_ar8_s0_telecommand_mask.mask30.rare_only": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/robustness/m2_target_ar8_s0_telecommand_mask.json",
+  "value": 42
+ },
+ "explo.robust.m2_target_ar8_s0_telecommand_mask.mask30.r_anom": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/robustness/m2_target_ar8_s0_telecommand_mask.json",
+  "value": 0.16666666666666666
+ },
+ "explo.robust.m2_target_ar8_s0_telecommand_mask.mask0.f05": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/robustness/m2_target_ar8_s0_telecommand_mask.json",
+  "value": 0.9624106610225746
+ },
+ "explo.robust.m2_target_ar8_s0_telecommand_mask.mask30.f05": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/robustness/m2_target_ar8_s0_telecommand_mask.json",
+  "value": 0.30392114568431783
+ },
+ "pre.m1.A0.conformal_bh.p.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/arms/m1_target_ar8_s0.json",
+  "value": 0.061460989309186954
+ },
+ "pre.m1.A0.conformal_bh.r.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/arms/m1_target_ar8_s0.json",
+  "value": 0.46153846153846156
+ },
+ "pre.m1.A0.conformal_bh.f05_anom.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/arms/m1_target_ar8_s0.json",
+  "value": 0.03161745478583164
+ },
+ "pre.m1.A0.conformal_bh.fa_yr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/arms/m1_target_ar8_s0.json",
+  "value": 91.56247555729371
+ },
+ "pre.m1.A1.conformal_bh.p.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.6666621863055484
+ },
+ "pre.m1.A1.conformal_bh.r.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.17582417582417584
+ },
+ "pre.m1.A1.conformal_bh.f05_anom.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.33613323885035423
+ },
+ "sel.m1.A1.conformal_bh.cv.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/selection/*.json",
+  "value": 0.6237172729211833
+ },
+ "pre.m1.A2.conformal_bh.p.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.6272235355653341
+ },
+ "pre.m1.A2.conformal_bh.r.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.4153846153846154
+ },
+ "pre.m1.A2.conformal_bh.f05_anom.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.3267121370906881
+ },
+ "pre.m1.A2.conformal_bh.fa_yr.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 8.456315995307001
+ },
+ "sel.m1.A2.conformal_bh.cv.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/selection/*.json",
+  "value": 0.7273242360142446
+ },
+ "pre.m1.A3.conformal_bh.p.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.21075773613246188
+ },
+ "pre.m1.A3.conformal_bh.r.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.265934065934066
+ },
+ "pre.m1.A3.conformal_bh.f05_anom.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.12496926246660997
+ },
+ "pre.m1.A3.conformal_bh.fa_yr.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 20.88367227219398
+ },
+ "sel.m1.A3.conformal_bh.cv.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/selection/*.json",
+  "value": 0.5361934048049144
+ },
+ "pre.m2.A0.conformal_bh.f05.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/arms/m2_target_ar8_s0.json",
+  "value": 0.9624106610225746
+ },
+ "pre.m2.A0.conformal_bh.p.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/arms/m2_target_ar8_s0.json",
+  "value": 0.9817048536481121
+ },
+ "pre.m2.A0.conformal_bh.r.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/arms/m2_target_ar8_s0.json",
+  "value": 0.8922651933701657
+ },
+ "pre.m2.A0.conformal_bh.f05_anom.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/arms/m2_target_ar8_s0.json",
+  "value": 0.1470516608223046
+ },
+ "pre.m2.A0.conformal_bh.fa_yr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/arms/m2_target_ar8_s0.json",
+  "value": 3.4349529780564265
+ },
+ "pre.m2.A1.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.8735292467628434
+ },
+ "pre.m2.A1.conformal_bh.p.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.9999756802687635
+ },
+ "pre.m2.A1.conformal_bh.r.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.580110497237569
+ },
+ "pre.m2.A1.conformal_bh.f05_anom.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.0
+ },
+ "pre.m2.A1.conformal_bh.fa_yr.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.0
+ },
+ "sel.m2.A1.conformal_bh.cv.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/selection/*.json",
+  "value": 0.9188583384278179
+ },
+ "pre.m2.A2.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.9039489617893265
+ },
+ "pre.m2.A2.conformal_bh.f05.std": {
+  "kind": "derived",
+  "note": "sample sd over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.04953404546994964
+ },
+ "pre.m2.A2.conformal_bh.p.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.9752872257384915
+ },
+ "pre.m2.A2.conformal_bh.r.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.7104972375690608
+ },
+ "pre.m2.A2.conformal_bh.f05_anom.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.12876259003788354
+ },
+ "pre.m2.A2.conformal_bh.fa_yr.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 3.5494514106583077
+ },
+ "sel.m2.A2.conformal_bh.cv.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/selection/*.json",
+  "value": 0.8897569772264147
+ },
+ "pre.m2.A3.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.8749431213956079
+ },
+ "pre.m2.A3.conformal_bh.f05.std": {
+  "kind": "derived",
+  "note": "sample sd over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.05820499267991894
+ },
+ "pre.m2.A3.conformal_bh.p.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.9578185062158703
+ },
+ "pre.m2.A3.conformal_bh.r.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.676243093922652
+ },
+ "pre.m2.A3.conformal_bh.f05_anom.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.17967313671365526
+ },
+ "pre.m2.A3.conformal_bh.fa_yr.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 7.671394984326019
+ },
+ "sel.m2.A3.conformal_bh.cv.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/selection/*.json",
+  "value": 0.9062064510319751
+ },
+ "pre.m1.A2.conformal_bh.f05.min": {
+  "kind": "derived",
+  "note": "min over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.15719533560118684
+ },
+ "pre.m1.A2.conformal_bh.f05.max": {
+  "kind": "derived",
+  "note": "max over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.7692274901721327
+ },
+ "pre.m1.A3.conformal_bh.f05.min": {
+  "kind": "derived",
+  "note": "min over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.08542160217007067
+ },
+ "pre.m1.A3.conformal_bh.f05.max": {
+  "kind": "derived",
+  "note": "max over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.3581786217259783
+ },
+ "pre.seed.m1_target_gbt_ar8_s4_event.conformal_bh.f05": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/m1_target_gbt_ar8_s4_event.json",
+  "value": 0.7692274901721327
+ },
+ "pre.seed.m1_target_gbt_ar8_s4_event.conformal_bh.fa_yr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/m1_target_gbt_ar8_s4_event.json",
+  "value": 0.14284317559640203
+ },
+ "pre.seed.m1_target_gbt_ar8_s1_event.conformal_bh.f05": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/m1_target_gbt_ar8_s1_event.json",
+  "value": 0.15719533560118684
+ },
+ "pre.seed.m1_target_gbt_ar8_s1_event.conformal_bh.fa_yr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/m1_target_gbt_ar8_s1_event.json",
+  "value": 33.85383261634728
+ },
+ "conf.freeze_id": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": "09a98f5e160e"
+ },
+ "conf.m1.h4.A_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.20536106259946085
+ },
+ "conf.m1.h4.B_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.4278060106400274
+ },
+ "conf.m1.h4.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.2224449725981661
+ },
+ "conf.m1.h4.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.3951525000119101
+ },
+ "conf.m1.h4.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.04232067917326693
+ },
+ "conf.m1.h4.p_holm": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.101
+ },
+ "conf.m1.h4.verdict": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": "refuted"
+ },
+ "conf.m1.h5.A_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.20536106259946085
+ },
+ "conf.m1.h5.B_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.5436142089506507
+ },
+ "conf.m1.h5.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.3301446781715797
+ },
+ "conf.m1.h5.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.5400523916071752
+ },
+ "conf.m1.h5.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.03299267182627246
+ },
+ "conf.m1.h5.p_holm": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.07
+ },
+ "conf.m1.h5.verdict": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": "refuted"
+ },
+ "conf.m1.h6.A_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.4278060106400274
+ },
+ "conf.m1.h6.B_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.07435099036517134
+ },
+ "conf.m1.h6.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.35179245613247356
+ },
+ "conf.m1.h6.p_holm": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.0015
+ },
+ "conf.m1.h6.verdict": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": "supported"
+ },
+ "conf.m2.h4.A_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.8749431213956079
+ },
+ "conf.m2.h4.B_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.8735292467628434
+ },
+ "conf.m2.h4.diff_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.0014138746327645446
+ },
+ "conf.m2.h4.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.001414836146506282
+ },
+ "conf.m2.h4.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.054806880848968176
+ },
+ "conf.m2.h4.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.053566036610437
+ },
+ "conf.m2.h5.A_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.8749431213956079
+ },
+ "conf.m2.h5.B_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.9039489617893265
+ },
+ "conf.m2.h5.diff_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.029005840393718563
+ },
+ "conf.m2.h5.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.029005077678233127
+ },
+ "conf.m2.h5.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.102830196781903
+ },
+ "conf.m2.h5.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.03701271860884018
+ },
+ "conf.m2.h6.A_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.8735292467628434
+ },
+ "conf.m2.h6.B_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.9624106610225746
+ },
+ "conf.m2.h6.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.08888184460160209
+ },
+ "conf.m2.h6.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.14320460403396318
+ },
+ "conf.m2.h6.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.04931630831752352
+ },
+ "sel.m1_target_ar8.conformal_bh.q": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/selection/m1_target_ar8.json",
+  "value": 0.0001
+ },
+ "sel.m1_target_ar8.conformal_bh.k": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/selection/m1_target_ar8.json",
+  "value": 10
+ },
+ "data.esa.m1.events_all.train.targets": {
+  "kind": "derived",
+  "note": "anomalies + rare events in the M1 training half (communication gaps excluded)",
+  "source": "data/DATASET_REPORT.json",
+  "value": 105
+ },
+ "pre.m1.A0.conformal_bh.alarm_runs_per_year": {
+  "kind": "derived",
+  "note": "alarm runs / test-half years",
+  "source": "outputs/benchmarks/telemetry_esa_adb/arms/m1_target_ar8_s0.json",
+  "value": 112.8461087211576
+ },
+ "pre.m1.A1.conformal_bh.alarm_prec.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.1391304347826087
+ },
+ "sel.m1.A1lw.conformal_bh.cv.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/selection/*.json",
+  "value": 0.5277748663881043
+ },
+ "pre.m1.A1lw.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.024687206978420664
+ },
+ "pre.m1.A1.threshold.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.4278060106400274
+ },
+ "pre.m1.A1.conformal_bh_rolling.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.10101010101010104
+ },
+ "pre.m1.A1.aci.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 5.030122990860565e-05
+ },
+ "pre.m1.A1.aci_event.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.008451248505202362
+ },
+ "pre.m1.A2.threshold.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.6134441425383826
+ },
+ "pre.m1.A2.conformal_bh_rolling.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.08737864077669902
+ },
+ "pre.m1.A2.aci.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 4.426376697617413e-05
+ },
+ "pre.m1.A2.aci_event.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.046015801375824554
+ },
+ "pre.m1.A3.threshold.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.28174236864451246
+ },
+ "pre.m1.A3.conformal_bh_rolling.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.32337863701370384
+ },
+ "pre.m1.A3.aci.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 6.218513631158142e-05
+ },
+ "pre.m1.A3.aci_event.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.0030129532047734027
+ },
+ "pre.m1.A3nr.threshold.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.27574838729473883
+ },
+ "pre.m1.A3nr.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.24930811069749012
+ },
+ "pre.m1.A3nr.conformal_bh_rolling.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.0
+ },
+ "pre.m1.A3nr.aci.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 5.86194639080866e-05
+ },
+ "pre.m1.A3nr.aci_event.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.005431961807558038
+ },
+ "pre.m1.A3c2.threshold.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.3627189906327209
+ },
+ "pre.m1.A3c2.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.19584680014253286
+ },
+ "pre.m1.A3c2.conformal_bh_rolling.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.08448700181065986
+ },
+ "pre.m1.A3c2.aci.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 8.730337122459181e-05
+ },
+ "pre.m1.A3c2.aci_event.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.00031822156754456786
+ },
+ "pre.m1.A1lw.threshold.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.35012411146215394
+ },
+ "pre.m1.A1lw.conformal_bh_rolling.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.12987012427208885
+ },
+ "pre.m1.A1lw.aci.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.00014132413248427202
+ },
+ "pre.m1.A1lw.aci_event.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.0
+ },
+ "pre.m2.A1.threshold.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.976528527234006
+ },
+ "pre.m2.A1.conformal_bh_rolling.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.3557312252964427
+ },
+ "pre.m2.A1.aci.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.0006906954582254767
+ },
+ "pre.m2.A1.aci_event.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.0
+ },
+ "pre.m2.A2.threshold.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.8191550047590994
+ },
+ "pre.m2.A2.conformal_bh_rolling.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.24405697604437301
+ },
+ "pre.m2.A2.aci.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.0006812486610162878
+ },
+ "pre.m2.A2.aci_event.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.013090118459572964
+ },
+ "pre.m2.A3.threshold.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.8533762534011812
+ },
+ "pre.m2.A3.conformal_bh_rolling.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.4865504599370591
+ },
+ "pre.m2.A3.aci.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.0014437148925036387
+ },
+ "pre.m2.A3.aci_event.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.005406037111058985
+ },
+ "pre.m2.A1lw.threshold.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.9777992028684807
+ },
+ "pre.m2.A1lw.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.9777992028684807
+ },
+ "pre.m2.A1lw.conformal_bh_rolling.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.5293097153537717
+ },
+ "pre.m2.A1lw.aci.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.0017180078681627985
+ },
+ "pre.m2.A1lw.aci_event.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.0
+ },
+ "pre.all.aci.point_far.min": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.009814703463802931
+ },
+ "pre.all.aci.point_far.max": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.009998336172815139
+ },
+ "pre.all.aci.n": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 30
+ },
+ "pre.all.aci.alarm_runs.max": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 1597643.0
+ },
+ "pre.all.aci_event.f05.max": {
+  "kind": "derived",
+  "note": "max over all test arms and seeds (30 runs)",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.1169587550969344
+ },
+ "pre.all.aci_event.f05.max_seedmean": {
+  "kind": "derived",
+  "note": "max over arms of the seed-mean",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.046015801375824554
+ },
+ "pre.all.aci_event.zero_alarm_runs": {
+  "kind": "derived",
+  "note": "runs where aci_event raised no alarm",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 10
+ },
+ "pre.all.aci_event.n_runs": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 30
+ },
+ "pre.all.aci.gamma005_runs": {
+  "kind": "derived",
+  "note": "runs whose selected gamma is 0.05",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 29
+ },
+ "pre.all.aci.gamma_runs": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 30
+ },
+ "aci.alpha_after_one_hit.g0.05": {
+  "kind": "derived",
+  "note": "alpha_t + gamma (alpha - 1) starting from alpha",
+  "source": "update rule of eq. (aci)",
+  "value": -0.0395
+ },
+ "aci.recovery_steps.g0.05": {
+  "kind": "derived",
+  "note": "non-exceedance steps until alpha_t > 0 again (alpha_t <= 0 means no alarm)",
+  "source": "update rule of eq. (aci)",
+  "value": 80
+ },
+ "aci.alpha_after_one_hit.g0.01": {
+  "kind": "derived",
+  "note": "alpha_t + gamma (alpha - 1) starting from alpha",
+  "source": "update rule of eq. (aci)",
+  "value": 9.99999999999994e-05
+ },
+ "layers.n_threshold_ge_bh": {
+  "kind": "derived",
+  "note": "rows of the alarm-layer table where threshold F0.5 >= conformal-BH F0.5",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 8
+ },
+ "layers.n_rows": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 10
+ },
+ "pre.m1.A1lw.conformal_bh.r.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.03076923076923077
+ },
+ "sel.m1.A1lw.conformal_bh.q.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/selection/*.json",
+  "value": 0.01
+ },
+ "sel.m1.A1lw.conformal_bh.k.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/selection/*.json",
+  "value": 30.0
+ },
+ "seleff.m1.full.conformal_bh": {
+  "kind": "derived",
+  "note": "A1 minus A0",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.35345502027485604
+ },
+ "seleff.m2.full.conformal_bh": {
+  "kind": "derived",
+  "note": "A1 minus A0",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": -0.08888141425973117
+ },
+ "seleff.m2.full.threshold": {
+  "kind": "derived",
+  "note": "A1 minus A0",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.09442984523282927
+ },
+ "seleff.m1.lw.conformal_bh": {
+  "kind": "derived",
+  "note": "A1 lightweight minus exploratory lightweight AR(8) (calibration-window selection)",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json + results.csv",
+  "value": -0.38334818263165754
+ },
+ "seleff.m2.lw.conformal_bh": {
+  "kind": "derived",
+  "note": "A1 lightweight minus exploratory lightweight AR(8) (calibration-window selection)",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json + results.csv",
+  "value": 0.06971684755566143
+ },
+ "seleff.m1.lw.threshold": {
+  "kind": "derived",
+  "note": "A1 lightweight minus exploratory lightweight AR(8) (calibration-window selection)",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json + results.csv",
+  "value": -0.056385420890807336
+ },
+ "seleff.m2.lw.threshold": {
+  "kind": "derived",
+  "note": "A1 lightweight minus exploratory lightweight AR(8) (calibration-window selection)",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json + results.csv",
+  "value": 0.15672156264728754
+ },
+ "xcomp.m1.x1.diff_official": {
+  "kind": "derived",
+  "note": "official seed mean A2 minus A1 (conformal_bh)",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.11580819831062333
+ },
+ "xcomp.m1.x1.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/exploratory_comparisons.json",
+  "value": 0.10769970557341363
+ },
+ "xcomp.m1.x1.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/exploratory_comparisons.json",
+  "value": -0.13251886384877956
+ },
+ "xcomp.m1.x1.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/exploratory_comparisons.json",
+  "value": 0.34414073427135833
+ },
+ "xcomp.m2.x1.diff_official": {
+  "kind": "derived",
+  "note": "official seed mean A2 minus A1 (conformal_bh)",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.030419715026483107
+ },
+ "xcomp.m2.x1.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/exploratory_comparisons.json",
+  "value": 0.03041991382473941
+ },
+ "xcomp.m2.x1.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/exploratory_comparisons.json",
+  "value": -0.016108988735848703
+ },
+ "xcomp.m2.x1.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/exploratory_comparisons.json",
+  "value": 0.08132283982523694
+ },
+ "shift.m1.A2.ratio_min": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/calibration_shift_m1.json",
+  "value": 5.080052285430959
+ },
+ "shift.m1.A2.ratio_max": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/calibration_shift_m1.json",
+  "value": 9.349873506903661
+ },
+ "shift.m1.a3_s1.ratio": {
+  "kind": "derived",
+  "note": "test rate / CV rate",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/calibration_shift_m1.json",
+  "value": 34.84502826690961
+ },
+ "pre.seed.m1_target_event_ar8_all_c3_s1_event.conformal_bh.f05": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/m1_target_event_ar8_all_c3_s1_event.json",
+  "value": 0.3581786217259783
+ },
+ "shift.m1.a3_s2.ratio": {
+  "kind": "derived",
+  "note": "test rate / CV rate",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/calibration_shift_m1.json",
+  "value": 2.7868925443728823
+ },
+ "pre.seed.m1_target_event_ar8_all_c3_s2_event.conformal_bh.f05": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/m1_target_event_ar8_all_c3_s2_event.json",
+  "value": 0.1349423809791785
+ },
+ "shift.m1.a3_s4.ratio": {
+  "kind": "derived",
+  "note": "test rate / CV rate",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/calibration_shift_m1.json",
+  "value": 6.315604369372205
+ },
+ "shift.m1.A3.spearman_f05": {
+  "kind": "derived",
+  "note": "Spearman rho over 5 seeds; descriptive only",
+  "source": "calibration_shift_m1.json + test/*.json",
+  "value": 0.0
+ },
+ "shift.m1.A2.spearman_f05": {
+  "kind": "derived",
+  "note": "Spearman rho over 5 seeds; descriptive only",
+  "source": "calibration_shift_m1.json + test/*.json",
+  "value": -0.6
+ },
+ "evcls.m1.unseen.Anomaly.n": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/event_classes_summary_m1.csv",
+  "value": 3
+ },
+ "evcls.m1.seen.Anomaly.A1": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/event_classes_summary_m1.csv",
+  "value": 0.154
+ },
+ "evcls.m1.seen.Anomaly.A2": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/event_classes_summary_m1.csv",
+  "value": 0.204
+ },
+ "evcls.m1.seen.Anomaly.A3": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/event_classes_summary_m1.csv",
+  "value": 0.227
+ },
+ "evcls.m1.seen.Rare_Event.A2": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/event_classes_summary_m1.csv",
+  "value": 0.679
+ },
+ "evcls.m1.unseen.Rare_Event.A2": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/event_classes_summary_m1.csv",
+  "value": 0.875
+ },
+ "evcls.m1.seen.Rare_Event.A1": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/event_classes_summary_m1.csv",
+  "value": 0.286
+ },
+ "evcls.m1.unseen.Rare_Event.A1": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/event_classes_summary_m1.csv",
+  "value": 0.0
+ },
+ "evcls.m1.gain_a2_a1.total": {
+  "kind": "derived",
+  "source": "event_classes_summary_m1.csv",
+  "value": 20.604
+ },
+ "evcls.m1.gain_a2_a1.seen.Rare_Event": {
+  "kind": "derived",
+  "note": "(detection rate A2 - A1) x number of events",
+  "source": "event_classes_summary_m1.csv",
+  "value": 11.004000000000001
+ },
+ "evcls.m1.gain_a2_a1.unseen.Rare_Event": {
+  "kind": "derived",
+  "note": "(detection rate A2 - A1) x number of events",
+  "source": "event_classes_summary_m1.csv",
+  "value": 7.0
+ },
+ "evcls.m1.gain_a2_a1.seen.Anomaly": {
+  "kind": "derived",
+  "note": "(detection rate A2 - A1) x number of events",
+  "source": "event_classes_summary_m1.csv",
+  "value": 2.5999999999999996
+ },
+ "evcls.m1.unseen.Rare_Event.A0": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/event_classes_summary_m1.csv",
+  "value": 0.875
+ },
+ "xcomp.m1.x4.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/exploratory_comparisons.json",
+  "value": 0.038636501827587294
+ },
+ "xcomp.m1.x4.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/exploratory_comparisons.json",
+  "value": -0.18823827433409884
+ },
+ "xcomp.m1.x4.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/exploratory_comparisons.json",
+  "value": 0.27795837902790665
+ },
+ "xcomp.m1.x5.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/exploratory_comparisons.json",
+  "value": -0.011955794972153683
+ },
+ "xcomp.m1.x5.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/exploratory_comparisons.json",
+  "value": -0.2597899725876692
+ },
+ "xcomp.m1.x5.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/exploratory_comparisons.json",
+  "value": 0.16419388766988327
+ },
+ "ph.plan_sha256": {
+  "kind": "config",
+  "source": "research_design/preregistration/posthoc_v2_freeze.json",
+  "value": "217648e6805f"
+ },
+ "ph.plan_written": {
+  "kind": "config",
+  "source": "research_design/preregistration/posthoc_v2_freeze.json",
+  "value": "2026-10-25T12:14:37"
+ },
+ "ph.p3.n_checks": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p3_exact/exactness.json",
+  "value": 302
+ },
+ "ph.p3.max_abs_diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p3_exact/exactness.json",
+  "value": 2.1217836515541322e-16
+ },
+ "ph.p3.m1.h6.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p3_exact/confirmatory_exact.json",
+  "value": 0.20728234635850293
+ },
+ "ph.p3.m1.h6.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p3_exact/confirmatory_exact.json",
+  "value": 0.4910759382242189
+ },
+ "ph.p3.m1.h5.p_holm": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p3_exact/confirmatory_exact.json",
+  "value": 0.066
+ },
+ "ph.p8.m1.max_abs_cv_diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p8_provenance/summary.json",
+  "value": 0.0
+ },
+ "ph.p1.m1.target.conformal_bh.forward.D.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 0.15640098523817936
+ },
+ "ph.p1.m1.target.conformal_bh.forward.D.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 0.4355200970288052
+ },
+ "ph.p1.m1.target.conformal_bh.reverse.D.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 0.23355208098358513
+ },
+ "ph.p1.m1.target.conformal_bh.reverse.D.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 0.500156004884022
+ },
+ "ph.p1.m1.target.conformal_bh.forward.P.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 0.04283867034797366
+ },
+ "ph.p1.m1.target.conformal_bh.forward.F.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 0.010013256474925333
+ },
+ "ph.p1.m1.target.conformal_bh.reverse.G.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": -0.06546472232041595
+ },
+ "ph.p1.m1.target.conformal_bh.r1.f05": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 0.4932707329604433
+ },
+ "ph.p1.m1.target.threshold.forward.P.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_threshold.json",
+  "value": 0.1454167703197957
+ },
+ "ph.p1.m1.target.threshold.forward.D.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_threshold.json",
+  "value": 0.196914992442458
+ },
+ "ph.p1.m1.lightweight.conformal_bh.forward.P.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_lightweight_conformal_bh.json",
+  "value": -0.1496410908880257
+ },
+ "ph.p1.m1.lightweight.conformal_bh.reverse.P.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_lightweight_conformal_bh.json",
+  "value": -0.22266596128878594
+ },
+ "ph.p1.m1.lightweight.conformal_bh.forward.D.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_lightweight_conformal_bh.json",
+  "value": -0.16586516250544198
+ },
+ "ph.p1.m2.target.conformal_bh.forward.D.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m2_target_conformal_bh.json",
+  "value": -0.08844760332447432
+ },
+ "ph.p1.m2.target.conformal_bh.forward.D.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m2_target_conformal_bh.json",
+  "value": -0.13420146480965792
+ },
+ "ph.p1.m2.target.conformal_bh.forward.D.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m2_target_conformal_bh.json",
+  "value": -0.05427916767302121
+ },
+ "ph.p2.m1.conformal_bh.mean_diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p2_forward/m1_summary.json",
+  "value": 0.23953917584137951
+ },
+ "ph.p2.m1.conformal_bh.fold2.W_fa_yr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p2_forward/m1_summary.json",
+  "value": 1172.803855407016
+ },
+ "ph.p2.m2.conformal_bh.n_folds": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p2_forward/m2_summary.json",
+  "value": 3
+ },
+ "ph.p2.m2.conformal_bh.mean_diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p2_forward/m2_summary.json",
+  "value": 0.017091893558966342
+ },
+ "ph.p4.m1.ar8.gamma_positive.gamma": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p4_aci/m1_target_ar8.json",
+  "value": 0.0001
+ },
+ "ph.p4.rule.n_arms": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p4_aci/*.json",
+  "value": 7
+ },
+ "ph.p4.rule.n_at_or_above": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p4_aci/*.json",
+  "value": 2
+ },
+ "ph.p4.rule.n_below": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p4_aci/*.json",
+  "value": 5
+ },
+ "ph.p5.m1.A1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p5_anomaly_arm/m1_summary.json",
+  "value": 0.33613323885035423
+ },
+ "ph.p5.m1.A2.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p5_anomaly_arm/m1_summary.json",
+  "value": 0.08686445016608561
+ },
+ "ph.p5.m1.A2.min": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p5_anomaly_arm/m1_summary.json",
+  "value": 0.010882002711823992
+ },
+ "ph.p5.m1.A2.max": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p5_anomaly_arm/m1_summary.json",
+  "value": 0.23177722607157317
+ },
+ "ph.p5.m1.A2.fa_yr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p5_anomaly_arm/m1_summary.json",
+  "value": 44.70991396167384
+ },
+ "ph.p5.m1.A3.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p5_anomaly_arm/m1_summary.json",
+  "value": 0.09700793457692847
+ },
+ "ph.p5.m1.A3.min": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p5_anomaly_arm/m1_summary.json",
+  "value": 0.034388058184473005
+ },
+ "ph.p5.m1.A3.max": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p5_anomaly_arm/m1_summary.json",
+  "value": 0.21052031766991586
+ },
+ "ph.p5.m2.A1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p5_anomaly_arm/m2_summary.json",
+  "value": 0.0
+ },
+ "ph.p5.m2.A2.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p5_anomaly_arm/m2_summary.json",
+  "value": 0.24720197809007374
+ },
+ "ph.p5.m2.A3.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p5_anomaly_arm/m2_summary.json",
+  "value": 0.004581923673582893
+ },
+ "ph.p6.m1.A2.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 0.4883657702642288
+ },
+ "ph.p6.m1.A2.f05.std": {
+  "kind": "derived",
+  "note": "sample sd over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 0.19471798440981633
+ },
+ "ph.p6.m1.A2.f05.n": {
+  "kind": "derived",
+  "note": "count over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 10
+ },
+ "ph.p6.m1.A2.f05.min": {
+  "kind": "derived",
+  "note": "min over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 0.15719533560118684
+ },
+ "ph.p6.m1.A2.f05.max": {
+  "kind": "derived",
+  "note": "max over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 0.7692274901721327
+ },
+ "ph.p6.m1.A3.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 0.17563707438967435
+ },
+ "ph.p6.m1.A3.f05.std": {
+  "kind": "derived",
+  "note": "sample sd over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 0.09313405876161027
+ },
+ "ph.p6.m1.A3.f05.n": {
+  "kind": "derived",
+  "note": "count over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 9
+ },
+ "ph.p6.m1.A3.f05.min": {
+  "kind": "derived",
+  "note": "min over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 0.08199084097506301
+ },
+ "ph.p6.m1.A3.f05.max": {
+  "kind": "derived",
+  "note": "max over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 0.3581786217259783
+ },
+ "ph.p6.m1.h4.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": -0.252168936250353
+ },
+ "ph.p6.m1.h4.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": -0.4017268149628562
+ },
+ "ph.p6.m1.h4.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": -0.042639085325481094
+ },
+ "ph.p6.m1.h5.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": -0.31272869587455443
+ },
+ "ph.p6.m1.h5.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": -0.45670761180607256
+ },
+ "ph.p6.m1.h5.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": -0.11185990870859351
+ },
+ "ph.p6.m1.x1.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 0.060559759624201404
+ },
+ "ph.p6.m1.x1.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": -0.13784016879964292
+ },
+ "ph.p6.m1.x1.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 0.2680362333409767
+ },
+ "ph.p7.m1.A1.detected": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 16.0
+ },
+ "ph.p7.m1.A1.n_events": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 91.0
+ },
+ "ph.p7.m1.A1.delay_h_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.3278183333333333
+ },
+ "ph.p7.m1.A1.false_alarms_per_1000_nominal_h": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.1466300002325648
+ },
+ "ph.p7.m1.A0.detected": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 42.0
+ },
+ "ph.p7.m1.A0.false_alarms_per_1000_nominal_h": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 11.748728768634255
+ },
+ "ph.p7.m1.A3.run_duration_h_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 5.0525
+ },
+ "ph.p7.m1.A3.delay_h_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 2.023654416666667
+ },
+ "ops.official.hybrid.f100.f1.std": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.0085650405907674
+ },
+ "ops.official.hybrid.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.9855485985742196
+ },
+ "ops.time_blocked.hybrid.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.9095976904989737
+ },
+ "ops.time_blocked.hybrid.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.971882007941239
+ },
+ "ops.official.fcnn.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.9365082570127352
+ },
+ "ops.official.fcnn.f100.f1.std": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.0081351728775041
+ },
+ "ops.official.fcnn.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.979982623464356
+ },
+ "ops.time_blocked.fcnn.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.906920603713473
+ },
+ "ops.time_blocked.fcnn.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.9665553886996736
+ },
+ "ops.official.cnn.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.9387531855021
+ },
+ "ops.official.cnn.f100.f1.std": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.0154459920411121
+ },
+ "ops.official.cnn.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.9870410575860816
+ },
+ "ops.time_blocked.cnn.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.8671644017482294
+ },
+ "ops.time_blocked.cnn.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.971173380102576
+ },
+ "ops.official.transformer.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.898064163964229
+ },
+ "ops.official.transformer.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.9483125267624226
+ },
+ "ops.time_blocked.transformer.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.8800232880516182
+ },
+ "ops.time_blocked.transformer.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.9417952282384644
+ },
+ "ops.official.xgboost.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.9109364910124638
+ },
+ "ops.official.xgboost.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.9607393360738852
+ },
+ "ops.time_blocked.xgboost.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.894145567356736
+ },
+ "ops.time_blocked.xgboost.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.9639388670778846
+ },
+ "ops.official.random_forest.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.9087502716800696
+ },
+ "ops.official.random_forest.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.9636752284148272
+ },
+ "ops.time_blocked.random_forest.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.8881970324361628
+ },
+ "ops.time_blocked.random_forest.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.9555077440940856
+ },
+ "ops.official.adaboost.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.8380952380952381
+ },
+ "ops.official.adaboost.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.9251163822295232
+ },
+ "ops.time_blocked.adaboost.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.8800000000000001
+ },
+ "ops.time_blocked.adaboost.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.9440116662450913
+ },
+ "ops.official.logreg.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.8625592417061612
+ },
+ "ops.official.logreg.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.9569128526781022
+ },
+ "ops.time_blocked.logreg.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.8757763975155279
+ },
+ "ops.time_blocked.logreg.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.9617168528926956
+ },
+ "ops.official.chronos.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.888888888888889
+ },
+ "ops.official.chronos.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.9553455989378694
+ },
+ "ops.time_blocked.chronos.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.8078175895765473
+ },
+ "ops.time_blocked.chronos.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.9190653971166414
+ },
+ "ops.official.cosmos_robust_z.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.4363636363636363
+ },
+ "ops.official.cosmos_robust_z.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.4712068402439562
+ },
+ "ops.time_blocked.cosmos_robust_z.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.3153153153153153
+ },
+ "ops.time_blocked.cosmos_robust_z.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.6732311409224514
+ },
+ "ops.official.iforest.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.2262318094112266
+ },
+ "ops.official.iforest.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.3462095130927948
+ },
+ "ops.time_blocked.iforest.f100.f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.1721009444919491
+ },
+ "ops.time_blocked.iforest.f100.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_time_blocked.csv",
+  "value": 0.3312811332055643
+ },
+ "ops.paired.hybrid_fcnn.aucpr.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/paired_comparisons.csv",
+  "value": 0.0058988702490559
+ },
+ "ops.paired.hybrid_fcnn.aucpr.ci_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/paired_comparisons.csv",
+  "value": 0.0004101578440799
+ },
+ "ops.paired.hybrid_fcnn.aucpr.ci_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/paired_comparisons.csv",
+  "value": 0.0127088117962533
+ },
+ "ops.paired.hybrid_fcnn.f1.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/paired_comparisons.csv",
+  "value": 0.0147178734507502
+ },
+ "ops.paired.hybrid_fcnn.f1.ci_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/paired_comparisons.csv",
+  "value": -0.0080153768177683
+ },
+ "ops.paired.hybrid_fcnn.f1.ci_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/paired_comparisons.csv",
+  "value": 0.0406960582119469
+ },
+ "ops.paired.hybrid_xgboost.aucpr.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/paired_comparisons.csv",
+  "value": 0.0254379966810233
+ },
+ "ops.paired.hybrid_xgboost.aucpr.ci_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/paired_comparisons.csv",
+  "value": 0.0077819730627653
+ },
+ "ops.paired.hybrid_xgboost.aucpr.ci_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/paired_comparisons.csv",
+  "value": 0.0460475424100532
+ },
+ "ops.paired.fcnn_xgboost.f1.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/paired_comparisons.csv",
+  "value": 0.0323823886724476
+ },
+ "ops.paired.fcnn_xgboost.f1.ci_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/paired_comparisons.csv",
+  "value": 0.0041046495237833
+ },
+ "ops.paired.fcnn_xgboost.f1.ci_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/paired_comparisons.csv",
+  "value": 0.062804576973568
+ },
+ "ops.paired.fcnn_xgboost.aucpr.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/paired_comparisons.csv",
+  "value": 0.0195391264319673
+ },
+ "ops.paired.fcnn_xgboost.aucpr.ci_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/paired_comparisons.csv",
+  "value": 0.0022327184120657
+ },
+ "ops.paired.fcnn_xgboost.aucpr.ci_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/paired_comparisons.csv",
+  "value": 0.0387609618949409
+ },
+ "ops.official.fcnn.f10.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.935697476289794
+ },
+ "ops.official.cnn.f10.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.91161403758117
+ },
+ "ops.official.hybrid.f10.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.9102142240480896
+ },
+ "ops.official.xgboost.f10.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.89134182227973
+ },
+ "ops.official.chronos.f10.auc_pr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/summary_official.csv",
+  "value": 0.823129605147971
+ },
+ "ops.robust.noise.0p1.hybrid.f1": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/robustness_summary.csv",
+  "value": 0.8563
+ },
+ "ops.robust.noise.0p1.fcnn.f1": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/robustness_summary.csv",
+  "value": 0.8074
+ },
+ "ops.robust.noise.0p1.xgboost.f1": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/robustness_summary.csv",
+  "value": 0.7661
+ },
+ "ops.robust.noise.0p1.cnn.f1": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/robustness_summary.csv",
+  "value": 0.5678
+ },
+ "ops.robust.dropout.0p3.xgboost.f1": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/robustness_summary.csv",
+  "value": 0.8505
+ },
+ "ops.robust.dropout.0p3.cnn.f1": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/robustness_summary.csv",
+  "value": 0.6719
+ },
+ "ops.robust.dropout.0p3.hybrid.f1": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_opssat/robustness_summary.csv",
+  "value": 0.7665
+ },
+ "mon.heldout.learned_conformal.seed_sets": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_cosmos_synthetic/heldout/summary_by_seed.csv",
+  "value": "5,6,7,8,9"
+ },
+ "mon.heldout.classical_ewma.f1.mean": {
+  "kind": "derived",
+  "note": "mean over seed sets",
+  "source": "outputs/benchmarks/telemetry_cosmos_synthetic/heldout/summary_by_seed.csv",
+  "value": 0.8337595907928389
+ },
+ "mon.heldout.classical_ewma.f1.std": {
+  "kind": "derived",
+  "note": "sample sd over seed sets",
+  "source": "outputs/benchmarks/telemetry_cosmos_synthetic/heldout/summary_by_seed.csv",
+  "value": 0.009338833035041193
+ },
+ "mon.heldout.classical_ewma.precision.mean": {
+  "kind": "derived",
+  "note": "mean over seed sets",
+  "source": "outputs/benchmarks/telemetry_cosmos_synthetic/heldout/summary_by_seed.csv",
+  "value": 1.0
+ },
+ "mon.heldout.classical_ewma.recall.mean": {
+  "kind": "derived",
+  "note": "mean over seed sets",
+  "source": "outputs/benchmarks/telemetry_cosmos_synthetic/heldout/summary_by_seed.csv",
+  "value": 0.7150000000000001
+ },
+ "mon.heldout.classical_ewma.localisation_accuracy.mean": {
+  "kind": "derived",
+  "note": "mean over seed sets",
+  "source": "outputs/benchmarks/telemetry_cosmos_synthetic/heldout/summary_by_seed.csv",
+  "value": 0.8300000000000001
+ },
+ "mon.heldout.classical_ewma.false_alarms_total": {
+  "kind": "derived",
+  "note": "sum over seed sets",
+  "source": "outputs/benchmarks/telemetry_cosmos_synthetic/heldout/summary_by_seed.csv",
+  "value": 0
+ },
+ "mon.heldout.learned_conformal.f1.mean": {
+  "kind": "derived",
+  "note": "mean over seed sets",
+  "source": "outputs/benchmarks/telemetry_cosmos_synthetic/heldout/summary_by_seed.csv",
+  "value": 0.7746165071763047
+ },
+ "mon.heldout.learned_conformal.f1.std": {
+  "kind": "derived",
+  "note": "sample sd over seed sets",
+  "source": "outputs/benchmarks/telemetry_cosmos_synthetic/heldout/summary_by_seed.csv",
+  "value": 0.053297869643583864
+ },
+ "mon.heldout.learned_conformal.precision.mean": {
+  "kind": "derived",
+  "note": "mean over seed sets",
+  "source": "outputs/benchmarks/telemetry_cosmos_synthetic/heldout/summary_by_seed.csv",
+  "value": 0.9287153274361284
+ },
+ "mon.heldout.learned_conformal.recall.mean": {
+  "kind": "derived",
+  "note": "mean over seed sets",
+  "source": "outputs/benchmarks/telemetry_cosmos_synthetic/heldout/summary_by_seed.csv",
+  "value": 0.6649999999999999
+ },
+ "mon.heldout.learned_conformal.localisation_accuracy.mean": {
+  "kind": "derived",
+  "note": "mean over seed sets",
+  "source": "outputs/benchmarks/telemetry_cosmos_synthetic/heldout/summary_by_seed.csv",
+  "value": 0.96
+ },
+ "mon.heldout.learned_conformal.false_alarms_total": {
+  "kind": "derived",
+  "note": "sum over seed sets",
+  "source": "outputs/benchmarks/telemetry_cosmos_synthetic/heldout/summary_by_seed.csv",
+  "value": 3
+ },
+ "spot.classical.diff.f100.test_f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.0838400859647837
+ },
+ "spot.classical.diff.f100.test_precision.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.0485185106668645
+ },
+ "spot.classical.diff.f100.test_recall.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.3082379349046015
+ },
+ "spot.unet.both.f100.test_f1.std": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.0053440485875283
+ },
+ "spot.unet.both.f100.test_precision.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.8460212897829522
+ },
+ "spot.unet.both.f100.test_recall.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.6671904227459784
+ },
+ "spot.run.unet.both.f100.mse_sum.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/vision_spotgeo/runs/*.json",
+  "value": 174792.89043146625
+ },
+ "spot.unet.raw.f100.test_f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.7506954461158046
+ },
+ "spot.unet.raw.f100.test_precision.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.8805668016194332
+ },
+ "spot.unet.raw.f100.test_recall.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.6542087542087542
+ },
+ "spot.run.unet.raw.f100.mse_sum.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/vision_spotgeo/runs/*.json",
+  "value": 174207.57473855765
+ },
+ "spot.unet.diff.f100.test_f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.6440304999744128
+ },
+ "spot.unet.diff.f100.test_precision.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.7487951448801095
+ },
+ "spot.unet.diff.f100.test_recall.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.564983164983165
+ },
+ "spot.run.unet.diff.f100.mse_sum.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/vision_spotgeo/runs/*.json",
+  "value": 251126.63004252073
+ },
+ "spot.unet.both.f25.test_f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.6630307859272182
+ },
+ "spot.unet.both.f25.test_precision.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.8544418085897391
+ },
+ "spot.unet.both.f25.test_recall.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.5416835016835017
+ },
+ "spot.run.unet.both.f25.mse_sum.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/vision_spotgeo/runs/*.json",
+  "value": 208472.245486025
+ },
+ "spot.unet.both.f10.test_f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.5345157008882342
+ },
+ "spot.unet.both.f10.test_precision.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.7630866613917462
+ },
+ "spot.unet.both.f10.test_recall.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.4113131313131313
+ },
+ "spot.run.unet.both.f10.mse_sum.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/vision_spotgeo/runs/*.json",
+  "value": 279284.29156090727
+ },
+ "spot.resnet18_pretrained.both.f100.test_f1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.7646287388320698
+ },
+ "spot.resnet18_pretrained.both.f100.test_f1.std": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.0334634436387786
+ },
+ "spot.resnet18_pretrained.both.f100.test_precision.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.8618266012181934
+ },
+ "spot.resnet18_pretrained.both.f100.test_recall.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_spotgeo/summary.csv",
+  "value": 0.6872390572390572
+ },
+ "spot.run.resnet18_pretrained.both.f100.mse_sum.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/vision_spotgeo/runs/*.json",
+  "value": 155487.9825960605
+ },
+ "lit.spotgeo.winner_mse": {
+  "kind": "literature",
+  "source": "chen2021spotgeo, Table 1 (final ranking, full test set)",
+  "value": 33838.99
+ },
+ "syn.heatmap.map50.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_cosmos_synthetic/summary.csv",
+  "value": 0.7801422207432523
+ },
+ "syn.heatmap.map50_95.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_cosmos_synthetic/summary.csv",
+  "value": 0.3704999855232931
+ },
+ "syn.yolov8n.map50.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_cosmos_synthetic/summary.csv",
+  "value": 0.4313639932766167
+ },
+ "syn.yolov8n.map50_95.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_cosmos_synthetic/summary.csv",
+  "value": 0.2443444649743882
+ },
+ "syn.tinyyolo.map50.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_cosmos_synthetic/summary.csv",
+  "value": 0.3787384668086402
+ },
+ "syn.tinyyolo.map50_95.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/vision_cosmos_synthetic/summary.csv",
+  "value": 0.1619634171118176
+ },
+ "lm.xgboost.all.h30.auc_pr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.7607973609024028
+ },
+ "lm.xgboost.all.h68.auc_roc": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.9982173577002668
+ },
+ "lm.xgboost.all.c_index": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.997265348233042
+ },
+ "lm.xgboost.all.h68.brier": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.002541139021037538
+ },
+ "lm.xgboost.all.h68.ece": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.002156988839429365
+ },
+ "lm.xgboost_aft.all.h30.auc_pr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.6582443568788107
+ },
+ "lm.xgboost_aft.all.h68.auc_pr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.8134699121999627
+ },
+ "lm.xgboost_aft.all.h68.auc_roc": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.997469395896183
+ },
+ "lm.xgboost_aft.all.c_index": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.9967474217620272
+ },
+ "lm.xgboost_aft.all.h68.brier": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.0026380938447550387
+ },
+ "lm.xgboost_aft.all.h68.ece": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.0020747486134043464
+ },
+ "lm.hazard_mlp.all.h30.auc_pr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.6097088193461665
+ },
+ "lm.hazard_mlp.all.h68.auc_roc": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.9963599192201251
+ },
+ "lm.hazard_mlp.all.c_index": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.9956618478787803
+ },
+ "lm.hazard_mlp.all.h68.brier": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.0032889182821934236
+ },
+ "lm.hazard_mlp.all.h68.ece": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.002406699310690229
+ },
+ "lm.hazard_mlp_nophys.all.h30.auc_pr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.5873800724303867
+ },
+ "lm.hazard_mlp_nophys.all.h68.auc_pr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.6619399948653941
+ },
+ "lm.hazard_mlp_nophys.all.h68.auc_roc": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.9953751028447481
+ },
+ "lm.hazard_mlp_nophys.all.c_index": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.9946177081132146
+ },
+ "lm.hazard_mlp_nophys.all.h68.brier": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.0033033910577811745
+ },
+ "lm.hazard_mlp_nophys.all.h68.ece": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.00244289108563605
+ },
+ "lm.logreg.all.h30.auc_pr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.528055780392058
+ },
+ "lm.logreg.all.h68.auc_pr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.5271638982632505
+ },
+ "lm.logreg.all.h68.auc_roc": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.9908457785866845
+ },
+ "lm.logreg.all.c_index": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.9902174048154732
+ },
+ "lm.logreg.all.h68.brier": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.003867515659096298
+ },
+ "lm.logreg.all.h68.ece": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.0016814593753707008
+ },
+ "lm.physics.all.h30.auc_pr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.2538354316251553
+ },
+ "lm.physics.all.h68.auc_pr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.18823485251003183
+ },
+ "lm.physics.all.h68.auc_roc": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.9766490480108372
+ },
+ "lm.physics.all.c_index": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.9759764985684513
+ },
+ "lm.physics.all.h68.brier": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.005599021501118182
+ },
+ "lm.physics.all.h68.ece": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.0014745568997059822
+ },
+ "lm.cmp.hazard_mlp_vs_xgboost.h68.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": -0.1336085523876196
+ },
+ "lm.cmp.hazard_mlp_vs_xgboost.h68.ci_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": -0.22057281131330905
+ },
+ "lm.cmp.hazard_mlp_vs_xgboost.h68.ci_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": -0.02394927201369863
+ },
+ "lm.cmp.xgboost_vs_physics.h68.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.6330901783810522
+ },
+ "lm.cmp.xgboost_vs_physics.h68.ci_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.426619177250776
+ },
+ "lm.cmp.xgboost_vs_physics.h68.ci_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.7794654810108472
+ },
+ "lm.cmp.hazard_mlp_vs_hazard_mlp_nophys.h68.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.02577648363807028
+ },
+ "lm.cmp.hazard_mlp_vs_hazard_mlp_nophys.h68.ci_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.0041318725143227346
+ },
+ "lm.cmp.hazard_mlp_vs_hazard_mlp_nophys.h68.ci_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.0650340134110083
+ },
+ "lm.physics.uncontrolled.n": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 3001
+ },
+ "lm.physics.uncontrolled.events": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 12
+ },
+ "lm.physics.uncontrolled.h30.auc_pr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.5117072518062618
+ },
+ "lm.logreg.uncontrolled.h30.auc_pr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.2942176870748299
+ },
+ "lm.xgboost.uncontrolled.h30.auc_pr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.20238095238095238
+ },
+ "lm.hazard_mlp.uncontrolled.h30.auc_pr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.1363123993558776
+ },
+ "lm.xgboost.uncontrolled.h68.auc_pr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.4641584495751162
+ },
+ "lm.physics.uncontrolled.h68.auc_pr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.20410009631855525
+ },
+ "lm.xgboost_aft.uncontrolled.h68.auc_pr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.5489094282050939
+ },
+ "lm.physics.uncontrolled.h30.positives": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 4
+ },
+ "lm.conf.xgboost.marginal.coverage": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.911473865955109
+ },
+ "lm.conf.xgboost.marginal.coverage_on_events": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.0
+ },
+ "lm.conf.hazard_mlp.marginal.coverage_on_events": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.13157894736842105
+ },
+ "lm.conf.xgboost.mondrian.coverage_events": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.9736842105263158
+ },
+ "lm.conf.xgboost.mondrian.coverage_nonevents": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_landmark/results.json",
+  "value": 0.9159955787146692
+ },
+ "sur.test.position_error_km_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_surrogate/results.json",
+  "value": 16.17301369729406
+ },
+ "sur.test.position_error_km_p95": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_surrogate/results.json",
+  "value": 69.35079754968869
+ },
+ "sur.test.downrange_relative_error_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_surrogate/results.json",
+  "value": 0.03219060134133413
+ },
+ "sur.test.fall_time_mae_s": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_surrogate/results.json",
+  "value": 41.27772783345956
+ },
+ "sur.test.impact_classification_accuracy": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_surrogate/results.json",
+  "value": 0.995075
+ },
+ "sur.test.surrogate_samples_per_s": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_surrogate/results.json",
+  "value": 80107.29856570772
+ },
+ "sur.ood_test.position_error_km_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_surrogate/results.json",
+  "value": 38.05683419186502
+ },
+ "sur.ood_test.position_error_km_p95": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_surrogate/results.json",
+  "value": 362.0503418991815
+ },
+ "sur.ood_auroc": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/reentry_surrogate/results.json",
+  "value": 0.726126576875
+ },
+ "sur.fp.n": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/reentry_surrogate/results.json",
+  "value": 12
+ },
+ "sur.fp.cep50_relerr_median": {
+  "kind": "derived",
+  "note": "|CEP50 sur - ref| / ref",
+  "source": "outputs/benchmarks/reentry_surrogate/results.json",
+  "value": 0.017373577458839592
+ },
+ "sur.fp.cep50_relerr_max": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/reentry_surrogate/results.json",
+  "value": 0.051892183808586574
+ },
+ "sur.fp.coverage_median": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/reentry_surrogate/results.json",
+  "value": 0.9532567165989447
+ },
+ "sur.fp.coverage_min": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/reentry_surrogate/results.json",
+  "value": 0.9266666666666666
+ },
+ "sur.fp.speedup_median": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/reentry_surrogate/results.json",
+  "value": 994.4365493889193
+ },
+ "sur.mode.n_seeds": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/reentry_surrogate/pipeline_fallback_modes.csv",
+  "value": 3
+ },
+ "sur.mode.ref.seconds_mean": {
+  "kind": "derived",
+  "note": "mean over 3 seeds",
+  "source": "outputs/benchmarks/reentry_surrogate/pipeline_fallback_modes.csv",
+  "value": 11.69
+ },
+ "sur.mode.ref.cep50_mean": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/reentry_surrogate/pipeline_fallback_modes.csv",
+  "value": 485.0
+ },
+ "sur.mode.none.seconds_mean": {
+  "kind": "derived",
+  "note": "mean over 3 seeds",
+  "source": "outputs/benchmarks/reentry_surrogate/pipeline_fallback_modes.csv",
+  "value": 0.09666666666666668
+ },
+ "sur.mode.none.cep50_mean": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/reentry_surrogate/pipeline_fallback_modes.csv",
+  "value": 498.7
+ },
+ "sur.mode.range.seconds_mean": {
+  "kind": "derived",
+  "note": "mean over 3 seeds",
+  "source": "outputs/benchmarks/reentry_surrogate/pipeline_fallback_modes.csv",
+  "value": 8.716666666666667
+ },
+ "sur.mode.range.cep50_mean": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/reentry_surrogate/pipeline_fallback_modes.csv",
+  "value": 498.73333333333335
+ },
+ "sur.mode.spread.seconds_mean": {
+  "kind": "derived",
+  "note": "mean over 3 seeds",
+  "source": "outputs/benchmarks/reentry_surrogate/pipeline_fallback_modes.csv",
+  "value": 8.866666666666667
+ },
+ "sur.mode.spread.cep50_mean": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/reentry_surrogate/pipeline_fallback_modes.csv",
+  "value": 490.93333333333334
+ },
+ "sur.mode.range.used_mean": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/reentry_surrogate/pipeline_fallback_modes.csv",
+  "value": 0.9899999999999999
+ },
+ "seleff.n": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 8
+ },
+ "seleff.n_positive": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 5
+ },
+ "data.esa.m1.train.start": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "2000-01-01 00:00:00"
+ },
+ "data.esa.m1.test.end": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": "2014-01-01 00:00:00"
+ },
+ "evcls.m1.unseen.Rare_Event.A3": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/event_classes_summary_m1.csv",
+  "value": 0.125
+ },
+ "pre.m1.A3.conformal_bh_rolling.f05.min": {
+  "kind": "derived",
+  "note": "min over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.0
+ },
+ "pre.m1.A3.conformal_bh_rolling.f05.max": {
+  "kind": "derived",
+  "note": "max over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.5688277327508782
+ },
+ "lit.dmlr.m1.lw.best_name": {
+  "kind": "literature",
+  "source": "kotowski2026esaadb, DMLR Table 4 (research_design/references/kotowski2026_esa_adb_dmlr.pdf)",
+  "value": "Telemanom-ESA-Pruned"
+ },
+ "seleff.bh.n_negative": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 2
+ },
+ "seleff.bh.n": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 4
+ }
+}

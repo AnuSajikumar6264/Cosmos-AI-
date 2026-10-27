@@ -1,0 +1,1612 @@
+{
+ "pre.m1.A0.conformal_bh.f05.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/arms/m1_target_ar8_s0.json",
+  "value": 0.07435099036517134
+ },
+ "pre.m1.A1.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.4278060106400274
+ },
+ "conf.m1.h6.diff_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.35345502027485604
+ },
+ "conf.m1.h6.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.20635509925755668
+ },
+ "conf.m1.h6.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.48810654614581644
+ },
+ "conf.p_floor_holm": {
+  "kind": "derived",
+  "note": "Holm factor 3 x floor",
+  "source": "CONFIRMATORY.json",
+  "value": 0.0015
+ },
+ "ph.p2.m1.conformal_bh.n_folds_H_better": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p2_forward/m1_summary.json",
+  "value": 2
+ },
+ "ph.p2.m1.conformal_bh.n_folds": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p2_forward/m1_summary.json",
+  "value": 4
+ },
+ "ph.p4.m1.ar8.gamma_positive.f05": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p4_aci/m1_target_ar8.json",
+  "value": 0.4716978667070382
+ },
+ "lit.dmlr.m1.full.best": {
+  "kind": "literature",
+  "source": "kotowski2026esaadb, DMLR Table 4 (research_design/references/kotowski2026_esa_adb_dmlr.pdf)",
+  "value": 0.061
+ },
+ "lit.dmlr.m2.full.best": {
+  "kind": "literature",
+  "source": "kotowski2026esaadb, DMLR Table 4 (research_design/references/kotowski2026_esa_adb_dmlr.pdf)",
+  "value": 0.079
+ },
+ "lit.tccad.m1_channels": {
+  "kind": "literature",
+  "source": "sahin2026tccad, figures/table7_official_V0_data.csv and fig5_budget_data.csv (Zenodo 23344000)",
+  "value": 24
+ },
+ "lit.tccad.m2_channels": {
+  "kind": "literature",
+  "source": "sahin2026tccad, figures/table7_official_V0_data.csv and fig5_budget_data.csv (Zenodo 23344000)",
+  "value": 19
+ },
+ "lit.brancato.smed_full": {
+  "kind": "literature",
+  "source": "brancato2027ast, abstract (full text not accessed)",
+  "value": 0.902
+ },
+ "lit.alcarria.m1_f05": {
+  "kind": "literature",
+  "source": "alcarria2026, Table 1 (arXiv 2609.10017)",
+  "value": 0.7
+ },
+ "lit.allegrini.private": {
+  "kind": "literature",
+  "source": "allegrini2026 (arXiv 2605.06681)",
+  "value": 0.853
+ },
+ "lit.tccad.aci_far_overshoot": {
+  "kind": "literature",
+  "source": "sahin2026tccad, preregistration/en/PREREGISTRATION_H4.md section 0",
+  "value": "1.15\u20133.4"
+ },
+ "data.esa.m1.grid_seconds": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 30
+ },
+ "data.esa.m2.grid_seconds": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 18
+ },
+ "data.esa.m1.target_channels": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 58
+ },
+ "data.esa.m2.target_channels": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 47
+ },
+ "data.esa.m1.events_all.train.targets": {
+  "kind": "derived",
+  "note": "anomalies + rare events in the M1 training half (communication gaps excluded)",
+  "source": "data/DATASET_REPORT.json",
+  "value": 105
+ },
+ "data.esa.m1.events_all.train.Anomaly": {
+  "kind": "derived",
+  "note": "events (unique ID) by first start time vs the official split date",
+  "source": "data/feature1_health/esa_adb/processed/mission1/labels_with_types.csv",
+  "value": 63
+ },
+ "data.esa.m1.events_all.train.Rare_Event": {
+  "kind": "derived",
+  "note": "events (unique ID) by first start time vs the official split date",
+  "source": "data/feature1_health/esa_adb/processed/mission1/labels_with_types.csv",
+  "value": 42
+ },
+ "data.esa.m1.test.years": {
+  "kind": "derived",
+  "note": "test end - start",
+  "source": "data/DATASET_REPORT.json",
+  "value": 7.000684462696783
+ },
+ "data.esa.m1.events_target.test.Anomaly": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 55
+ },
+ "data.esa.m1.events_target.test.Rare_Event": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 36
+ },
+ "data.esa.m2.events_target.test.Anomaly": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 6
+ },
+ "data.esa.m2.events_target.test.Rare_Event": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 356
+ },
+ "oof.m1.purge_steps": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof/m1_target_ar8/folds.json",
+  "value": 2880
+ },
+ "evm.receptive_field": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/event_model/m2_target_event_ar8_all_c3_s4/meta.json",
+  "value": 1021
+ },
+ "evm.m1.params": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/event_model/m1_target_event_ar8_all_c3_s4/meta.json",
+  "value": 220739
+ },
+ "cfg.prereg.levels.conformal_bh": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/oof_benchmark.py",
+  "value": [
+   0.01,
+   0.001,
+   0.0001,
+   1e-05
+  ]
+ },
+ "cfg.prereg.ks": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/oof_benchmark.py",
+  "value": [
+   1,
+   3,
+   10,
+   30,
+   100
+  ]
+ },
+ "cfg.prereg.levels.threshold": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/oof_benchmark.py",
+  "value": [
+   0.001,
+   0.0001,
+   1e-05,
+   0.0
+  ]
+ },
+ "cfg.prereg.aci_alpha": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/oof_benchmark.py",
+  "value": 0.01
+ },
+ "cfg.prereg.aci_gammas": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/oof_benchmark.py",
+  "value": [
+   0.001,
+   0.005,
+   0.01,
+   0.05
+  ]
+ },
+ "data.esa.m1.cal.n_steps": {
+  "kind": "derived",
+  "note": "calibration-window length / grid step",
+  "source": "cfg.periods + grid",
+  "value": 792000
+ },
+ "data.esa.m1.cal.months": {
+  "kind": "derived",
+  "source": "cfg.periods",
+  "value": 9.0
+ },
+ "data.esa.m1.train.n": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 7364161
+ },
+ "data.esa.m1.events_target.cal.events": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 9
+ },
+ "data.esa.m2.events_target.cal.events": {
+  "kind": "measured",
+  "source": "data/DATASET_REPORT.json",
+  "value": 43
+ },
+ "cfg.explo.levels.conformal_bh": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/alarms.py",
+  "value": [
+   0.01,
+   0.001,
+   0.0003,
+   0.0001
+  ]
+ },
+ "cfg.explo.ks": {
+  "kind": "config",
+  "source": "cosmos/ai/telemetry/alarms.py",
+  "value": [
+   1,
+   3,
+   10,
+   30
+  ]
+ },
+ "prereg.frozen_code_files": {
+  "kind": "derived",
+  "note": "frozen files minus the document",
+  "source": "research_design/preregistration/freeze_09a98f5e160e.json",
+  "value": 27
+ },
+ "prereg.freeze_id": {
+  "kind": "measured",
+  "source": "research_design/preregistration/freeze_09a98f5e160e.json",
+  "value": "09a98f5e160e"
+ },
+ "prereg.refreeze_id": {
+  "kind": "measured",
+  "source": "research_design/preregistration/freeze.json",
+  "value": "681cc7ddec86"
+ },
+ "explo.m2.full.ool.native.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/results.csv",
+  "value": 0.8936112694063737
+ },
+ "data.esa.m1.test.blocks30": {
+  "kind": "derived",
+  "note": "number of 30-day bootstrap blocks in the test half",
+  "source": "data/DATASET_REPORT.json",
+  "value": 86
+ },
+ "data.esa.m2.test.blocks30": {
+  "kind": "derived",
+  "note": "number of 30-day bootstrap blocks in the test half",
+  "source": "data/DATASET_REPORT.json",
+  "value": 22
+ },
+ "conf.m1.h6.n_boot": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 2000
+ },
+ "conf.reimpl_gap_max": {
+  "kind": "derived",
+  "note": "max |re-implemented - official difference| over the six comparisons",
+  "source": "CONFIRMATORY.json",
+  "value": 0.00810846817961014
+ },
+ "ph.plan_sha256": {
+  "kind": "config",
+  "source": "research_design/preregistration/posthoc_v2_freeze.json",
+  "value": "217648e6805f"
+ },
+ "ph.plan_written": {
+  "kind": "config",
+  "source": "research_design/preregistration/posthoc_v2_freeze.json",
+  "value": "2026-10-25T12:14:37"
+ },
+ "env.cpu_count": {
+  "kind": "measured",
+  "source": "outputs/experiments/20261024-154724_esa_event_m1_target_event_ar8_all_c3_s0_s0/env.json",
+  "value": 512
+ },
+ "env.torch": {
+  "kind": "measured",
+  "source": "outputs/experiments/20261024-154724_esa_event_m1_target_event_ar8_all_c3_s0_s0/env.json",
+  "value": "2.13.0+xpu"
+ },
+ "env.python": {
+  "kind": "measured",
+  "source": "outputs/experiments/20261024-154724_esa_event_m1_target_event_ar8_all_c3_s0_s0/env.json",
+  "value": "3.12.13"
+ },
+ "evm.m1.tcn.train_seconds_total.mean": {
+  "kind": "derived",
+  "note": "mean over runs (5 fold models + final model per run)",
+  "source": "outputs/benchmarks/telemetry_esa_adb/event_model/*/meta.json",
+  "value": 6170.096994733811
+ },
+ "evm.m1.gbt.train_seconds_total.mean": {
+  "kind": "derived",
+  "note": "mean over runs (5 fold models + final model per run)",
+  "source": "outputs/benchmarks/telemetry_esa_adb/event_model/*/meta.json",
+  "value": 193.2493832588196
+ },
+ "conf.m1.h5.p_boot": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.035
+ },
+ "conf.m1.h5.p_holm": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.07
+ },
+ "conf.m2.h6.diff_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.08888141425973117
+ },
+ "conf.m1.h4.A_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.20536106259946085
+ },
+ "conf.m1.h4.B_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.4278060106400274
+ },
+ "conf.m1.h4.diff_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.22244494804056653
+ },
+ "conf.m1.h4.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.3951525000119101
+ },
+ "conf.m1.h4.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.04232067917326693
+ },
+ "conf.m1.h4.p_holm": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.101
+ },
+ "conf.m1.h4.verdict": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": "refuted"
+ },
+ "conf.m1.h5.A_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.20536106259946085
+ },
+ "conf.m1.h5.B_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.5436142089506507
+ },
+ "conf.m1.h5.diff_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.33825314635118986
+ },
+ "conf.m1.h5.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.5400523916071752
+ },
+ "conf.m1.h5.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.03299267182627246
+ },
+ "conf.m1.h5.verdict": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": "refuted"
+ },
+ "conf.m1.h6.A_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.4278060106400274
+ },
+ "conf.m1.h6.B_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.07435099036517134
+ },
+ "conf.m1.h6.verdict": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": "supported"
+ },
+ "conf.m2.h4.A_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.8749431213956079
+ },
+ "conf.m2.h4.B_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.8735292467628434
+ },
+ "conf.m2.h4.diff_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.0014138746327645446
+ },
+ "conf.m2.h4.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.054806880848968176
+ },
+ "conf.m2.h4.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.053566036610437
+ },
+ "conf.m2.h4.p_boot": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.907
+ },
+ "conf.m2.h5.A_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.8749431213956079
+ },
+ "conf.m2.h5.B_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.9039489617893265
+ },
+ "conf.m2.h5.diff_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.029005840393718563
+ },
+ "conf.m2.h5.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.102830196781903
+ },
+ "conf.m2.h5.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.03701271860884018
+ },
+ "conf.m2.h5.p_boot": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.382
+ },
+ "conf.m2.h6.A_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.8735292467628434
+ },
+ "conf.m2.h6.B_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": 0.9624106610225746
+ },
+ "conf.m2.h6.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.14320460403396318
+ },
+ "conf.m2.h6.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/CONFIRMATORY.json",
+  "value": -0.04931630831752352
+ },
+ "conf.p_floor": {
+  "kind": "derived",
+  "note": "1 / replicates",
+  "source": "CONFIRMATORY.json",
+  "value": 0.0005
+ },
+ "ph.p3.n_checks": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p3_exact/exactness.json",
+  "value": 302
+ },
+ "ph.p3.max_abs_diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p3_exact/exactness.json",
+  "value": 2.1217836515541322e-16
+ },
+ "ph.p3.m1.h6.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p3_exact/confirmatory_exact.json",
+  "value": 0.20728234635850293
+ },
+ "ph.p3.m1.h6.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p3_exact/confirmatory_exact.json",
+  "value": 0.4910759382242189
+ },
+ "ph.p3.m1.h5.p_holm": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p3_exact/confirmatory_exact.json",
+  "value": 0.066
+ },
+ "ph.p8.m1.max_abs_cv_diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p8_provenance/summary.json",
+  "value": 0.0
+ },
+ "ph.p1.m1.target.conformal_bh.forward.D.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 0.300603093451957
+ },
+ "ph.p1.m1.target.conformal_bh.forward.D.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 0.15640098523817936
+ },
+ "ph.p1.m1.target.conformal_bh.forward.D.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 0.4355200970288052
+ },
+ "ph.p1.m1.target.conformal_bh.reverse.D.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 0.366067815772373
+ },
+ "ph.p1.m1.target.conformal_bh.reverse.D.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 0.23355208098358513
+ },
+ "ph.p1.m1.target.conformal_bh.reverse.D.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 0.500156004884022
+ },
+ "ph.p1.m1.target.conformal_bh.forward.P.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 0.04283867034797366
+ },
+ "ph.p1.m1.target.conformal_bh.forward.F.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 0.010013256474925333
+ },
+ "ph.p1.m1.target.conformal_bh.reverse.G.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": -0.06546472232041595
+ },
+ "ph.p1.m1.target.conformal_bh.reverse.G.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": -0.16736022005815612
+ },
+ "ph.p1.m1.target.conformal_bh.reverse.G.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 0.014195824371386343
+ },
+ "ph.p1.m1.target.conformal_bh.r1.f05": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 0.4932707329604433
+ },
+ "ph.p1.m1.target.threshold.forward.P.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_threshold.json",
+  "value": 0.1454167703197957
+ },
+ "ph.p1.m1.target.threshold.forward.D.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_threshold.json",
+  "value": 0.196914992442458
+ },
+ "ph.p1.m1.target.threshold.forward.F.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_threshold.json",
+  "value": -0.0027729403051504897
+ },
+ "ph.p1.m2.target.conformal_bh.forward.D.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m2_target_conformal_bh.json",
+  "value": -0.08844760332447432
+ },
+ "ph.p1.m2.target.conformal_bh.forward.D.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m2_target_conformal_bh.json",
+  "value": -0.13420146480965792
+ },
+ "ph.p1.m2.target.conformal_bh.forward.D.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m2_target_conformal_bh.json",
+  "value": -0.05427916767302121
+ },
+ "ph.p1.m2.target.conformal_bh.forward.P.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m2_target_conformal_bh.json",
+  "value": -0.0040887812441161575
+ },
+ "ph.p1.m2.target.conformal_bh.forward.F.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m2_target_conformal_bh.json",
+  "value": 0.002978562142611607
+ },
+ "ph.p2.m1.conformal_bh.mean_diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p2_forward/m1_summary.json",
+  "value": 0.23953917584137951
+ },
+ "ph.p2.m1.conformal_bh.fold2.W_fa_yr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p2_forward/m1_summary.json",
+  "value": 1172.803855407016
+ },
+ "ph.p2.m1.conformal_bh.fold2.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p2_forward/m1_summary.json",
+  "value": 0.8252105648872071
+ },
+ "ph.p2.m1.conformal_bh.fold1.W_fa_yr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p2_forward/m1_summary.json",
+  "value": 271.44288046721357
+ },
+ "ph.p2.m1.conformal_bh.fold3.H": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p2_forward/m1_summary.json",
+  "value": 0.35714285714285715
+ },
+ "ph.p2.m1.threshold.mean_diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p2_forward/m1_summary.json",
+  "value": 0.0843372437560811
+ },
+ "ph.p2.m1.threshold.n_folds_H_better": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p2_forward/m1_summary.json",
+  "value": 2
+ },
+ "ph.p2.m1.threshold.n_folds": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p2_forward/m1_summary.json",
+  "value": 4
+ },
+ "ph.p2.m2.conformal_bh.n_folds": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p2_forward/m2_summary.json",
+  "value": 3
+ },
+ "ph.p2.m2.conformal_bh.mean_diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p2_forward/m2_summary.json",
+  "value": 0.017091893558966342
+ },
+ "seleff.n_positive": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 5
+ },
+ "seleff.n": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 8
+ },
+ "seleff.m1.full.threshold": {
+  "kind": "derived",
+  "note": "A1 minus A0",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.3395588224571032
+ },
+ "seleff.m1.lw.conformal_bh": {
+  "kind": "derived",
+  "note": "A1 lightweight minus exploratory lightweight AR(8) (calibration-window selection)",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json + results.csv",
+  "value": -0.38334818263165754
+ },
+ "sel.m1.A1lw.conformal_bh.q.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/selection/*.json",
+  "value": 0.01
+ },
+ "sel.m1.A1lw.conformal_bh.cv.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/selection/*.json",
+  "value": 0.5277748663881043
+ },
+ "pre.m1.A1lw.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.024687206978420664
+ },
+ "ph.p1.m1.lightweight.conformal_bh.forward.P.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_lightweight_conformal_bh.json",
+  "value": -0.1496410908880257
+ },
+ "ph.p1.m1.lightweight.conformal_bh.reverse.P.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_lightweight_conformal_bh.json",
+  "value": -0.22266596128878594
+ },
+ "ph.p1.m1.lightweight.conformal_bh.forward.D.delta_official": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_lightweight_conformal_bh.json",
+  "value": -0.16586516250544198
+ },
+ "seleff.m2.full.conformal_bh": {
+  "kind": "derived",
+  "note": "A1 minus A0",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": -0.08888141425973117
+ },
+ "seleff.m2.full.threshold": {
+  "kind": "derived",
+  "note": "A1 minus A0",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.09442984523282927
+ },
+ "layers.n_threshold_ge_bh": {
+  "kind": "derived",
+  "note": "rows of the alarm-layer table where threshold F0.5 >= conformal-BH F0.5",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 8
+ },
+ "layers.n_rows": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 10
+ },
+ "sel.m1_target_ar8.conformal_bh.q": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/selection/m1_target_ar8.json",
+  "value": 0.0001
+ },
+ "sel.m1_target_ar8.conformal_bh.k": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/selection/m1_target_ar8.json",
+  "value": 10
+ },
+ "pre.m1.A0.conformal_bh.fa_yr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/arms/m1_target_ar8_s0.json",
+  "value": 91.56247555729371
+ },
+ "pre.m1.A1.conformal_bh.fa_yr.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 1.1427454047712162
+ },
+ "ph.p7.m1.A1.false_alarms_per_1000_nominal_h": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.1466300002325648
+ },
+ "ph.p7.m1.A1.detected": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 16.0
+ },
+ "ph.p7.m1.A1.n_events": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 91.0
+ },
+ "ph.p7.m1.A0.detected": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 42.0
+ },
+ "ph.p7.m1.A1.detected_within_24h": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.875
+ },
+ "pre.m1.A1.conformal_bh.alarm_prec.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.1391304347826087
+ },
+ "ph.p7.m1.A0.detected_anomalies": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 17.0
+ },
+ "pre.m1.A0.conformal_bh.alarm_runs_per_year": {
+  "kind": "derived",
+  "note": "alarm runs / test-half years",
+  "source": "outputs/benchmarks/telemetry_esa_adb/arms/m1_target_ar8_s0.json",
+  "value": 112.8461087211576
+ },
+ "ph.p7.m1.A0.delay_h_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.35091833333333333
+ },
+ "ph.p7.m1.A0.run_duration_h_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.041666666666666664
+ },
+ "pre.m1.A0.conformal_bh.alarm_prec.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/arms/m1_target_ar8_s0.json",
+  "value": 0.27631578947368424
+ },
+ "ph.p7.m1.A1.detected_anomalies": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 8.0
+ },
+ "pre.m1.A1.conformal_bh.alarm_runs_per_year": {
+  "kind": "derived",
+  "note": "alarm runs / test-half years",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 17.56971059835745
+ },
+ "ph.p7.m1.A1.delay_h_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.3278183333333333
+ },
+ "ph.p7.m1.A1.run_duration_h_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.31666666666666665
+ },
+ "pre.m1.A2.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.5436142089506507
+ },
+ "pre.m1.A2.conformal_bh.f05.std": {
+  "kind": "derived",
+  "note": "sample sd over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.23565873782168226
+ },
+ "ph.p7.m1.A2.detected": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 37.8
+ },
+ "ph.p7.m1.A2.detected_anomalies": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 11.8
+ },
+ "pre.m1.A2.conformal_bh.fa_yr.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 8.456315995307001
+ },
+ "pre.m1.A2.conformal_bh.alarm_runs_per_year": {
+  "kind": "derived",
+  "note": "alarm runs / test-half years",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 33.48244035979664
+ },
+ "ph.p7.m1.A2.delay_h_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 1.07064375
+ },
+ "ph.p7.m1.A2.run_duration_h_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.8
+ },
+ "pre.m1.A2.conformal_bh.alarm_prec.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.21290387673434932
+ },
+ "pre.m1.A3.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.20536106259946085
+ },
+ "pre.m1.A3.conformal_bh.f05.std": {
+  "kind": "derived",
+  "note": "sample sd over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.11416843086435596
+ },
+ "ph.p7.m1.A3.detected": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 24.2
+ },
+ "ph.p7.m1.A3.detected_anomalies": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 11.8
+ },
+ "pre.m1.A3.conformal_bh.fa_yr.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 20.88367227219398
+ },
+ "pre.m1.A3.conformal_bh.alarm_runs_per_year": {
+  "kind": "derived",
+  "note": "alarm runs / test-half years",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 30.368459131795074
+ },
+ "ph.p7.m1.A3.delay_h_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 2.023654416666667
+ },
+ "ph.p7.m1.A3.run_duration_h_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 5.0525
+ },
+ "pre.m1.A3.conformal_bh.alarm_prec.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.3255190714225197
+ },
+ "pre.m2.A0.conformal_bh.f05.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/arms/m2_target_ar8_s0.json",
+  "value": 0.9624106610225746
+ },
+ "ph.p7.m2.A0.detected": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 323.0
+ },
+ "ph.p7.m2.A0.detected_anomalies": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 1.0
+ },
+ "pre.m2.A0.conformal_bh.fa_yr.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/arms/m2_target_ar8_s0.json",
+  "value": 3.4349529780564265
+ },
+ "pre.m2.A0.conformal_bh.alarm_runs_per_year": {
+  "kind": "derived",
+  "note": "alarm runs / test-half years",
+  "source": "outputs/benchmarks/telemetry_esa_adb/arms/m2_target_ar8_s0.json",
+  "value": 204.95219435736678
+ },
+ "ph.p7.m2.A0.delay_h_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.16133916666666667
+ },
+ "ph.p7.m2.A0.run_duration_h_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.245
+ },
+ "pre.m2.A0.conformal_bh.alarm_prec.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/arms/m2_target_ar8_s0.json",
+  "value": 0.8947368421052632
+ },
+ "pre.m2.A1.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.8735292467628434
+ },
+ "ph.p7.m2.A1.detected": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 210.0
+ },
+ "ph.p7.m2.A1.detected_anomalies": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.0
+ },
+ "pre.m2.A1.conformal_bh.fa_yr.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.0
+ },
+ "pre.m2.A1.conformal_bh.alarm_runs_per_year": {
+  "kind": "derived",
+  "note": "alarm runs / test-half years",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 136.25313479623824
+ },
+ "ph.p7.m2.A1.delay_h_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.15965166666666666
+ },
+ "ph.p7.m2.A1.run_duration_h_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.195
+ },
+ "pre.m2.A1.conformal_bh.alarm_prec.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.8571428571428571
+ },
+ "pre.m2.A2.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.9039489617893265
+ },
+ "pre.m2.A2.conformal_bh.f05.std": {
+  "kind": "derived",
+  "note": "sample sd over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.04953404546994964
+ },
+ "ph.p7.m2.A2.detected": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 257.2
+ },
+ "ph.p7.m2.A2.detected_anomalies": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.8
+ },
+ "pre.m2.A2.conformal_bh.fa_yr.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 3.5494514106583077
+ },
+ "pre.m2.A2.conformal_bh.alarm_runs_per_year": {
+  "kind": "derived",
+  "note": "alarm runs / test-half years",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 162.8167711598746
+ },
+ "ph.p7.m2.A2.delay_h_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.06897158333333334
+ },
+ "ph.p7.m2.A2.run_duration_h_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.1855
+ },
+ "pre.m2.A2.conformal_bh.alarm_prec.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.9010622843488998
+ },
+ "pre.m2.A3.conformal_bh.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.8749431213956079
+ },
+ "pre.m2.A3.conformal_bh.f05.std": {
+  "kind": "derived",
+  "note": "sample sd over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.05820499267991894
+ },
+ "ph.p7.m2.A3.detected": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 244.8
+ },
+ "ph.p7.m2.A3.detected_anomalies": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.8
+ },
+ "pre.m2.A3.conformal_bh.fa_yr.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 7.671394984326019
+ },
+ "pre.m2.A3.conformal_bh.alarm_runs_per_year": {
+  "kind": "derived",
+  "note": "alarm runs / test-half years",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 161.5572884012539
+ },
+ "ph.p7.m2.A3.delay_h_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.2661755
+ },
+ "ph.p7.m2.A3.run_duration_h_median": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 0.2995
+ },
+ "pre.m2.A3.conformal_bh.alarm_prec.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.8853483149383573
+ },
+ "ph.p7.m2.A1.n_events": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p7_operational/summary.json",
+  "value": 362.0
+ },
+ "pre.all.aci.point_far.min": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.009814703463802931
+ },
+ "pre.all.aci.point_far.max": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.009998336172815139
+ },
+ "pre.all.aci.f05.max": {
+  "kind": "derived",
+  "note": "max over all test arms and seeds (30 runs)",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.0017180078681627985
+ },
+ "pre.all.aci.n": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 30
+ },
+ "pre.all.aci.alarm_runs.max": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 1597643.0
+ },
+ "pre.all.aci_event.f05.max_seedmean": {
+  "kind": "derived",
+  "note": "max over arms of the seed-mean",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.046015801375824554
+ },
+ "pre.all.aci_event.zero_alarm_runs": {
+  "kind": "derived",
+  "note": "runs where aci_event raised no alarm",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 10
+ },
+ "pre.all.aci_event.n_runs": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 30
+ },
+ "pre.all.aci.gamma005_runs": {
+  "kind": "derived",
+  "note": "runs whose selected gamma is 0.05",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 29
+ },
+ "pre.all.aci.gamma_runs": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 30
+ },
+ "aci.alpha_after_one_hit.g0.05": {
+  "kind": "derived",
+  "note": "alpha_t + gamma (alpha - 1) starting from alpha",
+  "source": "update rule of eq. (aci)",
+  "value": -0.0395
+ },
+ "aci.recovery_steps.g0.05": {
+  "kind": "derived",
+  "note": "non-exceedance steps until alpha_t > 0 again (alpha_t <= 0 means no alarm)",
+  "source": "update rule of eq. (aci)",
+  "value": 80
+ },
+ "ph.p4.m1.ar8.gamma_positive.alpha": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p4_aci/m1_target_ar8.json",
+  "value": 0.0001
+ },
+ "ph.p4.m1.ar8.gamma_positive.gamma": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p4_aci/m1_target_ar8.json",
+  "value": 0.0001
+ },
+ "ph.p4.m1.ar8.gamma_positive.k": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p4_aci/m1_target_ar8.json",
+  "value": 10
+ },
+ "ph.p4.m1.ar8.gamma_zero.f05": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p4_aci/m1_target_ar8.json",
+  "value": 0.2608695652173913
+ },
+ "ph.p4.rule.n_below": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p4_aci/*.json",
+  "value": 5
+ },
+ "ph.p4.rule.n_arms": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p4_aci/*.json",
+  "value": 7
+ },
+ "ph.p4.rule.n_at_or_above": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p4_aci/*.json",
+  "value": 2
+ },
+ "pre.m1.A1.aci.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 5.030122990860565e-05
+ },
+ "pre.m1.A1.aci_event.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.008451248505202362
+ },
+ "pre.m1.A1.threshold.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.4278060106400274
+ },
+ "pre.m1.A2.aci.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 4.426376697617413e-05
+ },
+ "pre.m1.A2.aci_event.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.046015801375824554
+ },
+ "ph.p4.m1.gbt.gamma_positive.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p4_aci/*.json",
+  "value": 0.4836697229216876
+ },
+ "ph.p4.m1.gbt.gamma_zero.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p4_aci/*.json",
+  "value": 0.24754167774363686
+ },
+ "pre.m1.A2.threshold.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.6134441425383826
+ },
+ "pre.m2.A1.aci.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.0006906954582254767
+ },
+ "pre.m2.A1.aci_event.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.0
+ },
+ "ph.p4.m2.ar8.gamma_positive.f05": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p4_aci/m2_target_ar8.json",
+  "value": 0.9253448354158474
+ },
+ "ph.p4.m2.ar8.gamma_zero.f05": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p4_aci/m2_target_ar8.json",
+  "value": 0.976528527234006
+ },
+ "pre.m2.A1.threshold.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.976528527234006
+ },
+ "ph.p4.m1.gbt.gamma_positive.f05.n": {
+  "kind": "derived",
+  "note": "count over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p4_aci/*.json",
+  "value": 5
+ },
+ "pre.m1.A2.conformal_bh.f05.min": {
+  "kind": "derived",
+  "note": "min over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.15719533560118684
+ },
+ "pre.m1.A2.conformal_bh.f05.max": {
+  "kind": "derived",
+  "note": "max over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.7692274901721327
+ },
+ "pre.m1.A3.conformal_bh.f05.min": {
+  "kind": "derived",
+  "note": "min over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.08542160217007067
+ },
+ "pre.m1.A3.conformal_bh.f05.max": {
+  "kind": "derived",
+  "note": "max over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 0.3581786217259783
+ },
+ "ph.p6.m1.A2.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 0.4883657702642288
+ },
+ "ph.p6.m1.A2.f05.std": {
+  "kind": "derived",
+  "note": "sample sd over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 0.19471798440981633
+ },
+ "ph.p6.m1.A2.f05.n": {
+  "kind": "derived",
+  "note": "count over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 10
+ },
+ "ph.p6.m1.A3.f05.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 0.17563707438967435
+ },
+ "ph.p6.m1.A3.f05.std": {
+  "kind": "derived",
+  "note": "sample sd over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 0.09313405876161027
+ },
+ "ph.p6.m1.A3.f05.n": {
+  "kind": "derived",
+  "note": "count over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 9
+ },
+ "ph.p6.m1.h4.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": -0.252168936250353
+ },
+ "ph.p6.m1.h4.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": -0.4017268149628562
+ },
+ "ph.p6.m1.h4.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": -0.042639085325481094
+ },
+ "ph.p6.m1.h5.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": -0.31272869587455443
+ },
+ "ph.p6.m1.h5.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": -0.45670761180607256
+ },
+ "ph.p6.m1.h5.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": -0.11185990870859351
+ },
+ "ph.p6.m1.x1.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 0.060559759624201404
+ },
+ "ph.p6.m1.x1.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": -0.13784016879964292
+ },
+ "ph.p6.m1.x1.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p6_seeds/summary.json",
+  "value": 0.2680362333409767
+ },
+ "sel.m1.A1.conformal_bh.cv.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/selection/*.json",
+  "value": 0.6237172729211833
+ },
+ "sel.m1.A2.conformal_bh.cv.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/selection/*.json",
+  "value": 0.7273242360142446
+ },
+ "sel.m1.A3.conformal_bh.cv.mean": {
+  "kind": "derived",
+  "note": "mean over seeds",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/selection/*.json",
+  "value": 0.5361934048049144
+ },
+ "shift.m1.a1_ar8.ratio": {
+  "kind": "derived",
+  "note": "test rate / CV rate",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/calibration_shift_m1.json",
+  "value": 0.8153460756633076
+ },
+ "shift.m1.A2.ratio_min": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/calibration_shift_m1.json",
+  "value": 5.080052285430959
+ },
+ "shift.m1.A2.ratio_max": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/calibration_shift_m1.json",
+  "value": 9.349873506903661
+ },
+ "shift.m1.A3.ratio_min": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/calibration_shift_m1.json",
+  "value": 2.7868925443728823
+ },
+ "shift.m1.A3.ratio_max": {
+  "kind": "derived",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/calibration_shift_m1.json",
+  "value": 54.15764522168543
+ },
+ "shift.m1.supervised.spearman_f05": {
+  "kind": "derived",
+  "note": "Spearman rho over the 10 supervised runs",
+  "source": "calibration_shift_m1.json + test/*.json",
+  "value": -0.11515151515151514
+ },
+ "evcls.m1.gain_a2_a1.recall_based": {
+  "kind": "derived",
+  "note": "difference of recall-based detected events, A2 seed mean minus A1",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/test/*.json",
+  "value": 21.800000000000004
+ },
+ "evcls.m1.gain_a2_a1.seen.Rare_Event": {
+  "kind": "derived",
+  "note": "(detection rate A2 - A1) x number of events",
+  "source": "event_classes_summary_m1.csv",
+  "value": 11.004000000000001
+ },
+ "evcls.m1.gain_a2_a1.unseen.Rare_Event": {
+  "kind": "derived",
+  "note": "(detection rate A2 - A1) x number of events",
+  "source": "event_classes_summary_m1.csv",
+  "value": 7.0
+ },
+ "evcls.m1.gain_a2_a1.seen.Anomaly": {
+  "kind": "derived",
+  "note": "(detection rate A2 - A1) x number of events",
+  "source": "event_classes_summary_m1.csv",
+  "value": 2.5999999999999996
+ },
+ "evcls.m1.unseen.Anomaly.n": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/event_classes_summary_m1.csv",
+  "value": 3
+ },
+ "ph.p5.m1.A2.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p5_anomaly_arm/m1_summary.json",
+  "value": 0.08686445016608561
+ },
+ "ph.p5.m1.A2.min": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p5_anomaly_arm/m1_summary.json",
+  "value": 0.010882002711823992
+ },
+ "ph.p5.m1.A2.max": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p5_anomaly_arm/m1_summary.json",
+  "value": 0.23177722607157317
+ },
+ "ph.p5.m1.A3.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p5_anomaly_arm/m1_summary.json",
+  "value": 0.09700793457692847
+ },
+ "ph.p5.m1.A1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p5_anomaly_arm/m1_summary.json",
+  "value": 0.33613323885035423
+ },
+ "ph.p5.m2.A2.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p5_anomaly_arm/m2_summary.json",
+  "value": 0.24720197809007374
+ },
+ "ph.p5.m2.A1.mean": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p5_anomaly_arm/m2_summary.json",
+  "value": 0.0
+ },
+ "xcomp.m1.x4.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/exploratory_comparisons.json",
+  "value": 0.038636501827587294
+ },
+ "xcomp.m1.x4.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/exploratory_comparisons.json",
+  "value": -0.18823827433409884
+ },
+ "xcomp.m1.x4.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/exploratory_comparisons.json",
+  "value": 0.27795837902790665
+ },
+ "xcomp.m1.x5.diff": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/exploratory_comparisons.json",
+  "value": -0.011955794972153683
+ },
+ "xcomp.m1.x5.ci95_low": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/exploratory_comparisons.json",
+  "value": -0.2597899725876692
+ },
+ "xcomp.m1.x5.ci95_high": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/oof_protocol/exploratory/exploratory_comparisons.json",
+  "value": 0.16419388766988327
+ },
+ "ph.p1.m1.target.conformal_bh.c0.fa_yr": {
+  "kind": "measured",
+  "source": "outputs/benchmarks/telemetry_esa_adb/posthoc_v2/p1_decompose/m1_target_conformal_bh.json",
+  "value": 91.56247555729371
+ },
+ "lit.dmlr.m1.lw.best": {
+  "kind": "literature",
+  "source": "kotowski2026esaadb, DMLR Table 4 (research_design/references/kotowski2026_esa_adb_dmlr.pdf)",
+  "value": 0.786
+ }
+}

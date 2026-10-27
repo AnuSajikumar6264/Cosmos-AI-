@@ -1,0 +1,34 @@
+digraph G {
+
+  graph [fontname="Helvetica", fontsize=11, bgcolor="#fcfcfb", pad=0.25, nodesep=0.35, ranksep=0.45];
+  node  [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", fillcolor="#ffffff",
+         color="#52514e", penwidth=1.0, margin="0.12,0.06"];
+  edge  [fontname="Helvetica", fontsize=9, color="#52514e", arrowsize=0.7];
+
+  rankdir=LR; compound=true;
+  subgraph cluster_h { label="cosmos.health  (Feature 1)"; style="rounded"; color="#c3c2b7";
+    tel [label="telemetry.py\n16-channel simulator\n+ fault injection", fillcolor="#dbe8f8"];
+    mon [label="monitor.py\nHealthMonitor (robust z, EWMA)", fillcolor="#dbe8f8"];
+    haz [label="hazard.py\nassess_hazard: subsystem →\nbreak-up type, altitude, σ log B", fillcolor="#dbe8f8"];
+    real [label="realdata.py\nSMAP/MSL, ESA-AD scoring\n(stand-alone)", fillcolor="#ecebe6"]; }
+  subgraph cluster_r { label="cosmos.reentry  (Feature 3)"; style="rounded"; color="#c3c2b7";
+    bu [label="breakup.py\nsimplified SBM cloud", fillcolor="#fbecc7"];
+    mc [label="montecarlo.py\nfootprint, Gaussian vs\nconformal zones", fillcolor="#fbecc7"];
+    rk [label="risk.py + population.py\nE_c, land probability", fillcolor="#fbecc7"];
+    phys [label="atmosphere.py (US76)\ndrag.py, propagator.py (3-DOF)", fillcolor="#ecebe6"]; }
+  subgraph cluster_d { label="cosmos.debris  (Feature 2; not in run_pipeline)"; style="rounded"; color="#c3c2b7";
+    cat [label="catalogue.py\nSATCAT, break-up clouds,\nKaplan–Meier", fillcolor="#d2efe3"];
+    life [label="lifetime.py\ndrag-decay lifetime,\ncensored A/M fit", fillcolor="#d2efe3"];
+    det [label="scene.py, detect.py, yolo.py\nsynthetic frame pairs,\nregistration + DoG, TinyYOLO", fillcolor="#d2efe3"]; }
+  subgraph cluster_ai { label="cosmos.ai  (COSMOS-AI)"; style="rounded"; color="#c3c2b7";
+    lm [label="telemetry.learned_monitor\n(backend='learned')", fillcolor="#f9dfea"];
+    sur [label="fusion.surrogate_footprint\n(footprint_backend='surrogate')", fillcolor="#f9dfea"];
+    studies [label="real-data studies:\nESA-ADB, OPSSAT-AD, SpotGEO,\nre-entry landmark", fillcolor="#f9dfea"]; }
+  tel -> mon -> haz -> bu -> mc -> rk;
+  phys -> mc [style=dashed];
+  lm -> mon [style=dashed, label=" replaces (optional)"];
+  sur -> mc [style=dashed, label=" replaces (optional)"];
+  cat -> life [style=dashed];
+  life -> phys [style=dotted, arrowhead=none, label=" shares US76"];
+
+}

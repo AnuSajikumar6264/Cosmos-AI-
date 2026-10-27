@@ -1,0 +1,2427 @@
+{
+ "script": "scripts/posthoc_v2/p3_exact_bootstrap.py",
+ "script_sha256": "d00293a3b33344a21d7e029b76eb0699496f8dbfac8bee26b55afb78c391c32d",
+ "plan_sha256": "217648e6805f84e11903507820a52c23b8446c03651523bb6f3d0e0b12fb0dea",
+ "run_at": "2026-10-25T12:17:49",
+ "n_checks": 302,
+ "max_abs_diff": 2.1217836515541322e-16,
+ "passed": true,
+ "checks": [
+  {
+   "tag": "m1_lightweight_ar8",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.35012411146215394,
+   "official": 0.35012411146215394,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_lightweight_ar8",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.17628302652037647,
+   "official": 0.17628302652037647,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_lightweight_ar8",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.024687206978420664,
+   "official": 0.024687206978420664,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_lightweight_ar8",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.027095270567951003,
+   "official": 0.027095270567951003,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_lightweight_ar8",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.12987012427208885,
+   "official": 0.12987012427208885,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_lightweight_ar8",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.243902419279724,
+   "official": 0.243902419279724,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_lightweight_ar8",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 0.00014132413248427202,
+   "official": 0.00014132413248427202,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_lightweight_ar8",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 3.454980772132076e-05,
+   "official": 3.454980772132076e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_lightweight_ar8",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_lightweight_ar8",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_ar8",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.4278060106400274,
+   "official": 0.4278060106400274,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_ar8",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.33613323885035423,
+   "official": 0.33613323885035423,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_ar8",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.4278060106400274,
+   "official": 0.4278060106400274,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_ar8",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.33613323885035423,
+   "official": 0.33613323885035423,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_ar8",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.10101010101010104,
+   "official": 0.10101010101010104,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_ar8",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.15873015873015872,
+   "official": 0.15873015873015872,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_ar8",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 5.030122990860566e-05,
+   "official": 5.030122990860565e-05,
+   "abs_diff": 1.3552527156068805e-20
+  },
+  {
+   "tag": "m1_target_ar8",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 2.9830770452476822e-05,
+   "official": 2.983077045247681e-05,
+   "abs_diff": 1.0164395367051604e-20
+  },
+  {
+   "tag": "m1_target_ar8",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.008451248505202362,
+   "official": 0.008451248505202362,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_ar8",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.004848881195577342,
+   "official": 0.004848881195577342,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s0_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.08352472120891524,
+   "official": 0.08352472120891524,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s0_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.037718892345983746,
+   "official": 0.037718892345983746,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s0_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.08374414758235653,
+   "official": 0.08374414758235653,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s0_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.03782476094758184,
+   "official": 0.03782476094758184,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s0_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s0_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s0_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 0.00010362632641071854,
+   "official": 0.00010362632641071854,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s0_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 6.194072594245303e-05,
+   "official": 6.194072594245303e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s0_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s0_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s1_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.6229528613762704,
+   "official": 0.6229528613762704,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s1_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.5046862314857335,
+   "official": 0.5046862314857335,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s1_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.18065764405092255,
+   "official": 0.18065764405092252,
+   "abs_diff": 2.7755575615628914e-17
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s1_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.10569746812460407,
+   "official": 0.10569746812460404,
+   "abs_diff": 2.7755575615628914e-17
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s1_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.2534610054319796,
+   "official": 0.2534610054319796,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s1_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.14407386409888123,
+   "official": 0.14407386409888123,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s1_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 7.181169912102269e-05,
+   "official": 7.181169912102269e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s1_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 4.224379054027089e-05,
+   "official": 4.224379054027089e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s1_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s1_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s2_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.3816793893129771,
+   "official": 0.3816793893129771,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s2_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.22388059701492535,
+   "official": 0.22388059701492535,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s2_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.32313860879431955,
+   "official": 0.32313860879431955,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s2_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.18713120523595567,
+   "official": 0.18713120523595567,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s2_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s2_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s2_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 8.647208814203423e-05,
+   "official": 8.647208814203423e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s2_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 5.128221381712313e-05,
+   "official": 5.128221381712313e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s2_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0009546647026339158,
+   "official": 0.0009546647026337036,
+   "abs_diff": 2.1217836515541322e-16
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c2_s2_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.000827279186710647,
+   "official": 0.0008272791867104632,
+   "abs_diff": 1.8388068845354155e-16
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s0_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.12738892554325001,
+   "official": 0.12738892554325001,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s0_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.06581766970676269,
+   "official": 0.06581766970676269,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s0_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.08542160217007067,
+   "official": 0.08542160217007067,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s0_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.04514096070548432,
+   "official": 0.04514096070548432,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s0_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.4925329829437291,
+   "official": 0.4925329829437291,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s0_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.27393310999677345,
+   "official": 0.27393310999677345,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s0_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 6.484435449484512e-05,
+   "official": 6.484435449484513e-05,
+   "abs_diff": 1.3552527156068805e-20
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s0_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 3.814507217707675e-05,
+   "official": 3.814507217707676e-05,
+   "abs_diff": 1.3552527156068805e-20
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s0_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s0_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s1_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.24027892226616956,
+   "official": 0.24027892226616956,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s1_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.16073665905015502,
+   "official": 0.16073665905015502,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s1_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.3581786217259783,
+   "official": 0.3581786217259783,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s1_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.2449915690840433,
+   "official": 0.2449915690840433,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s1_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s1_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s1_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 6.332909408126024e-05,
+   "official": 6.332909408126024e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s1_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 3.725373156951114e-05,
+   "official": 3.725373156951114e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s1_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.015064766023867015,
+   "official": 0.015064766023867015,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s1_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.007756470721385958,
+   "official": 0.007756470721385958,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s2_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.13030312322908402,
+   "official": 0.13030312322908402,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s2_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.08655114416455957,
+   "official": 0.08655114416455957,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s2_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.1349423809791785,
+   "official": 0.1349423809791785,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s2_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.0853376854159979,
+   "official": 0.0853376854159979,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s2_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.5688277327508782,
+   "official": 0.5688277327508782,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s2_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.3797314418824926,
+   "official": 0.3797314418824926,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s2_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 6.0412070372732486e-05,
+   "official": 6.0412070372732486e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s2_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 3.582694988096771e-05,
+   "official": 3.582694988096771e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s2_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s2_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s3_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.6205201714989496,
+   "official": 0.6205201714989496,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s3_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.5896344050082438,
+   "official": 0.5896344050082438,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s3_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.15804200743696764,
+   "official": 0.15804200743696764,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s3_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.09078163127982142,
+   "official": 0.09078163127982142,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s3_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.555532469373912,
+   "official": 0.555532469373912,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s3_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.40228570698140137,
+   "official": 0.40228570698140137,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s3_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 6.028109549846723e-05,
+   "official": 6.028109549846723e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s3_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 3.4751462902604635e-05,
+   "official": 3.4751462902604635e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s3_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s3_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s4_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.29022070068510925,
+   "official": 0.29022070068510925,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s4_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.15859446584770287,
+   "official": 0.15859446584770287,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s4_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.29022070068510925,
+   "official": 0.29022070068510925,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s4_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.15859446584770287,
+   "official": 0.15859446584770287,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s4_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s4_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s4_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 6.205906711060202e-05,
+   "official": 6.205906711060202e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s4_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 3.650660259025775e-05,
+   "official": 3.650660259025775e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s4_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_all_c3_s4_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s0_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.3760496242124083,
+   "official": 0.3760496242124083,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s0_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.24771511421337694,
+   "official": 0.24771511421337694,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s0_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.3694713447631076,
+   "official": 0.3694713447631076,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s0_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.23966247932419377,
+   "official": 0.23966247932419377,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s0_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s0_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s0_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 5.997493003071039e-05,
+   "official": 5.997493003071039e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s0_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 3.556771299321714e-05,
+   "official": 3.556771299321714e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s0_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.01343550305185571,
+   "official": 0.01343550305185571,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s0_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.00690503410600828,
+   "official": 0.00690503410600828,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s1_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.16955602801942438,
+   "official": 0.16955602801942438,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s1_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.1082395032495201,
+   "official": 0.1082395032495201,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s1_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.23618966151191745,
+   "official": 0.23618966151191745,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s1_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.14213867510931275,
+   "official": 0.14213867510931275,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s1_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s1_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s1_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 5.9133936810269805e-05,
+   "official": 5.913393681026981e-05,
+   "abs_diff": 6.776263578034403e-21
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s1_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 3.438135320608138e-05,
+   "official": 3.438135320608138e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s1_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0028590458998194093,
+   "official": 0.0028590458998194114,
+   "abs_diff": 2.168404344971009e-18
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s1_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0017264313988258069,
+   "official": 0.001726431398825808,
+   "abs_diff": 1.0842021724855044e-18
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s2_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.2816395096523839,
+   "official": 0.2816395096523839,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s2_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.14407141288011407,
+   "official": 0.14407141288011407,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s2_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.14226332581744525,
+   "official": 0.14226332581744525,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s2_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.0659687551985349,
+   "official": 0.0659687551985349,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s2_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s2_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s2_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 5.674952488327962e-05,
+   "official": 5.674952488327962e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s2_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 3.3383157659674285e-05,
+   "official": 3.3383157659674285e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s2_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 1.33647099899146e-06,
+   "official": 1.33647099899146e-06,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_event_ar8_no_residual_c3_s2_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 1.33647099899146e-06,
+   "official": 1.33647099899146e-06,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s0_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.662922302190758,
+   "official": 0.662922302190758,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s0_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.3955977517183418,
+   "official": 0.3955977517183418,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s0_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.6526871184615984,
+   "official": 0.6526871184615984,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s0_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.3972193471631225,
+   "official": 0.3972193471631225,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s0_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.14563106796116504,
+   "official": 0.14563106796116504,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s0_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.22388059701492535,
+   "official": 0.22388059701492535,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s0_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 4.4326000089745725e-05,
+   "official": 4.43260000897457e-05,
+   "abs_diff": 2.710505431213761e-20
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s0_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 2.598495997030849e-05,
+   "official": 2.5984959970308483e-05,
+   "abs_diff": 6.776263578034403e-21
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s0_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.1169587550969344,
+   "official": 0.1169587550969344,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s0_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.07873990520227757,
+   "official": 0.07873990520227757,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s1_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.3551236348848288,
+   "official": 0.3551236348848288,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s1_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.14493248445141219,
+   "official": 0.14493248445141219,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s1_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.15719533560118684,
+   "official": 0.15719533560118684,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s1_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.05623163617090483,
+   "official": 0.05623163617090483,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s1_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s1_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s1_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 4.416522460275699e-05,
+   "official": 4.416522460275698e-05,
+   "abs_diff": 6.776263578034403e-21
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s1_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 2.6398349543636227e-05,
+   "official": 2.639834954363622e-05,
+   "abs_diff": 6.776263578034403e-21
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s1_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0019965382840910605,
+   "official": 0.001996538284091171,
+   "abs_diff": 1.1058862159352145e-16
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s1_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0014343009349266696,
+   "official": 0.0014343009349267496,
+   "abs_diff": 8.001412032943023e-17
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s2_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.5773175407963027,
+   "official": 0.5773175407963027,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s2_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.2992818334279542,
+   "official": 0.2992818334279542,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s2_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.5035858247946808,
+   "official": 0.5035858247946808,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s2_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.24204795113957553,
+   "official": 0.24204795113957553,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s2_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.14563106796116504,
+   "official": 0.14563106796116504,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s2_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.22388059701492535,
+   "official": 0.22388059701492535,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s2_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 4.4062319447739e-05,
+   "official": 4.406231944773899e-05,
+   "abs_diff": 6.776263578034403e-21
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s2_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 2.633684110748323e-05,
+   "official": 2.633684110748322e-05,
+   "abs_diff": 1.0164395367051604e-20
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s2_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.06607867837041188,
+   "official": 0.06607867837041188,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s2_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.05347534773794604,
+   "official": 0.05347534773794604,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s3_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.7575754107628276,
+   "official": 0.7575754107628276,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s3_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.5263156220811818,
+   "official": 0.5263156220811818,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s3_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.6353752757236548,
+   "official": 0.6353752757236548,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s3_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.3773159267275235,
+   "official": 0.3773159267275235,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s3_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.14563106796116504,
+   "official": 0.14563106796116504,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s3_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.22388059701492535,
+   "official": 0.22388059701492535,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s3_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 4.454401407702485e-05,
+   "official": 4.4544014077024844e-05,
+   "abs_diff": 6.776263578034403e-21
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s3_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 2.662476224871828e-05,
+   "official": 2.6624762248718274e-05,
+   "abs_diff": 6.776263578034403e-21
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s3_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s3_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s4_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.7142818240571963,
+   "official": 0.7142818240571963,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s4_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.4878026136968811,
+   "official": 0.4878026136968811,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s4_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.7692274901721327,
+   "official": 0.7692274901721327,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s4_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.5607458242523139,
+   "official": 0.5607458242523139,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s4_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s4_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s4_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 4.4221276663604145e-05,
+   "official": 4.4221276663604124e-05,
+   "abs_diff": 2.0328790734103208e-20
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s4_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 2.643185300308755e-05,
+   "official": 2.6431853003087535e-05,
+   "abs_diff": 1.3552527156068805e-20
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s4_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.04504503512768531,
+   "official": 0.04504503512768531,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_gbt_ar8_s4_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0666666449436842,
+   "official": 0.0666666449436842,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_lightweight_ar8",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.9777992028684807,
+   "official": 0.9777992028684807,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_lightweight_ar8",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_lightweight_ar8",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.9777992028684807,
+   "official": 0.9777992028684807,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_lightweight_ar8",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_lightweight_ar8",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.5293097153537717,
+   "official": 0.5293097153537717,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_lightweight_ar8",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_lightweight_ar8",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0017180078681627985,
+   "official": 0.0017180078681627985,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_lightweight_ar8",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 4.91773819837047e-06,
+   "official": 4.91773819837047e-06,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_lightweight_ar8",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_lightweight_ar8",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_ar8",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.976528527234006,
+   "official": 0.976528527234006,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_ar8",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.22725562424558296,
+   "official": 0.22725562424558296,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_ar8",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.8735292467628434,
+   "official": 0.8735292467628434,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_ar8",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_ar8",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.3557312252964427,
+   "official": 0.3557312252964427,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_ar8",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_ar8",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0006906954582254769,
+   "official": 0.0006906954582254767,
+   "abs_diff": 2.168404344971009e-19
+  },
+  {
+   "tag": "m2_target_ar8",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 1.1458049926037018e-05,
+   "official": 1.1458049926037016e-05,
+   "abs_diff": 1.6940658945086007e-21
+  },
+  {
+   "tag": "m2_target_ar8",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_ar8",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s0_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.7901734820289538,
+   "official": 0.7901734820289538,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s0_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s0_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.8013159610523767,
+   "official": 0.8013159610523767,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s0_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s0_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.4466873071903606,
+   "official": 0.4466873071903606,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s0_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s0_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0014700130165392134,
+   "official": 0.0014700130165392134,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s0_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 2.4405583985809794e-05,
+   "official": 2.4405583985809794e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s0_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s0_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s1_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.9562065958743955,
+   "official": 0.9562065958743955,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s1_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.16664371573880743,
+   "official": 0.16664371573880743,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s1_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.9453808140839841,
+   "official": 0.9453808140839841,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s1_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.3571356582753331,
+   "official": 0.3571356582753331,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s1_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.4240011102688441,
+   "official": 0.4240011102688441,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s1_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s1_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0013439021215967608,
+   "official": 0.0013439021215967608,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s1_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 2.230899145004242e-05,
+   "official": 2.230899145004242e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s1_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s1_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s2_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.8008523552971859,
+   "official": 0.8008523552971859,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s2_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.04232613493277028,
+   "official": 0.04232613493277028,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s2_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.866813891627566,
+   "official": 0.866813891627566,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s2_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s2_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.43552981299934684,
+   "official": 0.43552981299934684,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s2_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s2_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0014166048624335455,
+   "official": 0.0014166048624335455,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s2_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 2.351761965721051e-05,
+   "official": 2.351761965721051e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s2_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s2_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s3_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.7971966438011459,
+   "official": 0.7971966438011459,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s3_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.03962799584011054,
+   "official": 0.03962799584011054,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s3_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.8416235234325341,
+   "official": 0.8416235234325341,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s3_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.041267448726577005,
+   "official": 0.041267448726577005,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s3_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.6473345462054843,
+   "official": 0.6473345462054843,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s3_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.04899371119110315,
+   "official": 0.04899371119110315,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s3_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 0.001369598287027037,
+   "official": 0.001369598287027037,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s3_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 2.2736079012636088e-05,
+   "official": 2.2736079012636085e-05,
+   "abs_diff": 3.3881317890172014e-21
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s3_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.01366120218579235,
+   "official": 0.01366120218579235,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s3_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s4_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.9224521900042248,
+   "official": 0.9224521900042248,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s4_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.16665813344220565,
+   "official": 0.16665813344220565,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s4_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.9195814167815786,
+   "official": 0.9195814167815786,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s4_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.49996257656636617,
+   "official": 0.49996257656636617,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s4_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.47919952302125984,
+   "official": 0.47919952302125984,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s4_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s4_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0016184561749216359,
+   "official": 0.0016184561749216359,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s4_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 2.6873865339607257e-05,
+   "official": 2.6873865339607257e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s4_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.013368983369502574,
+   "official": 0.013368983369502574,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_event_ar8_all_c3_s4_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s0_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.7622340348715515,
+   "official": 0.7622340348715515,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s0_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s0_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.9361546728980719,
+   "official": 0.9361546728980719,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s0_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.19228682869315183,
+   "official": 0.19228682869315183,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s0_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.22624434389140272,
+   "official": 0.22624434389140272,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s0_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s0_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0006767875743185761,
+   "official": 0.0006767875743185761,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s0_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 1.122758240696965e-05,
+   "official": 1.122758240696965e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s0_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 2.1408154696294005e-06,
+   "official": 2.1408154696294005e-06,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s0_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 2.1408154696294005e-06,
+   "official": 2.1408154696294005e-06,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s1_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.883803045482706,
+   "official": 0.883803045482706,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s1_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.02473338539574678,
+   "official": 0.02473338539574678,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s1_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.8930466419086938,
+   "official": 0.8930466419086938,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s1_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.09258497031508348,
+   "official": 0.09258497031508348,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s1_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.22624434389140272,
+   "official": 0.22624434389140272,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s1_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s1_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0006847859764270627,
+   "official": 0.0006847859764270627,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s1_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 1.1360348920055463e-05,
+   "official": 1.1360348920055463e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s1_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s1_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s2_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.8221394565880236,
+   "official": 0.8221394565880236,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s2_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s2_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.8215628025550654,
+   "official": 0.8215628025550654,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s2_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s2_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.3340062381011601,
+   "official": 0.3340062381011601,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s2_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s2_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0006742883823459543,
+   "official": 0.0006742883823459542,
+   "abs_diff": 1.0842021724855044e-19
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s2_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 1.1186093793186621e-05,
+   "official": 1.118609379318662e-05,
+   "abs_diff": 1.6940658945086007e-21
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s2_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 0.06544502617801046,
+   "official": 0.06544502617801046,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s2_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s3_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.8607466359072106,
+   "official": 0.8607466359072106,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s3_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s3_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.9328491985325467,
+   "official": 0.9328491985325467,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s3_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.19230000354309099,
+   "official": 0.19230000354309099,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s3_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.2168949771689498,
+   "official": 0.2168949771689498,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s3_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s3_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0006784295797443273,
+   "official": 0.0006784295797443273,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s3_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 1.125482327813297e-05,
+   "official": 1.125482327813297e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s3_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 2.997141144202826e-06,
+   "official": 2.997141144202826e-06,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s3_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 2.997141144202826e-06,
+   "official": 2.997141144202826e-06,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s4_event",
+   "calibrator": "threshold",
+   "metric": "anomaly_and_rare",
+   "exact": 0.7668518509460043,
+   "official": 0.7668518509460043,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s4_event",
+   "calibrator": "threshold",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s4_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.9361314930522547,
+   "official": 0.9361314930522547,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s4_event",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly",
+   "exact": 0.16664114763809135,
+   "official": 0.16664114763809135,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s4_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly_and_rare",
+   "exact": 0.2168949771689498,
+   "official": 0.2168949771689498,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s4_event",
+   "calibrator": "conformal_bh_rolling",
+   "metric": "anomaly",
+   "exact": 0.0,
+   "official": 0.0,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s4_event",
+   "calibrator": "aci",
+   "metric": "anomaly_and_rare",
+   "exact": 0.0006919517922455186,
+   "official": 0.0006919517922455186,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s4_event",
+   "calibrator": "aci",
+   "metric": "anomaly",
+   "exact": 1.1479305307155901e-05,
+   "official": 1.1479305307155901e-05,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s4_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly_and_rare",
+   "exact": 4.281632405293272e-07,
+   "official": 4.281632405293272e-07,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_gbt_ar8_s4_event",
+   "calibrator": "aci_event",
+   "metric": "anomaly",
+   "exact": 4.281632405293272e-07,
+   "official": 4.281632405293272e-07,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m1_target_ar8_calperiod",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.07435099036517134,
+   "official": 0.07435099036517134,
+   "abs_diff": 0.0
+  },
+  {
+   "tag": "m2_target_ar8_calperiod",
+   "calibrator": "conformal_bh",
+   "metric": "anomaly_and_rare",
+   "exact": 0.9624106610225746,
+   "official": 0.9624106610225746,
+   "abs_diff": 0.0
+  }
+ ]
+}

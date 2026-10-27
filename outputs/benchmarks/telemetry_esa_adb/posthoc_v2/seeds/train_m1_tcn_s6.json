@@ -1,0 +1,74 @@
+{
+ "script": "scripts/posthoc_v2/seeds_train.py",
+ "script_sha256": "e61d6743400d4fc454be1ee12ee874618e00dc93502f93d45c9bfe47bebec939",
+ "plan_sha256": "217648e6805f84e11903507820a52c23b8446c03651523bb6f3d0e0b12fb0dea",
+ "run_at": "2026-10-25T12:15:35",
+ "kind": "tcn",
+ "seed": 6,
+ "mission": 1,
+ "dir": "/tmp/posthoc_v2/benchmarks/telemetry_esa_adb/event_model/m1_target_event_ar8_all_c3_s6",
+ "meta": {
+  "config": {
+   "mission": 1,
+   "channels": "target",
+   "source": "ar8",
+   "d_model": 64,
+   "levels": 8,
+   "kernel": 3,
+   "dropout": 0.1,
+   "mix_every": 2,
+   "window": 2048,
+   "batch": 8,
+   "steps": 1500,
+   "lr": 0.001,
+   "weight_decay": 0.0001,
+   "event_fraction": 0.5,
+   "class_weights": [
+    1.0,
+    5.0,
+    5.0
+   ],
+   "n_classes": 3,
+   "inputs": "all",
+   "purge_days": 1.0,
+   "seed": 6,
+   "device": "xpu:2",
+   "extra": {}
+  },
+  "folds": [
+   {
+    "seconds": 1031.0438163280487,
+    "final_loss": 0.1448982115983963,
+    "params": 220739
+   },
+   {
+    "seconds": 1026.878749847412,
+    "final_loss": 0.18084791955351828,
+    "params": 220739
+   },
+   {
+    "seconds": 1025.2263362407684,
+    "final_loss": 0.14362559686601162,
+    "params": 220739
+   },
+   {
+    "seconds": 1028.0699744224548,
+    "final_loss": 0.17082932144403457,
+    "params": 220739
+   },
+   {
+    "seconds": 1025.3497059345245,
+    "final_loss": 0.16785360573232175,
+    "params": 220739
+   }
+  ],
+  "purge": 2880,
+  "run_id": "20261025-122252_esa_event_m1_target_event_ar8_all_c3_s6_s6",
+  "receptive_field": 1021,
+  "final": {
+   "seconds": 1023.5145423412323,
+   "final_loss": 0.1685751925110817,
+   "params": 220739
+  }
+ }
+}

@@ -1,0 +1,30 @@
+digraph G {
+
+  graph [fontname="Helvetica", fontsize=11, bgcolor="#fcfcfb", pad=0.25, nodesep=0.35, ranksep=0.45];
+  node  [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", fillcolor="#ffffff",
+         color="#52514e", penwidth=1.0, margin="0.12,0.06"];
+  edge  [fontname="Helvetica", fontsize=9, color="#52514e", arrowsize=0.7];
+
+  rankdir=TB;
+  subgraph cluster_data { label="ESA Anomalies Dataset v1.0 (official grids, full target channel sets)"; style="rounded"; color="#c3c2b7";
+    split [label="official split\ntraining half | test half (already used in the exploratory phase)", fillcolor="#ecebe6"]; }
+  subgraph cluster_train { label="training half only (labels allowed)"; style="rounded"; color="#c3c2b7";
+    folds [label="K = 5 contiguous blocks, 1-day purge\n(oof.fold_bounds)", fillcolor="#dbe8f8"];
+    ar8 [label="ridge AR(8) forecaster per channel\nfitted on the other blocks (oof.ar8_oof)\n→ OOF non-conformity s(t,c)", fillcolor="#dbe8f8"];
+    feats [label="7 causal features per (t, c)\n(event_model.features)", fillcolor="#dbe8f8"];
+    scorers [label="event scorers trained out of fold\nA2: XGBoost (event_gbt)   A3: causal TCN (event_model)", fillcolor="#d2efe3"];
+    select [label="alarm-layer selection by cross-fitting\nover the two halves of the training half\n(oof_benchmark.select: q, k on a fixed grid)", fillcolor="#fbecc7"]; }
+  freeze [label="pre-registration + SHA-256 freeze of 28 files\n(PREREG_TELEMETRY_V1.md, freeze.json)", shape=note, fillcolor="#f9dfea"];
+  subgraph cluster_test { label="test half (scored once per arm)"; style="rounded"; color="#c3c2b7";
+    test [label="gated single test pass\n(oof_benchmark.test: refuses if any frozen file changed)", fillcolor="#fbe1d4"];
+    stats [label="paired hierarchical block bootstrap, Holm\n(prereg_analysis.py stats → CONFIRMATORY.json)", fillcolor="#fbe1d4"]; }
+  split -> folds -> ar8 -> feats -> scorers;
+  ar8 -> select [label=" A1 scores"];
+  scorers -> select [label=" A2, A3 scores"];
+  select -> freeze [style=dashed, arrowhead=none];
+  freeze -> test [label=" hash check"];
+  select -> test [label=" chosen (q, k)"];
+  split -> test [label=" test scores from models\n fitted on the whole training half", style=dotted];
+  test -> stats;
+
+}

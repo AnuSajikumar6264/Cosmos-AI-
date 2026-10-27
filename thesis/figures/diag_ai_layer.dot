@@ -1,0 +1,31 @@
+digraph G {
+
+  graph [fontname="Helvetica", fontsize=11, bgcolor="#fcfcfb", pad=0.25, nodesep=0.35, ranksep=0.45];
+  node  [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", fillcolor="#ffffff",
+         color="#52514e", penwidth=1.0, margin="0.12,0.06"];
+  edge  [fontname="Helvetica", fontsize=9, color="#52514e", arrowsize=0.7];
+
+  rankdir=LR;
+  subgraph cluster_d { label="cosmos.ai.data"; style="rounded"; color="#c3c2b7";
+    dl [label="download.py\nchecksummed, resumable,\nmanifests", fillcolor="#ecebe6"];
+    pp [label="preprocess_telemetry.py\npreprocess_catalogue.py", fillcolor="#ecebe6"];
+    va [label="validate.py\nDATASET_REPORT", fillcolor="#ecebe6"]; }
+  subgraph cluster_t { label="cosmos.ai.telemetry"; style="rounded"; color="#c3c2b7";
+    esa [label="ESA-ADB: forecasting, alarms,\noof, event_model, event_gbt,\noof_benchmark, esa_metrics (official)", fillcolor="#dbe8f8"];
+    ops [label="OPSSAT-AD: opssat, robustness", fillcolor="#dbe8f8"];
+    lmon [label="learned_monitor (synthetic)", fillcolor="#dbe8f8"]; }
+  subgraph cluster_v { label="cosmos.ai.vision"; style="rounded"; color="#c3c2b7";
+    sg [label="spotgeo, heatmap,\ntrain_spotgeo (official scorer)", fillcolor="#d2efe3"];
+    syn [label="cosmos_synthetic, metrics", fillcolor="#d2efe3"]; }
+  subgraph cluster_r { label="re-entry"; style="rounded"; color="#c3c2b7";
+    lmk [label="survival/landmark", fillcolor="#fbecc7"];
+    sur [label="surrogate", fillcolor="#fbecc7"]; }
+  subgraph cluster_x { label="cross-cutting"; style="rounded"; color="#c3c2b7";
+    unc [label="uncertainty, evaluation,\nexplain", fillcolor="#f9dfea"];
+    exp [label="experiment (Run records)", fillcolor="#f9dfea"];
+    fus [label="fusion, registry, report", fillcolor="#f9dfea"]; }
+  dl -> pp -> va;
+  pp -> esa; pp -> ops; pp -> lmk; pp -> sg;
+  esa -> unc [style=dashed]; lmk -> unc [style=dashed]; sur -> fus [style=dashed]; lmon -> fus [style=dashed];
+
+}
