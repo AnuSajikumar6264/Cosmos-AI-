@@ -34,8 +34,10 @@ outputs/**/*.gz                 filter=lfs diff=lfs merge=lfs -text
 *.ckpt                          filter=lfs diff=lfs merge=lfs -text
 *.onnx                          filter=lfs diff=lfs merge=lfs -text
 
-# --- large documents and slides ---
-*.pptx                          filter=lfs diff=lfs merge=lfs -text
+# NOTE: *.pptx is deliberately NOT in LFS.  The one slide deck here (5.5 MB) was already
+# committed as an ordinary Git object before LFS was introduced; tracking the extension now
+# would make `git lfs fsck` report the existing blob as a non-pointer, and converting it
+# would mean rewriting history for no benefit at that size.
 
 # Deliberately NOT in LFS: *.py, *.md, *.tex, *.bib, *.json, *.csv outside data/.
 # Result tables are small and benefit from readable text diffs.
