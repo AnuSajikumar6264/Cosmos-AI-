@@ -1,0 +1,200 @@
+{
+ "window": 30,
+ "alpha": 0.001,
+ "persistence": 3,
+ "alarm": "causal, at the K-th consecutive step with p <= alpha_eff",
+ "calibration": "out-of-fold scores, 5 contiguous blocks, 30-window purge on each side; test scores from the full-training fit (cross-conformal approximation, Vovk 2015); chronos2 is zero-shot, so its training-series scores are used directly (split conformal)",
+ "chronos2": {
+  "model": "amazon/chronos-2",
+  "context": 512,
+  "min_context": 64,
+  "horizon": 8,
+  "batch": 256
+ },
+ "score_floor": 1e-06,
+ "channels": 81,
+ "channels_by_spacecraft": {
+  "MSL": 27,
+  "SMAP": 54
+ },
+ "label_rows": 82,
+ "merged_label_rows": [
+  "P-2"
+ ],
+ "alpha_eff": "max(alpha, 1 / (n_cal + 1)) per channel",
+ "n_channels_alpha_raised": {
+  "ar_ridge": 9,
+  "chronos2": 9,
+  "knn": 9,
+  "pca": 9,
+  "random": 9
+ },
+ "channels_alpha_raised": {
+  "ar_ridge": [
+   "A-5",
+   "A-6",
+   "A-8",
+   "A-9",
+   "C-2",
+   "D-12",
+   "S-2",
+   "T-8",
+   "T-9"
+  ],
+  "chronos2": [
+   "A-5",
+   "A-6",
+   "A-8",
+   "A-9",
+   "C-2",
+   "D-12",
+   "S-2",
+   "T-8",
+   "T-9"
+  ],
+  "knn": [
+   "A-5",
+   "A-6",
+   "A-8",
+   "A-9",
+   "C-2",
+   "D-12",
+   "S-2",
+   "T-8",
+   "T-9"
+  ],
+  "pca": [
+   "A-5",
+   "A-6",
+   "A-8",
+   "A-9",
+   "C-2",
+   "D-12",
+   "S-2",
+   "T-8",
+   "T-9"
+  ],
+  "random": [
+   "A-5",
+   "A-6",
+   "A-8",
+   "A-9",
+   "C-2",
+   "D-12",
+   "S-2",
+   "T-8",
+   "T-9"
+  ]
+ },
+ "near_zero_spread": "sd of the out-of-fold calibration scores < 1e-06 (ar_ridge: constant training target; pca, knn: constant training series)",
+ "near_zero_spread_channels": {
+  "ar_ridge": [
+   "A-1",
+   "B-1",
+   "C-2",
+   "D-12",
+   "D-13",
+   "D-14",
+   "D-2",
+   "D-7",
+   "D-8",
+   "D-9",
+   "G-2",
+   "M-6",
+   "P-4",
+   "R-1",
+   "S-2",
+   "T-5"
+  ],
+  "chronos2": [],
+  "knn": [
+   "D-12",
+   "D-13"
+  ],
+  "pca": [
+   "D-12",
+   "D-13"
+  ],
+  "random": []
+ },
+ "saturation": "alarm on more than 0.9 of the test steps (label-free)",
+ "saturated_channels": {
+  "ar_ridge": [
+   "A-1",
+   "D-5",
+   "F-3",
+   "G-6",
+   "P-14",
+   "R-1"
+  ],
+  "chronos2": [],
+  "knn": [
+   "D-5"
+  ],
+  "pca": [
+   "D-5"
+  ],
+  "random": []
+ },
+ "subsets": {
+  "attainable": "channels where alpha_eff == alpha for every detector",
+  "unsaturated": "channels no detector saturates",
+  "nondegenerate": "unsaturated channels where no detector has near-zero spread",
+  "note": "channel sets common to every detector (per_channel.csv flags; summary suffixes)"
+ },
+ "subset_channels_excluded": {
+  "attainable": [
+   "A-5",
+   "A-6",
+   "A-8",
+   "A-9",
+   "C-2",
+   "D-12",
+   "S-2",
+   "T-8",
+   "T-9"
+  ],
+  "unsaturated": [
+   "A-1",
+   "D-5",
+   "F-3",
+   "G-6",
+   "P-14",
+   "R-1"
+  ],
+  "nondegenerate": [
+   "A-1",
+   "B-1",
+   "C-2",
+   "D-12",
+   "D-13",
+   "D-14",
+   "D-2",
+   "D-5",
+   "D-7",
+   "D-8",
+   "D-9",
+   "F-3",
+   "G-2",
+   "G-6",
+   "M-6",
+   "P-14",
+   "P-4",
+   "R-1",
+   "S-2",
+   "T-5"
+  ]
+ },
+ "event_steps": "all test steps",
+ "event_fp": "maximal alarm segments outside every labelled sequence",
+ "esa_ew_precision": "TP / (TP + alarm runs touching no sequence) * (1 - nominal_alarm_fraction)",
+ "reference": "always_on: in alarm on every test step",
+ "labelled_steps_in_second_half": 0.9370077504785215,
+ "surrogates": "200 label-free alarms per channel and detector built from its alarms; shift: circularly shifted by a uniform offset; block: one block of its alarm time at a uniform start (both position-uniform); swap: the alarms reassigned among the channels of the spacecraft by a uniform random permutation, each stretched to its new channel's length by relative position (keeps the alarm positions; the null for channel-specific detection); late: one block of its alarm time at the end of the series (one draw, a reference; no p-value); *_<kind>: mean pooled metric; *_<kind>_p: (1 + #{surrogate >= detector}) / (draws + 1)",
+ "pointwise_steps": "test steps where telemanom has scores (250 .. n_test - 10), for every detector",
+ "pointwise_auc_pr": "mean over channels of the per-channel AUC-PR",
+ "pointwise_auc_pr_pooled": "pooled steps; each channel's scores mapped to conformal p-values against its out-of-fold training scores; steps above every calibration score tie at 1 / (n_cal + 1), so saturated or near-zero-spread channels fill the top of the ranking (ordered by n_cal); not for telemanom",
+ "pointwise_auc_pr_pooled_raw": "telemanom only (no training scores): pooled raw errors, the published convention",
+ "point_adjusted_f1": "on the pointwise steps; for contrast only",
+ "note": "thresholds fixed a priori; no test labels used for any choice"
+}

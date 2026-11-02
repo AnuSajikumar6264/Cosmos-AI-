@@ -1,0 +1,31 @@
+{
+ "note": "DEMONSTRATION: conjunction forecast and payload states come from different objects. Operational status is used as a proxy for manoeuvre capability; it is not one (many operational satellites carry no propulsion), and no public source used here states propulsion capability.",
+ "conjunction_test_event_index": 1263,
+ "p_high_uncalibrated": 0.548426704505414,
+ "final_risk_quantiles_log10": [
+  -30.0,
+  -28.181563041215686,
+  -8.775792949152638,
+  -5.333133371484402,
+  -4.9517437164717935,
+  -4.540425174794614,
+  -4.16707944944226
+ ],
+ "true_final_risk": -4.375408540873154,
+ "operational_payload": {
+  "norad": 44714,
+  "name": "STARLINK-1008",
+  "ops_status": "P",
+  "high_risk": true,
+  "action": "plan avoidance manoeuvre",
+  "validated": false
+ },
+ "non_operational_payload": {
+  "norad": 309,
+  "name": "TIROS 5",
+  "ops_status": "-",
+  "high_risk": true,
+  "action": "escalate: high-risk conjunction, manoeuvre capability uncertain",
+  "validated": false
+ }
+}

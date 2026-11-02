@@ -1,0 +1,42 @@
+{
+ "physics_only_pm20": {
+  "coverage": 0.6020819341840161,
+  "width_log10": 0.17540119085976646,
+  "coverage_decayed": 0.12234042553191489
+ },
+ "physics_only_pm30": {
+  "coverage": 0.6383478844862324,
+  "width_log10": 0.2676876638461152,
+  "coverage_decayed": 0.20364741641337386
+ },
+ "physics_only_conformal80": {
+  "coverage": 0.738079247817327,
+  "width_log10": 0.35440920113720464,
+  "coverage_decayed": 0.4194528875379939
+ },
+ "physics_only_conformal90": {
+  "coverage": 0.8764271323035594,
+  "width_log10": 0.6706126069925067,
+  "coverage_decayed": 0.7256838905775076
+ },
+ "cosmos_gated_pm20": {
+  "coverage": 0.5285426460711887,
+  "width_log10": 0.17609125905568093,
+  "coverage_decayed": 0.1831306990881459
+ },
+ "cosmos_gated_pm30": {
+  "coverage": 0.5990597716588314,
+  "width_log10": 0.2688453122925801,
+  "coverage_decayed": 0.2796352583586626
+ },
+ "cosmos_gated_conformal80": {
+  "coverage": 0.7169241101410343,
+  "width_log10": 0.4328898831659264,
+  "coverage_decayed": 0.5425531914893617
+ },
+ "cosmos_gated_conformal90": {
+  "coverage": 0.8740765614506381,
+  "width_log10": 0.6706956057412123,
+  "coverage_decayed": 0.8351063829787234
+ }
+}

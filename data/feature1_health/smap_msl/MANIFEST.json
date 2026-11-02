@@ -1,0 +1,36 @@
+{
+  "dataset": "smap_msl",
+  "class": "REAL",
+  "status": "downloaded",
+  "paper_doi": "10.1145/3219819.3219845",
+  "source": "NASA JPL telemanom data (SMAP satellite, MSL rover), via the Kaggle copy that the telemanom README links to; labels from the telemanom repository",
+  "licence": "Caltech copyright with a BSD-style redistribution licence (telemanom LICENSE.txt); Kaggle lists 'Data files (c) Original Authors'",
+  "notes": [
+    "The original s3-us-west-2.amazonaws.com/telemanom/data.zip returned HTTP 403 on 2026-10-27.",
+    "Values are pre-scaled to (-1, 1) using the min/max of the test set (stated in the telemanom README): a known benchmark flaw, see Wu & Keogh (2021)."
+  ],
+  "manifest_written_utc": "2026-10-27T04:17:36+00:00",
+  "files": [
+    {
+      "path": "raw/labeled_anomalies_telemanom.csv",
+      "url": "https://raw.githubusercontent.com/khundman/telemanom/2e6c5b6c3558e7835601519b7bdef37c649bdbdc/labeled_anomalies.csv",
+      "bytes": 3956,
+      "md5": "c54f6c09f44410763e33aac7329d769a",
+      "sha256": "057ce2d6c8875982bf4e5404aefea14efdcbce413d80826d2b737c95b59b7539",
+      "status": "downloaded",
+      "md5_verified": false,
+      "commit": "2e6c5b6c3558e7835601519b7bdef37c649bdbdc",
+      "retrieved_utc": "2026-10-27T04:17:36+00:00"
+    },
+    {
+      "path": "raw/nasa-smap-msl.zip",
+      "url": "https://www.kaggle.com/api/v1/datasets/download/patrickfleith/nasa-anomaly-detection-dataset-smap-msl",
+      "bytes": 86004011,
+      "md5": "b6c5c93aad79bce38d845cf9123f0039",
+      "sha256": "6084d3ee3906381f2c98aa3773b6b2d77c82413503faa78f962196582e873733",
+      "status": "cached",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-27T04:17:25+00:00"
+    }
+  ]
+}

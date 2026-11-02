@@ -1,0 +1,562 @@
+{
+ "data": {
+  "train_events_raw": 13154,
+  "train_events_kept": 8293,
+  "test_events": 2167,
+  "train_high_risk": 66,
+  "test_high_risk": 150
+ },
+ "log_transformed_columns": [
+  "last_max_risk_scaling",
+  "last_t_position_covariance_det",
+  "last_c_position_covariance_det",
+  "last_t_sigma_r",
+  "last_c_sigma_r",
+  "last_t_sigma_t",
+  "last_c_sigma_t",
+  "last_t_sigma_n",
+  "last_c_sigma_n"
+ ],
+ "best_learner_oof": "kumo",
+ "selection_pool": [
+  "tabm",
+  "tabicl",
+  "kumo"
+ ],
+ "gate_cosmos_gated": {
+  "theta": [
+   -8.31715060771779,
+   0.0031646967446157586,
+   0.0005292246514581342,
+   -0.004677202176806052,
+   -0.002643561417879663,
+   0.013808897405510261,
+   -0.0005478011592445246,
+   0.0016614334572114839,
+   0.001355196116898064,
+   -0.011438386216372415,
+   -0.002138977775234871
+  ],
+  "test_weight_mean": 0.00024427960119153836
+ },
+ "gate_stack_constant": {
+  "theta": [
+   -7.904366934918862
+  ],
+  "test_weight_mean": 0.0003689918522225117
+ },
+ "fits": {
+  "xgboost": {
+   "trial": 3,
+   "val_pinball": 0.6511097896812464,
+   "params": {
+    "max_depth": 4,
+    "learning_rate": 0.0841520471533342,
+    "subsample": 0.8610417263448223,
+    "colsample_bytree": 0.9494037643742325,
+    "min_child_weight": 28.983155777284143,
+    "reg_lambda": 0.20317241320026647
+   },
+   "oof_selection": [
+    {
+     "fold": 0,
+     "select_fold": 1,
+     "trial": 3,
+     "val_pinball": 0.6922377645873963,
+     "params": {
+      "max_depth": 4,
+      "learning_rate": 0.0841520471533342,
+      "subsample": 0.8610417263448223,
+      "colsample_bytree": 0.9494037643742325,
+      "min_child_weight": 28.983155777284143,
+      "reg_lambda": 0.20317241320026647
+     }
+    },
+    {
+     "fold": 1,
+     "select_fold": 2,
+     "trial": 3,
+     "val_pinball": 0.6014921580095371,
+     "params": {
+      "max_depth": 4,
+      "learning_rate": 0.0841520471533342,
+      "subsample": 0.8610417263448223,
+      "colsample_bytree": 0.9494037643742325,
+      "min_child_weight": 28.983155777284143,
+      "reg_lambda": 0.20317241320026647
+     }
+    },
+    {
+     "fold": 2,
+     "select_fold": 3,
+     "trial": 3,
+     "val_pinball": 0.601246484815434,
+     "params": {
+      "max_depth": 4,
+      "learning_rate": 0.0841520471533342,
+      "subsample": 0.8610417263448223,
+      "colsample_bytree": 0.9494037643742325,
+      "min_child_weight": 28.983155777284143,
+      "reg_lambda": 0.20317241320026647
+     }
+    },
+    {
+     "fold": 3,
+     "select_fold": 4,
+     "trial": 0,
+     "val_pinball": 0.6505779942099543,
+     "params": {
+      "max_depth": 4,
+      "learning_rate": 0.08013861768724162,
+      "subsample": 0.7883767189289016,
+      "colsample_bytree": 0.6016239712723395,
+      "min_child_weight": 6.210671208865818,
+      "reg_lambda": 0.24103080995541834
+     }
+    },
+    {
+     "fold": 4,
+     "select_fold": 0,
+     "trial": 3,
+     "val_pinball": 0.6675821379825572,
+     "params": {
+      "max_depth": 4,
+      "learning_rate": 0.0841520471533342,
+      "subsample": 0.8610417263448223,
+      "colsample_bytree": 0.9494037643742325,
+      "min_child_weight": 28.983155777284143,
+      "reg_lambda": 0.20317241320026647
+     }
+    }
+   ],
+   "seconds": 2295.861739397049,
+   "oof_pinball": 0.6438843056209488
+  },
+  "lightgbm": {
+   "trial": 6,
+   "val_pinball": 0.6291465268119132,
+   "params": {
+    "num_leaves": 28,
+    "learning_rate": 0.043975326586454914,
+    "subsample": 0.9247978410382549,
+    "colsample_bytree": 0.5742470002626533,
+    "min_child_samples": 19,
+    "reg_lambda": 0.1314169498185815
+   },
+   "oof_selection": [
+    {
+     "fold": 0,
+     "select_fold": 1,
+     "trial": 4,
+     "val_pinball": 0.6752337204244937,
+     "params": {
+      "num_leaves": 67,
+      "learning_rate": 0.028440181882977485,
+      "subsample": 0.8796357101480419,
+      "colsample_bytree": 0.7236207234455103,
+      "min_child_samples": 78,
+      "reg_lambda": 0.1083992851490228
+     }
+    },
+    {
+     "fold": 1,
+     "select_fold": 2,
+     "trial": 3,
+     "val_pinball": 0.6041770399109034,
+     "params": {
+      "num_leaves": 28,
+      "learning_rate": 0.031909002959101984,
+      "subsample": 0.8500258741809816,
+      "colsample_bytree": 0.8263021579310279,
+      "min_child_samples": 29,
+      "reg_lambda": 6.275019178450935
+     }
+    },
+    {
+     "fold": 2,
+     "select_fold": 3,
+     "trial": 6,
+     "val_pinball": 0.6108814556455232,
+     "params": {
+      "num_leaves": 28,
+      "learning_rate": 0.043975326586454914,
+      "subsample": 0.9247978410382549,
+      "colsample_bytree": 0.5742470002626533,
+      "min_child_samples": 19,
+      "reg_lambda": 0.1314169498185815
+     }
+    },
+    {
+     "fold": 3,
+     "select_fold": 4,
+     "trial": 6,
+     "val_pinball": 0.641691555646927,
+     "params": {
+      "num_leaves": 28,
+      "learning_rate": 0.043975326586454914,
+      "subsample": 0.9247978410382549,
+      "colsample_bytree": 0.5742470002626533,
+      "min_child_samples": 19,
+      "reg_lambda": 0.1314169498185815
+     }
+    },
+    {
+     "fold": 4,
+     "select_fold": 0,
+     "trial": 4,
+     "val_pinball": 0.6426632378941137,
+     "params": {
+      "num_leaves": 67,
+      "learning_rate": 0.028440181882977485,
+      "subsample": 0.8796357101480419,
+      "colsample_bytree": 0.7236207234455103,
+      "min_child_samples": 78,
+      "reg_lambda": 0.1083992851490228
+     }
+    }
+   ],
+   "seconds": 461.56771755218506,
+   "oof_pinball": 0.6370641789326
+  },
+  "catboost": {
+   "trial": 4,
+   "val_pinball": 0.6461284108246417,
+   "params": {
+    "depth": 4,
+    "learning_rate": 0.03805246804965862,
+    "l2_leaf_reg": 1.8411416580728397,
+    "bagging_temperature": 0.6250646854524542
+   },
+   "oof_selection": [
+    {
+     "fold": 0,
+     "select_fold": 1,
+     "trial": 7,
+     "val_pinball": 0.7032885769032482,
+     "params": {
+      "depth": 4,
+      "learning_rate": 0.03899643494182781,
+      "l2_leaf_reg": 3.1304559297563403,
+      "bagging_temperature": 0.3210279121387014
+     }
+    },
+    {
+     "fold": 1,
+     "select_fold": 2,
+     "trial": 4,
+     "val_pinball": 0.6115678749690562,
+     "params": {
+      "depth": 4,
+      "learning_rate": 0.03805246804965862,
+      "l2_leaf_reg": 1.8411416580728397,
+      "bagging_temperature": 0.6250646854524542
+     }
+    },
+    {
+     "fold": 2,
+     "select_fold": 3,
+     "trial": 2,
+     "val_pinball": 0.633036992470409,
+     "params": {
+      "depth": 5,
+      "learning_rate": 0.07106762085646018,
+      "l2_leaf_reg": 13.269015408854315,
+      "bagging_temperature": 0.8053722209059218
+     }
+    },
+    {
+     "fold": 3,
+     "select_fold": 4,
+     "trial": 4,
+     "val_pinball": 0.6566900573401854,
+     "params": {
+      "depth": 4,
+      "learning_rate": 0.03805246804965862,
+      "l2_leaf_reg": 1.8411416580728397,
+      "bagging_temperature": 0.6250646854524542
+     }
+    },
+    {
+     "fold": 4,
+     "select_fold": 0,
+     "trial": 4,
+     "val_pinball": 0.6660896320000926,
+     "params": {
+      "depth": 4,
+      "learning_rate": 0.03805246804965862,
+      "l2_leaf_reg": 1.8411416580728397,
+      "bagging_temperature": 0.6250646854524542
+     }
+    }
+   ],
+   "seconds": 166.53479552268982,
+   "oof_pinball": 0.6532982484129741
+  },
+  "mlp": {
+   "trial": 2,
+   "val_pinball": 0.7538743686843377,
+   "params": {
+    "width": 128,
+    "depth": 3,
+    "dropout": 0.25911662271251656,
+    "lr": 0.0029271613699481933,
+    "weight_decay": 5.5605530648848265e-06
+   },
+   "oof_selection": [
+    {
+     "fold": 0,
+     "select_fold": 1,
+     "trial": 1,
+     "val_pinball": 0.8285472193174921,
+     "params": {
+      "width": 256,
+      "depth": 3,
+      "dropout": 0.057310884024236626,
+      "lr": 0.0006884219646230255,
+      "weight_decay": 0.00018240832550652503
+     }
+    },
+    {
+     "fold": 1,
+     "select_fold": 2,
+     "trial": 1,
+     "val_pinball": 0.7523202069169217,
+     "params": {
+      "width": 256,
+      "depth": 3,
+      "dropout": 0.057310884024236626,
+      "lr": 0.0006884219646230255,
+      "weight_decay": 0.00018240832550652503
+     }
+    },
+    {
+     "fold": 2,
+     "select_fold": 3,
+     "trial": 1,
+     "val_pinball": 0.729582141604037,
+     "params": {
+      "width": 256,
+      "depth": 3,
+      "dropout": 0.057310884024236626,
+      "lr": 0.0006884219646230255,
+      "weight_decay": 0.00018240832550652503
+     }
+    },
+    {
+     "fold": 3,
+     "select_fold": 4,
+     "trial": 1,
+     "val_pinball": 0.8484644916906884,
+     "params": {
+      "width": 256,
+      "depth": 3,
+      "dropout": 0.057310884024236626,
+      "lr": 0.0006884219646230255,
+      "weight_decay": 0.00018240832550652503
+     }
+    },
+    {
+     "fold": 4,
+     "select_fold": 0,
+     "trial": 1,
+     "val_pinball": 0.7725088268594985,
+     "params": {
+      "width": 256,
+      "depth": 3,
+      "dropout": 0.057310884024236626,
+      "lr": 0.0006884219646230255,
+      "weight_decay": 0.00018240832550652503
+     }
+    }
+   ],
+   "seconds": 466.97274112701416,
+   "oof_pinball": 0.7907497046444869
+  },
+  "tabm": {
+   "trial": 1,
+   "val_pinball": 0.6714880220485685,
+   "params": {
+    "n_blocks": 2,
+    "d_block": 128,
+    "dropout": 0.0,
+    "lr": 0.0005214027408055207,
+    "weight_decay": 0.03900912663577338
+   },
+   "oof_selection": [
+    {
+     "fold": 0,
+     "select_fold": 1,
+     "trial": 1,
+     "val_pinball": 0.7397545788595794,
+     "params": {
+      "n_blocks": 2,
+      "d_block": 128,
+      "dropout": 0.0,
+      "lr": 0.0005214027408055207,
+      "weight_decay": 0.03900912663577338
+     }
+    },
+    {
+     "fold": 1,
+     "select_fold": 2,
+     "trial": 5,
+     "val_pinball": 0.6521782092305284,
+     "params": {
+      "n_blocks": 4,
+      "d_block": 256,
+      "dropout": 0.19061830546543995,
+      "lr": 0.0016799953065042012,
+      "weight_decay": 0.0
+     }
+    },
+    {
+     "fold": 2,
+     "select_fold": 3,
+     "trial": 1,
+     "val_pinball": 0.6528829064652961,
+     "params": {
+      "n_blocks": 2,
+      "d_block": 128,
+      "dropout": 0.0,
+      "lr": 0.0005214027408055207,
+      "weight_decay": 0.03900912663577338
+     }
+    },
+    {
+     "fold": 3,
+     "select_fold": 4,
+     "trial": 5,
+     "val_pinball": 0.6937145942148799,
+     "params": {
+      "n_blocks": 4,
+      "d_block": 256,
+      "dropout": 0.19061830546543995,
+      "lr": 0.0016799953065042012,
+      "weight_decay": 0.0
+     }
+    },
+    {
+     "fold": 4,
+     "select_fold": 0,
+     "trial": 1,
+     "val_pinball": 0.6842014049825063,
+     "params": {
+      "n_blocks": 2,
+      "d_block": 128,
+      "dropout": 0.0,
+      "lr": 0.0005214027408055207,
+      "weight_decay": 0.03900912663577338
+     }
+    }
+   ],
+   "seconds": 3405.754036426544,
+   "oof_pinball": 0.6895198342336621
+  },
+  "tabicl": {
+   "params": {
+    "n_estimators": 8
+   },
+   "oof_selection": [
+    {
+     "fold": 0,
+     "params": {
+      "n_estimators": 8
+     }
+    },
+    {
+     "fold": 1,
+     "params": {
+      "n_estimators": 8
+     }
+    },
+    {
+     "fold": 2,
+     "params": {
+      "n_estimators": 8
+     }
+    },
+    {
+     "fold": 3,
+     "params": {
+      "n_estimators": 8
+     }
+    },
+    {
+     "fold": 4,
+     "params": {
+      "n_estimators": 8
+     }
+    }
+   ],
+   "seconds": 2268.820598602295,
+   "oof_pinball": 0.5314926556870314
+  },
+  "kumo": {
+   "params": {
+    "n_estimators": 8
+   },
+   "oof_selection": [
+    {
+     "fold": 0,
+     "params": {
+      "n_estimators": 8
+     }
+    },
+    {
+     "fold": 1,
+     "params": {
+      "n_estimators": 8
+     }
+    },
+    {
+     "fold": 2,
+     "params": {
+      "n_estimators": 8
+     }
+    },
+    {
+     "fold": 3,
+     "params": {
+      "n_estimators": 8
+     }
+    },
+    {
+     "fold": 4,
+     "params": {
+      "n_estimators": 8
+     }
+    }
+   ],
+   "seconds": 605.0806314945221,
+   "oof_pinball": 0.5050143707329683
+  }
+ },
+ "bootstrap_L_ci95": {
+  "persistence": {
+   "ci95": null,
+   "share_infinite": 1.0
+  },
+  "kumo": {
+   "ci95": [
+    6.189581025423404,
+    17.2455839429146
+   ],
+   "share_infinite": 0.0
+  },
+  "cosmos_gated": {
+   "ci95": [
+    6.014805307824011,
+    17.38952921001206
+   ],
+   "share_infinite": 0.0
+  },
+  "latest_risk_point": {
+   "ci95": [
+    0.47590200331064725,
+    0.9727780735307222
+   ],
+   "share_infinite": 0.0
+  }
+ },
+ "seconds": 9689.49404001236
+}

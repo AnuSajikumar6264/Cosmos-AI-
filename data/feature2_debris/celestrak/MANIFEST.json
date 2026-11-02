@@ -10,7 +10,7 @@
     "gp-*.csv contain only objects still in orbit at retrieval.",
     "SW-All.csv mixes observed and predicted rows (PRD/PRM): only observed rows may be used as features."
   ],
-  "manifest_written_utc": "2026-10-24T08:05:03+00:00",
+  "manifest_written_utc": "2026-10-27T04:17:56+00:00",
   "files": [
     {
       "path": "gp-active.csv",
@@ -139,6 +139,86 @@
       "status": "downloaded",
       "md5_verified": false,
       "retrieved_utc": "2026-10-24T08:04:48+00:00"
+    },
+    {
+      "path": "snapshots/2026-10-27/SW-All.csv",
+      "url": "https://celestrak.org/SpaceData/SW-All.csv",
+      "bytes": 2892082,
+      "md5": "8960f8f632bede97633d82605fb20c30",
+      "sha256": "8e143c21472b2091ff67d4739c16511d35e65bc51f3db09ba2bdf37eea55036b",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-27T04:17:56+00:00"
+    },
+    {
+      "path": "snapshots/2026-10-27/gp-active.csv",
+      "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=csv",
+      "bytes": 2544175,
+      "md5": "40a13ed2a5a5c4919b1b377ff8d2a3cf",
+      "sha256": "e83156342586fcc142fadaca549eb12e9cd0adda59cd1f1da6d93a9551012c71",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-27T04:17:42+00:00"
+    },
+    {
+      "path": "snapshots/2026-10-27/gp-cosmos-1408-debris.csv",
+      "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=cosmos-1408-debris&FORMAT=csv",
+      "bytes": 704,
+      "md5": "7d1d8b64dd94f6ddf28e3f6e7c2d69c0",
+      "sha256": "27c59ce93ba4937ae14c65b1045aeae09430eabaf06d4e1016c95c05aab64b6f",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-27T04:17:47+00:00"
+    },
+    {
+      "path": "snapshots/2026-10-27/gp-cosmos-2251-debris.csv",
+      "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=cosmos-2251-debris&FORMAT=csv",
+      "bytes": 90601,
+      "md5": "1bd8e6f77194f7b061ff98fd146bff4d",
+      "sha256": "dfa38559d723418d539da8acca3bb55236aec46cfa513ed98eddaef2e81bbc5b",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-27T04:17:49+00:00"
+    },
+    {
+      "path": "snapshots/2026-10-27/gp-fengyun-1c-debris.csv",
+      "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=fengyun-1c-debris&FORMAT=csv",
+      "bytes": 303742,
+      "md5": "515428d6b6ca1be2f1179adb0cb44262",
+      "sha256": "8036f108ce0facc634db74c7fb1a70d97944c36c2a38429c377c4c06c36d6491",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-27T04:17:51+00:00"
+    },
+    {
+      "path": "snapshots/2026-10-27/gp-iridium-33-debris.csv",
+      "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=iridium-33-debris&FORMAT=csv",
+      "bytes": 17014,
+      "md5": "ccf234bcf171ef5bbfc071ee9cec0de1",
+      "sha256": "5f54b090eac86d33d6107fbc70255e1e8d81bd598011e07f03c25cd938c822d0",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-27T04:17:54+00:00"
+    },
+    {
+      "path": "snapshots/2026-10-27/gp-last-30-days.csv",
+      "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=last-30-days&FORMAT=csv",
+      "bytes": 39248,
+      "md5": "1d3b6d9f1ed263c709db34c06b1b0cdc",
+      "sha256": "18e0bf6ab9551ee15ba4f82297bf631b1df3c612762c1d526a6945189e983fec",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-27T04:17:44+00:00"
+    },
+    {
+      "path": "snapshots/2026-10-27/satcat.csv",
+      "url": "https://celestrak.org/pub/satcat.csv",
+      "bytes": 6782722,
+      "md5": "60e23085f0994ec66ce6cd0356f1c57d",
+      "sha256": "1cd24e71bee7dba71d376908682f69a9c9639739721d31f9b2ad4e533eacb50f",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-27T04:17:38+00:00"
     },
     {
       "path": "spatial_density.csv",

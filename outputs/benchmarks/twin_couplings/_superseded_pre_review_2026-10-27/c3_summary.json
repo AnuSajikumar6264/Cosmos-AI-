@@ -1,0 +1,130 @@
+{
+ "tau": "2026-08-16",
+ "follow_up": "2026-10-27",
+ "horizon_days": 72.0,
+ "n": 13813,
+ "events": 185,
+ "by_status": {
+  "non-operational": {
+   "n": 161,
+   "events": 17,
+   "event_rate": 0.10559006211180125,
+   "mean_p_physics": 0.11451863354037267,
+   "brier_physics": 0.09208802406832298,
+   "ece_physics": 0.08928571428571429,
+   "gcat_end_status_of_decays": {
+    "R": 14
+   },
+   "auc_roc_physics": 0.9187091503267973,
+   "auc_pr_physics": 0.52125862664016
+  },
+  "operational": {
+   "n": 13497,
+   "events": 167,
+   "event_rate": 0.012373119952582055,
+   "mean_p_physics": 0.05050890938727125,
+   "brier_physics": 0.028059548533933467,
+   "ece_physics": 0.03842289027191228,
+   "gcat_end_status_of_decays": {
+    "R": 151,
+    "O": 5,
+    "DK": 3,
+    "GRP": 1
+   },
+   "auc_roc_physics": 0.9485079353670753,
+   "auc_pr_physics": 0.3429009535951574
+  },
+  "unknown": {
+   "n": 155,
+   "events": 1,
+   "event_rate": 0.0064516129032258064,
+   "mean_p_physics": 0.016935483870967744,
+   "brier_physics": 0.007245463709677419,
+   "ece_physics": 0.012096774193548387,
+   "gcat_end_status_of_decays": {
+    "R": 1
+   },
+   "auc_roc_physics": 0.9935064935064936,
+   "auc_pr_physics": 0.5
+  }
+ },
+ "payload_base_rate_previous_window_used_for_operational": 0.01263537906137184,
+ "physics_status_blind": {
+  "brier": 0.028572283016904364,
+  "ece": 0.0384578838775067,
+  "auc_roc": 0.9486282217057092,
+  "auc_pr": 0.33809964528909
+ },
+ "twin_status_aware_baserate": {
+  "brier": 0.013095188303729908,
+  "ece": 0.0008522977491250451,
+  "auc_roc": 0.5561713166057163,
+  "auc_pr": 0.06210490371168979
+ },
+ "physics_recalibrated_status_blind": {
+  "brier": 0.01065203564852826,
+  "ece": 0.0038000492002764497,
+  "auc_roc": 0.9463181922750459,
+  "auc_pr": 0.31831292916778675
+ },
+ "twin_status_aware_recalibrated": {
+  "brier": 0.010676863977655543,
+  "ece": 0.004487765880287997,
+  "auc_roc": 0.8947637614133064,
+  "auc_pr": 0.3220802625007544
+ },
+ "brier_difference_ci95": {
+  "recal_status_minus_recal_blind": [
+   -0.00025147612016178497,
+   0.0002985882567648271,
+   2.660798871138475e-05
+  ],
+  "recal_status_minus_raw": [
+   -0.020203848975837213,
+   -0.01565620955525426,
+   -0.017889909592948124
+  ]
+ },
+ "by_status_policy": {
+  "non-operational": {
+   "raw_physics": {
+    "mean_p": 0.11451863354037267,
+    "event_rate": 0.10559006211180125,
+    "brier": 0.09208802406832298,
+    "ece": 0.08928571428571429
+   },
+   "recalibrated_status_blind": {
+    "mean_p": 0.022532861205345436,
+    "event_rate": 0.10559006211180125,
+    "brier": 0.08825181542348351,
+    "ece": 0.0830572009064558
+   },
+   "recalibrated_status_aware": {
+    "mean_p": 0.06599789009037224,
+    "event_rate": 0.10559006211180125,
+    "brier": 0.0923652397457003,
+    "ece": 0.09682937380702981
+   }
+  },
+  "operational": {
+   "raw_physics": {
+    "mean_p": 0.05050890938727125,
+    "event_rate": 0.012373119952582055,
+    "brier": 0.028059548533933467,
+    "ece": 0.03842289027191228
+   },
+   "recalibrated_status_blind": {
+    "mean_p": 0.013497563464142796,
+    "event_rate": 0.012373119952582055,
+    "brier": 0.009783810491594514,
+    "ece": 0.003468628228351405
+   },
+   "recalibrated_status_aware": {
+    "mean_p": 0.012489672448951489,
+    "event_rate": 0.012373119952582055,
+    "brier": 0.009742709654708522,
+    "ece": 0.0036661275380494114
+   }
+  }
+ }
+}

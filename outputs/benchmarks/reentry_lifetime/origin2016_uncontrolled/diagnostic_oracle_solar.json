@@ -1,0 +1,34 @@
+{
+ "persistence": {
+  "n": 2978,
+  "pinball": 0.08924911570800471,
+  "mae_log10": 0.23029110662942154,
+  "rmse_log10": 0.4501836727974425,
+  "mae_days": 270.5509671864786,
+  "medae_days": 0.0,
+  "p90ae_days": 1126.0365224381276,
+  "median_rel_err": 0.0,
+  "n_decayed": 1316,
+  "mae_days_decayed": 585.3937359052211,
+  "medae_days_decayed": 396.10027578660805,
+  "p90ae_days_decayed": 1483.2500000000005,
+  "median_rel_err_decayed": 0.9034562656168401,
+  "mae_log10_decayed": 0.5047401469355174
+ },
+ "oracle_realised_f107": {
+  "n": 2978,
+  "pinball": 0.07833279940770517,
+  "mae_log10": 0.20694798471665848,
+  "rmse_log10": 0.41968722771739064,
+  "mae_days": 204.45078168876432,
+  "medae_days": 0.0,
+  "p90ae_days": 778.1013770855905,
+  "median_rel_err": 0.0,
+  "n_decayed": 1316,
+  "mae_days_decayed": 421.9792678031424,
+  "medae_days_decayed": 205.05902461763287,
+  "p90ae_days_decayed": 1224.2500000000007,
+  "median_rel_err_decayed": 0.6687608684241999,
+  "mae_log10_decayed": 0.44839166936236924
+ }
+}

@@ -1,0 +1,396 @@
+{
+ "origin": "2011",
+ "population": "uncontrolled",
+ "snapshot": "2026-10-27",
+ "dates": [
+  "2004-01-01",
+  "2006-01-01",
+  "2011-01-01",
+  "2016-01-01"
+ ],
+ "sizes": {
+  "train": 20811,
+  "tuneA": 248,
+  "tuneB": 332,
+  "test": 2680
+ },
+ "known5": {
+  "train": 20777,
+  "tuneA": 248,
+  "tuneB": 332,
+  "test": 2667
+ },
+ "events_5yr": {
+  "train": 13827,
+  "tuneA": 101,
+  "tuneB": 145,
+  "test": 683
+ },
+ "physics_seconds": {
+  "train": 100.97467255592346,
+  "tuneA": 2.064204216003418,
+  "tuneB": 2.527768850326538,
+  "test": 17.11728310585022
+ },
+ "prior_pool_sizes": {
+  "lc:all": 14056,
+  "lc:C": 3287,
+  "lc:D": 8399,
+  "lc:R": 2370,
+  "am:R": 4011
+ },
+ "am_source_train": {
+  "class_prior_sbm": 14437,
+  "design": 6374
+ },
+ "am_source_tuneB": {
+  "class_prior_sbm": 259,
+  "design": 73
+ },
+ "am_source_test": {
+  "class_prior_sbm": 2263,
+  "design": 417
+ },
+ "best_learner_on_tuneA": "kumo",
+ "selection_pool": [
+  "tabm",
+  "tabicl",
+  "kumo"
+ ],
+ "tuneA_pinball": {
+  "xgboost": 0.06714729073866008,
+  "lightgbm": 0.09394161859505967,
+  "catboost": 0.07185402722352136,
+  "mlp": 0.05747355040439768,
+  "tabm": 0.05608990082287044,
+  "tabicl": 0.05808638740862648,
+  "kumo": 0.054720703169263606
+ },
+ "gates": {
+  "cosmos_gated": {
+   "theta": [
+    -2.42624034095464,
+    -0.15023256944959418,
+    0.0,
+    -0.03367049223040746,
+    -0.1892758816529624,
+    -0.1810230491073539,
+    0.17087022749329084,
+    0.2413840318294661,
+    -0.05733761851300356,
+    0.0,
+    0.13171086812349778
+   ],
+   "fitted_on": "train_oof",
+   "tuneA_pinball": 0.05574990169681076,
+   "test_weight_mean": 0.1185910987995584,
+   "test_weight_by_am_source": {
+    "class_prior_sbm": 0.13170449777677495,
+    "design": 0.04742653792320081
+   }
+  },
+  "stack_constant": {
+   "theta": [
+    -3.3422038015550224
+   ],
+   "fitted_on": "train_oof",
+   "tuneA_pinball": 0.05527281351728228,
+   "test_weight_mean": 0.034151390461100654,
+   "test_weight_by_am_source": {
+    "class_prior_sbm": 0.03415139046110066,
+    "design": 0.03415139046110066
+   }
+  },
+  "cosmos_gated_tuneA": {
+   "theta": [
+    -8.491918900198254,
+    0.0010918136844056347,
+    0.0,
+    -0.0024242642458193954,
+    -0.002073391100605906,
+    -0.0009210798607411201,
+    0.00016233614698592136,
+    0.0005712343415822745,
+    0.0006207979399803396,
+    0.0,
+    0.0012525666029933788
+   ],
+   "fitted_on": "tuneA",
+   "tuneA_pinball": 0.05472364346473542,
+   "test_weight_mean": 0.00020532454124451733,
+   "test_weight_by_am_source": {
+    "class_prior_sbm": 0.0002053257907771671,
+    "design": 0.00020531776020761946
+   }
+  }
+ },
+ "fits": {
+  "xgboost": {
+   "params": {
+    "max_depth": 4,
+    "learning_rate": 0.09082148157819635,
+    "subsample": 0.8066924087212669,
+    "colsample_bytree": 0.911928617288242,
+    "min_child_weight": 1.9252494930757755,
+    "reg_lambda": 9.140271708052994
+   },
+   "fit_seconds_per_seed": 48.41393041610718,
+   "predict_ms_per_1000_objects": 39.15206709904457,
+   "n_features": 53,
+   "tuned": true
+  },
+  "lightgbm": {
+   "params": {
+    "num_leaves": 67,
+    "learning_rate": 0.028440181882977485,
+    "subsample": 0.8796357101480419,
+    "colsample_bytree": 0.7236207234455103,
+    "min_child_samples": 78,
+    "reg_lambda": 0.1083992851490228
+   },
+   "fit_seconds_per_seed": 35.843722343444824,
+   "predict_ms_per_1000_objects": 28.256604920572308,
+   "n_features": 53,
+   "tuned": true
+  },
+  "catboost": {
+   "params": {
+    "depth": 5,
+    "learning_rate": 0.07106762085646018,
+    "l2_leaf_reg": 13.269015408854315,
+    "bagging_temperature": 0.8053722209059218
+   },
+   "fit_seconds_per_seed": 5.336992692947388,
+   "predict_ms_per_1000_objects": 7.948145937563768,
+   "n_features": 53,
+   "tuned": true
+  },
+  "mlp": {
+   "params": {
+    "width": 128,
+    "depth": 3,
+    "dropout": 0.25911662271251656,
+    "lr": 0.0029271613699481933,
+    "weight_decay": 5.5605530648848265e-06
+   },
+   "fit_seconds_per_seed": 11.131328582763672,
+   "predict_ms_per_1000_objects": 1.6762249505341944,
+   "n_features": 53,
+   "tuned": true
+  },
+  "tabm": {
+   "params": {
+    "n_blocks": 4,
+    "d_block": 256,
+    "dropout": 0.19061830546543995,
+    "lr": 0.0016799953065042012,
+    "weight_decay": 0.0
+   },
+   "fit_seconds_per_seed": 39.49329242706299,
+   "predict_ms_per_1000_objects": 5.726849854882084,
+   "n_features": 53,
+   "tuned": true
+  },
+  "tabicl": {
+   "params": {
+    "n_estimators": 8
+   },
+   "fit_seconds_per_seed": 569.6230697154999,
+   "predict_ms_per_1000_objects": 69278.09261563998,
+   "n_features": 53,
+   "tuned": true
+  },
+  "kumo": {
+   "params": {
+    "n_estimators": 8
+   },
+   "fit_seconds_per_seed": 80.70565595626832,
+   "predict_ms_per_1000_objects": 34911.93669945446,
+   "n_features": 53,
+   "tuned": true
+  },
+  "kumo_no_physics": {
+   "params": {
+    "n_estimators": 8
+   },
+   "fit_seconds_per_seed": 78.08557305335998,
+   "predict_ms_per_1000_objects": 33788.2587269171,
+   "n_features": 48,
+   "tuned": false
+  },
+  "kumo_no_family": {
+   "params": {
+    "n_estimators": 8
+   },
+   "fit_seconds_per_seed": 76.69846558570862,
+   "predict_ms_per_1000_objects": 33180.426394761496,
+   "n_features": 45,
+   "tuned": false
+  },
+  "kumo_no_space_weather": {
+   "params": {
+    "n_estimators": 8
+   },
+   "fit_seconds_per_seed": 78.73366322517396,
+   "predict_ms_per_1000_objects": 34049.89963147178,
+   "n_features": 49,
+   "tuned": false
+  },
+  "kumo_no_design": {
+   "params": {
+    "n_estimators": 8
+   },
+   "fit_seconds_per_seed": 77.06160869598389,
+   "predict_ms_per_1000_objects": 33387.540347540555,
+   "n_features": 46,
+   "tuned": false
+  },
+  "kumo_plus_rcs_2026": {
+   "params": {
+    "n_estimators": 8
+   },
+   "fit_seconds_per_seed": 93.56610679626465,
+   "predict_ms_per_1000_objects": 64726.31559443117,
+   "n_features": 54,
+   "tuned": false
+  }
+ },
+ "paired_vs_cosmos_gated": {
+  "physics_only": {
+   "pinball_other_minus_gated": -0.005586528249916543,
+   "ci95": [
+    -0.019873335339615685,
+    0.013920797220309497
+   ]
+  },
+  "xgboost": {
+   "pinball_other_minus_gated": 0.006579487088391236,
+   "ci95": [
+    0.001709043731192783,
+    0.013599495115718936
+   ]
+  },
+  "lightgbm": {
+   "pinball_other_minus_gated": 0.010058146262627446,
+   "ci95": [
+    0.0022799085543836477,
+    0.021538297385632257
+   ]
+  },
+  "catboost": {
+   "pinball_other_minus_gated": 0.004397226655951915,
+   "ci95": [
+    -0.001092256029578205,
+    0.012238947434444597
+   ]
+  },
+  "mlp": {
+   "pinball_other_minus_gated": 0.056398387101891434,
+   "ci95": [
+    0.005329219402350756,
+    0.12234479416259494
+   ]
+  },
+  "tabm": {
+   "pinball_other_minus_gated": 0.04117385359884417,
+   "ci95": [
+    0.0011222668582778566,
+    0.09050850135566506
+   ]
+  },
+  "tabicl": {
+   "pinball_other_minus_gated": 0.0013212232922330564,
+   "ci95": [
+    -0.0015724090840701765,
+    0.004432848545874671
+   ]
+  },
+  "kumo": {
+   "pinball_other_minus_gated": 0.0033496879280204323,
+   "ci95": [
+    0.0006888704503946588,
+    0.005479335705105325
+   ]
+  },
+  "kumo_no_physics": {
+   "pinball_other_minus_gated": 0.0055964475197557,
+   "ci95": [
+    0.000958412169689321,
+    0.008974392860331956
+   ]
+  },
+  "kumo_no_family": {
+   "pinball_other_minus_gated": 0.005730979582355587,
+   "ci95": [
+    -0.002248972893003516,
+    0.014332288075932502
+   ]
+  },
+  "kumo_no_space_weather": {
+   "pinball_other_minus_gated": 0.0042216867868367855,
+   "ci95": [
+    0.0008729360304040888,
+    0.007094870680085521
+   ]
+  },
+  "kumo_no_design": {
+   "pinball_other_minus_gated": 0.004174159161780117,
+   "ci95": [
+    0.001525146223811318,
+    0.00621806537769337
+   ]
+  },
+  "kumo_plus_rcs_2026": {
+   "pinball_other_minus_gated": -0.00042441256669247104,
+   "ci95": [
+    -0.0026539800665746206,
+    0.002883811144738957
+   ]
+  },
+  "stack_constant": {
+   "pinball_other_minus_gated": 0.0025134202952525548,
+   "ci95": [
+    0.00046704315054075656,
+    0.004109514515325277
+   ]
+  },
+  "cosmos_gated_tuneA": {
+   "pinball_other_minus_gated": 0.003344578202167001,
+   "ci95": [
+    0.0006876252457268567,
+    0.005471041898109292
+   ]
+  },
+  "equal_average": {
+   "pinball_other_minus_gated": -0.005565996443925011,
+   "ci95": [
+    -0.011507399509553864,
+    0.0024168587128323526
+   ]
+  }
+ },
+ "mae_log10_ci": {
+  "cosmos_gated": {
+   "mae_log10": 0.15701022480844828,
+   "ci95": [
+    0.12000602101041047,
+    0.20617070997717152
+   ]
+  },
+  "kumo": {
+   "mae_log10": 0.16329896555806073,
+   "ci95": [
+    0.12386014295729281,
+    0.21128676138706948
+   ]
+  },
+  "physics_only": {
+   "mae_log10": 0.1478162787762241,
+   "ci95": [
+    0.10540230230781099,
+    0.2177908195747324
+   ]
+  }
+ },
+ "seconds_total": 5256.981455087662
+}

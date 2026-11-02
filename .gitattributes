@@ -1,0 +1,59 @@
+# Git LFS tracking for COSMOS-AI.
+#
+# Principle: LFS carries dataset payloads and binary arrays only.  Source code, result
+# tables, manifests and small JSON/CSV stay in ordinary Git, so that diffs remain
+# reviewable and LFS storage is not spent on files that do not need it.
+#
+# GitHub limits that shape these patterns:
+#   ordinary Git   warns above 50 MB, rejects above 100 MB per file
+#   Git LFS        2 GB per file on Free/Pro/Team; 1 GB storage and 1 GB/month
+#                  bandwidth on the free tier
+# See README.md ("Datasets and Git LFS") for what is and is not in this repository.
+
+# --- dataset payloads: the authoritative raw archives and their extractions ---
+data/**/raw/**                  filter=lfs diff=lfs merge=lfs -text
+data/**/processed/**            filter=lfs diff=lfs merge=lfs -text
+
+# --- binary dataset and array formats anywhere under data/ ---
+data/**/*.zip                   filter=lfs diff=lfs merge=lfs -text
+data/**/*.gz                    filter=lfs diff=lfs merge=lfs -text
+data/**/*.npy                   filter=lfs diff=lfs merge=lfs -text
+data/**/*.npz                   filter=lfs diff=lfs merge=lfs -text
+data/**/*.parquet               filter=lfs diff=lfs merge=lfs -text
+data/**/*.h5                    filter=lfs diff=lfs merge=lfs -text
+data/**/*.pkl                   filter=lfs diff=lfs merge=lfs -text
+
+# --- experiment arrays: write-once binaries, kept out of ordinary Git history ---
+outputs/**/*.npy                filter=lfs diff=lfs merge=lfs -text
+outputs/**/*.npz                filter=lfs diff=lfs merge=lfs -text
+outputs/**/*.gz                 filter=lfs diff=lfs merge=lfs -text
+
+# --- model weights and checkpoints, wherever they appear ---
+*.pt                            filter=lfs diff=lfs merge=lfs -text
+*.pth                           filter=lfs diff=lfs merge=lfs -text
+*.ckpt                          filter=lfs diff=lfs merge=lfs -text
+*.onnx                          filter=lfs diff=lfs merge=lfs -text
+
+# --- large documents and slides ---
+*.pptx                          filter=lfs diff=lfs merge=lfs -text
+
+# Deliberately NOT in LFS: *.py, *.md, *.tex, *.bib, *.json, *.csv outside data/.
+# Result tables are small and benefit from readable text diffs.
+
+# --- line-ending and diff hygiene ---
+# Source text is normalised to LF.  Data files are NOT: every dataset file is checksummed in
+# data/DATASET_MANIFEST.csv, and end-of-line conversion would alter those bytes and break
+# `python -m cosmos.ai.data.validate`.  Several CelesTrak CSVs genuinely use CRLF upstream.
+*.py       text diff=python
+*.md       text
+*.tex      text
+*.bib      text
+*.csv      -text
+*.tsv      -text
+*.jsonl    -text
+*.dat      -text
+*.json     -text
+*.pdf      binary
+*.png      binary
+*.docx     binary
+*.pptx     binary

@@ -222,9 +222,17 @@ def fetch_github_snapshot(repo: str, sha: str, folder: str, verbose: bool = True
 
 
 def github_head(repo: str, branch: str = "main") -> str:
+    """Commit at the head of ``branch``; falls back to ``git ls-remote`` when the GitHub API
+    is rate-limited."""
     r = _session().get(f"https://api.github.com/repos/{repo}/commits/{branch}", timeout=60)
-    r.raise_for_status()
-    return r.json()["sha"]
+    if r.ok:
+        return r.json()["sha"]
+    import subprocess
+    out = subprocess.run(["git", "ls-remote", f"https://github.com/{repo}", f"refs/heads/{branch}"],
+                         capture_output=True, text=True, timeout=120, check=True).stdout.split()
+    if not out:
+        r.raise_for_status()
+    return out[0]
 
 
 # ============================================================================ datasets
@@ -483,6 +491,118 @@ def fetch_celestrak(date: str | None = None, verbose: bool = True) -> str:
     return folder
 
 
+#: GCAT (J. McDowell, CC-BY-4.0) tables used for the debris and re-entry studies
+GCAT_BASE = "https://planet4589.org/space/gcat"
+GCAT_TABLES = {"satcat.tsv": "tsv/cat/satcat.tsv", "auxcat.tsv": "tsv/cat/auxcat.tsv",
+               "psatcat.tsv": "tsv/cat/psatcat.tsv", "ftocat.tsv": "tsv/cat/ftocat.tsv",
+               "launch.tsv": "tsv/launch/launch.tsv", "orgs.tsv": "tsv/tables/orgs.tsv"}
+
+
+def gcat_release() -> str | None:
+    """The release number printed on the GCAT home page (e.g. ``1.8.8``)."""
+    import re
+    r = _session().get(GCAT_BASE + "/", timeout=60)
+    r.raise_for_status()
+    m = re.search(r"Release\s+([0-9][0-9.]*[0-9])", r.text)
+    return m.group(1) if m else None
+
+
+def fetch_gcat(date: str | None = None, verbose: bool = True) -> str:
+    """A dated GCAT snapshot under ``gcat/raw/<date>/`` (never overwritten)."""
+    folder = feature_dir("debris", "gcat")
+    date = date or _dt.date.today().isoformat()
+    files = []
+    for name, rel in GCAT_TABLES.items():
+        url = f"{GCAT_BASE}/{rel}"
+        e = fetch_url(url, os.path.join(folder, "raw", date, name), verbose=verbose)
+        files.append({"path": f"raw/{date}/{name}", **e, "retrieved_utc": utc_now()})
+        time.sleep(1.0)
+    write_manifest(folder, {
+        "dataset": "gcat", "class": "REAL", "status": "downloaded",
+        "source": "General Catalog of Artificial Space Objects, J. McDowell, " + GCAT_BASE,
+        "release_on_retrieval": {date: gcat_release()},
+        "licence": "CC-BY-4.0 (cite: McDowell, J., 2020, General Catalog of Artificial Space "
+                   "Objects, https://planet4589.org/space/gcat)",
+        "field_definitions": GCAT_BASE + "/web/cat/cats.html",
+        "notes": ["satcat: Earth-orbit objects with a US catalogue number; auxcat: objects "
+                  "without one; psatcat: payload attributes; ftocat: failed launches.",
+                  "ODate is the epoch of the single orbit listed per object (not a history); "
+                  "DDate is the decay or deorbit date; '?' marks uncertain values.",
+                  "Fixed snapshots: GCAT is revised continuously, so each retrieval date is kept."],
+    }, files)
+    return folder
+
+
+def fetch_kelvins_cac(verbose: bool = True) -> str:
+    """ESA Kelvins Collision Avoidance Challenge (Uriot et al., Astrodynamics 2022), Zenodo 4463683."""
+    folder = dataset_root("debris", "kelvins_cac")
+    rec, files = fetch_zenodo(4463683, folder, verbose=verbose)
+    for f in files:
+        safe_extract(os.path.join(folder, f["path"]), os.path.join(folder, "raw", "extracted"))
+    m = rec["metadata"]
+    write_manifest(folder, {
+        "dataset": "kelvins_cac", "class": "REAL", "status": "downloaded",
+        "title": m.get("title"), "zenodo_record": rec["id"], "doi": rec.get("doi"),
+        "licence": (m.get("license") or {}).get("id"),
+        "creators": [c["name"] for c in m.get("creators", [])],
+        "publication_date": m.get("publication_date"), "retrieved_utc": utc_now(),
+        "notes": ["Conjunction Data Messages received by ESA 2015-2019, anonymised; the "
+                  "official train/test split and the test labels kept private during the "
+                  "competition are both included."],
+    }, files)
+    return folder
+
+
+def fetch_kelvins_debris_origin(verbose: bool = True) -> str:
+    """ESA Kelvins 'Space debris: the origin' (Zenodo 4986292)."""
+    folder = dataset_root("debris", "kelvins_debris_origin")
+    rec, files = fetch_zenodo(4986292, folder, verbose=verbose)
+    for f in files:
+        safe_extract(os.path.join(folder, f["path"]), os.path.join(folder, "raw", "extracted"))
+    m = rec["metadata"]
+    write_manifest(folder, {
+        "dataset": "kelvins_debris_origin", "status": "downloaded",
+        "class": "SEE NOTES (simulated or real is determined in docs/DATASET_AUDIT.md)",
+        "title": m.get("title"), "zenodo_record": rec["id"], "doi": rec.get("doi"),
+        "licence": (m.get("license") or {}).get("id"),
+        "creators": [c["name"] for c in m.get("creators", [])],
+        "publication_date": m.get("publication_date"), "retrieved_utc": utc_now(),
+    }, files)
+    return folder
+
+
+#: NASA SMAP/MSL (Hundman et al., KDD 2018).  The original S3 archive answered HTTP 403 on
+#: 2026-10-27; the telemanom README now points to this Kaggle copy, which is used here.
+SMAP_MSL_KAGGLE = ("https://www.kaggle.com/api/v1/datasets/download/"
+                   "patrickfleith/nasa-anomaly-detection-dataset-smap-msl")
+TELEMANOM_REPO = "khundman/telemanom"
+
+
+def fetch_smap_msl(verbose: bool = True) -> str:
+    folder = dataset_root("health", "smap_msl")
+    e = fetch_url(SMAP_MSL_KAGGLE, os.path.join(folder, "raw", "nasa-smap-msl.zip"), verbose=verbose)
+    files = [{"path": "raw/nasa-smap-msl.zip", **e, "retrieved_utc": utc_now()}]
+    safe_extract(os.path.join(folder, "raw", "nasa-smap-msl.zip"), os.path.join(folder, "raw", "extracted"))
+    sha = github_head(TELEMANOM_REPO, "master")
+    lab = f"https://raw.githubusercontent.com/{TELEMANOM_REPO}/{sha}/labeled_anomalies.csv"
+    e = fetch_url(lab, os.path.join(folder, "raw", "labeled_anomalies_telemanom.csv"), verbose=verbose)
+    files.append({"path": "raw/labeled_anomalies_telemanom.csv", **e, "commit": sha,
+                  "retrieved_utc": utc_now()})
+    write_manifest(folder, {
+        "dataset": "smap_msl", "class": "REAL", "status": "downloaded",
+        "paper_doi": "10.1145/3219819.3219845",
+        "source": "NASA JPL telemanom data (SMAP satellite, MSL rover), via the Kaggle copy that "
+                  "the telemanom README links to; labels from the telemanom repository",
+        "licence": "Caltech copyright with a BSD-style redistribution licence (telemanom "
+                   "LICENSE.txt); Kaggle lists 'Data files (c) Original Authors'",
+        "notes": ["The original s3-us-west-2.amazonaws.com/telemanom/data.zip returned HTTP 403 "
+                  "on 2026-10-27.",
+                  "Values are pre-scaled to (-1, 1) using the min/max of the test set (stated in "
+                  "the telemanom README): a known benchmark flaw, see Wu & Keogh (2021)."],
+    }, files)
+    return folder
+
+
 def record_unavailable(feature: str, name: str, meta: dict) -> str:
     """Write a manifest for a dataset that could not be obtained, saying exactly why."""
     folder = dataset_root(feature, name)
@@ -492,7 +612,8 @@ def record_unavailable(feature: str, name: str, meta: dict) -> str:
 
 
 FETCHERS = {"opssat_ad": fetch_opssat_ad, "esa_adb": fetch_esa_adb, "spotgeo": fetch_spotgeo,
-            "celestrak": fetch_celestrak}
+            "celestrak": fetch_celestrak, "gcat": fetch_gcat, "kelvins_cac": fetch_kelvins_cac,
+            "kelvins_debris_origin": fetch_kelvins_debris_origin, "smap_msl": fetch_smap_msl}
 
 #: (feature, folder) of every dataset COSMOS-AI tracks, for :func:`status`
 TRACKED = {
@@ -502,6 +623,9 @@ TRACKED = {
     "spacesense_bench": ("debris", "spacesense_bench"),
     "cosmos_synthetic_vision": ("debris", "cosmos_synthetic"),
     "celestrak": ("debris", "celestrak"),
+    "gcat": ("debris", "gcat"), "kelvins_cac": ("debris", "kelvins_cac"),
+    "kelvins_debris_origin": ("debris", "kelvins_debris_origin"),
+    "smap_msl": ("health", "smap_msl"),
     "reentry_historical": ("reentry", "historical"),
     "reentry_simulated": ("reentry", "simulated"),
 }

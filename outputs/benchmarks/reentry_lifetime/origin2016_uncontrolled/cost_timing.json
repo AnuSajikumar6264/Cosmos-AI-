@@ -1,0 +1,141 @@
+{
+ "origin": "2016",
+ "population": "uncontrolled",
+ "sizes": [
+  1000,
+  3000,
+  30000
+ ],
+ "n_samples": 32,
+ "host": {
+  "node": "bmg17417.jf.intel.com",
+  "cpu_count": 512,
+  "torch_threads": "24",
+  "device_env": "xpu:0"
+ },
+ "train_rows": 25334,
+ "models": {
+  "physics_only": {
+   "fit_seconds": null,
+   "predict_seconds": {
+    "1000": 5.683536529541016,
+    "3000": 20.776968479156494,
+    "30000": 199.57277512550354
+   },
+   "device": "cpu",
+   "note": "Monte-Carlo propagation, 32 samples per object; no fitting step"
+  },
+  "xgboost": {
+   "fit_seconds": 14.15708613395691,
+   "predict_seconds": {
+    "1000": 0.021536588668823242,
+    "3000": 0.017263412475585938,
+    "30000": 0.07277512550354004
+   },
+   "params": {
+    "max_depth": 4,
+    "learning_rate": 0.08013861768724162,
+    "subsample": 0.7883767189289016,
+    "colsample_bytree": 0.6016239712723395,
+    "min_child_weight": 6.210671208865818,
+    "reg_lambda": 0.24103080995541834
+   },
+   "device": "cpu",
+   "context_rows": null
+  },
+  "lightgbm": {
+   "fit_seconds": 11.093000173568726,
+   "predict_seconds": {
+    "1000": 0.011739015579223633,
+    "3000": 0.021653175354003906,
+    "30000": 0.15023255348205566
+   },
+   "params": {
+    "num_leaves": 38,
+    "learning_rate": 0.08013861768724162,
+    "subsample": 0.7883767189289016,
+    "colsample_bytree": 0.6016239712723395,
+    "min_child_samples": 46,
+    "reg_lambda": 1.1416107541316163
+   },
+   "device": "cpu",
+   "context_rows": null
+  },
+  "catboost": {
+   "fit_seconds": 1.9487831592559814,
+   "predict_seconds": {
+    "1000": 0.003458261489868164,
+    "3000": 0.17224502563476562,
+    "30000": 0.21030282974243164
+   },
+   "params": {
+    "depth": 4,
+    "learning_rate": 0.10061598253769652,
+    "l2_leaf_reg": 1.5044765201405943,
+    "bagging_temperature": 0.3432090734659071
+   },
+   "device": "cpu",
+   "context_rows": null
+  },
+  "mlp": {
+   "fit_seconds": 23.75423264503479,
+   "predict_seconds": {
+    "1000": 0.006151676177978516,
+    "3000": 0.009465456008911133,
+    "30000": 0.1435554027557373
+   },
+   "params": {
+    "width": 512,
+    "depth": 4,
+    "dropout": 0.04454820015759198,
+    "lr": 0.00037255537182350444,
+    "weight_decay": 8.775056118686846e-06
+   },
+   "device": "cpu",
+   "context_rows": null
+  },
+  "tabm": {
+   "fit_seconds": 67.58840417861938,
+   "predict_seconds": {
+    "1000": 0.02368617057800293,
+    "3000": 0.16016817092895508,
+    "30000": 0.643669605255127
+   },
+   "params": {
+    "n_blocks": 3,
+    "d_block": 1024,
+    "dropout": 0.0,
+    "lr": 0.0005100471728795711,
+    "weight_decay": 0.0013770574815930843
+   },
+   "device": "xpu:0",
+   "context_rows": null
+  },
+  "tabicl": {
+   "fit_seconds": 2.132690906524658,
+   "predict_seconds": {
+    "1000": 231.5568859577179,
+    "3000": 338.44440245628357,
+    "30000": 626.4411110877991
+   },
+   "params": {
+    "n_estimators": 8
+   },
+   "device": "cpu",
+   "context_rows": null
+  },
+  "kumo": {
+   "fit_seconds": 83.63367533683777,
+   "predict_seconds": {
+    "1000": 5.396342754364014,
+    "3000": 14.115493774414062,
+    "30000": 140.47348189353943
+   },
+   "params": {
+    "n_estimators": 8
+   },
+   "device": "xpu:0",
+   "context_rows": 16000
+  }
+ }
+}

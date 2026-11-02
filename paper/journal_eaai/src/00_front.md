@@ -1,0 +1,13 @@
+---
+title: "Reliability-gated mixture of experts with conformal calibration: an uncertainty-aware digital twin for orbital debris, atmospheric re-entry and satellite health"
+author:
+  - "[Author name(s)]^a^"
+  - "^a^[Affiliation, postal address, country]"
+  - "Corresponding author: [name, e-mail]"
+abstract: |
+  *Contribution in artificial intelligence.* A reliability-gated mixture of experts in which a learned gate weights a physics-based prior against recent tabular neural models, with distribution-free conformal calibration of every predictive interval and probability. *Application in engineering.* Forecasting the low-Earth-orbit debris environment: residual orbital lifetime, collision risk and spacecraft health.
+
+  Operational debris tools rely on physics propagators whose uncertainty is uncalibrated, and prior machine-learning lifetime studies used a few hundred to 1,800 objects, single-epoch predictions and only objects that had already decayed. The proposed digital twin holds one state per object and couples three learning modules through four explicit mechanisms. Evaluated on {{data.cohort.rows_out:,}} catalogued objects across two forward-in-time test periods, a European Space Agency collision-avoidance benchmark and public spacecraft telemetry, the tabular foundation models reduced re-entry pinball loss {{imp.re.o2016.tabicl_vs_xgboost_pct:.0f}} % below the strongest gradient-boosted baseline and {{imp.re.o2016.tabicl_vs_physics_pct:.0f}} % below the physics expert for 2016–2021, yet were statistically tied with it for 2011–2015. Conformal intervals covered {{re.o2016.rule.physics_only_conformal90.coverage_decayed:pct}}–{{re.o2011.rule.physics_only_conformal90.coverage_decayed:pct}} of decayed objects against {{re.o2016.rule.physics_only_pm20.coverage_decayed:pct}}–{{re.o2011.rule.physics_only_pm20.coverage_decayed:pct}} for the operational ±20 % rule, and conditioning each area-to-mass ratio on catalogue history reduced 72-day over-prediction from {{t1.by_horizon.72d.expected_over_observed_ci95.lifetime.ratio:.1f}}-fold to {{t1.by_horizon.72d.expected_over_observed_ci95.physics_history.ratio:.1f}}-fold. Collision-risk forecasts improved {{imp.cac.kumo_vs_persistence_pct:.0f}} % over persistence, yet none beat the latest-risk baseline on the official metric, and zero-shot telemetry detection did not beat simple detectors. Calibrated learned fusion therefore improves debris forecasting wherever the full predictive distribution matters.
+
+  **Keywords:** Mixture of experts; Conformal prediction; Tabular foundation models; In-context learning; Uncertainty quantification; Digital twin; Space debris; Atmospheric re-entry prediction
+---

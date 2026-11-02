@@ -1,0 +1,86 @@
+{
+ "o2016.train": {
+  "n": 25350,
+  "share_rcs_missing": 0.27140039447731756,
+  "p_decay30_given_missing": 0.7594476744186046,
+  "p_decay30_given_present": 0.17227937195452084,
+  "n_missing": 6880,
+  "adjusted_or_rcs_missing": {
+   "odds_ratio": 3.5942123175693603,
+   "ci95": [
+    2.094115953694495,
+    6.168885806431298
+   ],
+   "n": 25350,
+   "clusters": 4166,
+   "se": "cluster-robust (launch family)"
+  },
+  "components_adjusted_or_design_missing": {
+   "odds_ratio": 3.4367964280653625,
+   "ci95": [
+    2.6383079382695516,
+    4.476948849158967
+   ],
+   "n": 6226,
+   "clusters": 2165,
+   "se": "cluster-robust (launch family)"
+  }
+ },
+ "o2016.tuneB": {
+  "n": 1560,
+  "share_rcs_missing": 0.01730769230769231,
+  "p_decay30_given_missing": 0.8888888888888888,
+  "p_decay30_given_present": 0.055446836268754074,
+  "n_missing": 27
+ },
+ "o2016.test": {
+  "n": 2979,
+  "share_rcs_missing": 0.6821080899630748,
+  "p_decay30_given_missing": 0.1343503937007874,
+  "p_decay30_given_present": 0.04118268215417107,
+  "n_missing": 2032,
+  "share_rcs_missing_t0_from_2018": 0.9994783515910276
+ },
+ "o2011.train": {
+  "n": 20793,
+  "share_rcs_missing": 0.3243880151974222,
+  "p_decay30_given_missing": 0.7639733135656042,
+  "p_decay30_given_present": 0.19056093394077447,
+  "n_missing": 6745,
+  "adjusted_or_rcs_missing": {
+   "odds_ratio": 3.6246064632462134,
+   "ci95": [
+    2.076433755875833,
+    6.327084587326386
+   ],
+   "n": 20793,
+   "clusters": 3890,
+   "se": "cluster-robust (launch family)"
+  },
+  "components_adjusted_or_design_missing": {
+   "odds_ratio": 3.594198595863125,
+   "ci95": [
+    2.7662588165310553,
+    4.669940306852497
+   ],
+   "n": 5915,
+   "clusters": 2039,
+   "se": "cluster-robust (launch family)"
+  }
+ },
+ "o2011.tuneB": {
+  "n": 332,
+  "share_rcs_missing": 0.09939759036144578,
+  "p_decay30_given_missing": 0.5757575757575758,
+  "p_decay30_given_present": 0.1705685618729097,
+  "n_missing": 33
+ },
+ "o2011.test": {
+  "n": 2669,
+  "share_rcs_missing": 0.018733608092918696,
+  "p_decay30_given_missing": 0.84,
+  "p_decay30_given_present": 0.0649102710958381,
+  "n_missing": 50,
+  "share_rcs_missing_t0_from_2018": null
+ }
+}

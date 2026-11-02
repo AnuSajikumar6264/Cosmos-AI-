@@ -109,6 +109,74 @@ matters, and the notebook marks every dataset **IN USE** or **PLANNED**.
 
 ---
 
+## Datasets and Git LFS
+
+The complete local working tree is about **172 GiB**. GitHub cannot hold that: Git LFS allows
+**2 GB per file** on Free/Pro/Team plans and the free tier provides **1 GiB of LFS storage and
+1 GiB of bandwidth per month**. This repository therefore carries the datasets that are both
+**clear for redistribution** and **within that quota**, and documents exactly how to fetch the
+rest. Nothing here is a sample or a truncation: every dataset listed as present is the
+complete artefact, byte-identical to the checksum recorded in
+[`data/DATASET_MANIFEST.csv`](data/DATASET_MANIFEST.csv).
+
+### Carried in this repository (via Git LFS)
+
+| Dataset | Size | Licence | Path |
+|---|---|---|---|
+| ESA Kelvins Collision Avoidance Challenge | 594 MiB | CC BY 4.0 | `data/feature2_debris/kelvins_cac/raw/` |
+| NASA SMAP / MSL telemetry (telemanom) | 179 MiB | Caltech copyright, BSD-style redistribution licence | `data/feature1_health/smap_msl/raw/` |
+| General Catalog of Artificial Space Objects (GCAT) | 12 MiB | CC BY 4.0 | `data/feature2_debris/gcat/raw/` |
+| ESA Kelvins "Space Debris: the Origin" | 8.4 MiB | CC BY 4.0 | `data/feature2_debris/kelvins_debris_origin/raw/` |
+| ESA OPSSAT-AD | 8.3 MiB | CC BY 4.0 | `data/feature1_health/opssat_ad/raw/` |
+| CelesTrak SATCAT / GP / space weather snapshots | 17 MiB | CelesTrak usage policy (public, no credentials, no explicit licence) | `data/feature2_debris/celestrak/` |
+| Re-entry cohort, NRLMSIS 2.1 density table, derived lifetimes | 7 MiB | derived from the above | `data/feature3_reentry/{processed,derived,historical}/` |
+
+Together with the result arrays of the reported benchmarks, this is **0.664 GiB in LFS** and
+**0.141 GiB in ordinary Git** — 1,159 files, 0.805 GiB in total.
+
+One archive is carried as the archive only. The Kelvins CAC loader reads
+`kelvins_cac/raw/extracted/`, which is byte-for-byte derivable from the committed
+`.zip`; carrying both would spend the LFS quota twice for the same bytes. Recreate it with
+`python scripts/extract_lfs_archives.py` (no network access, no manifest rewrite — it calls
+the same `safe_extract` the downloader uses).
+
+### Not carried here — fetch locally
+
+These are excluded for size, for redistribution terms, or both. All are reproducible with
+`python -m cosmos.ai.data.download` (see [Data](#data-download-verify-prepare)), which verifies
+each download against the manifest checksum.
+
+| Dataset | Local size | Why it is not here |
+|---|---|---|
+| SpotGEO v2 | 45 GiB | CC BY 4.0, but the single archive is 4.0 GiB — above the 2 GB Git LFS per-file limit — and the extracted set alone exceeds the free quota 45× |
+| ESA Anomaly Dataset (ESA-ADB), missions 1–3 | 12.6 GiB | each archive is 3.5–3.9 GiB, above the 2 GB per-file limit; the Zenodo record states no licence (the DMLR paper indicates CC BY 3.0 IGO), so redistribution terms are unclear |
+| SpaceSense-Bench | 1.0 GiB | CC BY-**NC** 4.0 on the Hugging Face card and no licence file in the source repository; inspected but not used in any reported result |
+| SPARK | not held | access restricted, by request only |
+| `outputs/benchmarks/telemetry_esa_adb/` | 66 GiB | out-of-fold score dumps for the ESA-ADB companion study; regenerable, and derived from the dataset above |
+| `outputs/experiments/` | 37 GiB | per-arm score dumps and checkpoints; regenerable from the recorded configs, and the metrics they summarise **are** committed |
+
+### Working with the LFS content
+
+```bash
+# once per machine
+git lfs install
+
+git clone https://github.com/AnuSajikumar6264/Cosmos-AI-
+cd Cosmos-AI-
+git lfs pull                               # downloads the actual dataset bytes
+python scripts/extract_lfs_archives.py     # expands the one archive-only dataset
+python -m cosmos.ai.data.validate          # re-verifies every checksum in the manifest
+```
+
+A plain `git clone` without `git lfs pull` leaves the LFS-tracked files as small pointer
+files. If `data/.../raw/*.zip` looks like a ~130-byte text file, run `git lfs pull`.
+
+Because this repository is public and the free tier allows 1 GiB of LFS bandwidth per month,
+roughly one full `git lfs pull` per month fits the quota. Heavier use needs a GitHub data pack
+or a mirror on object storage (see `docs/` for the DVC option).
+
+---
+
 ## What is verified, and what is not
 
 `python tests/test_verify.py` — **20 / 20 pass**. Each expected value comes from outside this
@@ -154,6 +222,53 @@ Found while building this, each one silent enough to survive casual testing:
   independently, so their product over-shot a 1800 kg parent by 15×.
 - **Censoring.** A third of catalogued fragments have not re-entered yet. Fitting on the
   decayed ones only moves the fitted area-to-mass by the `bias_factor` the notebook prints.
+
+---
+
+## COSMOS-AI digital twin (Q1 rebuild, 2026-10-27)
+
+**One framework for three functions:** satellite health monitoring, orbital debris analysis and
+atmospheric re-entry risk prediction.
+
+**Structure.** Each module is validated on its own real public data. The modules are joined by
+explicit couplings, tested where a real test exists (no public dataset follows one object
+through telemetry, conjunctions and re-entry).
+
+**Documentation:**
+- architecture and claims: `docs/ARCHITECTURE_AND_NOVELTY.md`;
+- targets and splits: `docs/TARGET_DEFINITIONS.md`;
+- data: `docs/DATASET_AUDIT.md` and `data/DATASET_MANIFEST.csv`;
+- models: `docs/SOTA_MODEL_SELECTION.md`;
+- review findings, fixes and deviations: `docs/REVIEW_AND_FIXES.md`;
+- results: `docs/RESULTS_AND_ANALYSIS.md`;
+- implementation and run order: `docs/FINAL_IMPLEMENTATION_REPORT.md`.
+
+The manuscript is in `paper/journal_v3_twin/` (Word and LaTeX built from Markdown; every number
+is a placeholder filled from the result files).
+
+| Module | Code | Data | Models |
+|---|---|---|---|
+| Re-entry risk | `cosmos/ai/lifetime/` | GCAT + CelesTrak (64,516 objects, two temporal test periods) | physics expert (King-Hele and exact orbit averages, NRLMSIS 2.1, Monte-Carlo area-to-mass) fused by a reliability gate with a learned expert. The expert is chosen among TabM (2025), TabICLv2 (2026) and Kumo-Tabular (2026). XGBoost, LightGBM, CatBoost, a quantile MLP and XGBoost-AFT are baselines. Mondrian conformal intervals |
+| Debris: collision risk | `cosmos/ai/conjunction/` | ESA Kelvins CAC | persistence expert + the same learners, gated; official metric L |
+| Debris: breakup clouds (C2) | `cosmos/ai/twin/couplings.py` | lifetime test folds | per-fragment survival summed per cloud, raw and calibrated |
+| Health | `cosmos/ai/telemetry/` | ESA-ADB (companion pre-registered study), NASA SMAP/MSL | conformal alarm layer; on SMAP/MSL, Chronos-2 (2025) zero-shot plus classic baselines and the published telemanom scores |
+| Twin engine | `cosmos/ai/twin/engine.py` | CelesTrak snapshot of the as-of date | per-object state; history-conditioned physics for objects in orbit; operational status selects the regime (C3); dated, hashed forecast |
+| As-of-date tests | `cosmos/ai/twin/couplings.py` (C3), `cosmos/ai/twin/prospective.py` (T1) | snapshots 2026-08-16 → 2026-10-27 (a window analysed earlier in the project, so not blind) | payload regimes (C3); twin re-entry forecasts for every object class (T1) |
+
+Run order: see `docs/FINAL_IMPLEMENTATION_REPORT.md`, section 3.
+
+**Honest-reporting rules applied:**
+- Test sets are read only for scoring. They were scored more than once during development,
+  and every reuse, the learner-pool change and every post-hoc analysis are logged in
+  `docs/REVIEW_AND_FIXES.md`.
+- Results that do not favour the proposed components are reported as they are:
+  - At the 2016 origin, two 2026 foundation models are significantly better than the
+    reliability-gated fusion and the physics expert.
+  - At the 2011 origin, the physics expert, the foundation models and the gated fusion are
+    statistically tied (physics has the lowest point estimate).
+  - Selection on the tuning cohort chose a significantly worse learner at 2016.
+  - No model beats the latest-risk forecast on the Kelvins metric.
+- The radar cross-section is excluded because its availability encodes the outcome.
 
 ---
 

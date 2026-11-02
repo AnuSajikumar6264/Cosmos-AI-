@@ -1,0 +1,125 @@
+{
+ "data": {
+  "train_events_raw": 13154,
+  "train_events_kept": 8293,
+  "test_events": 2167,
+  "train_high_risk": 66,
+  "test_high_risk": 150
+ },
+ "log_transformed_columns": [
+  "last_max_risk_scaling",
+  "last_t_position_covariance_det",
+  "last_c_position_covariance_det",
+  "last_t_sigma_r",
+  "last_c_sigma_r",
+  "last_t_sigma_t",
+  "last_c_sigma_t",
+  "last_t_sigma_n",
+  "last_c_sigma_n"
+ ],
+ "best_learner_oof": "tabicl",
+ "gate_cosmos_gated": {
+  "theta": [
+   -8.696504586980588,
+   0.009050243742835048,
+   -0.011763373099557127,
+   -0.0007457467027181334,
+   -0.0022970410029220455,
+   0.006995948982777165,
+   -0.0015782758923273369,
+   0.0016544269492628706,
+   0.004849847590104905,
+   -0.007242368570016627,
+   -0.005121821189556191
+  ],
+  "test_weight_mean": 0.00016733768981316204
+ },
+ "gate_stack_constant": {
+  "theta": [
+   -8.277030897334773
+  ],
+  "test_weight_mean": 0.000254226449132936
+ },
+ "fits": {
+  "xgboost": {
+   "params": {
+    "max_depth": 4,
+    "learning_rate": 0.0841520471533342,
+    "subsample": 0.8610417263448223,
+    "colsample_bytree": 0.9494037643742325,
+    "min_child_weight": 28.983155777284143,
+    "reg_lambda": 0.20317241320026647
+   },
+   "seconds": 695.700686454773,
+   "oof_pinball": 0.6443228628082626
+  },
+  "lightgbm": {
+   "params": {
+    "num_leaves": 28,
+    "learning_rate": 0.043975326586454914,
+    "subsample": 0.9247978410382549,
+    "colsample_bytree": 0.5742470002626533,
+    "min_child_samples": 19,
+    "reg_lambda": 0.1314169498185815
+   },
+   "seconds": 139.85028719902039,
+   "oof_pinball": 0.6372971081046968
+  },
+  "catboost": {
+   "params": {
+    "depth": 4,
+    "learning_rate": 0.03805246804965862,
+    "l2_leaf_reg": 1.8411416580728397,
+    "bagging_temperature": 0.6250646854524542
+   },
+   "seconds": 79.57209706306458,
+   "oof_pinball": 0.6603812904089581
+  },
+  "mlp": {
+   "params": {
+    "width": 128,
+    "depth": 3,
+    "dropout": 0.25911662271251656,
+    "lr": 0.0029271613699481933,
+    "weight_decay": 5.5605530648848265e-06
+   },
+   "seconds": 178.1098325252533,
+   "oof_pinball": 0.9275180826475267
+  },
+  "tabicl": {
+   "params": {
+    "n_estimators": 8
+   },
+   "seconds": 81.8556649684906,
+   "oof_pinball": 0.5447542036976849
+  }
+ },
+ "bootstrap_L_ci95": {
+  "persistence": {
+   "ci95": null,
+   "share_infinite": 1.0
+  },
+  "tabicl": {
+   "ci95": [
+    14.53632735354644,
+    68.73111081921661
+   ],
+   "share_infinite": 0.0015
+  },
+  "cosmos_gated": {
+   "ci95": [
+    14.65259043539769,
+    65.43596739986067
+   ],
+   "share_infinite": 0.001
+  },
+  "latest_risk_point": {
+   "ci95": [
+    0.47590200331064725,
+    0.9727780735307222
+   ],
+   "share_infinite": 0.0
+  }
+ },
+ "seconds": 1196.780023574829
+}

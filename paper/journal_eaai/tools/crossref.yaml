@@ -1,0 +1,11 @@
+# pandoc-crossref settings for Elsevier-style captions and references: "Fig. 1.", "Table 1.", "Eq. (1)"
+figureTitle: "Fig."
+tableTitle: "Table"
+titleDelim: "."
+figPrefix: "Fig."
+tblPrefix: "Table"
+secPrefix: "Section"
+eqnPrefix: "Eq."
+eqnPrefixTemplate: "$$p$$ ($$i$$)"
+link-citations: true
+tableEqns: true

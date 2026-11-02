@@ -1,0 +1,19 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: manuscript_twocol.aux
+The style file: elsarticle-num.bst
+Database file #1: refs.bib
+Warning--entry type for "esaadb_dataset" isn't style-file defined
+--line 1939 of file refs.bib
+Warning--entry type for "cosmos_software" isn't style-file defined
+--line 1951 of file refs.bib
+Warning--empty pages in operti2017assessing
+Warning--empty pages in lotti2025exploring
+Warning--empty pages in acciarini2021kessler
+Warning--empty pages in stevenson2022towards
+Warning--empty pages in ke2017lightgbm
+Warning--empty pages in prokhorenkova2018catboost
+Warning--empty pages in gorishniy2025tabm
+Warning--empty pages in romano2019cqr
+Warning--empty pages in lakshminarayanan2017ensembles
+(There were 11 warnings)

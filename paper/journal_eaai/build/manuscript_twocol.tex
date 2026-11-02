@@ -1,0 +1,1951 @@
+\documentclass[3p,times,twocolumn]{elsarticle}
+
+% Elsevier's class requires the title, authors, abstract and keywords inside a frontmatter block,
+% which pandoc's default template does not emit; everything else here is the usual pandoc preamble.
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\providecommand{\passthrough}[1]{#1}
+\setlength{\emergencystretch}{3em}
+\providecommand{\passthrough}[1]{#1}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+
+% wide floats in two-column mode: a single-column figure of a full-width panel is unreadable
+\makeatletter
+\renewenvironment{figure}[1][]{\@float{figure}[#1]}{\end@float}
+\makeatother
+
+% symbols used in the Markdown source that the default text font lacks
+\usepackage{newunicodechar}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{−}{\ensuremath{-}}
+
+\journal{Engineering Applications of Artificial Intelligence}
+
+\begin{document}
+\begin{frontmatter}
+
+\title{Reliability-gated mixture of experts with conformal calibration:
+an uncertainty-aware digital twin for orbital debris, atmospheric
+re-entry and satellite health}
+
+\author{{[}Author name(s){]}\textsuperscript{a}}
+\author{\textsuperscript{a}{[}Affiliation, postal address, country{]}}
+\author{Corresponding author: {[}name, e-mail{]}}
+
+\begin{abstract}
+\emph{Contribution in artificial intelligence.} A reliability-gated
+mixture of experts in which a learned gate weights a physics-based prior
+against recent tabular neural models, with distribution-free conformal
+calibration of every predictive interval and probability.
+\emph{Application in engineering.} Forecasting the low-Earth-orbit
+debris environment: residual orbital lifetime, collision risk and
+spacecraft health.
+
+Operational debris tools rely on physics propagators whose uncertainty
+is uncalibrated, and prior machine-learning lifetime studies used a few
+hundred to 1,800 objects, single-epoch predictions and only objects that
+had already decayed. The proposed digital twin holds one state per
+object and couples three learning modules through four explicit
+mechanisms. Evaluated on 64,516 catalogued objects across two
+forward-in-time test periods, a European Space Agency
+collision-avoidance benchmark and public spacecraft telemetry, the
+tabular foundation models reduced re-entry pinball loss 13 \% below the
+strongest gradient-boosted baseline and 44 \% below the physics expert
+for 2016--2021, yet were statistically tied with it for 2011--2015.
+Conformal intervals covered 72.6 \%--90.6 \% of decayed objects against
+12.2 \%--17.1 \% for the operational ±20 \% rule, and conditioning each
+area-to-mass ratio on catalogue history reduced 72-day over-prediction
+from 9.5-fold to 1.4-fold. Collision-risk forecasts improved 37 \% over
+persistence, yet none beat the latest-risk baseline on the official
+metric, and zero-shot telemetry detection did not beat simple detectors.
+Calibrated learned fusion therefore improves debris forecasting wherever
+the full predictive distribution matters.
+
+\textbf{Keywords:} Mixture of experts; Conformal prediction; Tabular
+foundation models; In-context learning; Uncertainty quantification;
+Digital twin; Space debris; Atmospheric re-entry prediction
+\end{abstract}
+
+
+\end{frontmatter}
+
+\section{Introduction}\label{sec:intro}
+
+More than 30,000 tracked objects share low Earth orbit with the
+satellites that operators must keep healthy, steer clear of debris and
+eventually bring down. Three questions govern the resulting debris
+environment. How long does each object remain in orbit? How likely is a
+given encounter to become a collision? And which objects are still under
+control, and therefore not decaying freely at all? In operational
+practice each question is answered by a separate tool, and the
+uncertainty those tools report is rarely calibrated.
+
+The three questions are not independent. A spacecraft that loses the
+ability to manoeuvre stops station-keeping and begins to decay;
+fragments of one breakup share an origin, and therefore a range of
+area-to-mass ratios that shapes how long they stay in orbit; and how
+long fragments remain aloft determines the population that conjunction
+assessment must screen. A digital twin of the tracked population, with
+one state per object that every function reads and updates, is the
+natural way to make these links explicit \citep{liu2024digital}.
+
+Building such a twin on public data meets a hard constraint: no public
+dataset follows the same object through telemetry, conjunction messages
+and re-entry. Telemetry benchmarks are anonymised
+\citep{kotowski2026esaadb, hundman2018}, conjunction messages are
+anonymised \citep{uriot2022spacecraft}, and catalogue data carry no
+telemetry. A credible twin therefore cannot be a single model trained
+over unpaired data. It must be a set of modules, each validated on its
+own real data, joined by couplings that are defined explicitly and
+tested wherever a real test exists.
+
+This paper presents such a system. Its contribution in artificial
+intelligence is a \textbf{reliability-gated mixture of experts with
+distribution-free calibration}: a learned gate weights a physics-based
+prior against recent tabular neural models, and every interval and
+probability the system emits is calibrated by conformal prediction and
+isotonic regression. Its application in engineering is
+\textbf{forecasting the low-Earth-orbit debris environment}, across
+residual orbital lifetime, collision risk and spacecraft health.
+
+The contributions are:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  A reliability-gated mixture-of-experts architecture for censored
+  regression on an operational catalogue, evaluated against eight
+  alternative fusion arms including the physics prior alone, each
+  learned expert alone, an equal-weight average, a learned gate without
+  reliability features, and a gradient-boosted baseline.
+\item
+  A licence-clean, leakage-controlled benchmark of 64,516 catalogued
+  objects with administrative censoring and two independent
+  forward-in-time test periods.
+\item
+  Four explicit cross-module couplings, three of which are tested on
+  real data, with their measured contribution and their statistical
+  significance reported.
+\item
+  Evidence that conformal prediction's marginal guarantee degrades under
+  temporal drift, and that a catalogue covariate can leak the outcome
+  through its availability rather than its value.
+\item
+  An honest account of where learning helps and where it does not,
+  including a central negative result: the learned gate never beat the
+  best single expert.
+\end{enumerate}
+
+\section{Related work and the research gap}\label{sec:related}
+
+\subsection{Physics-based lifetime and re-entry
+prediction}\label{physics-based-lifetime-and-re-entry-prediction}
+
+Semi-analytic decay theory
+\citep{kinghele1987satellite, frey2019extension} and numerical
+propagators with empirical atmospheres underpin operational tools such
+as the European Space Agency's debris-risk suite \citep{braun2020drama}.
+Assessments of the inter-agency re-entry campaigns report mean errors of
+about 10 \% of the remaining lifetime, and a ±20 \% window around the
+predicted epoch that covers roughly 90 \% of true epochs in the final
+days before re-entry \citep{pardini2018assessing}; earlier assessments
+of propagator accuracy reach similar conclusions
+\citep{pardini2004accuracy, operti2017assessing}. Thermospheric density
+is the dominant error source, and both its empirical modelling
+\citep{emmert2021nrlmsis, licata2022msis} and its uncertainty
+\citep{licata2022uncertainty, pardini2012thermospheric} are active
+subjects. Where orbital histories are available, the ballistic
+coefficient is fitted from tracking data
+\citep{gondelach2017ballistic, sang2013estimation, pardini2008impact},
+which is the practice our state-estimation step approximates from two
+catalogue orbits.
+
+\subsection{Learning-based lifetime and re-entry
+prediction}\label{learning-based-lifetime-and-re-entry-prediction}
+
+Machine-learning studies predict the re-entry epoch or the orbital
+lifetime from orbital histories. Table \ref{tbl:gap} summarises those we
+could read in full. Salmaso et al.~train a sequence model on 417
+Space-Track bodies and test on 15 campaign objects
+\citep{salmaso2023machine}; Lotti et al.~fit a physics-informed
+convolutional network to 1,783 payloads and report that generalisation
+is ``not yet fully satisfactory'' \citep{lotti2025exploring}; Jung et
+al.~use a recurrent network on altitude histories
+\citep{jung2021recurrent}, and a physics-based backtest reports
+calibrated lifetime distributions for 1,283 objects but calibrates on
+the same backtest set \citep{shambaugh2026validation}. Related learning
+work addresses density correction \citep{licata2022machine},
+ballistic-coefficient estimation \citep{andaristiyan2025ballistic} and
+lifetime regression on orbital elements
+\citep{li2023backpropagation, peng2020machine}.
+
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{\textbf{Prior machine-learning work on orbital lifetime,
+against this study.} Cells are taken from our reading of each source;
+where a paper could not be read in full, the cell says so rather than
+guessing.}\label{tbl:gap}
+\begin{tabular}{@{}
+>{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Study
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Scale
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Censoring
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Output
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Evaluation split
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Cross-module couplings
+\end{minipage} \\
+\midrule\noalign{}
+
+\bottomrule\noalign{}
+
+Salmaso et al. \citep{salmaso2023machine} & 417 bodies; test 15 campaign
+objects & decayed only & point epoch & interleaved in time & none \\
+Lotti et al. \citep{lotti2025exploring} & 1,783 after filtering; 1,435
+train & decayed only & point lifetime & random, stratified & none \\
+Jung et al. \citep{jung2021recurrent} & not readable (closed access) &
+not readable & point epoch & not readable & none \\
+Shambaugh \citep{shambaugh2026validation} & 1,283 objects & decayed only
+& distribution & backtest, calibrated on itself & none \\
+This work & 64,516 objects, two periods & censoring-aware & seven
+quantiles + intervals & forward in time, two origins & three tested \\
+\end{tabular}
+\end{table*}
+
+Three properties are shared by every study we could read. The datasets
+are one to two orders of magnitude smaller than an operational
+catalogue; the output is a point epoch rather than a distribution; and
+the training population consists of objects that have already decayed,
+which discards the censored majority. Our Kaplan--Meier description
+(Section \ref{sec:ablations}) shows that this majority is 46.7 \% of one
+test cohort and 55.3 \% of the other. None of these studies couples
+lifetime prediction to conjunction assessment or to spacecraft health.
+
+\subsection{Collision risk and the debris
+environment}\label{collision-risk-and-the-debris-environment}
+
+The Kelvins collision-avoidance challenge released conjunction data
+messages with the final risk of each event
+\citep{uriot2021cacdataset, uriot2022spacecraft}. The latest-risk
+baseline scored 0.694 on the official metric and only 12 of 97 teams
+beat it; the winning entry scored 0.556 \citep{uriot2022spacecraft}.
+Later entries report scores on the same split
+\citep{tulczyjew2021predicting}, and a pre-registered re-evaluation
+found that no model beats the latest-risk forecast with confidence
+\citep{vazquez2026latest}. Other learning approaches to conjunction
+screening and risk include surrogate models of the encounter geometry
+\citep{acciarini2021kessler, acciarini2024improving}, sequence models
+over message streams \citep{chu2024conjunction, chu2026conjunction}, and
+operational studies of alert handling
+\citep{stevenson2022towards, lidtke2019optimising}. The debris
+environment itself is modelled from breakup statistics
+\citep{johnson2001nasa, kessler1978collision}, and breakup families have
+been studied for origin attribution
+\citep{wu2023investigation, celletti2021reconnecting}; the Kelvins
+``space debris: the origin'' data are simulated
+\citep{efthymiopoulos2021origin, esa2021kelvinsorigin}. We found no
+study that uses breakup-family membership as a predictor of fragment
+lifetime.
+
+\subsection{Spacecraft telemetry anomaly
+detection}\label{spacecraft-telemetry-anomaly-detection}
+
+The public spacecraft benchmarks are the Soil Moisture Active Passive
+and Mars Science Laboratory channels released with telemanom
+\citep{hundman2018}, the European Space Agency anomaly-detection
+benchmark \citep{kotowski2026esaadb, esaadb_dataset} and the OPS-SAT set
+\citep{ruszczak2025opssat}. Metric design is a known hazard in this
+literature: point adjustment can make random detectors appear strong
+\citep{kim2022rigorous, wu2021flawed}, and range-based metrics were
+introduced to address it \citep{tatbul2018precision}. Broad surveys of
+time-series anomaly detection make the same point about benchmark
+artefacts
+\citep{schmidl2022anomaly, paparrizos2022tsbuad, sehili2023flawed}. We
+therefore report event-wise and point-wise metrics without adjustment,
+alongside label-free references.
+
+\subsection{Methods from artificial
+intelligence}\label{methods-from-artificial-intelligence}
+
+Tabular prediction has moved from gradient-boosted trees
+\citep{chen2016xgboost, ke2017lightgbm, prokhorenkova2018catboost},
+which remained competitive on tabular benchmarks
+\citep{grinsztajn2022tree}, to parameter-efficient deep ensembles
+\citep{gorishniy2025tabm} and to in-context foundation models that
+condition on the training set at inference time rather than fitting
+weights to it
+\citep{hollmann2025accurate, qu2025tabicl, qu2026tabiclv2, nvidia2026kumo}.
+For time series, pretrained forecasters are used zero-shot
+\citep{ansari2024chronos, ansari2025chronos2}. These models are normally
+assessed on curated benchmark suites; we are not aware of an evaluation
+on an operational scientific catalogue with administrative censoring and
+forward-in-time drift.
+
+Uncertainty is handled here by conformal prediction, which gives
+finite-sample, distribution-free coverage under exchangeability
+\citep{vovk2005algorithmic, angelopoulos2023gentle}. Conformalised
+quantile regression adapts interval width to the input
+\citep{romano2019cqr}, Mondrian variants condition coverage on groups
+\citep{vovk2005algorithmic}, and the behaviour of the guarantee under
+distribution shift has been studied directly
+\citep{barber2023, candes2023conformalized, gibbs2021aci}. Conformal
+methods have been applied to space-surveillance tracking
+\citep{laxhammar2010conformal, laxhammar2015inductive}. Averaging
+quantile functions is a well-studied combination rule
+\citep{lichtendahl2013average}, and deep ensembles are a standard
+uncertainty baseline \citep{lakshminarayanan2017ensembles}. Censored
+targets connect the problem to survival analysis
+\citep{harrell1982evaluating, barnwal2022survival}. Digital twins for
+space systems have been proposed mostly as architectures and reviews
+\citep{liu2024digital, guimaraes2023taxonomy}, or built for single
+functions such as orbit prediction \citep{xu2025digital} and
+physics-informed monitoring \citep{em2026physics}.
+
+\subsection{The gap this paper
+addresses}\label{the-gap-this-paper-addresses}
+
+Three gaps follow. First, no catalogue-scale, censoring-aware,
+forward-in-time evaluation of learned lifetime prediction with
+calibrated intervals exists. Second, recent tabular and time-series
+foundation models have not been tested on operational space-surveillance
+data, where the covariate distribution drifts with the solar cycle.
+Third, and most relevant to an integrated system, the couplings between
+health, debris and re-entry are asserted in digital-twin architectures
+but, as far as we can establish, never measured. This paper addresses
+all three, and reports the couplings that do not pay off as well as
+those that do.
+
+\section{Objectives and problem formulation}\label{sec:objectives}
+
+\subsection{Objectives}\label{objectives}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  To build a shared-state digital twin in which orbital debris analysis
+  is the primary function, and lifetime prediction and spacecraft health
+  are sub-functions that feed it.
+\item
+  To design a fusion architecture that combines a physics prior with
+  recent tabular neural models and emits calibrated predictive
+  distributions rather than point estimates.
+\item
+  To measure what each learned component and each cross-module coupling
+  contributes, against the operational practice it would replace, under
+  forward-in-time evaluation.
+\item
+  To report honestly where learning does not help.
+\end{enumerate}
+
+\subsection{Problem formulation}\label{problem-formulation}
+
+\textbf{Residual lifetime.} For object \(i\) with state \(s_i(t_0)\) at
+prediction time \(t_0\), let \(T_i\) be the time from \(t_0\) to natural
+atmospheric re-entry. \(T_i\) is right-censored: an object still in
+orbit at the catalogue snapshot, or whose phase ended by a controlled
+de-orbit, landing or docking, contributes only the information
+\(T_i > c_i\) for its censoring time \(c_i\). With a five-year horizon
+the learning target is
+
+\begin{equation}\protect\phantomsection\label{eq:target}{z_i = \log_{10} \min(T_i,\, 5\ \text{yr}), \qquad \delta_i = \mathbb{1}[T_i \leq c_i],}\end{equation}
+
+and the estimand is the conditional distribution of \(z_i\) given
+\(s_i(t_0)\), represented by the quantiles \(q_\tau(i)\) for
+\(\tau \in \{0.05, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95\}\) and by the
+horizon probabilities \(P(T_i \leq H)\). Models are scored only on
+objects whose five-year outcome is known at the snapshot, so the
+five-year cap is a genuine point mass of the target rather than a
+censoring artefact.
+
+\textbf{Collision risk.} For encounter \(e\) with the sequence of
+conjunction data messages \(C_e\) released at least two days before
+closest approach, the target is the risk \(r_e\) of the final message,
+where \(r_e = \log_{10} P_c\) is the base-ten logarithm of the collision
+probability, floored at \(-30\). The estimand is the distribution of
+\(r_e\) given \(C_e\), and the derived decision quantity is
+\(P(r_e \geq -6)\).
+
+\textbf{Health.} For channel \(c\) of a spacecraft with nominal history
+\(\mathcal{C}_c\), a forecaster produces a non-conformity score
+\(s_c(t)\), and the estimand is a calibrated alarm: a decision rule
+whose rate of alarm on nominal data is controlled.
+
+\textbf{What integration must mean.} We require each coupling to be a
+function between module outputs and the shared state, with its inputs
+restricted to information available at the prediction time. A coupling
+counts as validated only if removing or replacing it changes a measured
+quantity on real data by an amount whose confidence interval we report.
+Architectural connections that cannot be tested on public data are
+labelled as demonstrations and excluded from every performance claim.
+
+\section{Architecture}\label{sec:arch}
+
+\subsection{Shared state}\label{shared-state}
+
+The system keeps one state per tracked object,
+
+\begin{equation}\protect\phantomsection\label{eq:state}{s_i(t) = \bigl(o_i(t),\, \pi_i,\, h_i(t),\, F_i(t),\, e(t),\, C_i(t)\bigr),}\end{equation}
+
+holding the latest orbit \(o_i\) (perigee, apogee, inclination), design
+properties \(\pi_i\) (mass, dimensions, shape and a mass-uncertainty
+flag), health evidence \(h_i\) (catalogue operational status, and an
+alarm state where telemetry exists), the debris family \(F_i\) with
+sibling statistics restricted to events before \(t\), space weather
+\(e\) from observed days only, and a conjunction summary \(C_i\) where
+messages exist. Three modules read and write this state, and every
+output written to it carries its model, its validation status and its
+own uncertainty. Figure \ref{fig:arch} shows the modules and Figure
+\ref{fig:integration} the couplings.
+
+\begin{figure*}
+\centering
+\includegraphics[width=0.92\linewidth,height=\textheight,keepaspectratio,alt={System architecture. Three modules read and update one state per object. Solid arrows are couplings tested on real data; the dashed coupling has no public test data.}]{artwork/Figure_4.png}
+\caption{\textbf{System architecture.} Three modules read and update one
+state per object. Solid arrows are couplings tested on real data; the
+dashed coupling has no public test data.}\label{fig:arch}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio,alt={Integration. The four couplings as a data flow, with the variable that crosses each boundary and how each is evaluated. Operational status reaches the re-entry module through the shared state, which is how it is implemented.}]{artwork_eaai/eaai_integration.png}
+\caption{\textbf{Integration.} The four couplings as a data flow, with
+the variable that crosses each boundary and how each is evaluated.
+Operational status reaches the re-entry module through the shared state,
+which is how it is implemented.}\label{fig:integration}
+\end{figure*}
+
+\subsection{The artificial-intelligence
+contribution}\label{the-artificial-intelligence-contribution}
+
+The contribution is a two-expert mixture whose mixing weight is learned
+from descriptors of \emph{one expert's own reliability}, and whose
+output is calibrated without distributional assumptions. For object
+\(i\),
+
+\begin{equation}\protect\phantomsection\label{eq:gate}{q_\tau(i) = g(r_i)\, q^{\text{phys}}_\tau(i) + \bigl(1 - g(r_i)\bigr) q^{\text{ml}}_\tau(i), \qquad g(r) = \sigma(w^\top r + b),}\end{equation}
+
+where \(q^{\text{phys}}_\tau\) are the quantiles of a Monte-Carlo
+physics prior, \(q^{\text{ml}}_\tau\) those of a learned expert, and
+\(r_i\) collects reliability descriptors of the physics prior: the
+provenance of its area-to-mass ratio, the spread of its own Monte-Carlo
+distribution, eccentricity, a perigee band, the object class, and the
+probability it places at the five-year cap. Because a convex combination
+of monotone quantile functions is monotone, Eq. \ref{eq:gate} returns a
+valid predictive distribution for any \(g\); no sorting or post-hoc
+repair is required. The parameters \((w,b)\) minimise the mean pinball
+loss on out-of-fold predictions of the training period with an \(L_2\)
+penalty, so the gate never sees a target that its experts were fitted
+on.
+
+Two design choices distinguish this from a standard stacked ensemble.
+First, the gate input describes the \emph{prior's} trustworthiness, not
+the input in general, which makes the learned weights interpretable: a
+positive coefficient means ``trust the physics more in this regime''.
+Second, mixing happens in quantile space rather than in expectation, so
+the fused object remains a distribution and can be conformalised
+directly.
+
+\subsection{Uncertainty layer}\label{uncertainty-layer}
+
+Two distinct calibrations are applied, and the distinction matters.
+\textbf{Mondrian conformal prediction} converts the fused quantiles into
+intervals with finite-sample coverage: on a calibration split disjoint
+from fitting and gating, the score
+\(S = \max(q_{\text{lo}} - z,\; z - q_{\text{hi}})\) is computed per
+object, and within group \(k\) the correction \(\hat{Q}_k\) is the
+\(\lceil (1-\alpha)(n_k+1) \rceil\)-th smallest score, giving the
+interval \([q_{\text{lo}} - \hat{Q}_k,\; q_{\text{hi}} + \hat{Q}_k]\).
+Groups are object class crossed with perigee band, falling back to class
+and then to the pooled cohort when a group is too small.
+\textbf{Isotonic regression} is a separate, monotone recalibration of
+the horizon probabilities \(P(T \leq H)\) read off the same fused
+quantile function. Conformal prediction controls interval coverage and
+makes no assumption about the score distribution; isotonic regression
+corrects the probability scale and assumes only monotonicity. They are
+applied to different outputs and neither substitutes for the other.
+Because isotonic maps are piecewise constant and therefore tie scores,
+every ranking metric in this paper is computed on the raw probabilities
+and every calibration metric on the mapped ones.
+
+\section{Debris module: collision risk and cloud
+population}\label{sec:debris}
+
+\subsection{Family evidence}\label{family-evidence}
+
+For object \(i\) at time \(t\) the module computes \(\varphi_F(i,t)\):
+the number of siblings catalogued by \(t\) in the same launch family
+and, for fragments, the same breakup family; the number and fraction of
+those siblings that decayed naturally before \(t\); and their mean
+log-lifetime. Only events strictly before \(t\) enter, so the feature is
+causal by construction. This is the quantity that coupling C1 passes to
+the re-entry module.
+
+\subsection{Collision risk}\label{collision-risk}
+
+Inputs are the conjunction data messages of an encounter released at
+least two days before closest approach, reduced to one feature row per
+event: the latest risk; the minimum, maximum, mean and first risk; the
+change and the three-point slope; the last step; the logarithmic ratio
+of miss distance and of the covariance scales between the first and the
+last message; the message count; and the span. The target is the risk of
+the final message.
+
+A \textbf{persistence expert} predicts the latest risk plus the training
+distribution of (final \(-\) latest) changes within the same latest-risk
+bin, which is an honest persistence forecast with uncertainty rather
+than a bare point. The same learned experts as the re-entry module are
+applied to the event features, and the two are fused by Eq.
+\ref{eq:gate}. Learner selection, the gate, the conformal calibration,
+the isotonic map and the decision threshold are all driven by nested
+out-of-fold predictions over five event-hash folds, so no test message
+informs any choice. Quantiles within \(10^{-4}\) of the risk floor are
+snapped to it, because most final risks lie exactly at the floor and the
+spacing of single-precision floats there is about \(2 \times 10^{-6}\).
+
+Because the official metric scores a \emph{point} forecast, a decision
+rule is also required: predict the latest risk when the calibrated
+\(P(r \geq -6)\) exceeds a threshold chosen on out-of-fold training
+events, and \(-6.001\) otherwise.
+
+\subsection{Cloud population}\label{cloud-population}
+
+Coupling C2 turns per-object survival into a debris-environment
+quantity. For a breakup cloud the expected number of catalogued
+fragments still in orbit at time \(t\) is
+
+\begin{equation}\protect\phantomsection\label{eq:cloud}{\mathbb{E}[N(t)] = \sum_{i:\, t_{0,i} \leq t} S_i\bigl(t - t_{0,i}\bigr),}\end{equation}
+
+where \(S_i\) is the survival function of fragment \(i\) read from the
+fused predictive distribution. It is read two ways: directly from the
+quantile function, and after isotonic maps of \(P(T \leq a)\) fitted on
+calibration fragments at 25 ages and interpolated in log-age. Reading it
+two ways is necessary because the two readings disagree, as Section
+\ref{sec:results} shows.
+
+\section{Re-entry module: physics prior and learned
+expert}\label{sec:reentry}
+
+Figure \ref{fig:method} shows the whole pipeline, including which cohort
+each component is fitted on.
+
+\begin{figure*}
+\centering
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio,alt={Experimental design of the re-entry module. Every component is fitted on data strictly earlier than the cohort it is applied to, and the test cohort enters only at the final step.}]{artwork_eaai/eaai_method.png}
+\caption{\textbf{Experimental design of the re-entry module.} Every
+component is fitted on data strictly earlier than the cohort it is
+applied to, and the test cohort enters only at the final
+step.}\label{fig:method}
+\end{figure*}
+
+\subsection{Physics prior}\label{physics-prior}
+
+The prior integrates the orbit-averaged drag equations for the
+semi-major axis \(a\) and eccentricity \(e\) with a thermospheric
+density from NRLMSIS 2.1 \citep{emmert2021nrlmsis} evaluated at perigee,
+and a ballistic coefficient \(B = C_D A/m\). For \(e \leq 0.05\) it uses
+King-Hele's Bessel-function series \citep{kinghele1987satellite}; above
+that it integrates the same orbit averages exactly over the eccentric
+anomaly by 257-node quadrature, because the truncated series raises the
+perigee for \(e\) above about 0.3, which is unphysical. Space weather is
+held at its value at \(t_0\), using only days that ended before \(t_0\).
+
+The area-to-mass ratio is the dominant unknown, and it is sampled rather
+than assumed. Each object draws 32 Monte-Carlo values from one of three
+sources, which is recorded per object: its design value where the
+catalogue has one, modelled log-normally with a spread of 0.25 dex; a
+pool of design values of its class estimated on the training cohort, for
+intact payloads and rocket stages without one; or the NASA Standard
+Breakup Model \citep{johnson2001nasa} with a characteristic length drawn
+from the training distribution of radar-derived sizes of its class, for
+fragments and components. Each object has its own random stream seeded
+from its catalogue identifier, so a draw is reproducible per object. The
+prior is therefore not free of fitted quantities: its class pools are
+estimated on the training cohort, and we say so rather than presenting
+it as purely a priori.
+
+\subsection{Learned expert}\label{learned-expert}
+
+The expert performs quantile regression of \(z\) on 53 features in seven
+groups: orbit, age at \(t_0\), design properties, space weather, family
+evidence \(\varphi_F\), five summaries of the physics prior's
+Monte-Carlo distribution, and object class. Candidates are models
+published between 2022 and 2026: TabM, a parameter-efficient deep
+ensemble of multilayer perceptrons sharing most weights
+\citep{gorishniy2025tabm}; and two in-context foundation models,
+TabICLv2 \citep{qu2025tabicl, qu2026tabiclv2} and Kumo-Tabular
+\citep{nvidia2026kumo}, which condition on the training set at inference
+time instead of fitting weights to it. The candidate with the lowest
+pinball loss on the tuning split becomes the expert. Gradient-boosted
+trees
+\citep{chen2016xgboost, ke2017lightgbm, prokhorenkova2018catboost}, a
+plain non-crossing quantile multilayer perceptron, and an
+accelerated-failure-time model trained on all objects including censored
+ones \citep{barnwal2022survival} are reported as reference baselines and
+are not eligible for selection. Each tuned learner receives the same
+budget of 12 random configurations scored on the tuning split and five
+seeds; the two in-context models are used with their default inference
+settings and are not tuned.
+
+The deliberate exclusion is the radar cross-section. Whether the
+catalogue publishes one depends on how fast the object decayed, so its
+\emph{availability} carries the outcome; Section \ref{sec:results}
+quantifies this and the paper keeps the covariate only as a labelled
+leak demonstration.
+
+\subsection{State estimation for objects already in
+orbit}\label{state-estimation-for-objects-already-in-orbit}
+
+The module is fitted at canonical-orbit epochs, but a twin must forecast
+objects that have been in orbit for years. Survival since the canonical
+orbit selects low area-to-mass ratios, which neither the class pools nor
+the learned expert know about. For each uncontrolled object the twin
+therefore conditions the area-to-mass distribution on the object's
+catalogue history, a coarse two-orbit form of the ballistic-coefficient
+estimation used in practice
+\citep{gondelach2017ballistic, sang2013estimation, pardini2008impact}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  128 prior samples are propagated from the canonical orbit to the as-of
+  date with the realised trailing space weather;
+\item
+  samples that would already have re-entered receive zero weight;
+\item
+  the remainder are weighted by a Gaussian likelihood of the current
+  perigee and apogee, with \(\sigma = 10\ \text{km} + 0.3\,|\Delta|\)
+  for an observed change \(\Delta\) since the canonical orbit;
+\item
+  32 posterior samples are drawn by systematic resampling; if the
+  effective sample size falls below four, survival alone is used, and if
+  no sample survives, the eight longest survivors are.
+\end{enumerate}
+
+The physics prior then forecasts from the current orbit with these
+samples. This step is Bayesian rather than learned, and Section
+\ref{sec:discussion} returns to that point.
+
+\section{Health module}\label{sec:health}
+
+The health module converts a forecaster's residuals into calibrated
+alarms. For channel \(c\), a model fitted on nominal data produces a
+non-conformity score \(s_c(t)\), which becomes a conformal \(p\)-value
+against that channel's own calibration pool \(\mathcal{C}_c\),
+
+\begin{equation}\protect\phantomsection\label{eq:pval}{p_c(t) = \frac{1 + \#\{s' \in \mathcal{C}_c : s' \geq s_c(t)\}}{|\mathcal{C}_c| + 1},}\end{equation}
+
+the \(p\)-values are aggregated across channels at each step with
+Benjamini--Hochberg control \citep{benjamini1995}, and an alarm is
+raised causally at the third consecutive step with
+\(p \leq \max(10^{-3}, 1/(|\mathcal{C}_c|+1))\). The level, the
+persistence and the window were fixed before any detector was scored,
+and no test label informs any choice. Calibration scores are computed
+out of fold in five contiguous blocks with a 30-step purge on each side,
+so no step is scored by a model that has seen it.
+
+The detector compared in this paper is Chronos-2
+\citep{ansari2025chronos2}, a pretrained time-series foundation model
+used zero-shot: rolling eight-step forecasts from up to 512 past steps,
+scored by the absolute residual of the forecast median. It is set
+against three classic detectors --- ridge autoregression,
+principal-component reconstruction and nearest-neighbour window distance
+--- the published telemanom scores \citep{hundman2018}, a random-score
+floor and an always-on alarm reference.
+
+Two limitations of this evidence must be stated plainly. First, the Soil
+Moisture Active Passive and Mars Science Laboratory channels are real
+spacecraft telemetry, but they belong to an Earth-observation satellite
+and a planetary rover, not to the catalogue population whose debris risk
+the rest of the system forecasts; no public dataset provides telemetry
+for the objects in our catalogue cohort. The health module therefore
+transfers a \emph{method}, not a fitted model, and its coupling to the
+debris modules runs through operational status rather than through
+telemetry. Second, the conformal alarm layer of this module was
+developed and tested in a separate pre-registered study on the European
+Space Agency benchmark \citep{kotowski2026esaadb} by the same authors;
+that study found the gain on one mission and a reversal on the other,
+and we treat the health module as the least validated of the three
+throughout.
+
+\section{Cross-module couplings}\label{sec:couplings}
+
+What separates this system from three models in one wrapper is that the
+modules exchange specific variables, and that each exchange is measured.
+Table \ref{tbl:couplings} states each coupling, what crosses the
+boundary, and what the measurement shows.
+
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{\textbf{The four couplings and their measured effect.}
+Confidence intervals are 2,000 cluster bootstraps over launch families
+(C1), clouds (C2) or launches (C3). A positive C1 effect means the
+features help; a negative C3 difference means the status-aware policy
+lowers the Brier score.}\label{tbl:couplings}
+\begin{tabular}{@{}
+>{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Coupling
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Direction
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+What is measured
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Measured effect
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Verdict
+\end{minipage} \\
+\midrule\noalign{}
+
+\bottomrule\noalign{}
+
+C1 & debris \(\rightarrow\) re-entry & family features removed from the
+expert & +0.0056 {[}+0.0015, +0.0101{]} at 2016; +0.0024 {[}-0.0058,
++0.0103{]} at 2011 & yes at 2016, not at 2011 \\
+C2 & re-entry \(\rightarrow\) debris & cloud population against
+catalogue counts & best mean absolute error 0.095 {[}0.068, 0.123{]} of
+a cloud (predcal\_tabicl) & experts not separable \\
+C3 & health \(\rightarrow\) re-entry & status-aware against status-blind
+Brier score & -0.0054 {[}-0.0120, +0.0006{]} & not significant \\
+C4 & health \(\times\) debris & no public paired dataset & not evaluated
+& demonstration only \\
+\end{tabular}
+\end{table*}
+
+\textbf{C1, debris to re-entry.} Motivation: fragments of one breakup
+share an origin and therefore a range of area-to-mass ratios, so the
+fate of catalogued siblings is evidence about an object's own lifetime.
+Formulation: \(\varphi_F(i,t_0)\) enters the feature vector \(x_i\) of
+the learned expert. Evaluation: the feature group is removed and the
+expert refitted with identical settings and seeds, and the paired
+difference in test pinball loss is bootstrapped over launch families.
+Result: the features help at origin 2016, +0.0056 (+0.0015 to +0.0101),
+and the interval includes zero at origin 2011. Limitation: siblings are
+only informative once some of them have decayed, which is why the
+earlier origin gains less.
+
+\textbf{C2, re-entry to debris.} Motivation: the debris environment is
+the sum of individual survival, so a lifetime model should reproduce the
+observed decline of a breakup cloud. Formulation: Eq. \ref{eq:cloud}.
+Evaluation: predicted against catalogued fragment counts for every cloud
+with at least 30 fragments in a test cohort, at one to five years after
+its first catalogued fragment, with a bootstrap resampling whole clouds.
+Result: the best reading reaches a mean absolute error of about a tenth
+of a cloud's size, but with 27 clouds the experts cannot be separated.
+Limitation: the number of clouds, not the number of fragments, sets the
+precision of this test.
+
+\textbf{C3, health to re-entry.} Motivation: an operator that still
+controls a satellite determines its orbit, so drag physics does not
+predict its decay. Formulation: the status in \(h_i\) selects a regime
+\(\rho_i\); in the operator-controlled regime the drag forecast is
+withheld and the previous-window payload base rate is used instead.
+Evaluation: an as-of-date test on 13,794 payloads below 600 km with 182
+decays in the following 72 days, comparing status-aware and status-blind
+policies that use only information available at the as-of date, with
+intervals resampling launches. Result: drag physics over-predicts for
+operational payloads (mean predicted 0.039 against an observed rate of
+0.012) and under-predicts for non-operational ones (0.076 against
+0.106). The status-aware policy lowers the Brier score, but the interval
+includes zero. Limitation: with 182 decays in one window the test shows
+the direction of the effect and not its size.
+
+\textbf{C4, health and debris to response.} Motivation: a high-risk
+conjunction for a spacecraft that may be unable to manoeuvre warrants
+escalation. Formulation: an alarm state or a non-operational status
+raises the response level of a high-risk event. Evaluation: none is
+possible, because no public dataset pairs conjunction messages with
+telemetry or health status for the same spacecraft. This coupling is
+implemented and reported as a demonstration, and it supports no
+performance claim anywhere in this paper.
+
+\section{Datasets and preprocessing}\label{sec:data}
+
+All data are public and real; provenance, checksums and licences are
+recorded in a manifest released with the code. Table \ref{tbl:datasets}
+lists what is used.
+
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{\textbf{Datasets.} The class column follows the project's own
+data audit, which separates real sources from derived and simulated
+ones. Simulated sets held on disk, such as the Kelvins debris-origin
+challenge data, are not used anywhere in this
+paper.}\label{tbl:datasets}
+\begin{tabular}{@{}
+>{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Role
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Source
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Class
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Extent used
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Licence
+\end{minipage} \\
+\midrule\noalign{}
+
+\bottomrule\noalign{}
+
+Catalogue (re-entry, debris) & General Catalog of Artificial Space
+Objects, release 1.8.8; CelesTrak catalogue and space weather & real &
+64,516 objects below 2000 km perigee; 32,970 natural decays & Creative
+Commons Attribution 4.0 / CelesTrak policy \\
+Conjunctions (debris) & European Space Agency Kelvins
+collision-avoidance challenge & real, anonymised & 8,293 training and
+2,167 official test events & Creative Commons Attribution 4.0 \\
+Telemetry (health) & National Aeronautics and Space Administration Soil
+Moisture Active Passive and Mars Science Laboratory & real & 81
+channels, 68 and 36 labelled sequences & as stated by the authors \\
+Thermospheric density & NRLMSIS 2.1 via pymsis, tabulated & derived &
+density table used by the physics prior & open source \\
+\end{tabular}
+\end{table*}
+
+\textbf{Catalogue.} The General Catalog of Artificial Space Objects
+\citep{mcdowell2020gcat, mcdowell2022elements} gives, for each object,
+one \emph{canonical orbit} representative of early operations with its
+epoch, design mass and dimensions, the parent object for fragments, and
+the end of the current phase with a status code that distinguishes
+natural decay from controlled de-orbit, landing or docking. The
+CelesTrak catalogue \citep{celestrak2026satcat} adds operational status,
+and the CelesTrak space-weather file provides the solar and geomagnetic
+indices; only observed rows for days that ended before the prediction
+time are read. The cohort holds 64,516 objects whose canonical orbit has
+perigee below 2000 km, of which 32,970 decayed naturally. Figure
+\ref{fig:data-reentry} shows the cohort's orbits, its distribution in
+time with the cohorts of both forecast origins, the observed lifetimes
+with their censoring, and the space-weather record.
+
+\begin{figure*}
+\centering
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio,alt={The catalogue dataset. (a) Canonical orbits by object class; the classes overlap heavily at these densities, and the largest is drawn first. (b) Objects per year of canonical-orbit epoch, with the training, tuning and test cohorts of both origins. (c) Observed time to natural decay, and to censoring for objects still in orbit or whose phase ended otherwise. (d) Solar flux; its 81-day mean is the model input, and the bars mark the two test periods.}]{artwork/Figure_1.png}
+\caption{\textbf{The catalogue dataset.} (a) Canonical orbits by object
+class; the classes overlap heavily at these densities, and the largest
+is drawn first. (b) Objects per year of canonical-orbit epoch, with the
+training, tuning and test cohorts of both origins. (c) Observed time to
+natural decay, and to censoring for objects still in orbit or whose
+phase ended otherwise. (d) Solar flux; its 81-day mean is the model
+input, and the bars mark the two test periods.}\label{fig:data-reentry}
+\end{figure*}
+
+\textbf{Conjunctions.} The Kelvins collision-avoidance challenge data
+\citep{uriot2021cacdataset, esa2019kelvinscac} contain anonymised
+conjunction data messages received by the European Space Agency between
+2015 and 2019. Following the challenge, inputs are the messages released
+at least two days before closest approach and the target is the risk of
+the final message. Training events are filtered to mirror the test
+inputs, leaving 8,293 training events, of which 66 are high risk, and
+the official 2,167 test events, of which 150 are high risk. Figure
+\ref{fig:data-debris} shows the breakup clouds of the catalogue and the
+structure of the message data.
+
+\begin{figure*}
+\centering
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio,alt={Debris data. (a) Catalogued fragments in orbit over time for the four largest breakup clouds of the cohort. (b) Gabbard diagram of the largest cloud. (c) Risk sequences of 75 training events, 60 drawn at random from the low-risk events and 15 from the high-risk events, so high-risk events are deliberately oversampled. (d) The forecast target: most final risks lie at the floor.}]{artwork/Figure_2.png}
+\caption{\textbf{Debris data.} (a) Catalogued fragments in orbit over
+time for the four largest breakup clouds of the cohort. (b) Gabbard
+diagram of the largest cloud. (c) Risk sequences of 75 training events,
+60 drawn at random from the low-risk events and 15 from the high-risk
+events, so high-risk events are deliberately oversampled. (d) The
+forecast target: most final risks lie at the
+floor.}\label{fig:data-debris}
+\end{figure*}
+
+\textbf{Telemetry.} The Soil Moisture Active Passive and Mars Science
+Laboratory channels \citep{hundman2018} provide 81 channels with 68 and
+36 labelled anomaly sequences respectively; the label file lists one
+channel twice and the two rows are merged. Figure
+\ref{fig:data-telemetry} shows example channels with their labels.
+
+\begin{figure*}
+\centering
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio,alt={Telemetry data. Two channels of each spacecraft drawn at random: training series in grey, test series in black, labelled anomaly sequences shaded. The lower panel shows the European Space Agency benchmark around the first labelled anomaly of its test half, for the target channels it affects.}]{artwork/Figure_3.png}
+\caption{\textbf{Telemetry data.} Two channels of each spacecraft drawn
+at random: training series in grey, test series in black, labelled
+anomaly sequences shaded. The lower panel shows the European Space
+Agency benchmark around the first labelled anomaly of its test half, for
+the target channels it affects.}\label{fig:data-telemetry}
+\end{figure*}
+
+\textbf{What is not available.} Orbital-element histories at catalogue
+scale require an account whose user agreement forbids redistribution
+\citep{spacetrack2019agreement}, and no legitimate public archive
+exists; the European Space Agency's debris database and its re-entry
+predictions also need accounts
+\citep{klinkrad1991discos, esa2026reentry}. The re-entry module
+therefore predicts from a single dated orbit per object rather than from
+a history, which is the main structural difference between this study
+and operational practice.
+
+\section{Experimental setup and metrics}\label{sec:setup}
+
+\subsection{Temporal protocol}\label{temporal-protocol}
+
+The prediction time \(t_0\) is the canonical-orbit epoch. Under the
+protocol \emph{as of origin \(O\)}, the training cohort has
+\(t_0 < O - 7\) yr, the tuning cohort \(O - 7 \leq t_0 < O - 5\) yr, and
+all their outcomes are censored administratively at \(O\) so that
+nothing later than the origin can influence a fitted quantity. The
+tuning cohort is split by a hash of the launch family into tune-A, used
+for early stopping, the hyperparameter search, learner selection and
+gate checks, and tune-B, used for conformal and probability calibration;
+splitting by family rather than at random prevents siblings of one
+launch from appearing on both sides. The test cohort starts at \(O\) and
+ends where the five-year follow-up is complete at the snapshot, or at
+the next origin: \(t_0 <\) 2016-01-01 at origin 2011 and \(t_0 <\)
+2021-10-27 at origin 2016. The two origins, 2011-01-01 and 2016-01-01,
+therefore give two disjoint test periods, which span different phases of
+the solar cycle. The primary population is objects that cannot
+manoeuvre; payloads are excluded from it because many are
+operator-controlled.
+
+For the collision-risk module the official challenge split is used
+unchanged. For telemetry the official channel split is used, with
+thresholds fixed in advance.
+
+\subsection{Metrics}\label{metrics}
+
+Table \ref{tbl:metrics} lists every metric and what it is for. Pinball
+loss over the seven quantiles is primary throughout, because a single
+predicted date is not a decision-useful object for either re-entry
+planning or conjunction screening.
+
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{\textbf{Metrics.} Ranking metrics use the raw probabilities,
+because isotonic calibration ties scores; calibration metrics use the
+mapped ones.}\label{tbl:metrics}
+\begin{tabular}{@{}
+>{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Metric
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+What it measures
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Where used
+\end{minipage} \\
+\midrule\noalign{}
+
+\bottomrule\noalign{}
+
+Mean pinball loss & quality of the whole predictive distribution over
+seven quantiles & re-entry, conjunction \\
+Mean absolute error of the median & point accuracy, \(\log_{10}\) days &
+re-entry \\
+Empirical coverage, width, Winkler score & honesty and sharpness of the
+intervals & re-entry, conjunction \\
+Harrell's concordance & ranking over all objects, censored included &
+re-entry \\
+AUC-PR, AUC-ROC & discrimination at a horizon, on the raw probabilities
+& all three modules \\
+Brier score, expected calibration error & probability calibration, after
+isotonic mapping & re-entry, conjunction \\
+Expected over observed count & absolute bias of a probability forecast &
+couplings C3, T1 \\
+\(L=\mathrm{MSE}_{\mathrm{HR}}/F_2\) & the challenge's official
+collision-risk metric & conjunction \\
+Corrected event-wise \(F_{0.5}\) & alarm quality, charging alarm time
+spent on nominal data & health \\
+Kaplan-Meier survival & censoring-aware description of the cohort &
+re-entry \\
+Cluster bootstrap, 2,000 replicates & intervals resampling launch
+families, launches or clouds & all \\
+\end{tabular}
+\end{table*}
+
+Confidence intervals come from 2,000 cluster-bootstrap replicates,
+paired for model differences. The resampling unit is the launch family
+for the catalogue cohorts, the launch for the payload-status test and
+the cloud for the cloud-population test, because objects sharing an
+origin do not provide independent evidence. Learner predictions are
+cached under a fingerprint of the data, features and settings, so a
+stale result cannot enter a comparison.
+
+\subsection{Deviations and prior use of test
+data}\label{deviations-and-prior-use-of-test-data}
+
+The test sets were not untouched when the reported results were
+produced, and the full record is in the supplementary material. In
+summary: an earlier complete run used a different candidate pool and its
+test results were known before the pool was narrowed to models published
+2022--2026; two engineering smoke tests printed test scores before the
+reported run; every benchmark was scored once before an internal review
+and corrected afterwards; the window used for the as-of-date tests of C3
+and the state-estimation comparison had been analysed earlier in the
+project; and the head-to-head comparisons, the
+gate-applied-to-every-learner analysis and the calibrated cloud reading
+were added after results had been seen. All intervals are nominal 95 \%
+intervals without correction for multiplicity. We report this because it
+bounds how confirmatory the comparisons can be, and a fresh test period
+would be needed to confirm them.
+
+\section{Results}\label{sec:results}
+
+\subsection{The mixture of experts}\label{the-mixture-of-experts}
+
+Table \ref{tbl:moe} and Figure \ref{fig:moe} give the eight-arm
+comparison that tests the paper's central claim.
+
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{\textbf{Mixture-of-experts arms on both test periods.} Columns
+are the mean pinball loss, the mean absolute error of the median in
+\(\log_{10}\) days, and the empirical coverage of the 90 \% conformal
+interval; the first three numeric columns are origin 2016 and the last
+three origin 2011. Lowest pinball loss: 0.0499 at origin 2016 and 0.0527
+at origin 2011; the proposed gate attains
+neither.}\label{tbl:moe}
+\begin{tabular}{@{}
+>{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Fusion arm
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Type
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Pinball
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+MAE
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Cov.
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Pinball
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+MAE
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Cov.
+\end{minipage} \\
+\midrule\noalign{}
+
+\bottomrule\noalign{}
+
+Physics prior only (\(g=1\)) & single expert & 0.0892 & 0.230 & 0.876 &
+0.0527 & 0.148 & 0.974 \\
+TabM (2025) & single expert & 0.0593 & 0.192 & 0.877 & 0.0994 & 0.354 &
+0.918 \\
+TabICLv2 (2026) & single expert & 0.0499 & 0.166 & 0.962 & 0.0596 &
+0.160 & 0.919 \\
+Kumo-Tabular (2026) & single expert & 0.0508 & 0.162 & 0.974 & 0.0616 &
+0.163 & 0.966 \\
+XGBoost & baseline & 0.0576 & 0.190 & 0.921 & 0.0648 & 0.231 & 0.894 \\
+Equal-weight average (\(g=1/2\)) & fixed fusion & 0.0691 & 0.205 & 0.838
+& 0.0527 & 0.148 & 0.970 \\
+Learned constant gate & learned fusion & 0.0601 & 0.193 & 0.877 & 0.0608
+& 0.162 & 0.960 \\
+Reliability gate fitted on tune-A & learned fusion & 0.0695 & 0.202 &
+0.832 & 0.0616 & 0.163 & 0.959 \\
+Reliability-gated mixture (proposed) & learned fusion & 0.0604 & 0.193 &
+0.874 & 0.0583 & 0.157 & 0.959 \\
+\end{tabular}
+\end{table*}
+
+\begin{figure*}
+\centering
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio,alt={All eight fusion arms on both test periods. The dotted line marks the best arm at each origin.}]{artwork_eaai/eaai_moe.png}
+\caption{\textbf{All eight fusion arms on both test periods.} The dotted
+line marks the best arm at each origin.}\label{fig:moe}
+\end{figure*}
+
+The headline comparison is favourable to the learned experts and
+unfavourable to the fusion. For 2016--2021 the in-context foundation
+models are the most accurate arms, at 0.0499 and 0.0508 against 0.0892
+for the physics prior and 0.0576 for the strongest gradient-boosted
+baseline, reductions of 44 \% and 13 \% respectively. For 2011--2015 the
+ordering changes: the physics prior has the lowest point estimate,
+0.0527, and TabM --- the arm selected by the tuning split at the other
+origin --- is the worst of all at 0.0994.
+
+The proposed reliability gate reaches 0.0604 and 0.0583. \textbf{It does
+not attain the best arm at either origin.} It beats the physics prior
+decisively at 2016 and beats its own learned expert at 2011, but an
+oracle choosing the single best expert per period would do better in
+both. Three further points follow from the table. The equal-weight
+average is the second-best arm at 2011 and among the worst at 2016, so a
+fixed mixing weight is not a safe default. The learned constant gate,
+which is the same model without reliability features, is close to the
+full gate at 2016 and worse at 2011, so the reliability descriptors
+contribute little at one origin and something at the other. And fitting
+the gate on the tuning split rather than on out-of-fold training
+predictions is clearly worse at both origins, which shows the fitting
+protocol matters more than the parameterisation.
+
+Table \ref{tbl:reentry-pairs} gives the paired comparisons with
+intervals.
+
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{\textbf{Head-to-head differences in test pinball loss} with
+paired launch-family cluster bootstraps. A negative difference favours
+the first model. These comparisons were added after test results had
+been seen and are nominal.}\label{tbl:reentry-pairs}
+\begin{tabular}{@{}
+>{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Origin
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Comparison
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(\Delta\) pinball
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+95 \% CI
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Excludes 0
+\end{minipage} \\
+\midrule\noalign{}
+
+\bottomrule\noalign{}
+
+2016 & Physics prior only \(-\) TabICLv2 (2026) & +0.0393 & {[}+0.0217,
++0.0622{]} & yes \\
+2016 & Physics prior only \(-\) Kumo-Tabular (2026) & +0.0385 &
+{[}+0.0203, +0.0613{]} & yes \\
+2016 & Physics prior only \(-\) TabM (2025) & +0.0300 & {[}+0.0147,
++0.0493{]} & yes \\
+2016 & Physics prior only \(-\) Reliability-gated mixture & +0.0289 &
+{[}+0.0148, +0.0469{]} & yes \\
+2016 & TabICLv2 (2026) \(-\) Kumo-Tabular (2026) & -0.0008 & {[}-0.0036,
++0.0024{]} & no \\
+2016 & TabICLv2 (2026) \(-\) XGBoost & -0.0076 & {[}-0.0121, -0.0036{]}
+& yes \\
+2016 & Kumo-Tabular (2026) \(-\) XGBoost & -0.0068 & {[}-0.0134,
+-0.0012{]} & yes \\
+2016 & TabICLv2 (2026) \(-\) Reliability-gated mixture & -0.0104 &
+{[}-0.0179, -0.0043{]} & yes \\
+2016 & Kumo-Tabular (2026) \(-\) Reliability-gated mixture & -0.0096 &
+{[}-0.0181, -0.0023{]} & yes \\
+2016 & TabICLv2 (2026) \(-\) TabM (2025) & -0.0093 & {[}-0.0162,
+-0.0036{]} & yes \\
+2016 & Kumo-Tabular (2026) \(-\) TabM (2025) & -0.0085 & {[}-0.0167,
+-0.0017{]} & yes \\
+2011 & Physics prior only \(-\) TabICLv2 (2026) & -0.0069 & {[}-0.0217,
++0.0122{]} & no \\
+2011 & Physics prior only \(-\) Kumo-Tabular (2026) & -0.0089 &
+{[}-0.0253, +0.0133{]} & no \\
+2011 & Physics prior only \(-\) TabM (2025) & -0.0468 & {[}-0.1078,
++0.0085{]} & no \\
+2011 & Physics prior only \(-\) Reliability-gated mixture & -0.0056 &
+{[}-0.0199, +0.0139{]} & no \\
+2011 & TabICLv2 (2026) \(-\) Kumo-Tabular (2026) & -0.0020 & {[}-0.0058,
++0.0024{]} & no \\
+2011 & TabICLv2 (2026) \(-\) XGBoost & -0.0053 & {[}-0.0124, +0.0001{]}
+& no \\
+2011 & Kumo-Tabular (2026) \(-\) XGBoost & -0.0032 & {[}-0.0126,
++0.0035{]} & no \\
+2011 & TabICLv2 (2026) \(-\) Reliability-gated mixture & +0.0013 &
+{[}-0.0016, +0.0044{]} & no \\
+2011 & Kumo-Tabular (2026) \(-\) Reliability-gated mixture & +0.0033 &
+{[}+0.0007, +0.0055{]} & yes \\
+2011 & TabICLv2 (2026) \(-\) TabM (2025) & -0.0399 & {[}-0.0881,
++0.0006{]} & no \\
+2011 & Kumo-Tabular (2026) \(-\) TabM (2025) & -0.0378 & {[}-0.0862,
++0.0009{]} & no \\
+\end{tabular}
+\end{table*}
+
+At 2016 both foundation models are significantly better than the physics
+prior, the gated mixture, TabM and XGBoost. At 2011 the physics prior
+cannot be separated from either foundation model or from the gated
+mixture; the single significant difference among them is that
+Kumo-Tabular is \emph{worse} than the gated mixture that fuses it,
++0.0033 (+0.0007 to +0.0055). Figure \ref{fig:gate} shows what the gate
+actually does: it places a mean weight of 0.11 and 0.12 on the physics
+prior, more when the area-to-mass ratio comes from the breakup model
+than when a design value exists, which is the behaviour the descriptors
+were designed to produce.
+
+\begin{figure*}
+\centering
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio,alt={Gate behaviour. (a) Mean weight placed on the physics prior, by the provenance of the area-to-mass ratio. (b) The fitted reliability coefficients; a positive coefficient shifts weight towards the physics prior.}]{artwork_eaai/eaai_gate.png}
+\caption{\textbf{Gate behaviour.} (a) Mean weight placed on the physics
+prior, by the provenance of the area-to-mass ratio. (b) The fitted
+reliability coefficients; a positive coefficient shifts weight towards
+the physics prior.}\label{fig:gate}
+\end{figure*}
+
+\subsection{Model selection under temporal
+shift}\label{model-selection-under-temporal-shift}
+
+Selection on a tuning cohort five to seven years older than the test
+cohort did not identify the arm that generalised best. At 2016 TabM led
+the tuning split by a wide margin and was significantly worse than both
+foundation models on test. At 2011 the small tuning cohort (248 objects)
+selected Kumo-Tabular, which is tied with TabICLv2 on test. A random
+split would have concealed this; only the forward-in-time protocol
+exposes it.
+
+\subsection{What the module outputs look
+like}\label{what-the-module-outputs-look-like}
+
+Figure \ref{fig:reentry-outputs} shows the predictive distributions for
+individual objects and for the cohort.
+
+\begin{figure*}
+\centering
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio,alt={Re-entry module outputs, origin 2016. (a) Forty test objects drawn at random among those with a known five-year outcome: median and 90 \% conformal interval of the physics prior and of the gated mixture, against the observed outcome. (b--d) Predicted median against observed outcome for every such test object.}]{artwork/Figure_6.png}
+\caption{\textbf{Re-entry module outputs, origin 2016.} (a) Forty test
+objects drawn at random among those with a known five-year outcome:
+median and 90 \% conformal interval of the physics prior and of the
+gated mixture, against the observed outcome. (b--d) Predicted median
+against observed outcome for every such test
+object.}\label{fig:reentry-outputs}
+\end{figure*}
+
+\subsection{Collision risk}\label{collision-risk-1}
+
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{\textbf{Collision risk on the official test set.} \(L\) is the
+challenge metric, infinite when \(F_2 = 0\) because every median falls
+below the high-risk threshold and the metric divides by
+zero.}\label{tbl:cac}
+\begin{tabular}{@{}
+>{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Model
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Pinball
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+AUC-PR
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+AUC-ROC
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(F_2\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(L\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Cov. 90 \%
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Cov. high risk
+\end{minipage} \\
+\midrule\noalign{}
+
+\bottomrule\noalign{}
+
+Persistence + residual climatology & 1.045 & 0.664 & 0.944 & 0.000 &
+\(\infty\) & 0.910 & 0.593 \\
+XGBoost & 0.855 & 0.606 & 0.945 & 0.000 & \(\infty\) & 0.917 & 0.433 \\
+LightGBM & 0.861 & 0.541 & 0.944 & 0.000 & \(\infty\) & 0.905 & 0.253 \\
+CatBoost & 0.869 & 0.542 & 0.935 & 0.000 & \(\infty\) & 0.912 & 0.467 \\
+Quantile multilayer perceptron & 1.035 & 0.434 & 0.901 & 0.000 &
+\(\infty\) & 0.936 & 0.853 \\
+TabM (2025) & 0.885 & 0.512 & 0.937 & 0.000 & \(\infty\) & 0.919 &
+0.727 \\
+TabICLv2 (2026) & 0.692 & 0.665 & 0.961 & 0.057 & 30.06 & 0.918 &
+0.327 \\
+Kumo-Tabular (2026) & 0.653 & 0.733 & 0.970 & 0.168 & 9.89 & 0.942 &
+0.480 \\
+Learned constant gate & 0.653 & 0.733 & 0.970 & 0.168 & 9.90 & 0.935 &
+0.480 \\
+Reliability-gated mixture (proposed) & 0.653 & 0.733 & 0.970 & 0.168 &
+9.90 & 0.940 & 0.480 \\
+Latest-risk point forecast (challenge baseline) & & & & & 0.69 & & \\
+\end{tabular}
+\end{table*}
+
+Kumo-Tabular gives the best predictive distribution, 0.653 against 1.045
+for persistence, a reduction of 37 \%, and the best discrimination of
+high-risk events at AUC-PR 0.733. Table \ref{tbl:cac-pairs} shows the
+margin is significant against every comparator.
+
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{\textbf{Paired bootstrap over test events of the collision-risk
+pinball loss.} A negative difference favours
+Kumo-Tabular.}\label{tbl:cac-pairs}
+\begin{tabular}{@{}
+>{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Comparison
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(\Delta\) pinball
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+95 \% CI
+\end{minipage} \\
+\midrule\noalign{}
+
+\bottomrule\noalign{}
+
+Kumo-Tabular \(-\) TabICLv2 & -0.039 & {[}-0.053, -0.025{]} \\
+Kumo-Tabular \(-\) XGBoost & -0.202 & {[}-0.233, -0.171{]} \\
+Kumo-Tabular \(-\) TabM (2025) & -0.231 & {[}-0.264, -0.199{]} \\
+Kumo-Tabular \(-\) Persistence + residual climatology & -0.392 &
+{[}-0.451, -0.337{]} \\
+\end{tabular}
+\end{table*}
+
+On the official point metric, however, no model beats the latest-risk
+baseline at 0.694. The reason is visible in Figure
+\ref{fig:cac-outputs}: 129 of the 150 high-risk events receive a median
+below the threshold, 41 of them between \(-10\) and \(-6\), so \(F_2\)
+reaches only 0.17. The conformal interval covers 94.2 \% of all events
+but only 48.0 \% of the high-risk ones, because the calibration groups
+are coarse exactly where the decisions are made. This reproduces the
+challenge's own finding and an independent re-evaluation
+\citep{uriot2022spacecraft, vazquez2026latest}.
+
+\begin{figure*}
+\centering
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio,alt={Collision-risk outputs. (a) Final risk against the latest available risk. (b) Final risk against the median forecast. (c--e) Three high-risk test events drawn at random: input messages, predictive quantiles and the final risk.}]{artwork/Figure_11.png}
+\caption{\textbf{Collision-risk outputs.} (a) Final risk against the
+latest available risk. (b) Final risk against the median forecast.
+(c--e) Three high-risk test events drawn at random: input messages,
+predictive quantiles and the final risk.}\label{fig:cac-outputs}
+\end{figure*}
+
+\subsection{Health}\label{health}
+
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{\textbf{Telemetry detectors.} AUC-PR is the per-channel mean
+over anomalous steps; \(F_{0.5}\) is the corrected event-wise score,
+which charges alarm time spent on nominal data. ``Late ref.'' keeps each
+detector's amount of alarm time but places it as one block at the end of
+the series.}\label{tbl:telemetry}
+\begin{tabular}{@{}
+>{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Detector
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+AUC-PR
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(F_{0.5}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Late ref.
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+AUC-PR
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(F_{0.5}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Late ref.
+\end{minipage} \\
+\midrule\noalign{}
+
+\bottomrule\noalign{}
+
+telemanom (published scores) & 0.576 & & & 0.473 & & \\
+Chronos-2, zero-shot & 0.343 & 0.170 & 0.197 & 0.367 & 0.035 & 0.224 \\
+Ridge autoregression & 0.355 & 0.240 & 0.413 & 0.329 & 0.252 & 0.297 \\
+Principal-component reconstruction & 0.322 & 0.249 & 0.306 & 0.328 &
+0.212 & 0.314 \\
+Nearest-neighbour window & 0.341 & 0.114 & 0.272 & 0.364 & 0.334 &
+0.281 \\
+Random scores (floor) & 0.129 & 0.000 & 0.000 & 0.141 & 0.000 & 0.000 \\
+Always-on alarm (reference) & & 0.000 & & & 0.000 & \\
+\end{tabular}
+\end{table*}
+
+The zero-shot foundation model does not beat the simple detectors. Its
+per-channel AUC-PR is 0.343 and 0.367, level with ridge,
+principal-component and nearest-neighbour scoring and far below the
+published telemanom scores at 0.576 and 0.473. Two benchmark artefacts
+must be stated alongside these numbers. The always-on alarm reaches an
+uncorrected event \(F_1\) of 0.548 and 0.537, higher than every
+detector, while its corrected \(F_{0.5}\) is zero; and because 93.7 \%
+of labelled steps lie in the second half of their series, the late-alarm
+reference outscores the detector itself in seven of the eight
+detector--spacecraft pairs. Figure \ref{fig:smap-outputs} shows the
+scores and alarms on one channel of each spacecraft.
+
+\begin{figure*}
+\centering
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio,alt={Health module outputs on the median channel of each spacecraft by zero-shot AUC-PR. Top: test series and labels. Middle: conformal p-values with the alarm level. Bottom: labels and each detector's causal alarms.}]{artwork/Figure_16.png}
+\caption{\textbf{Health module outputs} on the median channel of each
+spacecraft by zero-shot AUC-PR. Top: test series and labels. Middle:
+conformal \(p\)-values with the alarm level. Bottom: labels and each
+detector's causal alarms.}\label{fig:smap-outputs}
+\end{figure*}
+
+\section{Ablations and uncertainty evaluation}\label{sec:ablations}
+
+\subsection{Censoring}\label{censoring}
+
+Any evaluation restricted to objects that have already decayed discards
+most of the cohort. Table \ref{tbl:km} and Figure \ref{fig:km} give the
+Kaplan--Meier description of both test cohorts, which is model-free and
+uses the censoring indicator directly.
+
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{\textbf{Kaplan--Meier description of the test cohorts.}
+\(S(\cdot)\) is the estimated survival probability. A median that is
+``not reached'' means more than half the group is still in orbit, so no
+median lifetime exists for it.}\label{tbl:km}
+\begin{tabular}{@{}
+>{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Origin
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Group
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Decays
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Censored
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Median (d)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(S\)(30 d)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(S\)(1 yr)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(S\)(5 yr)
+\end{minipage} \\
+\midrule\noalign{}
+
+\bottomrule\noalign{}
+
+2016 & all uncontrolled & 2,993 & 1,594 & 46.7\% & 2,780 & 0.895 & 0.768
+& 0.558 \\
+2016 & fragments & 2,155 & 1,032 & 52.1\% & 3,354 & 0.962 & 0.839 &
+0.619 \\
+2016 & rocket stages & 385 & 250 & 35.1\% & 1,050 & 0.789 & 0.617 &
+0.415 \\
+2016 & components & 453 & 312 & 31.1\% & 933 & 0.661 & 0.551 & 0.383 \\
+2011 & all uncontrolled & 2,680 & 1,199 & 55.3\% & not reached & 0.921 &
+0.845 & 0.744 \\
+2011 & fragments & 2,078 & 858 & 58.7\% & not reached & 0.961 & 0.903 &
+0.803 \\
+2011 & rocket stages & 267 & 157 & 41.2\% & 1,310 & 0.725 & 0.548 &
+0.486 \\
+2011 & components & 335 & 184 & 45.1\% & 3,233 & 0.823 & 0.708 &
+0.571 \\
+\end{tabular}
+\end{table*}
+
+\begin{figure*}
+\centering
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio,alt={Kaplan--Meier survival of the test cohorts, overall and by object class, with the censored fraction of each group.}]{artwork_eaai/eaai_km.png}
+\caption{\textbf{Kaplan--Meier survival of the test cohorts}, overall
+and by object class, with the censored fraction of each
+group.}\label{fig:km}
+\end{figure*}
+
+46.7 \% of the 2016 cohort and 55.3 \% of the 2011 cohort are
+right-censored. At origin 2011 the median lifetime of the cohort is
+never reached. Rocket stages and components decay substantially faster
+than fragments in both periods. This is why the target is capped and
+scored only where the five-year outcome is known, why the
+accelerated-failure-time baseline is trained on censored observations as
+well, and why the comparison in Table \ref{tbl:gap} against studies that
+train on decayed objects only is not like-for-like in their favour.
+
+\subsection{Feature groups}\label{feature-groups}
+
+Removing each feature group from the selected expert and refitting with
+identical settings and seeds gives the paired effects in Figure
+\ref{fig:ablation}. The family features are the coupling C1 result
+reported in Table \ref{tbl:couplings}. Design properties help at 2016
+(+0.0071, +0.0035 to +0.0121); the physics summaries help the selected
+expert at 2011 (+0.0022) but hurt at 2016 (-0.0050), which is consistent
+with the physics prior's own error growing in the rising phase of the
+solar cycle. All intervals are nominal and uncorrected for the eight
+comparisons.
+
+\begin{figure*}
+\centering
+\includegraphics[width=0.78\linewidth,height=\textheight,keepaspectratio,alt={Feature-group ablations of the selected expert. In the first four rows a group is removed, so a positive change means the group helps; the last row instead adds the leaking covariate, where a positive change means it makes the model worse.}]{artwork/Figure_9.png}
+\caption{\textbf{Feature-group ablations of the selected expert.} In the
+first four rows a group is removed, so a positive change means the group
+helps; the last row instead adds the leaking covariate, where a positive
+change means it makes the model worse.}\label{fig:ablation}
+\end{figure*}
+
+\subsection{Leakage through covariate
+availability}\label{leakage-through-covariate-availability}
+
+Whether the catalogue publishes a radar cross-section depends on how
+quickly the object decayed. In the origin-2016 training cohort 75.9 \%
+of objects without a value decayed within 30 days of their
+canonical-orbit epoch, against 17.2 \% of those with one; adjusted for
+orbit, class and decade, and with standard errors clustered on launch
+families, the odds ratio is 3.59 (2.09 to 6.17).
+
+The consequence for a modeller is instructive. Adding the covariate
+changes the test pinball loss by amounts whose intervals include zero at
+both origins, so point accuracy would not reveal the problem. What it
+does break is calibration: at origin 2016, where the missingness pattern
+differs from training, the 90 \% coverage of the selected expert falls
+from 87.7 \% to 76.8 \%. A covariate that looks like a size measurement
+is in fact partly an outcome indicator, and the symptom appears in the
+interval rather than in the mean. We therefore exclude it, and release
+the availability test with the code.
+
+\subsection{Uncertainty
+quantification}\label{uncertainty-quantification}
+
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{\textbf{Interval rules on both test periods.} ``Cov. all'' is
+over every test object including those surviving past the five-year cap;
+``Cov. decayed'' is restricted to objects that decayed within five
+years; width is in \(\log_{10}\) days. The first three numeric columns
+are origin 2016, the last three origin
+2011.}\label{tbl:coverage}
+\begin{tabular}{@{}
+>{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Interval rule
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Cov. all
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Cov. decayed
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Width
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Cov. all
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Cov. decayed
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Width
+\end{minipage} \\
+\midrule\noalign{}
+
+\bottomrule\noalign{}
+
+Physics median ±20 \% (operational rule) & 0.602 & 0.122 & 0.18 & 0.747
+& 0.171 & 0.17 \\
+Physics median ±30 \% & 0.638 & 0.204 & 0.27 & 0.766 & 0.234 & 0.27 \\
+Physics prior, conformal 80 \% & 0.738 & 0.419 & 0.35 & 0.944 & 0.805 &
+0.65 \\
+Physics prior, conformal 90 \% & 0.876 & 0.726 & 0.67 & 0.974 & 0.906 &
+1.03 \\
+Gated median ±20 \% & 0.529 & 0.183 & 0.18 & 0.651 & 0.201 & 0.18 \\
+Gated median ±30 \% & 0.599 & 0.280 & 0.27 & 0.694 & 0.283 & 0.27 \\
+Gated mixture, conformal 80 \% & 0.717 & 0.543 & 0.43 & 0.923 & 0.776 &
+0.88 \\
+Gated mixture, conformal 90 \% & 0.874 & 0.835 & 0.67 & 0.959 & 0.884 &
+1.21 \\
+\end{tabular}
+\end{table*}
+
+Against the operational practice it would replace, the calibrated
+interval is a clear improvement on the objects that matter. The ±20 \%
+residual-lifetime window around the physics median --- the rule assessed
+at roughly 90 \% coverage in the final days before re-entry
+\citep{pardini2018assessing} --- covers 12.2 \% and 17.1 \% of objects
+that decayed within five years when it is applied at canonical-orbit
+epochs, while the conformal 90 \% interval covers 72.6 \% and 90.6 \%.
+The comparison is not a criticism of the operational rule, which is
+designed for a different regime with continuous tracking; it quantifies
+how far that regime is from forecasting years ahead from one catalogue
+orbit. Figure \ref{fig:coverage} places every rule side by side.
+
+\begin{figure*}
+\centering
+\includegraphics[width=0.92\linewidth,height=\textheight,keepaspectratio,alt={Interval coverage over all test objects, including those still in orbit after five years.}]{artwork/Figure_8.png}
+\caption{\textbf{Interval coverage} over all test objects, including
+those still in orbit after five years.}\label{fig:coverage}
+\end{figure*}
+
+\textbf{Conditional coverage.} Mondrian grouping is the mechanism
+intended to make coverage conditional, and Table \ref{tbl:coverage}
+shows it reaching the nominal level marginally at origin 2011 and
+falling short at origin 2016 for the arms with the narrowest intervals.
+
+\textbf{Temporal calibration.} Conformal prediction guarantees
+\emph{marginal} coverage under exchangeability, and a forward-in-time
+test period is precisely where exchangeability is doubtful. Table
+\ref{tbl:temporal} and Figure \ref{fig:temporal} break the 90 \%
+coverage down by calendar year of the prediction time.
+
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{\textbf{Conditional coverage over time.} Years with fewer than
+25 scored objects are omitted.}\label{tbl:temporal}
+\begin{tabular}{@{}
+>{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Origin
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Model
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+90 \% coverage, first to last test year
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+First \(-\) last
+\end{minipage} \\
+\midrule\noalign{}
+
+\bottomrule\noalign{}
+
+2016 & Reliability-gated mixture & 0.902 · 0.963 · 0.848 · 0.879 · 0.812
+· 0.847 & +0.055 \\
+2016 & Physics prior only & 0.929 · 0.974 · 0.908 · 0.885 · 0.836 ·
+0.732 & +0.197 \\
+2016 & TabM (2025) & 0.897 · 0.963 · 0.823 · 0.868 · 0.817 · 0.886 &
++0.011 \\
+2011 & Reliability-gated mixture & 0.978 · 0.974 · 0.929 · 0.930 · 0.957
+& +0.021 \\
+2011 & Kumo-Tabular (2026) & 0.975 · 0.982 · 0.929 · 0.943 · 0.968 &
++0.007 \\
+2011 & Physics prior only & 0.980 · 0.980 · 0.965 · 0.957 · 0.978 &
++0.002 \\
+\end{tabular}
+\end{table*}
+
+\begin{figure*}
+\centering
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio,alt={Coverage by calendar year. The dashed line is the nominal level. Coverage drifts downward across the 2016 test period and is stable across the 2011 period.}]{artwork_eaai/eaai_temporal.png}
+\caption{\textbf{Coverage by calendar year.} The dashed line is the
+nominal level. Coverage drifts downward across the 2016 test period and
+is stable across the 2011 period.}\label{fig:temporal}
+\end{figure*}
+
+At origin 2016 the physics prior's coverage falls from 0.929 in the
+first test year to 0.732 in the last, a drop of 0.197, while at origin
+2011 it stays between 0.978 and 0.980. The marginal guarantee is kept;
+what degrades is coverage conditional on time, as the rising phase of
+solar cycle 25 moves the covariate distribution away from the
+calibration cohort. To our knowledge this is the first demonstration of
+the effect on an operational space-surveillance catalogue, and it is a
+caution for any deployment that calibrates once and then runs for years.
+
+\subsection{State estimation for objects in
+orbit}\label{state-estimation-for-objects-in-orbit}
+
+The lifetime pipeline is fitted at canonical-orbit epochs; applied to
+objects that have survived for years it over-predicts re-entry by
+9.5-fold over a 72-day horizon (6.9 to 13.0), because survival selects
+low area-to-mass ratios that the fitted model cannot know about. Class
+priors reduce this to 3.64-fold and conditioning on the catalogue
+history to 1.37-fold (1.20 to 1.63), still significantly above one. The
+three variants rank decaying objects almost identically, with AUC-ROC
+within 0.01 of each other; what differs is calibration, which is the
+quantity the state-estimation step targets. Figure \ref{fig:t1} shows
+the reliability and the counts.
+
+\begin{figure*}
+\centering
+\includegraphics[width=0.92\linewidth,height=\textheight,keepaspectratio,alt={As-of-date test of the three variants for objects in orbit on 2026-08-16, scored against decays to 2026-10-27. (a) Reliability in six fixed probability bins, marker area growing with the number of objects. (b) Expected against observed re-entries.}]{artwork/Figure_14.png}
+\caption{\textbf{As-of-date test of the three variants} for objects in
+orbit on 2026-08-16, scored against decays to 2026-10-27. (a)
+Reliability in six fixed probability bins, marker area growing with the
+number of objects. (b) Expected against observed
+re-entries.}\label{fig:t1}
+\end{figure*}
+
+This window had been analysed earlier in the project, so this comparison
+is an as-of-date test rather than a blind one; a dated, hashed forecast
+released with the code is the blind test, and a later catalogue snapshot
+will score it.
+
+\section{Discussion, limitations and threats to
+validity}\label{sec:discussion}
+
+\subsection{What the evidence
+supports}\label{what-the-evidence-supports}
+
+Three claims survive the measurements. First, \textbf{in-context tabular
+foundation models transfer to an operational space catalogue}: at origin
+2016 they reduce pinball loss by 13 \% against the best gradient-boosted
+baseline and by 44 \% against the physics prior, with intervals
+excluding zero, and the same family of models gives significantly the
+best collision-risk distribution. This is a positive result for
+in-context learning outside its usual benchmark setting. Second,
+\textbf{distribution-free calibration is what makes the output usable}:
+the conformal interval covers a far larger share of decayed objects than
+the operational window applied at the same horizon, and the Mondrian
+grouping is what keeps coverage near nominal at the earlier origin.
+Third, \textbf{the state estimate matters more than the learner} for
+objects already in orbit, where a Bayesian conditioning step removes
+most of a ninefold bias that no choice of learner addressed.
+
+\subsection{What the evidence does not
+support}\label{what-the-evidence-does-not-support}
+
+The reliability gate, which is the architectural novelty, \textbf{does
+not beat the best single expert at either origin}. Table \ref{tbl:moe}
+makes this explicit, and we draw three conclusions rather than one. The
+gate is fitted on out-of-fold predictions of the training period, so it
+can learn where the physics prior is unreliable but cannot anticipate
+that a \emph{learner} will degrade on a future cohort; its descriptors
+are all properties of the prior. The equal-weight and constant-gate arms
+show that the benefit of learning the weight at all is small and
+inconsistent across origins. And the tuning-split variant shows that the
+fitting protocol dominates the parameterisation. A gate that also saw
+descriptors of covariate shift is the obvious next step, and it would
+have to be validated on a third test period rather than on these two.
+
+The honest reading is therefore that reliability gating is a safety
+mechanism rather than an accuracy mechanism: it prevented the
+catastrophic arm at each origin (TabM at 2011, the physics prior at
+2016) without matching the best one. For an operator who must fix an
+architecture before knowing which regime the next five years bring, that
+property has value; for a benchmark table it is a loss.
+
+Two further negative results are reported. Zero-shot time-series
+forecasting did not beat ridge autoregression on spacecraft telemetry,
+and on the official collision-risk metric no model beat a baseline that
+simply repeats the latest risk.
+
+\subsection{Threats to validity}\label{threats-to-validity}
+
+\textbf{Test-set reuse.} The test sets were scored more than once during
+development, the candidate pool was narrowed after an earlier run's test
+results were known, and several analyses were added after results had
+been seen. Section \ref{sec:setup} states this and the supplement
+records it in full. This bounds the comparisons' confirmatory value; the
+significance statements should be read as nominal.
+
+\textbf{Two periods only.} Every statement about generalisation rests on
+two test periods from one catalogue. The direction of the solar-cycle
+effect is measured, not assumed, but a third period would be needed to
+establish that the foundation models keep their advantage.
+
+\textbf{Single orbit per object.} The re-entry module predicts from one
+dated orbit because orbital histories at catalogue scale cannot be
+redistributed. Operational tools that fit a ballistic coefficient to
+weeks of tracking data use far more information near re-entry, and our
+months-to-years forecasts are not comparable with their final-days
+accuracy.
+
+\textbf{Priors estimated from catalogue values.} The physics prior's
+class pools are built from objects that received a radar-derived size,
+which biases them towards longer-lived objects; the design-data ablation
+bounds the influence of this.
+
+\textbf{Telemetry domain.} The telemetry benchmarks are real but belong
+to spacecraft outside the catalogue population, so the health module
+transfers a method and not a fitted model, and its coupling into the
+debris modules runs through operational status rather than telemetry.
+The benchmark's own metric artefacts, documented in Section
+\ref{sec:results}, mean its absolute scores should not be read as
+operational detection rates.
+
+\textbf{Integrator resolution.} A step of the decay integrator may not
+exceed ten days, so for an object whose perigee is already within one
+kilometre of the re-entry threshold the forecast is reported at the end
+of that step; two objects in the released forecast have a degenerate
+interval for this reason. They are within days of re-entry regardless,
+and no reported comparison depends on them.
+
+\textbf{Reproducibility.} Seeded training on the graphics processor is
+not bit-reproducible, while on the central processor it is. Repeating
+the telemetry run moved per-channel AUC-PR by at most
+\(2 \times 10^{-5}\) and changed no reported value at three decimals;
+two runs of the lifetime variant in the as-of-date test gave ratios of
+8.9 and 9.5.
+
+\section{Conclusions and future work}\label{sec:conclusion}
+
+This paper presented a shared-state digital twin for orbital debris
+analysis in which a reliability-gated mixture of experts, calibrated by
+conformal prediction and isotonic regression, forecasts residual orbital
+lifetime and collision risk, and in which spacecraft health enters
+through operational status. It was evaluated on 64,516 catalogued
+objects across two forward-in-time test periods, an official
+collision-avoidance benchmark and public spacecraft telemetry, with
+cluster-bootstrap intervals throughout.
+
+The measured findings are:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  In-context tabular foundation models are the most accurate lifetime
+  arms in the later test period, by 13 \% against the best
+  gradient-boosted baseline and 44 \% against the physics prior, and
+  they give significantly the best collision-risk distribution, 37 \%
+  better than persistence. In the earlier period they are statistically
+  tied with the physics prior.
+\item
+  The reliability gate did not beat the best single expert at either
+  origin. It avoided the worst arm in both, and the fitting protocol
+  mattered more than the gate's parameterisation.
+\item
+  Calibrated intervals cover 72.6 \% and 90.6 \% of decayed objects
+  where the operational ±20 \% window applied at the same horizon covers
+  12.2 \% and 17.1 \%.
+\item
+  Conformal coverage conditional on time degrades across a six-year
+  forward test window, falling by 0.197 at origin 2016 while remaining
+  stable at origin 2011.
+\item
+  Conditioning the area-to-mass ratio on an object's catalogue history
+  reduces 72-day over-prediction from 9.5-fold to 1.37-fold.
+\item
+  Of the four couplings, breakup-family evidence helps the learned
+  expert in one of two periods, cloud population is reproduced to about
+  a tenth of a cloud without separating the experts, the status coupling
+  has the expected direction but no significant gain, and the fourth
+  cannot be tested on public data.
+\item
+  A catalogue covariate can leak the outcome through its availability.
+  Adding it leaves point accuracy unchanged within noise and breaks
+  interval coverage, so leakage of this kind is invisible to a
+  mean-error check.
+\end{enumerate}
+
+Future work follows directly from the negative results. The gate should
+be given descriptors of covariate shift and validated on a third period.
+The state-estimation step, which produces the largest effect in the
+paper, is currently Bayesian importance sampling over a physics
+propagator; replacing it with an amortised neural posterior trained on
+simulated propagations would make the system's strongest component a
+learned one, and we are pursuing that. On the collision-risk side, the
+gap between the best predictive distribution and the official point
+metric is a decision-theoretic problem rather than a modelling one, and
+a learned decision rule over the calibrated probability is the natural
+next step. Finally, the dated and hashed forecast released with this
+paper is the only fully blind test of the system, and scoring it against
+a later catalogue snapshot is the cleanest available validation.
+
+\section*{Declarations}\label{declarations}
+\addcontentsline{toc}{section}{Declarations}
+
+\textbf{Contribution in artificial intelligence and application in
+engineering.} The contribution in artificial intelligence is the
+reliability-gated mixture of experts with distribution-free calibration
+described in Section \ref{sec:arch}, together with the evaluation of
+recent tabular and time-series foundation models under forward-in-time
+drift and administrative censoring. The application in engineering is
+forecasting the low-Earth-orbit debris environment: residual orbital
+lifetime, collision risk and spacecraft health status.
+
+\textbf{Credit authorship contribution statement.} {[}Author 1{]}:
+conceptualisation, methodology, software, validation, formal analysis,
+investigation, data curation, writing --- original draft, visualisation.
+{[}Author 2{]}: supervision, writing --- review and editing. {[}To be
+completed by the authors.{]}
+
+\textbf{Declaration of competing interest.} {[}To be completed by the
+authors.{]}
+
+\textbf{Funding.} {[}To be completed by the authors.{]}
+
+\textbf{Data availability.} All data used are public. The catalogue is
+available under Creative Commons Attribution 4.0
+\citep{mcdowell2020gcat}; the CelesTrak catalogue and space-weather
+files under CelesTrak's usage policy \citep{celestrak2026satcat}; the
+collision-avoidance challenge data under Creative Commons Attribution
+4.0 \citep{uriot2021cacdataset}; and the telemetry benchmarks under the
+terms stated by their authors \citep{hundman2018, esaadb_dataset}. The
+derived cohort table, the density table, all predictions and result
+files, and the dated forecast will be deposited with a digital object
+identifier before publication {[}identifier to be added{]}. No
+restricted orbital-element data are used or redistributed. Pretrained
+weights are obtained from their publishers under their own licences.
+
+\textbf{Code availability.} The code, including data fetchers with
+checksummed manifests, the three modules, the twin engine and the
+scripts that generate every table and figure in this paper from the
+result files, is available \citep{cosmos_software}; an archived release
+with a digital object identifier will be created before publication.
+
+\textbf{Declaration of generative artificial intelligence in the writing
+process.} During the preparation of this work the authors used a
+generative artificial-intelligence assistant to help write analysis and
+plotting code and to draft and edit text. The authors reviewed and
+edited the content and take full responsibility for the published
+article. Every figure was rendered by the scripts named above from the
+study's result files; no figure was generated by a generative model.
+{[}The authors must review this statement and adjust it to their actual
+use.{]}
+
+\bibliographystyle{elsarticle-num}
+\bibliography{refs}
+
+\end{document}

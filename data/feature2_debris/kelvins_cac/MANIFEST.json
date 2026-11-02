@@ -1,0 +1,35 @@
+{
+  "dataset": "kelvins_cac",
+  "class": "REAL",
+  "status": "downloaded",
+  "title": "Collision Avoidance Challenge dataset",
+  "zenodo_record": 4463683,
+  "doi": "10.5281/zenodo.4463683",
+  "licence": "cc-by-4.0",
+  "creators": [
+    "Thomas Uriot",
+    "Dario Izzo",
+    "Jose Martinez-Heras",
+    "Francesca Letizia",
+    "Jan Siminski",
+    "Klaus Merz"
+  ],
+  "publication_date": "2021-01-25",
+  "retrieved_utc": "2026-10-27T04:16:59+00:00",
+  "notes": [
+    "Conjunction Data Messages received by ESA 2015-2019, anonymised; the official train/test split and the test labels kept private during the competition are both included."
+  ],
+  "manifest_written_utc": "2026-10-27T04:16:59+00:00",
+  "files": [
+    {
+      "path": "raw/Collision Avoidance Challenge - Dataset.zip",
+      "url": "https://zenodo.org/api/records/4463683/files/Collision%20Avoidance%20Challenge%20-%20Dataset.zip/content",
+      "bytes": 221128642,
+      "md5": "d19dc8875229f2f6893253c38adddc87",
+      "sha256": "df1500146705305006ea506eeccc97f5c2e9593928d6650c503c4f5b5529d0bb",
+      "status": "downloaded",
+      "md5_verified": true,
+      "published_checksum": "md5:d19dc8875229f2f6893253c38adddc87"
+    }
+  ]
+}

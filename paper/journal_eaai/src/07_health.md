@@ -1,0 +1,11 @@
+# Health module {#sec:health}
+
+The health module converts a forecaster's residuals into calibrated alarms. For channel $c$, a model fitted on nominal data produces a non-conformity score $s_c(t)$, which becomes a conformal $p$-value against that channel's own calibration pool $\mathcal{C}_c$,
+
+$$p_c(t) = \frac{1 + \#\{s' \in \mathcal{C}_c : s' \geq s_c(t)\}}{|\mathcal{C}_c| + 1},$$ {#eq:pval}
+
+the $p$-values are aggregated across channels at each step with Benjamini–Hochberg control [@benjamini1995], and an alarm is raised causally at the third consecutive step with $p \leq \max(10^{-3}, 1/(|\mathcal{C}_c|+1))$. The level, the persistence and the window were fixed before any detector was scored, and no test label informs any choice. Calibration scores are computed out of fold in five contiguous blocks with a 30-step purge on each side, so no step is scored by a model that has seen it.
+
+The detector compared in this paper is Chronos-2 [@ansari2025chronos2], a pretrained time-series foundation model used zero-shot: rolling eight-step forecasts from up to 512 past steps, scored by the absolute residual of the forecast median. It is set against three classic detectors — ridge autoregression, principal-component reconstruction and nearest-neighbour window distance — the published telemanom scores [@hundman2018], a random-score floor and an always-on alarm reference.
+
+Two limitations of this evidence must be stated plainly. First, the Soil Moisture Active Passive and Mars Science Laboratory channels are real spacecraft telemetry, but they belong to an Earth-observation satellite and a planetary rover, not to the catalogue population whose debris risk the rest of the system forecasts; no public dataset provides telemetry for the objects in our catalogue cohort. The health module therefore transfers a *method*, not a fitted model, and its coupling to the debris modules runs through operational status rather than through telemetry. Second, the conformal alarm layer of this module was developed and tested in a separate pre-registered study on the European Space Agency benchmark [@kotowski2026esaadb] by the same authors; that study found the gain on one mission and a reversal on the other, and we treat the health module as the least validated of the three throughout.

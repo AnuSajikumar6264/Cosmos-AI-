@@ -1,0 +1,70 @@
+{
+ "as_of": "2026-10-27",
+ "objects": 31396,
+ "regime_counts": {
+  "natural_decay": 13787,
+  "operator_controlled": 16386,
+  "unknown": 1223
+ },
+ "natural_decay_by_class": {
+  "D": 10654,
+  "R": 1470,
+  "C": 1114,
+  "P": 549
+ },
+ "learner": "tabm",
+ "seeds": 5,
+ "train_n": 32962,
+ "tuneB_n": 732,
+ "expected_reentries_natural_decay": {
+  "30d": 24.46875,
+  "90d": 75.34375,
+  "1yr": 258.09375
+ },
+ "expected_reentries_unknown_regime": {
+  "30d": 1.03125,
+  "90d": 2.65625,
+  "1yr": 11.65625
+ },
+ "expected_reentries_uncontrolled_by_variant": {
+  "physics_history": {
+   "30d": 21.59375,
+   "90d": 68.125,
+   "1yr": 236.4375
+  },
+  "physics_prior": {
+   "30d": 76.34375,
+   "90d": 187.8125,
+   "1yr": 554.0625
+  },
+  "lifetime": {
+   "30d": 229.10040206371824,
+   "90d": 572.5663030409116,
+   "1yr": 1003.5233409962239
+  }
+ },
+ "history_kinds": {
+  "history": 12606,
+  "survival_only": 410,
+  "prior": 166,
+  "longest_survivors": 56
+ },
+ "payload_base_rates_previous_window": {
+  "30d": {
+   "perigee_lt_600": 0.005277044854881266,
+   "perigee_600_2000": 0.0
+  },
+  "90d": {
+   "perigee_lt_600": 0.015774483312641495,
+   "perigee_600_2000": 0.0
+  },
+  "1yr": {
+   "perigee_lt_600": 0.07772299417301659,
+   "perigee_600_2000": 0.0
+  }
+ },
+ "objects_p30d_above_0.5_natural_decay": 21,
+ "clouds_with_30_fragments": 61,
+ "seconds": 1249.7153158187866,
+ "verification": "compare with decays in a later CelesTrak SATCAT snapshot"
+}

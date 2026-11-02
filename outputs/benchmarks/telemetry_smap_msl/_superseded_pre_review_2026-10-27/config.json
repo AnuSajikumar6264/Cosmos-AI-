@@ -1,0 +1,7 @@
+{
+ "window": 30,
+ "alpha": 0.001,
+ "persistence": 3,
+ "channels": 82,
+ "note": "thresholds fixed a priori; no test labels used for any choice"
+}

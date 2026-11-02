@@ -1,0 +1,769 @@
+{
+ "xgboost": [
+  {
+   "trial": 0,
+   "params": {
+    "max_depth": 4,
+    "learning_rate": 0.08013861768724162,
+    "subsample": 0.7883767189289016,
+    "colsample_bytree": 0.6016239712723395,
+    "min_child_weight": 6.210671208865818,
+    "reg_lambda": 0.24103080995541834
+   },
+   "val_pinball": 0.03513589509953453,
+   "seconds": 14.416932344436646
+  },
+  {
+   "trial": 1,
+   "params": {
+    "max_depth": 6,
+    "learning_rate": 0.03815448523839864,
+    "subsample": 0.9014726208766376,
+    "colsample_bytree": 0.7758358883656071,
+    "min_child_weight": 19.75072824879462,
+    "reg_lambda": 4.080791837258768
+   },
+   "val_pinball": 0.03945685162035539,
+   "seconds": 26.590765953063965
+  },
+  {
+   "trial": 2,
+   "params": {
+    "max_depth": 7,
+    "learning_rate": 0.030892809907373815,
+    "subsample": 0.9935982327568689,
+    "colsample_bytree": 0.834998582973116,
+    "min_child_weight": 2.6337481585477014,
+    "reg_lambda": 0.25575637545748675
+   },
+   "val_pinball": 0.03880855631973874,
+   "seconds": 63.1500928401947
+  },
+  {
+   "trial": 3,
+   "params": {
+    "max_depth": 4,
+    "learning_rate": 0.0841520471533342,
+    "subsample": 0.8610417263448223,
+    "colsample_bytree": 0.9494037643742325,
+    "min_child_weight": 28.983155777284143,
+    "reg_lambda": 0.20317241320026647
+   },
+   "val_pinball": 0.036154005682766534,
+   "seconds": 37.4271194934845
+  },
+  {
+   "trial": 4,
+   "params": {
+    "max_depth": 7,
+    "learning_rate": 0.055878076368796215,
+    "subsample": 0.6070052836418418,
+    "colsample_bytree": 0.6455124527970715,
+    "min_child_weight": 3.7312548793242906,
+    "reg_lambda": 0.43858707019919
+   },
+   "val_pinball": 0.03689992553239615,
+   "seconds": 62.587793588638306
+  },
+  {
+   "trial": 5,
+   "params": {
+    "max_depth": 7,
+    "learning_rate": 0.17480130396309718,
+    "subsample": 0.8810667890140503,
+    "colsample_bytree": 0.5682251593234513,
+    "min_child_weight": 3.2720023747328777,
+    "reg_lambda": 4.207161709477848
+   },
+   "val_pinball": 0.04345958137281324,
+   "seconds": 24.87802290916443
+  },
+  {
+   "trial": 6,
+   "params": {
+    "max_depth": 8,
+    "learning_rate": 0.022873134908675374,
+    "subsample": 0.7257666536758645,
+    "colsample_bytree": 0.7100782265743486,
+    "min_child_weight": 16.293956858663293,
+    "reg_lambda": 0.10447567176938372
+   },
+   "val_pinball": 0.04248020183986767,
+   "seconds": 143.75515627861023
+  },
+  {
+   "trial": 7,
+   "params": {
+    "max_depth": 3,
+    "learning_rate": 0.05676541121183349,
+    "subsample": 0.8234747942130902,
+    "colsample_bytree": 0.5014443169056648,
+    "min_child_weight": 2.7966386406693973,
+    "reg_lambda": 0.12811447985039334
+   },
+   "val_pinball": 0.04466197976426805,
+   "seconds": 13.991568803787231
+  },
+  {
+   "trial": 8,
+   "params": {
+    "max_depth": 7,
+    "learning_rate": 0.17400356636224357,
+    "subsample": 0.8897094867061226,
+    "colsample_bytree": 0.9281890449912851,
+    "min_child_weight": 6.553502578258051,
+    "reg_lambda": 0.5745150095809778
+   },
+   "val_pinball": 0.040194322123515404,
+   "seconds": 17.720278024673462
+  },
+  {
+   "trial": 9,
+   "params": {
+    "max_depth": 6,
+    "learning_rate": 0.0802462466366474,
+    "subsample": 0.893841596971312,
+    "colsample_bytree": 0.9942040617041499,
+    "min_child_weight": 21.795225321469985,
+    "reg_lambda": 1.0946708715479434
+   },
+   "val_pinball": 0.03814377733527718,
+   "seconds": 44.877816915512085
+  },
+  {
+   "trial": 10,
+   "params": {
+    "max_depth": 5,
+    "learning_rate": 0.03971371475899955,
+    "subsample": 0.9342101637417355,
+    "colsample_bytree": 0.5922532464658178,
+    "min_child_weight": 1.8863748117586634,
+    "reg_lambda": 0.2951591707640905
+   },
+   "val_pinball": 0.03573360580728169,
+   "seconds": 34.85772705078125
+  },
+  {
+   "trial": 11,
+   "params": {
+    "max_depth": 4,
+    "learning_rate": 0.09082148157819635,
+    "subsample": 0.8066924087212669,
+    "colsample_bytree": 0.911928617288242,
+    "min_child_weight": 1.9252494930757755,
+    "reg_lambda": 9.140271708052994
+   },
+   "val_pinball": 0.03649752100327743,
+   "seconds": 36.27419066429138
+  }
+ ],
+ "lightgbm": [
+  {
+   "trial": 0,
+   "params": {
+    "num_leaves": 38,
+    "learning_rate": 0.08013861768724162,
+    "subsample": 0.7883767189289016,
+    "colsample_bytree": 0.6016239712723395,
+    "min_child_samples": 46,
+    "reg_lambda": 1.1416107541316163
+   },
+   "val_pinball": 0.03608640703215642,
+   "seconds": 32.52602791786194
+  },
+  {
+   "trial": 1,
+   "params": {
+    "num_leaves": 48,
+    "learning_rate": 0.03815448523839864,
+    "subsample": 0.9014726208766376,
+    "colsample_bytree": 0.7758358883656071,
+    "min_child_samples": 23,
+    "reg_lambda": 5.338806141866443
+   },
+   "val_pinball": 0.043309043388007076,
+   "seconds": 14.359053134918213
+  },
+  {
+   "trial": 2,
+   "params": {
+    "num_leaves": 116,
+    "learning_rate": 0.03534863623586905,
+    "subsample": 0.6759429648326161,
+    "colsample_bytree": 0.991997790946086,
+    "min_child_samples": 66,
+    "reg_lambda": 2.187733071002777
+   },
+   "val_pinball": 0.041879346763953836,
+   "seconds": 50.966349601745605
+  },
+  {
+   "trial": 3,
+   "params": {
+    "num_leaves": 28,
+    "learning_rate": 0.031909002959101984,
+    "subsample": 0.8500258741809816,
+    "colsample_bytree": 0.8263021579310279,
+    "min_child_samples": 29,
+    "reg_lambda": 6.275019178450935
+   },
+   "val_pinball": 0.04357565127958508,
+   "seconds": 8.034790515899658
+  },
+  {
+   "trial": 4,
+   "params": {
+    "num_leaves": 67,
+    "learning_rate": 0.028440181882977485,
+    "subsample": 0.8796357101480419,
+    "colsample_bytree": 0.7236207234455103,
+    "min_child_samples": 78,
+    "reg_lambda": 0.1083992851490228
+   },
+   "val_pinball": 0.041312075033338856,
+   "seconds": 36.042035818099976
+  },
+  {
+   "trial": 5,
+   "params": {
+    "num_leaves": 110,
+    "learning_rate": 0.04799948866915795,
+    "subsample": 0.7284111648554805,
+    "colsample_bytree": 0.9712723340057867,
+    "min_child_samples": 30,
+    "reg_lambda": 2.542927304713205
+   },
+   "val_pinball": 0.040952053942011415,
+   "seconds": 34.9303834438324
+  },
+  {
+   "trial": 6,
+   "params": {
+    "num_leaves": 28,
+    "learning_rate": 0.043975326586454914,
+    "subsample": 0.9247978410382549,
+    "colsample_bytree": 0.5742470002626533,
+    "min_child_samples": 19,
+    "reg_lambda": 0.1314169498185815
+   },
+   "val_pinball": 0.040650797754534077,
+   "seconds": 11.826658725738525
+  },
+  {
+   "trial": 7,
+   "params": {
+    "num_leaves": 33,
+    "learning_rate": 0.05249965544573709,
+    "subsample": 0.9232070832264677,
+    "colsample_bytree": 0.5047537930749939,
+    "min_child_samples": 32,
+    "reg_lambda": 0.8094081564942672
+   },
+   "val_pinball": 0.04031309208661697,
+   "seconds": 11.084059476852417
+  },
+  {
+   "trial": 8,
+   "params": {
+    "num_leaves": 78,
+    "learning_rate": 0.020085776867355725,
+    "subsample": 0.7191030277143893,
+    "colsample_bytree": 0.5268995544184869,
+    "min_child_samples": 49,
+    "reg_lambda": 1.365644021124463
+   },
+   "val_pinball": 0.04129428163916621,
+   "seconds": 54.1268265247345
+  },
+  {
+   "trial": 9,
+   "params": {
+    "num_leaves": 91,
+    "learning_rate": 0.10574837848815072,
+    "subsample": 0.942551235993028,
+    "colsample_bytree": 0.772157824874677,
+    "min_child_samples": 75,
+    "reg_lambda": 0.5745150095809778
+   },
+   "val_pinball": 0.03837178888716193,
+   "seconds": 25.06289529800415
+  },
+  {
+   "trial": 10,
+   "params": {
+    "num_leaves": 104,
+    "learning_rate": 0.10829389953585031,
+    "subsample": 0.9953632493633199,
+    "colsample_bytree": 0.9461204543872326,
+    "min_child_samples": 52,
+    "reg_lambda": 1.0946708715479434
+   },
+   "val_pinball": 0.039470338205202925,
+   "seconds": 27.663596630096436
+  },
+  {
+   "trial": 11,
+   "params": {
+    "num_leaves": 56,
+    "learning_rate": 0.03971371475899955,
+    "subsample": 0.9342101637417355,
+    "colsample_bytree": 0.5922532464658178,
+    "min_child_samples": 24,
+    "reg_lambda": 0.23307945022754892
+   },
+   "val_pinball": 0.04127209836855962,
+   "seconds": 30.30359983444214
+  }
+ ],
+ "catboost": [
+  {
+   "trial": 0,
+   "params": {
+    "depth": 5,
+    "learning_rate": 0.08013861768724162,
+    "l2_leaf_reg": 4.094721195403526,
+    "bagging_temperature": 0.20324794254467882
+   },
+   "val_pinball": 0.040943432291175585,
+   "seconds": 4.399209499359131
+  },
+  {
+   "trial": 1,
+   "params": {
+    "depth": 6,
+    "learning_rate": 0.06741538601838469,
+    "l2_leaf_reg": 1.7715245046774024,
+    "bagging_temperature": 0.2815455986418517
+   },
+   "val_pinball": 0.04191176972614469,
+   "seconds": 2.5387206077575684
+  },
+  {
+   "trial": 2,
+   "params": {
+    "depth": 5,
+    "learning_rate": 0.07106762085646018,
+    "l2_leaf_reg": 13.269015408854315,
+    "bagging_temperature": 0.8053722209059218
+   },
+   "val_pinball": 0.04265960330881233,
+   "seconds": 2.5799202919006348
+  },
+  {
+   "trial": 3,
+   "params": {
+    "depth": 7,
+    "learning_rate": 0.03534863623586905,
+    "l2_leaf_reg": 1.7652842064546028,
+    "bagging_temperature": 0.9839955818921721
+   },
+   "val_pinball": 0.04029110702182086,
+   "seconds": 7.403405427932739
+  },
+  {
+   "trial": 4,
+   "params": {
+    "depth": 4,
+    "learning_rate": 0.03805246804965862,
+    "l2_leaf_reg": 1.8411416580728397,
+    "bagging_temperature": 0.6250646854524542
+   },
+   "val_pinball": 0.0399932452524796,
+   "seconds": 3.4609034061431885
+  },
+  {
+   "trial": 5,
+   "params": {
+    "depth": 7,
+    "learning_rate": 0.08966115227222299,
+    "l2_leaf_reg": 14.738381276584056,
+    "bagging_temperature": 0.974763780707167
+   },
+   "val_pinball": 0.04219022845367883,
+   "seconds": 5.797778606414795
+  },
+  {
+   "trial": 6,
+   "params": {
+    "depth": 8,
+    "learning_rate": 0.09979051762556915,
+    "l2_leaf_reg": 3.8142915074408656,
+    "bagging_temperature": 0.01751320910460452
+   },
+   "val_pinball": 0.039104384015975505,
+   "seconds": 5.815103530883789
+  },
+  {
+   "trial": 7,
+   "params": {
+    "depth": 4,
+    "learning_rate": 0.03899643494182781,
+    "l2_leaf_reg": 3.1304559297563403,
+    "bagging_temperature": 0.3210279121387014
+   },
+   "val_pinball": 0.04046769001690462,
+   "seconds": 5.201993942260742
+  },
+  {
+   "trial": 8,
+   "params": {
+    "depth": 4,
+    "learning_rate": 0.10061598253769652,
+    "l2_leaf_reg": 1.5044765201405943,
+    "bagging_temperature": 0.3432090734659071
+   },
+   "val_pinball": 0.036596525126972035,
+   "seconds": 3.2191178798675537
+  },
+  {
+   "trial": 9,
+   "params": {
+    "depth": 8,
+    "learning_rate": 0.1294179757306241,
+    "l2_leaf_reg": 1.5597040529411859,
+    "bagging_temperature": 0.05932569150816602
+   },
+   "val_pinball": 0.04272998493914666,
+   "seconds": 4.2965099811553955
+  },
+  {
+   "trial": 10,
+   "params": {
+    "depth": 4,
+    "learning_rate": 0.05249965544573709,
+    "l2_leaf_reg": 11.2311187833678,
+    "bagging_temperature": 0.009507586149987812
+   },
+   "val_pinball": 0.04090782841277463,
+   "seconds": 3.3356196880340576
+  },
+  {
+   "trial": 11,
+   "params": {
+    "depth": 5,
+    "learning_rate": 0.05676541121183349,
+    "l2_leaf_reg": 5.324674707300528,
+    "bagging_temperature": 0.002888633811329533
+   },
+   "val_pinball": 0.042154114256374706,
+   "seconds": 4.075650453567505
+  }
+ ],
+ "mlp": [
+  {
+   "trial": 0,
+   "params": {
+    "width": 128,
+    "depth": 3,
+    "dropout": 0.18115255410189887,
+    "lr": 0.001161796748759689,
+    "weight_decay": 4.071400518714532e-06
+   },
+   "val_pinball": 0.033741942743021676,
+   "seconds": 18.988455057144165
+  },
+  {
+   "trial": 1,
+   "params": {
+    "width": 256,
+    "depth": 3,
+    "dropout": 0.057310884024236626,
+    "lr": 0.0006884219646230255,
+    "weight_decay": 0.00018240832550652503
+   },
+   "val_pinball": 0.030353335824022422,
+   "seconds": 28.929457664489746
+  },
+  {
+   "trial": 2,
+   "params": {
+    "width": 128,
+    "depth": 3,
+    "dropout": 0.25911662271251656,
+    "lr": 0.0029271613699481933,
+    "weight_decay": 5.5605530648848265e-06
+   },
+   "val_pinball": 0.032151981775652365,
+   "seconds": 55.01077580451965
+  },
+  {
+   "trial": 3,
+   "params": {
+    "width": 512,
+    "depth": 2,
+    "dropout": 0.2951986745676516,
+    "lr": 0.0020137084808926494,
+    "weight_decay": 6.936629362653402e-06
+   },
+   "val_pinball": 0.02977238042604292,
+   "seconds": 31.385783910751343
+  },
+  {
+   "trial": 4,
+   "params": {
+    "width": 256,
+    "depth": 2,
+    "dropout": 0.18751940563573624,
+    "lr": 0.0019192218485902005,
+    "weight_decay": 0.0004970757611998398
+   },
+   "val_pinball": 0.030609338491617774,
+   "seconds": 14.825458765029907
+  },
+  {
+   "trial": 5,
+   "params": {
+    "width": 256,
+    "depth": 4,
+    "dropout": 0.04617971085066134,
+    "lr": 0.0021822632066606225,
+    "weight_decay": 2.1964652699047677e-05
+   },
+   "val_pinball": 0.03062639878996599,
+   "seconds": 32.32249641418457
+  },
+  {
+   "trial": 6,
+   "params": {
+    "width": 256,
+    "depth": 2,
+    "dropout": 0.08730747167824292,
+    "lr": 0.0009067424186965037,
+    "weight_decay": 9.18509677467685e-06
+   },
+   "val_pinball": 0.030107342662300272,
+   "seconds": 21.533397912979126
+  },
+  {
+   "trial": 7,
+   "params": {
+    "width": 128,
+    "depth": 4,
+    "dropout": 0.21080009176053777,
+    "lr": 0.0004610418851675886,
+    "weight_decay": 1.0705999540257581e-05
+   },
+   "val_pinball": 0.0337799527404343,
+   "seconds": 27.566334009170532
+  },
+  {
+   "trial": 8,
+   "params": {
+    "width": 512,
+    "depth": 4,
+    "dropout": 0.04454820015759198,
+    "lr": 0.00037255537182350444,
+    "weight_decay": 8.775056118686846e-06
+   },
+   "val_pinball": 0.028775023875834582,
+   "seconds": 30.382229566574097
+  },
+  {
+   "trial": 9,
+   "params": {
+    "width": 256,
+    "depth": 3,
+    "dropout": 0.2424053124198508,
+    "lr": 0.0003246452877062709,
+    "weight_decay": 2.3027742516314582e-05
+   },
+   "val_pinball": 0.032591648302224066,
+   "seconds": 22.46325159072876
+  },
+  {
+   "trial": 10,
+   "params": {
+    "width": 256,
+    "depth": 3,
+    "dropout": 0.0008665901433988598,
+    "lr": 0.0007199611850628129,
+    "weight_decay": 1.4500979096844272e-06
+   },
+   "val_pinball": 0.03023918352931354,
+   "seconds": 12.580820798873901
+  },
+  {
+   "trial": 11,
+   "params": {
+    "width": 512,
+    "depth": 3,
+    "dropout": 0.28216744489093537,
+    "lr": 0.0023395291464779703,
+    "weight_decay": 0.0003707953421101217
+   },
+   "val_pinball": 0.032691031416222184,
+   "seconds": 57.13783121109009
+  }
+ ],
+ "tabm": [
+  {
+   "trial": 0,
+   "params": {
+    "n_blocks": 1,
+    "d_block": 512,
+    "dropout": 0.3019209235031648,
+    "lr": 0.00018374787501442062,
+    "weight_decay": 0.0
+   },
+   "val_pinball": 0.03212226234313216,
+   "seconds": 45.95987915992737
+  },
+  {
+   "trial": 1,
+   "params": {
+    "n_blocks": 2,
+    "d_block": 128,
+    "dropout": 0.0,
+    "lr": 0.0005214027408055207,
+    "weight_decay": 0.03900912663577338
+   },
+   "val_pinball": 0.02895212913904934,
+   "seconds": 26.318400382995605
+  },
+  {
+   "trial": 2,
+   "params": {
+    "n_blocks": 4,
+    "d_block": 1024,
+    "dropout": 0.12418633160306941,
+    "lr": 0.001901928807286543,
+    "weight_decay": 0.0
+   },
+   "val_pinball": 0.029843784727883592,
+   "seconds": 158.24270844459534
+  },
+  {
+   "trial": 3,
+   "params": {
+    "n_blocks": 1,
+    "d_block": 256,
+    "dropout": 0.10195661713710064,
+    "lr": 0.0007053190446970278,
+    "weight_decay": 0.04970757611998398
+   },
+   "val_pinball": 0.030248524651474484,
+   "seconds": 38.20190954208374
+  },
+  {
+   "trial": 4,
+   "params": {
+    "n_blocks": 2,
+    "d_block": 1024,
+    "dropout": 0.07696618475110223,
+    "lr": 0.0003814291507440866,
+    "weight_decay": 0.00011285989121332192
+   },
+   "val_pinball": 0.029401886433894412,
+   "seconds": 39.55173134803772
+  },
+  {
+   "trial": 5,
+   "params": {
+    "n_blocks": 4,
+    "d_block": 256,
+    "dropout": 0.19061830546543995,
+    "lr": 0.0016799953065042012,
+    "weight_decay": 0.0
+   },
+   "val_pinball": 0.031018442870593944,
+   "seconds": 106.71815252304077
+  },
+  {
+   "trial": 6,
+   "params": {
+    "n_blocks": 1,
+    "d_block": 128,
+    "dropout": 0.17160453673295356,
+    "lr": 0.00015597040529411854,
+    "weight_decay": 0.00015065275377257453
+   },
+   "val_pinball": 0.033287966225072435,
+   "seconds": 117.00873470306396
+  },
+  {
+   "trial": 7,
+   "params": {
+    "n_blocks": 1,
+    "d_block": 256,
+    "dropout": 0.2100782265743486,
+    "lr": 0.00010288684786718446,
+    "weight_decay": 0.002302774251631458
+   },
+   "val_pinball": 0.03383601651849919,
+   "seconds": 33.10404634475708
+  },
+  {
+   "trial": 8,
+   "params": {
+    "n_blocks": 3,
+    "d_block": 512,
+    "dropout": 0.0,
+    "lr": 0.00011747321143687631,
+    "weight_decay": 0.0
+   },
+   "val_pinball": 0.02969757569578013,
+   "seconds": 31.673529863357544
+  },
+  {
+   "trial": 9,
+   "params": {
+    "n_blocks": 3,
+    "d_block": 1024,
+    "dropout": 0.0,
+    "lr": 0.0005100471728795711,
+    "weight_decay": 0.0013770574815930843
+   },
+   "val_pinball": 0.02779989458874371,
+   "seconds": 63.68584632873535
+  },
+  {
+   "trial": 10,
+   "params": {
+    "n_blocks": 4,
+    "d_block": 512,
+    "dropout": 0.0,
+    "lr": 0.0014451508458108264,
+    "weight_decay": 0.003621807326580278
+   },
+   "val_pinball": 0.0287291765134374,
+   "seconds": 39.85133147239685
+  },
+  {
+   "trial": 11,
+   "params": {
+    "n_blocks": 2,
+    "d_block": 128,
+    "dropout": 0.0,
+    "lr": 0.00017372344812640445,
+    "weight_decay": 0.0003558409930437533
+   },
+   "val_pinball": 0.028915424767362138,
+   "seconds": 43.74569821357727
+  }
+ ],
+ "tabicl": [
+  {
+   "trial": 0,
+   "params": {
+    "n_estimators": 8
+   },
+   "val_pinball": 0.037784877078513725,
+   "seconds": 335.58776593208313
+  }
+ ],
+ "kumo": [
+  {
+   "trial": 0,
+   "params": {
+    "n_estimators": 8
+   },
+   "val_pinball": 0.04518328097503284,
+   "seconds": 92.91947793960571
+  }
+ ],
+ "tabm_no_physics": [],
+ "tabm_no_family": [],
+ "tabm_no_space_weather": [],
+ "tabm_no_design": [],
+ "tabm_plus_rcs_2026": []
+}

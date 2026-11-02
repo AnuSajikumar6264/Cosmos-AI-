@@ -1,0 +1,79 @@
+{
+  "dataset": "gcat",
+  "class": "REAL",
+  "status": "downloaded",
+  "source": "General Catalog of Artificial Space Objects, J. McDowell, https://planet4589.org/space/gcat",
+  "release_on_retrieval": {
+    "2026-10-27": "1.8.8"
+  },
+  "licence": "CC-BY-4.0 (cite: McDowell, J., 2020, General Catalog of Artificial Space Objects, https://planet4589.org/space/gcat)",
+  "field_definitions": "https://planet4589.org/space/gcat/web/cat/cats.html",
+  "notes": [
+    "satcat: Earth-orbit objects with a US catalogue number; auxcat: objects without one; psatcat: payload attributes; ftocat: failed launches.",
+    "ODate is the epoch of the single orbit listed per object (not a history); DDate is the decay or deorbit date; '?' marks uncertain values.",
+    "Fixed snapshots: GCAT is revised continuously, so each retrieval date is kept."
+  ],
+  "manifest_written_utc": "2026-10-27T04:13:54+00:00",
+  "files": [
+    {
+      "path": "raw/2026-10-27/auxcat.tsv",
+      "url": "https://planet4589.org/space/gcat/tsv/cat/auxcat.tsv",
+      "bytes": 3430620,
+      "md5": "6a39fcc6153f066aaaa049ba7e36a786",
+      "sha256": "c6c25a684475385f3bf168390b6718f783947ecd594ff893166813891d2c2f0d",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-27T04:13:45+00:00"
+    },
+    {
+      "path": "raw/2026-10-27/ftocat.tsv",
+      "url": "https://planet4589.org/space/gcat/tsv/cat/ftocat.tsv",
+      "bytes": 511727,
+      "md5": "edd0be3e0914acce10cf475b954762b0",
+      "sha256": "6826ab6ab916cea7de0c328dae9ee761b6c304350b4447f8988e0f18a42a3ac5",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-27T04:13:49+00:00"
+    },
+    {
+      "path": "raw/2026-10-27/launch.tsv",
+      "url": "https://planet4589.org/space/gcat/tsv/launch/launch.tsv",
+      "bytes": 13813643,
+      "md5": "05742df3a446bf66702c99bbbbe2c56c",
+      "sha256": "0fcd7493bcc7a6ce9bd28689c2333fcc941ea389861931b8414fceb86145adfd",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-27T04:13:51+00:00"
+    },
+    {
+      "path": "raw/2026-10-27/orgs.tsv",
+      "url": "https://planet4589.org/space/gcat/tsv/tables/orgs.tsv",
+      "bytes": 711974,
+      "md5": "9fa6711c47094828c11471864f977038",
+      "sha256": "66416d53e7e1612a3b85d765e3b02a024b6ea819f5b514f3d8244b5782c27ec3",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-27T04:13:53+00:00"
+    },
+    {
+      "path": "raw/2026-10-27/psatcat.tsv",
+      "url": "https://planet4589.org/space/gcat/tsv/cat/psatcat.tsv",
+      "bytes": 5232656,
+      "md5": "6fc3d11a822e38acc2afa9f08c08f644",
+      "sha256": "5af402056893dd666ad3ef2e573fbd59933306efee11d196e25581135cefd3a3",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-27T04:13:47+00:00"
+    },
+    {
+      "path": "raw/2026-10-27/satcat.tsv",
+      "url": "https://planet4589.org/space/gcat/tsv/cat/satcat.tsv",
+      "bytes": 19297558,
+      "md5": "19e1a96270e07b9aaa8dea6d7910bafe",
+      "sha256": "ea7191b85786baf4af1f17979e691d7015adc541cc0dbcb960447e2a86e1d4e8",
+      "status": "downloaded",
+      "md5_verified": false,
+      "retrieved_utc": "2026-10-27T04:13:43+00:00"
+    }
+  ]
+}

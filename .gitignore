@@ -3,6 +3,8 @@
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+catboost_info/
+.tools/
 # credentials: never commit (DISCOSweb token, Space-Track, HF tokens)
 *.token
 .env
@@ -37,7 +39,11 @@ outputs/logs/
 *.zip
 *.tar.gz
 *.part
-# third-party full texts kept locally for reading only (copyright stays with the authors)
+# third-party full texts kept locally for reading only (copyright stays with the authors).
+# Recursive: extracted text in subdirectories is as much the authors' copyright as a PDF is.
+research_design/references/**/*.pdf
+research_design/references/**/*.html
+research_design/references/**/*.txt
 research_design/references/*.pdf
 research_design/references/*.html
 research_design/references/*.txt
@@ -46,3 +52,36 @@ research_design/references/competitors/
 data/**/raw/
 data/**/weights/
 data/**/images/
+
+# Datasets published to GitHub via Git LFS are exceptions to the rules above.  They are
+# licence-clear for redistribution and small enough for the LFS quota, so they are negated
+# here rather than force-added, which keeps the committed set reproducible from a clean
+# checkout.  See README.md ("Datasets and Git LFS") for the full inventory, including the
+# datasets that are deliberately NOT redistributed here and how to fetch them.
+!data/feature2_debris/gcat/raw/
+!data/feature2_debris/gcat/raw/**
+!data/feature2_debris/kelvins_cac/raw/
+!data/feature2_debris/kelvins_cac/raw/**
+# ...but not the extraction of that archive: it is byte-for-byte derivable from the
+# committed .zip, and carrying both would spend the LFS quota twice for the same bytes.
+# Recreate it with: python scripts/extract_lfs_archives.py
+data/feature2_debris/kelvins_cac/raw/extracted/
+!data/feature2_debris/kelvins_debris_origin/raw/
+!data/feature2_debris/kelvins_debris_origin/raw/**
+!data/feature1_health/smap_msl/raw/
+!data/feature1_health/smap_msl/raw/**
+!data/feature1_health/opssat_ad/raw/
+!data/feature1_health/opssat_ad/raw/**
+!data/feature3_reentry/historical/raw/
+!data/feature3_reentry/historical/raw/**
+!data/feature3_reentry/processed/
+!data/feature3_reentry/processed/**
+
+# result arrays of the benchmarks the manuscript reports (small; carried in LFS)
+!outputs/benchmarks/reentry_lifetime/**/*.npz
+!outputs/benchmarks/reentry_lifetime/**/*.npy
+!outputs/benchmarks/conjunction_kelvins_cac/**/*.npz
+!outputs/benchmarks/conjunction_kelvins_cac/**/*.npy
+!outputs/benchmarks/twin_couplings/**/*.npz
+!outputs/benchmarks/twin_prospective_t1/**/*.npz
+!outputs/figure_data/**/*.npz

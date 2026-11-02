@@ -1,0 +1,58 @@
+\documentclass[$if(classoption)$$classoption$$else$review$endif$]{elsarticle}
+
+% Elsevier's class requires the title, authors, abstract and keywords inside a frontmatter block,
+% which pandoc's default template does not emit; everything else here is the usual pandoc preamble.
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\providecommand{\passthrough}[1]{#1}
+\setlength{\emergencystretch}{3em}
+\providecommand{\passthrough}[1]{#1}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+
+% wide floats in two-column mode: a single-column figure of a full-width panel is unreadable
+\makeatletter
+\renewenvironment{figure}[1][]{\@float{figure}[#1]}{\end@float}
+\makeatother
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\journal{Engineering Applications of Artificial Intelligence}
+
+\begin{document}
+\begin{frontmatter}
+
+\title{$title$}
+
+$for(author)$
+\author{$author$}
+$endfor$
+
+\begin{abstract}
+$abstract$
+\end{abstract}
+
+$if(keywords)$
+\begin{keyword}
+$for(keywords)$$keywords$$sep$ \sep $endfor$
+\end{keyword}
+$endif$
+
+\end{frontmatter}
+
+$body$
+
+\bibliographystyle{elsarticle-num}
+\bibliography{refs}
+
+\end{document}

@@ -1,0 +1,30 @@
+{
+  "dataset": "kelvins_debris_origin",
+  "status": "downloaded",
+  "class": "SEE NOTES (simulated or real is determined in docs/DATASET_AUDIT.md)",
+  "title": "Space Debris: the origin dataset",
+  "zenodo_record": 4986292,
+  "doi": "10.5281/zenodo.4986292",
+  "licence": "cc-by-4.0",
+  "creators": [
+    "Christos Efthymiopoulos",
+    "Marcus M\u00e4rtens",
+    "Michael Gaitanas",
+    "Dario Izzo"
+  ],
+  "publication_date": "2021-06-21",
+  "retrieved_utc": "2026-10-27T04:14:16+00:00",
+  "manifest_written_utc": "2026-10-27T04:14:16+00:00",
+  "files": [
+    {
+      "path": "raw/space-debris-the-origin.zip",
+      "url": "https://zenodo.org/api/records/4986292/files/space-debris-the-origin.zip/content",
+      "bytes": 2903013,
+      "md5": "bacb7cda14f58c7524e329fb9100ee6c",
+      "sha256": "4c886cf6afe3d6e206c67a7fcb1698f8a2ba5ed0e78ba8f5aa6da6d5892cbde7",
+      "status": "downloaded",
+      "md5_verified": true,
+      "published_checksum": "md5:bacb7cda14f58c7524e329fb9100ee6c"
+    }
+  ]
+}
