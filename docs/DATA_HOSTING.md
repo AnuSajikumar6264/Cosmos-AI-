@@ -39,10 +39,13 @@ this plan at any price, and a file above 100 MB cannot enter ordinary Git.
 
 ## 3. What was committed, and what was not
 
-Committed, in LFS: ESA Kelvins CAC (594 MiB, CC BY 4.0), NASA SMAP/MSL (179 MiB, BSD-style
-redistribution licence), GCAT (12 MiB, CC BY 4.0), Kelvins Debris Origin (8.4 MiB, CC BY 4.0),
-OPSSAT-AD (8.3 MiB, CC BY 4.0), CelesTrak snapshots (17 MiB), the re-entry cohort and NRLMSIS
-density table (7 MiB), and the result arrays of the five benchmarks the manuscript reports.
+Committed, in LFS (true byte counts; `du` under-reports because this filesystem is
+compressed): NASA SMAP/MSL (342 MiB, BSD-style redistribution licence), ESA Kelvins CAC
+(211 MiB, CC BY 4.0), GCAT (42 MiB, CC BY 4.0), CelesTrak snapshots (34 MiB), OPSSAT-AD
+(23 MiB, CC BY 4.0), Kelvins Debris Origin (12 MiB, CC BY 4.0), the re-entry cohort and
+NRLMSIS density table (4.1 MiB), and the result arrays of the five benchmarks the manuscript
+reports (55 MiB). Total: 821 files, 0.696 GiB in LFS; 3,811 tracked files and 0.920 GiB in a
+complete checkout.
 
 Not committed, with the reason separated by kind:
 

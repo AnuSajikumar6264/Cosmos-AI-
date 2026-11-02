@@ -123,16 +123,20 @@ complete artefact, byte-identical to the checksum recorded in
 
 | Dataset | Size | Licence | Path |
 |---|---|---|---|
-| ESA Kelvins Collision Avoidance Challenge | 594 MiB | CC BY 4.0 | `data/feature2_debris/kelvins_cac/raw/` |
-| NASA SMAP / MSL telemetry (telemanom) | 179 MiB | Caltech copyright, BSD-style redistribution licence | `data/feature1_health/smap_msl/raw/` |
-| General Catalog of Artificial Space Objects (GCAT) | 12 MiB | CC BY 4.0 | `data/feature2_debris/gcat/raw/` |
-| ESA Kelvins "Space Debris: the Origin" | 8.4 MiB | CC BY 4.0 | `data/feature2_debris/kelvins_debris_origin/raw/` |
-| ESA OPSSAT-AD | 8.3 MiB | CC BY 4.0 | `data/feature1_health/opssat_ad/raw/` |
-| CelesTrak SATCAT / GP / space weather snapshots | 17 MiB | CelesTrak usage policy (public, no credentials, no explicit licence) | `data/feature2_debris/celestrak/` |
-| Re-entry cohort, NRLMSIS 2.1 density table, derived lifetimes | 7 MiB | derived from the above | `data/feature3_reentry/{processed,derived,historical}/` |
+| NASA SMAP / MSL telemetry (telemanom) | 342 MiB | Caltech copyright, BSD-style redistribution licence | `data/feature1_health/smap_msl/raw/` |
+| ESA Kelvins Collision Avoidance Challenge | 211 MiB | CC BY 4.0 | `data/feature2_debris/kelvins_cac/raw/` |
+| General Catalog of Artificial Space Objects (GCAT) | 42 MiB | CC BY 4.0 | `data/feature2_debris/gcat/raw/` |
+| CelesTrak SATCAT / GP / space weather snapshots | 34 MiB | CelesTrak usage policy (public, no credentials, no explicit licence) | `data/feature2_debris/celestrak/` |
+| ESA OPSSAT-AD | 23 MiB | CC BY 4.0 | `data/feature1_health/opssat_ad/raw/` |
+| ESA Kelvins "Space Debris: the Origin" | 12 MiB | CC BY 4.0 | `data/feature2_debris/kelvins_debris_origin/raw/` |
+| Re-entry cohort, NRLMSIS 2.1 density table, derived lifetimes | 4.1 MiB | derived from the above | `data/feature3_reentry/{processed,derived,historical}/` |
 
-Together with the result arrays of the reported benchmarks, this is **0.664 GiB in LFS** and
-**0.141 GiB in ordinary Git** — 1,159 files, 0.805 GiB in total.
+Sizes are true byte counts. A `du` on this project reports smaller figures because the
+working filesystem is compressed; the numbers above are what actually transfers.
+
+Together with the result arrays of the reported benchmarks, the repository holds **821 files
+in LFS (0.696 GiB)** and the remainder in ordinary Git — **3,811 tracked files, 0.920 GiB**
+in a complete checkout.
 
 One archive is carried as the archive only. The Kelvins CAC loader reads
 `kelvins_cac/raw/extracted/`, which is byte-for-byte derivable from the committed
